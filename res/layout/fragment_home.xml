@@ -1,0 +1,150 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_all"
+    tools:context="com.wangyi.activity.ItOneActivity" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/title_home" >
+
+        <Button
+            android:id="@+id/menu_left"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="32dp"
+            android:layout_height="28dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_search"
+            android:text="  " />
+    </RelativeLayout>
+	
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:layout_alignParentBottom="true"
+        android:background="#f2f2f2"
+        android:orientation="vertical" >
+        
+		<RelativeLayout
+		    android:id="@+id/book_head"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="@drawable/ic_mybook" >
+
+			<Button
+			    android:id="@+id/read_history"
+			    style="?android:attr/buttonStyleSmall"
+			    android:layout_width="20dp"
+			    android:layout_height="20dp"
+			    android:layout_alignParentRight="true"
+			    android:layout_centerVertical="true"
+			    android:layout_marginRight="8dp"
+			    android:background="@drawable/readhistory_normal" />
+
+			<Button
+			    android:id="@+id/mybook"
+			    style="?android:attr/buttonStyleSmall"
+			    android:layout_width="20dp"
+			    android:layout_height="20dp"
+			    android:layout_centerVertical="true"
+			    android:layout_toLeftOf="@+id/read_history"
+			    android:layout_marginRight="5dp"
+			    android:background="@drawable/mybook_normal" />
+
+		</RelativeLayout>
+
+		<View
+		    android:layout_width="match_parent"
+		    android:layout_height="2dp" />
+		
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <com.wangyi.widget.SwipeListView
+                android:id="@+id/item_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+                android:clipToPadding="false"
+                android:divider="@color/typography_color_dividers"
+                android:dividerHeight="1px"
+                android:paddingBottom="@dimen/padding_step1"
+                android:scrollbars="none" >
+            </com.wangyi.widget.SwipeListView>
+
+            <TextView
+                android:id="@+id/browseTextNoItem"
+                style="@style/Typography_Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:fontFamily="sans-serif"
+                android:text="没有课本啊少年"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/typography_color_hinttext"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical" >
+        
+		<View
+		    android:id="@+id/lesson_table"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:background="@drawable/ic_todaylesson" />
+		
+		<View
+            android:layout_width="match_parent"
+            android:layout_height="2dp" />
+		
+        <GridView
+            android:id="@+id/today_lesson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="2"
+            android:paddingLeft="0dp"
+            android:scrollbars="none"
+            android:listSelector="#00000000"
+            android:background="#fcfdfd" >
+        </GridView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/lessonNoItem"
+            android:visibility="gone" >
+            <TextView
+                style="@style/Typography_Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:fontFamily="sans-serif"
+                android:text="今天没有课感觉自己萌萌哒"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/typography_color_hinttext" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
