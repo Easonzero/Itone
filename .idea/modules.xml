@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ItOne.iml" filepath="$PROJECT_DIR$/ItOne.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../PagerSlidingTabStrip/PagerSlidingTabStrip.iml" filepath="$PROJECT_DIR$/../PagerSlidingTabStrip/PagerSlidingTabStrip.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../appcompat_v7.0/appcompat_v7.0.iml" filepath="$PROJECT_DIR$/../appcompat_v7.0/appcompat_v7.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../wheel/wheel.iml" filepath="$PROJECT_DIR$/../wheel/wheel.iml" />
+    </modules>
+  </component>
+</project>
