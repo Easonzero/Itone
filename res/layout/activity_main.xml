@@ -9,21 +9,21 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        class="com.wangyi.fragment.HomeFragment" />
+        class="com.wangyi.view.fragment.HomeFragment" />
 
     <fragment
         android:id="@+id/allsubject"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        class="com.wangyi.fragment.AllSubjectFragment" />
+        class="com.wangyi.view.fragment.AllSubjectFragment" />
 
     <fragment
         android:id="@+id/me"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        class="com.wangyi.fragment.MeFragment" />
+        class="com.wangyi.view.fragment.MeFragment" />
 
     <com.wangyi.widget.FragmentIndicator
         android:id="@+id/indicator"

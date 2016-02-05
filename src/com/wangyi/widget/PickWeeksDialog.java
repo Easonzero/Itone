@@ -1,7 +1,7 @@
 package com.wangyi.widget;
 
 
-import com.zreader.main.R;
+import com.wangyi.reader.R;
 
 import android.app.AlertDialog;
 import android.content.Context;

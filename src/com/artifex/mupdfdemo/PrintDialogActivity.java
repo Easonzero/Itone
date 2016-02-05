@@ -3,7 +3,7 @@ package com.artifex.mupdfdemo;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
-import com.zreader.main.R;
+import com.wangyi.reader.R;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;

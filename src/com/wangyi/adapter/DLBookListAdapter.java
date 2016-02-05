@@ -2,8 +2,8 @@ package com.wangyi.adapter;
 
 import java.util.ArrayList;
 
-import com.wangyi.database.BookDate;
-import com.zreader.main.R;
+import com.wangyi.define.BookData;
+import com.wangyi.reader.R;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,9 +14,9 @@ import android.widget.TextView;
 
 public class DLBookListAdapter extends BaseAdapter {
 	Context context;
-	ArrayList<BookDate> books;
+	ArrayList<BookData> books;
 	LayoutInflater inflater;
-	public DLBookListAdapter(Context context ,ArrayList<BookDate> books){
+	public DLBookListAdapter(Context context ,ArrayList<BookData> books){
 		this.books = books;
 		this.context = context;
 		inflater = LayoutInflater.from(context);
@@ -36,7 +36,7 @@ public class DLBookListAdapter extends BaseAdapter {
 	}
 
 	@Override
-	public BookDate getItem(int pos) {
+	public BookData getItem(int pos) {
 		// TODO Auto-generated method stub
 		return books.get(pos);
 	}

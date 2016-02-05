@@ -34,9 +34,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject; 
 
-import com.wangyi.activity.LoginActivity;
-import com.wangyi.database.BookDate;
-import com.wangyi.database.UserInfo;
+import com.wangyi.define.BookData;
+import com.wangyi.define.UserInfo;
+import com.wangyi.view.activity.LoginActivity;
 
 public class MyHttps {
 	private DefaultHttpClient client;
@@ -164,9 +164,9 @@ public class MyHttps {
 		return null;
 	}
 	
-	public ArrayList<BookDate> getBookDate(String bookName){
+	public ArrayList<BookData> getBookDate(String bookName){
 		try {
-			ArrayList<BookDate> books = new ArrayList();
+			ArrayList<BookData> books = new ArrayList();
 			List<NameValuePair> postdate = new ArrayList();
 			postdate.add(new BasicNameValuePair("bookName",bookName));
 			UrlEncodedFormEntity entity = new UrlEncodedFormEntity(postdate,HTTP.UTF_8);
@@ -182,7 +182,7 @@ public class MyHttps {
 				JSONArray booksJSON = multiJSON.getJSONArray("books");
 				for(int i = 0;i < booksJSON.length();i++){
 					JSONObject bookJSON = booksJSON.getJSONObject(i);
-					BookDate book = new BookDate();
+					BookData book = new BookData();
 					book.bookName = bookJSON.getString("bookName");
 					book.subject = bookJSON.getString("subject");
 					book.occupation = bookJSON.getString("occupation");
@@ -201,7 +201,7 @@ public class MyHttps {
 		return null;
 	}
 	
-	public void getBooksDate(String subject,ArrayList<BookDate> books){
+	public void getBooksDate(String subject,ArrayList<BookData> books){
 		try {
 			List<NameValuePair> postdate = new ArrayList();
 			postdate.add(new BasicNameValuePair("subject",subject));
@@ -218,7 +218,7 @@ public class MyHttps {
 				JSONArray booksJSON = multiJSON.getJSONArray("books");
 				for(int i = 0;i < booksJSON.length();i++){
 					JSONObject bookJSON = booksJSON.getJSONObject(i);
-					BookDate book = new BookDate();
+					BookData book = new BookData();
 					book.bookName = bookJSON.getString("bookName");
 					book.subject = bookJSON.getString("subject");
 					book.occupation = bookJSON.getString("occupation");

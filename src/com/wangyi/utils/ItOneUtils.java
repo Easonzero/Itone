@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import com.zreader.main.R;
+import com.wangyi.reader.R;
 
 import android.content.Context;
 import android.content.res.Resources;

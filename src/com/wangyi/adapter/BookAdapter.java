@@ -2,7 +2,7 @@ package com.wangyi.adapter;
 
 import java.util.ArrayList;
 import com.wangyi.widget.ScrollingTextView;
-import com.zreader.main.R;
+import com.wangyi.reader.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

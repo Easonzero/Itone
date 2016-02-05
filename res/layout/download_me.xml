@@ -63,14 +63,14 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        class="com.wangyi.fragment.DownloadEdFragment" />
+        class="com.wangyi.view.fragment.DownloadEdFragment" />
 
     <fragment
         android:id="@+id/downloading"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        class="com.wangyi.fragment.DownloadIngFragment" />
+        class="com.wangyi.view.fragment.DownloadIngFragment" />
 
     <RelativeLayout
         android:id="@+id/control"

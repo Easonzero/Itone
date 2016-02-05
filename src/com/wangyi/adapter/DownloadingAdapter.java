@@ -2,9 +2,9 @@ package com.wangyi.adapter;
 
 import java.util.ArrayList;
 
-import com.wangyi.database.BookDate;
-import com.wangyi.database.DBBook;
-import com.zreader.main.R;
+import com.wangyi.define.BookData;
+import com.wangyi.imp.database.DBBook;
+import com.wangyi.reader.R;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -21,7 +21,7 @@ import android.widget.TextView;
 
 public class DownloadingAdapter extends BaseAdapter {
 	Context context;
-	ArrayList<BookDate> books;
+	ArrayList<BookData> books;
 	public ArrayList<SelectInfo> selectInfo;
 	LayoutInflater inflater;
 	public boolean state;
@@ -31,7 +31,7 @@ public class DownloadingAdapter extends BaseAdapter {
 		public boolean download;
 	}
 	
-	public DownloadingAdapter(Context context ,ArrayList<BookDate> books){
+	public DownloadingAdapter(Context context ,ArrayList<BookData> books){
 		this.books = books;
 		this.context = context;
 		inflater = LayoutInflater.from(context);
@@ -77,10 +77,10 @@ public class DownloadingAdapter extends BaseAdapter {
 		selectInfo.add(pos, info);
 		if(is){
 			DBBook db = new DBBook(context).open();
-			ArrayList<BookDate> _books = db.getFromBookName(books.get(pos).bookName);
+			ArrayList<BookData> _books = db.getFromBookName(books.get(pos).bookName);
 			db.close();
 			if(_books != null){
-				BookDate book = _books.get(0);
+				BookData book = _books.get(0);
 				Intent intent = new Intent();
 				intent.putExtra("flag", 2);
 				intent.putExtra("count", book.count);
@@ -97,7 +97,7 @@ public class DownloadingAdapter extends BaseAdapter {
 	}
 	
 	public void changeDate(int pos,long count,long fileLength){
-		BookDate book = books.get(pos);
+		BookData book = books.get(pos);
 		book.count = count;
 		book.fileLength = fileLength;
 		books.remove(pos);
@@ -116,7 +116,7 @@ public class DownloadingAdapter extends BaseAdapter {
 	}
 
 	@Override
-	public BookDate getItem(int pos) {
+	public BookData getItem(int pos) {
 		// TODO Auto-generated method stub
 		return books.get(pos);
 	}

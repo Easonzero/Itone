@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.wangyi.activity.ScheduleActivity;
-import com.wangyi.database.DBLesson;
-import com.wangyi.database.LessonDate;
+import com.wangyi.define.LessonData;
+import com.wangyi.imp.database.DBLesson;
+import com.wangyi.view.activity.ScheduleActivity;
 import com.wangyi.widget.ScrollingTextView;
-import com.zreader.main.R;
+import com.wangyi.reader.R;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -26,7 +26,7 @@ public class LessonGridAdapter extends BaseAdapter {
 	private int initWeek;
 	private int initDate;
 	private int _today;
-	private ArrayList<LessonDate> lessonDates;
+	private ArrayList<LessonData> lessonDatas;
 	
 	public LessonGridAdapter(Context context){
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
@@ -34,9 +34,9 @@ public class LessonGridAdapter extends BaseAdapter {
 		initDate = prefs.getInt("initDate", 10);
 		_today = getWeekOfDate();
 		_weekOfToday = initWeek + (getWeekNumber() - initDate);
-		lessonDates = new ArrayList<LessonDate>();
+		lessonDatas = new ArrayList<LessonData>();
 		DBLesson db = new DBLesson(context).open();
-		//lessonDates = db.getAllFromWeeknum("true",_weekOfToday,_today);
+		//lessonDatas = db.getAllFromWeeknum("true",_weekOfToday,_today);
 		db.close();
 		
 		inflater = LayoutInflater.from(context);
@@ -45,13 +45,13 @@ public class LessonGridAdapter extends BaseAdapter {
 	@Override
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return lessonDates.size();
+		return lessonDatas.size();
 	}
 
 	@Override
 	public Object getItem(int position) {
 		// TODO Auto-generated method stub
-		return lessonDates.get(position);
+		return lessonDatas.get(position);
 	}
 
 	@Override
@@ -75,12 +75,12 @@ public class LessonGridAdapter extends BaseAdapter {
 		else{
 			holder = (ViewHolder)convertView.getTag();
 		}
-		holder.lesson_name.setText(lessonDates.get(position).lessonName);
-		holder.location.setText(lessonDates.get(position).classRoom);
-		holder.class_from_to.setText(lessonDates.get(position).fromClass + " - " 
-		+ lessonDates.get(position).toClass + "½Ú");
+		holder.lesson_name.setText(lessonDatas.get(position).lessonName);
+		holder.location.setText(lessonDatas.get(position).classRoom);
+		holder.class_from_to.setText(lessonDatas.get(position).fromClass + " - " 
+		+ lessonDatas.get(position).toClass + "½Ú");
 		
-		if(Integer.parseInt(lessonDates.get(position).fromClass) < 5){
+		if(Integer.parseInt(lessonDatas.get(position).fromClass) < 5){
 			holder.class_from_to.setBackgroundResource(R.drawable.ic_home_blue);
 		}
 		else{

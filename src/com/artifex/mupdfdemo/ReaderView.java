@@ -3,7 +3,7 @@ package com.artifex.mupdfdemo;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
-import com.zreader.main.R;
+import com.wangyi.reader.R;
 
 import android.content.Context;
 import android.content.res.Configuration;

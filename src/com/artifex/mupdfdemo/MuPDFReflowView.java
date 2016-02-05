@@ -2,7 +2,7 @@ package com.artifex.mupdfdemo;
 
 import java.io.UnsupportedEncodingException;
 
-import com.zreader.main.R;
+import com.wangyi.reader.R;
 
 import android.content.Context;
 import android.graphics.Point;

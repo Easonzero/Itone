@@ -3,7 +3,7 @@ package com.artifex.mupdfdemo;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import com.zreader.main.R;
+import com.wangyi.reader.R;
 
 import android.content.Context;
 import android.graphics.Bitmap;

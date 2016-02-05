@@ -1,6 +1,6 @@
 package com.artifex.mupdfdemo;
 
-import com.zreader.main.R;
+import com.wangyi.reader.R;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;

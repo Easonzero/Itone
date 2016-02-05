@@ -19,9 +19,9 @@ import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HTTP;
 
-import com.wangyi.database.BookDate;
-import com.wangyi.database.DBBook;
-import com.wangyi.database.UserInfo;
+import com.wangyi.define.BookData;
+import com.wangyi.define.UserInfo;
+import com.wangyi.imp.database.DBBook;
 
 import android.app.IntentService;
 import android.content.BroadcastReceiver;
@@ -37,7 +37,7 @@ public class DownloadService extends IntentService {
 	private Handler handler = new Handler();
 	private DefaultHttpClient client;
 	private HttpPost post;
-	private BookDate book;
+	private BookData book;
 	private static String IP = "http://192.168.0.106:8080";
 	private long count = 0;
 	private long fileLength;
@@ -79,7 +79,7 @@ public class DownloadService extends IntentService {
 		String name = intent.getStringExtra("book_name");
 		long count = intent.getLongExtra("count",0);
 		state = intent.getIntExtra("flag",INIT);
-		book = new BookDate();
+		book = new BookData();
 		book.bookName = name;
 		book.url = url;
 		book.count = count;
@@ -91,7 +91,7 @@ public class DownloadService extends IntentService {
 	    super.onDestroy();
 	}
 	
-	public void downloadBook(BookDate book){
+	public void downloadBook(BookData book){
 		client = new DefaultHttpClient();
 		HttpParams params = null;  
         params = client.getParams();

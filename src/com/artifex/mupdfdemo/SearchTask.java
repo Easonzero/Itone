@@ -2,7 +2,7 @@ package com.artifex.mupdfdemo;
 
 import java.util.ArrayList;
 
-import com.zreader.main.R;
+import com.wangyi.reader.R;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;

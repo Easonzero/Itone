@@ -1,6 +1,6 @@
 package com.wangyi.widget;
 
-import com.zreader.main.R;
+import com.wangyi.reader.R;
 
 import android.content.Context;
 import android.util.AttributeSet;

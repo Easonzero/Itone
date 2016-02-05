@@ -25,9 +25,9 @@ import com.androidquery.AQuery;
 import com.artifex.mupdfdemo.AsyncTask;
 import com.artifex.mupdfdemo.MuPDFCore;
 import com.squareup.picasso.Picasso;
-import com.wangyi.database.BookmarkData;
+import com.wangyi.define.BookmarkData;
 import com.wangyi.utils.PreferencesItOne;
-import com.zreader.main.R;
+import com.wangyi.reader.R;
 
 public class BookmarkViewAdapter extends BaseAdapter {
 

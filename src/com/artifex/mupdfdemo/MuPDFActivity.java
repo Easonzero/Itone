@@ -17,9 +17,9 @@ import com.hidev.popupview.PopupView.OnDismissListener;
 import com.wangyi.adapter.BookmarkViewAdapter;
 import com.wangyi.adapter.ThumbnailViewAdapter;
 import com.wangyi.adapter.searchItemAdapter;
-import com.wangyi.database.BookmarkData;
-import com.wangyi.database.DBBookmark;
-import com.zreader.main.R;
+import com.wangyi.define.BookmarkData;
+import com.wangyi.imp.database.DBBookmark;
+import com.wangyi.reader.R;
 import com.wangyi.utils.PreferencesItOne;
 import com.wangyi.utils.ItOneUtils;
 

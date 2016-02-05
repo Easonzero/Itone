@@ -13,7 +13,7 @@ import com.artifex.mupdfdemo.MuPDFCore;
 import com.squareup.picasso.Picasso;
 import com.wangyi.utils.PreferencesItOne;
 import com.wangyi.utils.ItOneUtils;
-import com.zreader.main.R;
+import com.wangyi.reader.R;
 
 import android.content.Context;
 import android.content.res.Resources;

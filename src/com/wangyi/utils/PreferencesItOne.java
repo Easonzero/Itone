@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.artifex.mupdfdemo.MuPDFCore;
-import com.wangyi.database.BookDate;
+import com.wangyi.define.BookData;
 
 import android.app.Activity;
 import android.content.Context;
@@ -25,14 +25,14 @@ public class PreferencesItOne {
 		return prefs.getBoolean("islogin", false); 
 	}
 	
-	public static void saveDownloadList(Activity act,BookDate bdnew){
-		ArrayList<BookDate> bd = getDownloadList(act);
+	public static void saveDownloadList(Activity act,BookData bdnew){
+		ArrayList<BookData> bd = getDownloadList(act);
 		bd.add(bdnew);
 		SharedPreferences prefs = act.getSharedPreferences("download",Context.MODE_PRIVATE);
 		SharedPreferences.Editor edit = prefs.edit();
 		Set<String> book_Name = new HashSet();
 		Set<String> book_URL = new HashSet();
-		for(BookDate bditem:bd){
+		for(BookData bditem:bd){
 			book_Name.add(bditem.bookName);
 			book_URL.add(bditem.url);
 		}
@@ -42,13 +42,13 @@ public class PreferencesItOne {
 	}
 	
 	public static void deleteDownloadList(Activity act,int pos){
-		ArrayList<BookDate> bd = getDownloadList(act);
+		ArrayList<BookData> bd = getDownloadList(act);
 		bd.remove(pos);
 		SharedPreferences prefs = act.getSharedPreferences("download",Context.MODE_PRIVATE);
 		SharedPreferences.Editor edit = prefs.edit();
 		Set<String> book_Name = new HashSet();
 		Set<String> book_URL = new HashSet();
-		for(BookDate bditem:bd){
+		for(BookData bditem:bd){
 			book_Name.add(bditem.bookName);
 			book_URL.add(bditem.url);
 		}
@@ -57,16 +57,16 @@ public class PreferencesItOne {
 		edit.commit();
 	}
 	
-	public static ArrayList<BookDate> getDownloadList(Activity act){
+	public static ArrayList<BookData> getDownloadList(Activity act){
 		SharedPreferences prefs = act.getSharedPreferences("download",Context.MODE_PRIVATE);
-		ArrayList<BookDate> bd = new ArrayList<BookDate>();
+		ArrayList<BookData> bd = new ArrayList<BookData>();
 		Set<String> book_Names = prefs.getStringSet("book_Name", null);
 		Set<String> book_URLs = prefs.getStringSet("book_URL", null);
 		if(book_Names != null){
 			String[] book_Name = (String[])(book_Names.toArray(new String[book_Names.size()]));
 			String[] book_URL = (String[])(book_URLs.toArray(new String[book_URLs.size()]));
 			for(int i = 0;i < book_Name.length;i++){
-				BookDate bditem = new BookDate();
+				BookData bditem = new BookData();
 				bditem.bookName = book_Name[i];
 				bditem.url = book_URL[i];
 				bd.add(bditem);
