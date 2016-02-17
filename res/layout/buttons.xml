@@ -272,6 +272,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignWithParentIfMissing="true"
                 android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/editAnnotButton"
                 android:background="@drawable/button"
                 android:contentDescription="@string/copy_text_to_the_clipboard"
                 android:onClick="OnCopyTextButtonClick"
@@ -281,13 +282,12 @@
                 android:id="@+id/editAnnotButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
                 android:background="@drawable/button"
                 android:contentDescription="@string/edit_annotations"
                 android:onClick="OnEditAnnotButtonClick"
                 android:src="@drawable/ic_annotation" />
-
         </RelativeLayout>
 
         <RelativeLayout
@@ -317,7 +317,7 @@
                 android:gravity="center"
                 android:singleLine="true"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/md_light_blue"
+                android:textColor="#FFFFFF"
                 android:textStyle="bold" />
 
             <ImageButton
@@ -332,17 +332,7 @@
                 android:src="@drawable/ic_check" />
         </RelativeLayout>
     </ViewAnimator>
-
-    <!-- <TextView
-        android:id="@+id/info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/page_num"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#FFFFFF" /> -->
-
+    
     <ViewAnimator
         android:id="@+id/bottomMenus"
         android:layout_width="match_parent"
@@ -351,51 +341,51 @@
         android:layout_alignParentBottom="true"
         android:orientation="horizontal" >
 
-        <LinearLayout
-            android:id="@+id/lowerMenus"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/bottombar_height"
-            android:background="@drawable/bg_lowerbutton"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:visibility="invisible" >
+    	<LinearLayout
+        	android:id="@+id/lowerMenus"
+        	android:layout_width="match_parent"
+        	android:layout_height="@dimen/bottombar_height"
+        	android:layout_alignParentBottom="true"
+        	android:layout_centerHorizontal="true"
+        	android:background="@drawable/bg_lowerbutton"
+        	android:gravity="center_vertical"
+        	android:orientation="horizontal"
+        	android:visibility="invisible" >
 
-            <ImageView
-                android:id="@+id/showOutlineAction"
-                android:layout_width="60dp"
-                android:layout_height="match_parent"
-                android:padding="8dp"
-                android:src="@drawable/ic_action_outline" />
+        	<ImageView
+            	android:id="@+id/showOutlineAction"
+            	android:layout_width="60dp"
+            	android:layout_height="match_parent"
+            	android:padding="8dp"
+            	android:src="@drawable/ic_action_outline" />
 
-            <SeekBar
-                android:id="@+id/pageSlider"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                android:layout_weight="1"
-                android:paddingBottom="0dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:paddingTop="0dp" />
+        	<SeekBar
+            	android:id="@+id/pageSlider"
+            	android:layout_width="match_parent"
+            	android:layout_height="wrap_content"
+            	android:layout_margin="0dp"
+            	android:layout_weight="1"
+            	android:paddingBottom="0dp"
+            	android:paddingLeft="16dp"
+            	android:paddingRight="16dp"
+            	android:paddingTop="0dp"/>
 
-            <TextView
-                android:id="@+id/pageNumber"
-                android:layout_width="72dp"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="100 / 100"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#FFFFFF" />
-            
+        	<TextView
+            	android:id="@+id/pageNumber"
+            	android:layout_width="72dp"
+           	 	android:layout_height="match_parent"
+            	android:gravity="center"
+            	android:text="100 / 100"
+            	android:textAppearance="?android:attr/textAppearanceSmall"
+            		android:textColor="#FFFFFF" />
             <ImageButton
-                android:id="@+id/editAnnotButton0"
+              	android:id="@+id/editAnnotButton0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#00000000"
                 android:contentDescription="@string/edit_annotations"
                 android:onClick="OnEditAnnotButtonClick"
                 android:src="@drawable/ic_annotation" />
-
         </LinearLayout>
         
         <RelativeLayout
@@ -403,7 +393,6 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/bottombar_height"
             android:background="@drawable/bg_lowerbutton" >
-
             <ImageButton
                 android:id="@+id/cancelAnnotButton0"
                 android:layout_width="wrap_content"
@@ -414,7 +403,6 @@
                 android:contentDescription="@string/cancel"
                 android:onClick="OnCancelAnnotButtonClick"
                 android:src="@drawable/ic_action_content_remove" />
-
             <ImageButton
                 android:id="@+id/highlightButton0"
                 android:layout_width="wrap_content"
@@ -425,7 +413,6 @@
                 android:contentDescription="@string/highlight"
                 android:onClick="OnHighlightButtonClick"
                 android:src="@drawable/ic_highlight" />
-
             <ImageButton
                 android:id="@+id/underlineButton0"
                 android:layout_width="wrap_content"
@@ -436,7 +423,6 @@
                 android:contentDescription="@string/underline"
                 android:onClick="OnUnderlineButtonClick"
                 android:src="@drawable/ic_underline" />
-
             <ImageButton
                 android:id="@+id/strikeOutButton0"
                 android:layout_width="wrap_content"
@@ -447,7 +433,6 @@
                 android:contentDescription="@string/strike_out"
                 android:onClick="OnStrikeOutButtonClick"
                 android:src="@drawable/ic_strike" />
-
             <ImageButton
                 android:id="@+id/inkButton0"
                 android:layout_width="wrap_content"
@@ -464,7 +449,6 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/bottombar_height"
             android:background="@drawable/bg_lowerbutton" >
-
             <ImageButton
                 android:id="@+id/cancelAcceptButton0"
                 android:layout_width="wrap_content"
@@ -475,7 +459,6 @@
                 android:contentDescription="@string/cancel"
                 android:onClick="OnCancelAcceptButtonClick"
                 android:src="@drawable/ic_action_content_remove" />
-
             <TextView
                 android:id="@+id/annotType0"
                 android:layout_width="wrap_content"
@@ -488,7 +471,6 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/md_light_blue"
                 android:textStyle="bold" />
-
             <ImageButton
                 android:id="@+id/acceptButton0"
                 android:layout_width="wrap_content"
@@ -500,12 +482,11 @@
                 android:onClick="OnAcceptButtonClick"
                 android:src="@drawable/ic_check" />
         </RelativeLayout>
-		<RelativeLayout
+        <RelativeLayout
             android:id="@+id/bottomDelete"
             android:layout_width="match_parent"
             android:layout_height="@dimen/bottombar_height"
             android:background="@drawable/bg_lowerbutton" >
-
             <ImageButton
                 android:id="@+id/cancelDeleteButton0"
                 android:layout_width="wrap_content"
@@ -516,7 +497,6 @@
                 android:contentDescription="@string/cancel"
                 android:onClick="OnCancelDeleteButtonClick"
                 android:src="@drawable/ic_action_content_remove" />
-
             <TextView
                 android:id="@+id/deleteLabel0"
                 android:layout_width="wrap_content"
@@ -530,7 +510,6 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold" />
-
             <ImageButton
                 android:id="@+id/deleteButton0"
                 android:background="#00000000"

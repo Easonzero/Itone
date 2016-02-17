@@ -8,7 +8,7 @@
         android:id="@+id/tabs_strip"
         android:layout_width="match_parent"
         android:layout_height="@dimen/bottombar_height"
-        tools:context="com.zreader.main.zReaderActivity"
+        tools:context="com.wangyi.reader.R;.zReaderActivity"
         android:background="@color/apptheme_color"
          />
 
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/tabs_strip"
-        tools:context="com.zreader.main.zReaderActivity" >
+        tools:context="com.wangyi.reader.R;.zReaderActivity" >
 
     </android.support.v4.view.ViewPager>
 

@@ -213,10 +213,4 @@ public class MuPDFReflowView extends WebView implements MuPDFView {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	@Override
-	public void invalidateView() {
-		// TODO Auto-generated method stub
-		
-	}
 }

@@ -11,7 +11,7 @@ import com.artifex.mupdfdemo.AsyncTask;
 import com.artifex.mupdfdemo.MuPDFActivity;
 import com.artifex.mupdfdemo.MuPDFCore;
 import com.squareup.picasso.Picasso;
-import com.wangyi.utils.PreferencesItOne;
+import com.wangyi.utils.PreferencesReader;
 import com.wangyi.utils.ItOneUtils;
 import com.wangyi.reader.R;
 
@@ -53,7 +53,7 @@ public class ThumbnailViewAdapter extends BaseAdapter {
 		mContext = context;
 		mCore = core;
 		if (mCore.getFilePath() != null) {
-			mPath = PreferencesItOne.getDataDir(mContext) + "/Thumbnail/"+PreferencesItOne.rePlaceString(mCore.getFilePath());		
+			mPath = PreferencesReader.getDataDir(mContext) + "/Thumbnail/"+PreferencesReader.rePlaceString(mCore.getFilePath());		
 			File mCacheDirectory = new File(mPath);
 			if (!mCacheDirectory.exists() || !mCacheDirectory.isDirectory())
 				mCacheDirectory.mkdirs();

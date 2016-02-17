@@ -11,7 +11,7 @@ import com.artifex.mupdfdemo.AsyncTask;
 import com.artifex.mupdfdemo.MuPDFCore;
 import com.artifex.mupdfdemo.SearchTaskResult;
 import com.squareup.picasso.Picasso;
-import com.wangyi.utils.PreferencesItOne;
+import com.wangyi.utils.PreferencesReader;
 import com.wangyi.reader.R;
 
 import android.content.Context;
@@ -43,7 +43,7 @@ public class searchItemAdapter  extends BaseAdapter{
 		mContext = context;
 		mCore = core;
 		searchItem.addAll(result);
-		mPath = /*core.getFileDirectory()*/PreferencesItOne.getDataDir(mContext) + "/thumbnail";
+		mPath = /*core.getFileDirectory()*/PreferencesReader.getDataDir(mContext) + "/thumbnail";
 		File mCacheDirectory = new File(mPath);
 		if (!mCacheDirectory.exists())
 			mCacheDirectory.mkdirs();

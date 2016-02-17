@@ -1,22 +1,16 @@
 package com.wangyi.view.fragment;
 
+import org.xutils.view.annotation.*;
+
 import com.wangyi.reader.R;
+import com.wangyi.view.BaseFragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
-public class DownloadEdFragment extends Fragment {
-	public void onActivityCreated(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		super.onActivityCreated(savedInstanceState);
-	}
-
+@ContentView(R.layout.download_ed)
+public class DownloadEdFragment extends BaseFragment {
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.download_ed, container, false);
-		return view;
+	public void onViewCreated(View view, Bundle savedInstanceState) {
+		super.onViewCreated(view, savedInstanceState);
 	}
 }

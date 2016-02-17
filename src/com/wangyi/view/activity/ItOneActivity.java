@@ -1,41 +1,42 @@
 package com.wangyi.view.activity;
 
-import com.wangyi.function.ScheduleFunc;
-import com.wangyi.imp.database.DBLesson;
+import org.xutils.view.annotation.ContentView;
+
+import com.wangyi.view.BaseActivity;
 import com.wangyi.widget.FragmentIndicator;
 import com.wangyi.widget.FragmentIndicator.OnIndicateListener;
+import com.wangyi.function.BookManagerFunc;
+import com.wangyi.function.ScheduleFunc;
 import com.wangyi.reader.R;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.util.Log;
+import android.app.Fragment;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class ItOneActivity extends FragmentActivity{
+@ContentView(R.layout.activity_main)
+public class ItOneActivity extends BaseActivity{
 	public static Fragment[] mFragments;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
 		
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus(true);
-        }
+		ScheduleFunc.getInstance().init(this);
+        BookManagerFunc.getInstance().init(this);
+        
 		setFragmentIndicator(0);
 	}
 
 	private void setFragmentIndicator(int whichIsDefault) {
 		mFragments = new Fragment[3];
-		mFragments[0] = getSupportFragmentManager().findFragmentById(R.id.home);
-		mFragments[1] = getSupportFragmentManager().findFragmentById(R.id.allsubject);
-		mFragments[2] = getSupportFragmentManager().findFragmentById(R.id.me);
+		mFragments[0] = getFragmentManager().findFragmentById(R.id.home);
+		mFragments[1] = getFragmentManager().findFragmentById(R.id.allsubject);
+		mFragments[2] = getFragmentManager().findFragmentById(R.id.me);
 
-		getSupportFragmentManager().beginTransaction().hide(mFragments[0])
+		getFragmentManager().beginTransaction().hide(mFragments[0])
 				.hide(mFragments[1]).hide(mFragments[2])
 				.show(mFragments[whichIsDefault]).commit();
 
@@ -45,22 +46,17 @@ public class ItOneActivity extends FragmentActivity{
 
 			@Override
 			public void onIndicate(View v, int which) {
-				getSupportFragmentManager().beginTransaction()
+				getFragmentManager().beginTransaction()
 						.hide(mFragments[0]).hide(mFragments[1])
 						.hide(mFragments[2]).show(mFragments[which]).commit();
 			}
 		});
 	}
 	
-	protected void setTranslucentStatus(boolean on) {
-	    Window win = getWindow();
-	    WindowManager.LayoutParams winParams = win.getAttributes();
-	    final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-	    if (on) {
-	        winParams.flags |= bits;
-	    } else {
-	        winParams.flags &= ~bits;
-	    }
-	    win.setAttributes(winParams);
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		BookManagerFunc.getInstance().finish();
+		super.onDestroy();
 	}
 }

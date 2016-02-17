@@ -15,7 +15,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBBookmark {
 	
-	public static final String DATABASE_NAME = "ItOneBookmark.db";
+	public static final String DATABASE_NAME = "zReaderBookmark.db";
 	public static final String KEY_ID = "_id";
 	public static final String KEY_PATH = "path";
 	public static final String KEY_BOOKNAME = "bookname";

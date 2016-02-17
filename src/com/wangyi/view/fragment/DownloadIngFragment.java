@@ -1,9 +1,13 @@
 package com.wangyi.view.fragment;
 
 import java.util.ArrayList;
+
+import org.xutils.view.annotation.*;
+
 import com.wangyi.adapter.DownloadingAdapter;
 import com.wangyi.define.BookData;
-import com.wangyi.utils.PreferencesItOne;
+import com.wangyi.utils.PreferencesReader;
+import com.wangyi.view.BaseFragment;
 import com.wangyi.reader.R;
 
 import android.app.Activity;
@@ -14,23 +18,17 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.widget.Toast;
 
-public class DownloadIngFragment extends Fragment{
-	public void onActivityCreated(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		super.onActivityCreated(savedInstanceState);
-	}
+@ContentView(R.layout.download_ing)
+public class DownloadIngFragment extends BaseFragment{
+	@ViewInject(R.id.download_ing_list)
+	private ListView download_list;
 	
 	private ArrayList<BookData> list;
-	private ListView download_list;
 	private DownloadingAdapter download_date;
 	private Activity act;
 	private int[] stateList;
@@ -55,7 +53,7 @@ public class DownloadIngFragment extends Fragment{
 			
 			if(count == fileLength){
 				download_date.removeDate(pos);
-				PreferencesItOne.deleteDownloadList(act, pos);
+				PreferencesReader.deleteDownloadList(act, pos);
 			}
 			else{
 				download_date.changeDate(pos, count, fileLength);
@@ -80,12 +78,10 @@ public class DownloadIngFragment extends Fragment{
     private mBroadcastReceiver mbr;
 	
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.download_ing, container, false);
+	public void onViewCreated(View view, Bundle savedInstanceState) {
 		context = this.getActivity().getApplicationContext();
 		act = this.getActivity();
-		list = PreferencesItOne.getDownloadList(act);
+		list = PreferencesReader.getDownloadList(act);
 		
 		BookData book = new BookData();
 		book.bookName = "工科数学";
@@ -93,7 +89,6 @@ public class DownloadIngFragment extends Fragment{
 		list.add(book);
 		
 		download_date = new DownloadingAdapter(context, list);
-		download_list = (ListView)view.findViewById(R.id.download_ing_list);
 		download_list.setAdapter(download_date);
 		stateList = new int[list.size()];
 		
@@ -130,8 +125,6 @@ public class DownloadIngFragment extends Fragment{
 			}
 	    	
 	    });
-		
-		return view;
 	}
 	
 	public void edit(){

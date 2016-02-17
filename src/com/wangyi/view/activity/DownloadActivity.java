@@ -1,141 +1,95 @@
 package com.wangyi.view.activity;
 
-import com.wangyi.reader.R;
-import com.wangyi.view.fragment.DownloadIngFragment;
+import org.xutils.view.annotation.*;
 
-import android.os.Build;
+import com.wangyi.reader.R;
+import com.wangyi.view.BaseActivity;
+import com.wangyi.view.fragment.DownloadIngFragment;
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
+import android.app.Fragment;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
-public class DownloadActivity extends FragmentActivity{
+@ContentView(R.layout.download_me)
+public class DownloadActivity extends BaseActivity{
 	
 	public static Fragment[] mFragments;
+	@ViewInject(R.id.ing)
 	private Button ing;
+	@ViewInject(R.id.ed)
 	private Button ed;
-	private Button edit;
-	private Button back;
-	private Button allselect;
-	private Button delete;
+	@ViewInject(R.id.control)
 	private RelativeLayout control;
 	private static int mCurIndicator = 0;
 	private static int mEditState = 0;
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.download_me);
-		
-		ing = (Button) findViewById(R.id.ing);
-		ed = (Button) findViewById(R.id.ed);
-		edit = (Button) findViewById(R.id.edit);
-		back = (Button) findViewById(R.id.back);
-		control = (RelativeLayout) findViewById(R.id.control);
-		allselect = (Button) control.findViewById(R.id.button1);
-		delete = (Button) control.findViewById(R.id.button2);
 		
 		control.setVisibility(View.GONE);
 		setFragmentIndicator(0);
-		
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus(true);
-        }
-		
-		allselect.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View view) {
-				// TODO Auto-generated method stub
-				if(mCurIndicator == 0){
-					((DownloadIngFragment)mFragments[0]).allselect();
-				}
-			}
-		
-		});
-		
-		delete.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View view) {
-				// TODO Auto-generated method stub
-				if(mCurIndicator == 0){
-					((DownloadIngFragment)mFragments[0]).delete();
-				}
-			}
-			
-		});
-		
-		edit.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View view) {
-				// TODO Auto-generated method stub
-					if(mEditState == 0){
-						((Button)view).setText("完成");
-						control.setVisibility(View.VISIBLE);
-						((DownloadIngFragment)mFragments[0]).edit();
-						mEditState = 1;
-					}
-					else{
-						((Button)view).setText("编辑");
-						control.setVisibility(View.GONE);
-						((DownloadIngFragment)mFragments[0]).finish();
-						mEditState = 0;
-					}
-			}
-			
-		});
-		
-		back.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				DownloadActivity.this.finish();
-			}
-			
-		});
+	}
+	
+	@Event(R.id.back)
+	private void onBackClick(View view){
+		DownloadActivity.this.finish();
+	}
+	
+	@Event(R.id.edit)
+	private void onEditClick(View view){
+		if(mEditState == 0){
+			((Button)view).setText("完成");
+			control.setVisibility(View.VISIBLE);
+			((DownloadIngFragment)mFragments[0]).edit();
+			mEditState = 1;
+		}
+		else{
+			((Button)view).setText("编辑");
+			control.setVisibility(View.GONE);
+			((DownloadIngFragment)mFragments[0]).finish();
+			mEditState = 0;
+		}
+	}
+	
+	@Event(R.id.button1)
+	private void onAllSelectClick(View view){
+		if(mCurIndicator == 0){
+			((DownloadIngFragment)mFragments[0]).allselect();
+		}
+	}
+	
+	@Event(R.id.button2)
+	private void onDeleteClick(View view){
+		if(mCurIndicator == 0){
+			((DownloadIngFragment)mFragments[0]).delete();
+		}
+	}
+	
+	@Event(R.id.ing)
+	private void onIngClick(View view){
+		getFragmentManager().beginTransaction()
+		.hide(mFragments[0]).hide(mFragments[1]).show(mFragments[0]).commit();
+		setIndicator(0);
+	}
+	
+	@Event(R.id.ed)
+	private void onEdClick(View view){
+		getFragmentManager().beginTransaction()
+		.hide(mFragments[0]).hide(mFragments[1]).show(mFragments[1]).commit();
+		setIndicator(1);
 	}
 	
 	private void setFragmentIndicator(int whichIsDefault) {
 		mFragments = new Fragment[2];
-		mFragments[0] = getSupportFragmentManager().findFragmentById(R.id.downloading);
-		mFragments[1] = getSupportFragmentManager().findFragmentById(R.id.downloaded);
+		mFragments[0] = getFragmentManager().findFragmentById(R.id.downloading);
+		mFragments[1] = getFragmentManager().findFragmentById(R.id.downloaded);
 
-		getSupportFragmentManager().beginTransaction().hide(mFragments[0])
+		getFragmentManager().beginTransaction().hide(mFragments[0])
 				.hide(mFragments[1]).show(mFragments[whichIsDefault]).commit();
 
 		setIndicator(whichIsDefault);
-		
-		ing.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				getSupportFragmentManager().beginTransaction()
-				.hide(mFragments[0]).hide(mFragments[1]).show(mFragments[0]).commit();
-				setIndicator(0);
-			}
-			
-		});
-		
-		
-		ed.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				getSupportFragmentManager().beginTransaction()
-				.hide(mFragments[0]).hide(mFragments[1]).show(mFragments[1]).commit();
-				setIndicator(1);
-			}
-			
-		});
 	}
 	
 	public void setIndicator(int which) {
@@ -158,17 +112,5 @@ public class DownloadActivity extends FragmentActivity{
 		}
 
 		mCurIndicator = which;
-	}
-	
-	protected void setTranslucentStatus(boolean on) {
-	    Window win = getWindow();
-	    WindowManager.LayoutParams winParams = win.getAttributes();
-	    final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-	    if (on) {
-	        winParams.flags |= bits;
-	    } else {
-	        winParams.flags &= ~bits;
-	    }
-	    win.setAttributes(winParams);
 	}
 }

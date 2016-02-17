@@ -1,8 +1,11 @@
 package com.wangyi.view.fragment;
 
+import org.xutils.view.annotation.*;
+
 import com.wangyi.define.UserInfo;
 import com.wangyi.utils.ImageUtil;
 import com.wangyi.utils.MyHttps;
+import com.wangyi.view.BaseFragment;
 import com.wangyi.view.activity.DownloadActivity;
 import com.wangyi.view.activity.LoginActivity;
 import com.wangyi.reader.R;
@@ -23,109 +26,72 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MeFragment extends Fragment {
-	Button login ;
-	Context context;
-	LinearLayout download;
-	LinearLayout back;
-	LinearLayout isLogin;
-	LinearLayout notLogin;
-	
-	private Handler handler;
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		super.onActivityCreated(savedInstanceState);
-	}
-
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_me, container, false);
-		context = this.getActivity();
-		
-		initView(view);
-		initHandler();
-		
-        return view;
-	}
-	
-	private void initView(View view){
-		login = (Button) view.findViewById(R.id.menu_in);
-		download = (LinearLayout) view.findViewById(R.id.download);
-		back = (LinearLayout) view.findViewById(R.id.back);
-		isLogin = (LinearLayout) view.findViewById(R.id.Login);
-		notLogin = (LinearLayout) view.findViewById(R.id.notLogin);
-		
-		download.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(context,DownloadActivity.class);
-				startActivity(intent);
-			}
-			
-		});
-		
-		back.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				MeFragment.this.getActivity().finish();
-			}
-			
-		});
-		
-		login.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(context,LoginActivity.class);
-				startActivity(intent);
-			}
-			
-		});
-	}
-	
-	private void initHandler(){
-		handler = new Handler(){
-            @Override
-            public void handleMessage(Message msg){
-                if(msg.what == 1){
-                	TextView userName = (TextView) isLogin.findViewById(R.id.userName);
-                	TextView other = (TextView) isLogin.findViewById(R.id.other);
-                	UserInfo userInfo = (UserInfo) msg.obj;
-                	String otherString = userInfo.university + " " + userInfo.faculty + " " + userInfo.occupation;
-                	userName.setText(userInfo.userName);
-                	other.setText(otherString);
-                	notLogin.setVisibility(View.GONE);
-                	isLogin.setVisibility(View.VISIBLE);
-                	if(!((UserInfo)msg.obj).imageUrl.equals("null")){
-                		new Thread(){
-                			public void run(){
-                				String url0 = "/ItOne/DownloadServlet";
-                				MyHttps mHttps = new MyHttps(url0);
-                				if(UserInfo.sessionId != null){
-                					Bitmap headPic = mHttps.getImage(UserInfo.sessionId);
-                					Message message = new Message();
-                					message.obj = headPic;
-                					message.what = 3;
-                					handler.sendMessage(message);
-                				}
-                			}
-                		}.start();
-                	}
-                }
-                else if(msg.what == 3){
-                	ImageView pic = (ImageView) isLogin.findViewById(R.id.headPic);
-                	pic.setImageBitmap(ImageUtil.toRoundBitmap((Bitmap)msg.obj));
-                }
-                super.handleMessage(msg);
+@ContentView(R.layout.fragment_me)
+public class MeFragment extends BaseFragment {
+	@ViewInject(R.id.Login)
+	private LinearLayout isLogin;
+	@ViewInject(R.id.notLogin)
+	private LinearLayout notLogin;
+	@ViewInject(R.id.headPic)
+	private ImageView pic;
+	@ViewInject(R.id.userName)
+	private TextView userName;
+	@ViewInject(R.id.other)
+	private TextView other;
+	private Context context;
+	private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg){
+            if(msg.what == 1){
+            	UserInfo userInfo = (UserInfo) msg.obj;
+            	String otherString = userInfo.university + " " + userInfo.faculty + " " + userInfo.occupation;
+            	userName.setText(userInfo.userName);
+            	other.setText(otherString);
+            	notLogin.setVisibility(View.GONE);
+            	isLogin.setVisibility(View.VISIBLE);
+            	if(!((UserInfo)msg.obj).imageUrl.equals("null")){
+            		new Thread(){
+            			public void run(){
+            				String url0 = "/ItOne/DownloadServlet";
+            				MyHttps mHttps = new MyHttps(url0);
+            				if(UserInfo.sessionId != null){
+            					Bitmap headPic = mHttps.getImage(UserInfo.sessionId);
+            					Message message = new Message();
+            					message.obj = headPic;
+            					message.what = 3;
+            					handler.sendMessage(message);
+            				}
+            			}
+            		}.start();
+            	}
             }
-        };
+            else if(msg.what == 3){
+            	pic.setImageBitmap(ImageUtil.toRoundBitmap((Bitmap)msg.obj));
+            }
+            super.handleMessage(msg);
+        }
+    };
+
+	@Override
+	public void onViewCreated(View view, Bundle savedInstanceState){
+		context = this.getActivity();
+	}
+	
+	@Event(R.id.download)
+	private void onDownloadClick(View view){
+		Intent intent = new Intent(context,DownloadActivity.class);
+		startActivity(intent);
+	}
+	
+	@Event(R.id.back)
+	private void onBackClick(View view){
+		MeFragment.this.getActivity().finish();
+	}
+	
+	@Event(R.id.menu_in)
+	private void onLoginClick(View view){
+		Intent intent = new Intent(context,LoginActivity.class);
+		startActivity(intent);
 	}
 
 	@Override

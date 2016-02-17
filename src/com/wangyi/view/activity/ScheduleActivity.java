@@ -5,16 +5,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import com.wangyi.define.Event;
+import org.xutils.view.annotation.*;
+
+import com.wangyi.define.EventName;
 import com.wangyi.define.LessonData;
 import com.wangyi.function.ScheduleFunc;
+import com.wangyi.view.BaseActivity;
 import com.wangyi.widget.SildingFinishLayout;
 import com.wangyi.widget.SildingFinishLayout.OnSildingFinishListener;
 import com.wangyi.reader.R;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -33,52 +34,76 @@ import android.widget.ScrollView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-public class ScheduleActivity extends Activity {
+@ContentView(R.layout.activity_schedule)
+public class ScheduleActivity extends BaseActivity {
 	private int[][] lessonLocation;
 	private int[] weekDays;
 	private int id = -1;
 	
+	@ViewInject(R.id.lessons)
 	private ScrollView scroll;
+	@ViewInject(R.id.weekoftoday)
+	private TextView weekOfToday;
+	
+	private ListView lvPopupList;
 	private TextView lesson;
 	private LinearLayout today;
-	private TextView weekOfToday;
-	private ListView lvPopupList;
 	private PopupWindow pwMyPopWindow;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_schedule);
-		
-		ScheduleFunc.getInstance().init(this);
-		
 		lessonLocation = new int[][]{{R.id.date,R.id.date_mon,R.id.date_tue,R.id.date_wed,R.id.date_thu,R.id.date_fri,R.id.date_sta,R.id.date_sun},
-				{R.id.lesson_1,R.id.mon_lesson_1,R.id.tue_lesson_1,R.id.wed_lesson_1,R.id.thu_lesson_1,R.id.fri_lesson_1,R.id.sta_lesson_1,R.id.sun_lesson_1},
-				{R.id.lesson_2,R.id.mon_lesson_2,R.id.tue_lesson_2,R.id.wed_lesson_2,R.id.thu_lesson_2,R.id.fri_lesson_2,R.id.sta_lesson_2,R.id.sun_lesson_2},		
-				{R.id.lesson_3,R.id.mon_lesson_3,R.id.tue_lesson_3,R.id.wed_lesson_3,R.id.thu_lesson_3,R.id.fri_lesson_3,R.id.sta_lesson_3,R.id.sun_lesson_3},
-				{R.id.lesson_4,R.id.mon_lesson_4,R.id.tue_lesson_4,R.id.wed_lesson_4,R.id.thu_lesson_4,R.id.fri_lesson_4,R.id.sta_lesson_4,R.id.sun_lesson_4},
-				{R.id.lesson_5,R.id.mon_lesson_5,R.id.tue_lesson_5,R.id.wed_lesson_5,R.id.thu_lesson_5,R.id.fri_lesson_5,R.id.sta_lesson_5,R.id.sun_lesson_5},
-				{R.id.lesson_6,R.id.mon_lesson_6,R.id.tue_lesson_6,R.id.wed_lesson_6,R.id.thu_lesson_6,R.id.fri_lesson_6,R.id.sta_lesson_6,R.id.sun_lesson_6},
-				{R.id.lesson_7,R.id.mon_lesson_7,R.id.tue_lesson_7,R.id.wed_lesson_7,R.id.thu_lesson_7,R.id.fri_lesson_7,R.id.sta_lesson_7,R.id.sun_lesson_7},
-				{R.id.lesson_8,R.id.mon_lesson_8,R.id.tue_lesson_8,R.id.wed_lesson_8,R.id.thu_lesson_8,R.id.fri_lesson_8,R.id.sta_lesson_8,R.id.sun_lesson_8},
-				{R.id.lesson_9,R.id.mon_lesson_9,R.id.tue_lesson_9,R.id.wed_lesson_9,R.id.thu_lesson_9,R.id.fri_lesson_9,R.id.sta_lesson_9,R.id.sun_lesson_9},
-				{R.id.lesson_10,R.id.mon_lesson_10,R.id.tue_lesson_10,R.id.wed_lesson_10,R.id.thu_lesson_10,R.id.fri_lesson_10,R.id.sta_lesson_10,R.id.sun_lesson_10},
-				{R.id.lesson_11,R.id.mon_lesson_11,R.id.tue_lesson_11,R.id.wed_lesson_11,R.id.thu_lesson_11,R.id.fri_lesson_11,R.id.sta_lesson_11,R.id.sun_lesson_11},
-				{R.id.lesson_12,R.id.mon_lesson_12,R.id.tue_lesson_12,R.id.wed_lesson_12,R.id.thu_lesson_12,R.id.fri_lesson_12,R.id.sta_lesson_12,R.id.sun_lesson_12}};
+			{R.id.lesson_1,R.id.mon_lesson_1,R.id.tue_lesson_1,R.id.wed_lesson_1,R.id.thu_lesson_1,R.id.fri_lesson_1,R.id.sta_lesson_1,R.id.sun_lesson_1},
+			{R.id.lesson_2,R.id.mon_lesson_2,R.id.tue_lesson_2,R.id.wed_lesson_2,R.id.thu_lesson_2,R.id.fri_lesson_2,R.id.sta_lesson_2,R.id.sun_lesson_2},		
+			{R.id.lesson_3,R.id.mon_lesson_3,R.id.tue_lesson_3,R.id.wed_lesson_3,R.id.thu_lesson_3,R.id.fri_lesson_3,R.id.sta_lesson_3,R.id.sun_lesson_3},
+			{R.id.lesson_4,R.id.mon_lesson_4,R.id.tue_lesson_4,R.id.wed_lesson_4,R.id.thu_lesson_4,R.id.fri_lesson_4,R.id.sta_lesson_4,R.id.sun_lesson_4},
+			{R.id.lesson_5,R.id.mon_lesson_5,R.id.tue_lesson_5,R.id.wed_lesson_5,R.id.thu_lesson_5,R.id.fri_lesson_5,R.id.sta_lesson_5,R.id.sun_lesson_5},
+			{R.id.lesson_6,R.id.mon_lesson_6,R.id.tue_lesson_6,R.id.wed_lesson_6,R.id.thu_lesson_6,R.id.fri_lesson_6,R.id.sta_lesson_6,R.id.sun_lesson_6},
+			{R.id.lesson_7,R.id.mon_lesson_7,R.id.tue_lesson_7,R.id.wed_lesson_7,R.id.thu_lesson_7,R.id.fri_lesson_7,R.id.sta_lesson_7,R.id.sun_lesson_7},
+			{R.id.lesson_8,R.id.mon_lesson_8,R.id.tue_lesson_8,R.id.wed_lesson_8,R.id.thu_lesson_8,R.id.fri_lesson_8,R.id.sta_lesson_8,R.id.sun_lesson_8},
+			{R.id.lesson_9,R.id.mon_lesson_9,R.id.tue_lesson_9,R.id.wed_lesson_9,R.id.thu_lesson_9,R.id.fri_lesson_9,R.id.sta_lesson_9,R.id.sun_lesson_9},
+			{R.id.lesson_10,R.id.mon_lesson_10,R.id.tue_lesson_10,R.id.wed_lesson_10,R.id.thu_lesson_10,R.id.fri_lesson_10,R.id.sta_lesson_10,R.id.sun_lesson_10},
+			{R.id.lesson_11,R.id.mon_lesson_11,R.id.tue_lesson_11,R.id.wed_lesson_11,R.id.thu_lesson_11,R.id.fri_lesson_11,R.id.sta_lesson_11,R.id.sun_lesson_11},
+			{R.id.lesson_12,R.id.mon_lesson_12,R.id.tue_lesson_12,R.id.wed_lesson_12,R.id.thu_lesson_12,R.id.fri_lesson_12,R.id.sta_lesson_12,R.id.sun_lesson_12}};
 		weekDays = new int[]{R.id.mon,R.id.tue,R.id.wed,R.id.thu,R.id.fri,R.id.sta,R.id.sun};
 		
-		scroll = (ScrollView) findViewById(R.id.lessons);
 		today = (LinearLayout) findViewById(weekDays[ScheduleFunc.getInstance()._today-1]);
-		weekOfToday = (TextView) findViewById(R.id.weekoftoday);
 		today.setBackgroundResource(R.drawable.class_lesson_tody);
 		
 		initWeekOfToday();
 		initLesson(ScheduleFunc.getInstance()._weekOfToday);
 		initSetLessonListener();
 		initSlidFinish();
-		
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus(true);
+	}
+	
+	@Event(R.id.weekoftoday)
+	private void onWeekClick(View view){
+		if (pwMyPopWindow.isShowing()) {
+            pwMyPopWindow.dismiss();
+        } else {
+            pwMyPopWindow.showAsDropDown(view,-100,0);  
         }
+	}
+	
+	@Event(value=R.id.lv_popup_list,type=ListView.OnItemClickListener.class)
+	private void onListItemClick(AdapterView<?> parent, View view,  
+            int position, long id){
+		ScheduleFunc.getInstance().currentWeek = position+1;
+    	reset(ScheduleFunc.getInstance().currentWeek);
+        pwMyPopWindow.dismiss();
+	}
+	
+	@Event(value=R.id.lessons,type=View.OnTouchListener.class)
+	private boolean onLessonsTouch(View arg0, MotionEvent event){
+		if(MotionEvent.ACTION_MOVE == event.getAction()){
+			if(id != (-1)){
+				lesson = (TextView) findViewById(id);
+				lesson.setBackgroundResource(R.drawable.bg_lesson);
+				lesson.setTag("none");
+				id = -1;
+			}
+		}
+		return false;
 	}
 	
 	private void initSlidFinish(){
@@ -97,21 +122,6 @@ public class ScheduleActivity extends Activity {
 	private void initWeekOfToday(){
 		weekOfToday.setText(ScheduleFunc.getInstance().getWeekNumStr(ScheduleFunc.getInstance()._weekOfToday));
 		initPopupWindow();
-		weekOfToday.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View view) {
-				// TODO Auto-generated method stub
-				if (pwMyPopWindow.isShowing()) {  
-					  
-                    pwMyPopWindow.dismiss();
-                } else {  
-  
-                    pwMyPopWindow.showAsDropDown(view,-100,0);  
-                }  
-			}
-			
-		});
 	}
 	
 	private void initPopupWindow() {  
@@ -124,25 +134,14 @@ public class ScheduleActivity extends Activity {
         }
         LayoutInflater inflater = (LayoutInflater) this  
                 .getSystemService(LAYOUT_INFLATER_SERVICE);  
-        View layout = inflater.inflate(R.layout.task_detail_popupwindow, null);  
-        lvPopupList = (ListView) layout.findViewById(R.id.lv_popup_list);  
+        View layout = inflater.inflate(R.layout.task_detail_popupwindow, null); 
+        lvPopupList = (ListView) layout.findViewById(R.id.lv_popup_list);
         pwMyPopWindow = new PopupWindow(layout);  
         pwMyPopWindow.setFocusable(true);
         lvPopupList.setAdapter(new SimpleAdapter(ScheduleActivity.this, setList,  
                 R.layout.list_item_popupwindow, new String[] { "share_key" },  
                 new int[] { R.id.tv_list_item }));
         lvPopupList.setSelection(ScheduleFunc.getInstance()._weekOfToday-2);
-        lvPopupList.setOnItemClickListener(new OnItemClickListener() {  
-  
-            @Override  
-            public void onItemClick(AdapterView<?> parent, View view,  
-                    int position, long id) 
-            {  
-            	ScheduleFunc.getInstance().currentWeek = position+1;
-            	reset(ScheduleFunc.getInstance().currentWeek);
-                pwMyPopWindow.dismiss();
-            }  
-        });  
         pwMyPopWindow.setBackgroundDrawable(ScheduleActivity.this.getResources().getDrawable(R.drawable.popupwindow));
   
         lvPopupList.measure(View.MeasureSpec.UNSPECIFIED,  
@@ -155,7 +154,7 @@ public class ScheduleActivity extends Activity {
 	}  
 
 	private void initLesson(int week){
-		ArrayList<LessonData> lessonDatas = ScheduleFunc.getInstance().find(Event.ScheduleFunc.FINDBYWEEK).getDataList();
+		ArrayList<LessonData> lessonDatas = ScheduleFunc.getInstance().find(EventName.ScheduleFunc.FINDBYWEEK).getDataList();
 		if(lessonDatas != null){
 			for(int i = 0;i < lessonDatas.size();i++){
 				LessonData ld= lessonDatas.get(i);
@@ -175,23 +174,6 @@ public class ScheduleActivity extends Activity {
 	}
 	
 	private void initSetLessonListener(){
-		scroll.setOnTouchListener(new OnTouchListener(){
-
-			@Override
-			public boolean onTouch(View arg0, MotionEvent event) {
-				// TODO Auto-generated method stub
-				if(MotionEvent.ACTION_MOVE == event.getAction()){
-					if(id != (-1)){
-						lesson = (TextView) findViewById(id);
-						lesson.setBackgroundResource(R.drawable.bg_lesson);
-						lesson.setTag("none");
-						id = -1;
-					}
-				}
-				return false;
-			}
-			
-		});
 		
 		for(int i = 1;i <= 12;i++){
 			for(int j = 1;j <= 7;j++){
@@ -266,18 +248,6 @@ public class ScheduleActivity extends Activity {
 		overridePendingTransition(0, R.anim.base_slide_right_out);
 	}
 	
-	protected void setTranslucentStatus(boolean on) {
-	    Window win = getWindow();
-	    WindowManager.LayoutParams winParams = win.getAttributes();
-	    final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-	    if (on) {
-	        winParams.flags |= bits;
-	    } else {
-	        winParams.flags &= ~bits;
-	    }
-	    win.setAttributes(winParams);
-	}
-
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		// TODO Auto-generated method stub
@@ -304,6 +274,5 @@ public class ScheduleActivity extends Activity {
 	public static int dip2px(Context context, float dpValue) {  
         final float scale = context.getResources().getDisplayMetrics().density;  
         return (int) (dpValue * scale + 0.5f);  
-    }  
-	
+    } 
 }

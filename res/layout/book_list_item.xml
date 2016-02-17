@@ -35,7 +35,7 @@
                 android:ellipsize="marquee"
         		android:marqueeRepeatLimit="marquee_forever"
         		android:scrollHorizontally="true"
-        		android:textSize="25sp"
+        		android:textSize="5dp"
                 android:text="A" />
 		</RelativeLayout>
 

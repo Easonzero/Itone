@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.wangyi.Interface.DBInterface;
 import com.wangyi.define.BookData;
+import com.wangyi.define.EventName;
 import com.wangyi.define.LessonData;
 import com.wangyi.define.Response;
 
@@ -14,7 +15,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DBBook{
+public class DBBook implements DBInterface<BookData>{
 	public static final String DATABASE_NAME = "ItOneBook.db";
 	public static final String KEY_BOOKNAME = "bookname";
 	public static final String KEY_SUBJECT = "subject";
@@ -119,5 +120,48 @@ public class DBBook{
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		}
 
+	}
+
+	@Override
+	public void add(Response<BookData> response) {
+		// TODO Auto-generated method stub
+		String event = response.getEvent();
+		BookData book = response.getDataList().get(0);
+		if(event.equals(EventName.BookFunc.ADDBOOK)){
+			addBook(book.bookName, book.subject, book.occupation, book.fromUniversity,book.downloadNumber,book.count,book.fileLength,book.url);
+		}
+	}
+
+	@Override
+	public void delete(Response<BookData> response) {
+		// TODO Auto-generated method stub
+		String event = response.getEvent();
+		BookData book = response.getDataList().get(0);
+		if(event.equals(EventName.BookFunc.DELETEBOOK)){
+			deleteBook(book.bookName);
+		}
+	}
+
+	@Override
+	public Response<BookData> find(Response<BookData> response) {
+		// TODO Auto-generated method stub
+		String event = response.getEvent();
+		BookData book = response.getDataList().get(0);
+		ArrayList<BookData> books = null;
+		if(event.equals(EventName.BookFunc.FINDBYNAME)){
+			books = getFromBookName(book.bookName);
+		}
+		response.setDataList(books);
+		return response;
+	}
+
+	@Override
+	public void change(Response<BookData> response) {
+		// TODO Auto-generated method stub
+		String event = response.getEvent();
+		BookData book = response.getDataList().get(0);
+		if(event.equals(EventName.BookFunc.CHANGECOUNT)){
+			setBookCount(book.url,book.count);
+		}
 	}
 }

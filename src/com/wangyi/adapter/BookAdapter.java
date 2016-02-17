@@ -1,7 +1,7 @@
 package com.wangyi.adapter;
 
-import java.util.ArrayList;
 import com.wangyi.widget.ScrollingTextView;
+import com.wangyi.function.BookManagerFunc;
 import com.wangyi.reader.R;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -16,9 +16,6 @@ import android.widget.LinearLayout.LayoutParams;
 
 public class BookAdapter extends BaseAdapter {
 	private LayoutInflater inflater;
-    private ArrayList<String> names = null;
-    private ArrayList<String> paths = null;
-    private Context context = null;
     private int mRightWidth = 0;
     private IOnItemRightClickListener mListener = null;
 
@@ -26,10 +23,7 @@ public class BookAdapter extends BaseAdapter {
         void onRightClick(View v, int position);
     }
 
-    public BookAdapter(Context context,ArrayList<String> na,ArrayList<String> pa,int rightWidth, IOnItemRightClickListener l){
-        names = na;
-        paths = pa;
-        this.context = context;
+    public BookAdapter(Context context,int rightWidth, IOnItemRightClickListener l){
         mRightWidth = rightWidth;
         mListener = l;
         inflater = LayoutInflater.from(context);
@@ -37,13 +31,13 @@ public class BookAdapter extends BaseAdapter {
 	@Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return names.size();
+        return BookManagerFunc.getInstance().getBooknum();
     }
 
     @Override
     public Object getItem(int position) {
         // TODO Auto-generated method stub
-        return names.get(position);
+        return BookManagerFunc.getInstance().getna(position);
     }
 
     @Override
@@ -77,8 +71,8 @@ public class BookAdapter extends BaseAdapter {
         LinearLayout.LayoutParams lp2 = new LayoutParams(mRightWidth, LayoutParams.MATCH_PARENT);
         holder.item_right.setLayoutParams(lp2);
         holder.item_right_text.setText("É¾³ý");
-        holder.item_left_text.setText(names.get(position));
-        holder.text_icon.setText(names.get(position));
+        holder.item_left_text.setText(BookManagerFunc.getInstance().getna(position));
+        holder.text_icon.setText(BookManagerFunc.getInstance().getna(position));
         holder.item_right.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

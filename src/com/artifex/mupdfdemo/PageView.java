@@ -103,10 +103,10 @@ class TextSelector {
 
 public abstract class PageView extends ViewGroup {
 	private static final int HIGHLIGHT_COLOR = 0x802572AC;
-	private static final int LINK_COLOR = 0xFFFF0000;
-	private static final int BOX_COLOR = 0x802572AC;
-	public static int INK_COLOR = 0xFFFF0000;
-	public static float INK_THICKNESS = 10.0f;
+	private static final int LINK_COLOR = 0xfffa4b2a;
+	private static final int BOX_COLOR = 0xFF4444FF;
+	private static final int INK_COLOR = 0xFFFF0000;
+	private static final float INK_THICKNESS = 10.0f;
 	private static final int BACKGROUND_COLOR = 0xFFFFFFFF;
 	private static final int PROGRESS_DIALOG_DELAY = 200;
 	protected final Context   mContext;
@@ -133,7 +133,7 @@ public abstract class PageView extends ViewGroup {
 	private       TextWord  mText[][];
 	private       RectF     mItemSelectBox;
 	protected     ArrayList<ArrayList<PointF>> mDrawing;
-	public       View      mSearchView;
+	private       View      mSearchView;
 	private       boolean   mIsBlank;
 	private       boolean   mHighlightLinks;
 

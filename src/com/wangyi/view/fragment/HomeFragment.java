@@ -1,20 +1,20 @@
 package com.wangyi.view.fragment;
 
 import java.io.File;
-import java.io.FileFilter;
 import java.util.ArrayList;
+
+import org.xutils.view.annotation.*;
 
 import com.artifex.mupdfdemo.MuPDFActivity;
 import com.wangyi.adapter.BookAdapter;
 import com.wangyi.adapter.LessonGridAdapter;
-import com.wangyi.imp.database.DBBook;
-import com.wangyi.imp.database.DBBookmark;
-import com.wangyi.imp.database.DBLesson;
+import com.wangyi.define.EventName;
+import com.wangyi.function.BookManagerFunc;
+import com.wangyi.view.BaseFragment;
 import com.wangyi.view.activity.ScheduleActivity;
 import com.wangyi.widget.SwipeListView;
 import com.wangyi.reader.R;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -31,97 +31,94 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.RelativeLayout;
 
-public class HomeFragment extends Fragment {
-
-	ArrayList<String> names = null;
-	ArrayList<String> paths = null;
-	SwipeListView browseList = null;
-	BookAdapter adapter = null;
-	View view = null;
-	LessonGridAdapter adapter_lesson = null;
-	GridView lessonList = null;
-	RelativeLayout noLessonItem = null;
-	View lessonTable = null;
+@ContentView(R.layout.fragment_home)
+public class HomeFragment extends BaseFragment {
+	@ViewInject(R.id.today_lesson)
+	GridView lessonList;
+	@ViewInject(R.id.lessonNoItem)
+	RelativeLayout noLessonItem;
+	@ViewInject(R.id.mybook)
 	Button myBook;
+	@ViewInject(R.id.read_history)
 	Button readHistory;
+	@ViewInject(R.id.item_listview)
+	SwipeListView browseList;
+	@ViewInject(R.id.book_head)
 	RelativeLayout bookHead;
+	BookAdapter adapter = null;
+	LessonGridAdapter adapter_lesson = null;
 	Context context;
 	private int mCurIndicator = 0;
-	private Handler handler;
-	
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		super.onActivityCreated(savedInstanceState);
-	}
+	private Handler handler = new Handler(){
+		public void handleMessage(Message msg){
+			if(msg.what == 0){
+				BookManagerFunc.getInstance().showFileDir();
+				adapter.notifyDataSetChanged();
+			}else if(msg.what == 1){
+				BookManagerFunc.getInstance().showHistoryDir();
+				adapter.notifyDataSetChanged();
+			}
+            super.handleMessage(msg);
+        }
+    };
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		view = inflater.inflate(R.layout.fragment_home, container, false); 
+	public void onViewCreated(View view, Bundle savedInstanceState){
 		context = this.getActivity();
-		File file = new File("/sdcard/textBook/");
-		if(!file.exists()){
-			file.mkdirs();
-		}
 		
-		initHandler();
 		initBookView();
 		initLessonView();
-		
-        return view;
 	}
 	
-	private void initHandler(){
-		handler = new Handler(){
-			public void handleMessage(Message msg){
-				if(msg.what == 0){
-					showFileDir("/sdcard/textBook/");
-				}
-                super.handleMessage(msg);
-            }
-        };
+	@Event(R.id.mybook)
+	private void onMyBookClick(View view){
+		setMybookConsole(0);
+		bookHead.setBackgroundResource(R.drawable.ic_mybook);
+		handler.sendEmptyMessage(0);
+	}
+	
+	@Event(R.id.read_history)
+	private void onReadHistoryClick(View view){
+		setMybookConsole(1);
+		bookHead.setBackgroundResource(R.drawable.ic_readhistory);
+		handler.sendEmptyMessage(1);
+	}
+	
+	@Event(R.id.lesson_table)
+	private void onLessonTableClick(View view){
+		Intent intent = new Intent(HomeFragment.this.getActivity().getApplicationContext(),ScheduleActivity.class);
+		startActivity(intent);
+	}
+	
+	@Event(value=R.id.item_listview,type=SwipeListView.OnItemClickListener.class)
+	private void onListItemClick(AdapterView<?> parent, View view, int position, long id){
+		File file = new File(BookManagerFunc.getInstance().getpa(position));
+		Uri uri = Uri.fromFile(file);
+		Intent intent = new Intent(HomeFragment.this.getActivity().getApplicationContext(),MuPDFActivity.class);
+		intent.setAction(Intent.ACTION_VIEW);
+		intent.setData(uri);
+		startActivity(intent);
 	}
 	
 	private void initBookView(){
-		myBook = (Button) view.findViewById(R.id.mybook);
-		readHistory = (Button) view.findViewById(R.id.read_history);
-		bookHead = (RelativeLayout) view.findViewById(R.id.book_head);
-		
 		setMybookConsole(mCurIndicator);
-		showFileDir("/sdcard/textBook/");
-		
-		myBook.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				setMybookConsole(0);
-				bookHead.setBackgroundResource(R.drawable.ic_mybook);
-				showFileDir("/sdcard/textBook/");
-			}
-			
-		});
-		
-		
-		readHistory.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				setMybookConsole(1);
-				bookHead.setBackgroundResource(R.drawable.ic_readhistory);
-				showHistoryDir();
-			}
-			
-		});
+		adapter = new BookAdapter(context,browseList.getRightViewWidth(),
+	            new BookAdapter.IOnItemRightClickListener() {
+	                @Override
+	                public void onRightClick(View v, int position) {
+	                        // TODO Auto-generated method stub
+	                BookManagerFunc.getInstance().book.bookName = BookManagerFunc.getInstance().getna(position);
+	                BookManagerFunc.getInstance().cur = position;
+	                BookManagerFunc.getInstance().delete(EventName.BookFunc.DELETEBOOK);
+	                handler.sendEmptyMessage(0);
+	             }
+	    });
+		browseList.setAdapter(adapter);
+		handler.sendEmptyMessage(0);
 	}
 
 	private void initLessonView(){
-		lessonTable = (View) view.findViewById(R.id.lesson_table);
-		lessonList = (GridView) view.findViewById(R.id.today_lesson);
 		adapter_lesson = new LessonGridAdapter(context);
-		noLessonItem = (RelativeLayout) view.findViewById(R.id.lessonNoItem);
 		
 		if(adapter_lesson.getCount() != 0){
 			lessonList.setAdapter(adapter_lesson);
@@ -130,78 +127,6 @@ public class HomeFragment extends Fragment {
 			lessonList.setVisibility(View.GONE);
 			noLessonItem.setVisibility(View.VISIBLE);
 		}
-		
-		lessonTable.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(HomeFragment.this.getActivity().getApplicationContext(),ScheduleActivity.class);
-				startActivity(intent);
-			}
-			
-		});
-		
-		browseList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-	        @Override
-	        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-	        	File file = new File(paths.get(position));
-				Uri uri = Uri.fromFile(file);
-				Intent intent = new Intent(HomeFragment.this.getActivity().getApplicationContext(),MuPDFActivity.class);
-				intent.setAction(Intent.ACTION_VIEW);
-				intent.setData(uri);
-				startActivity(intent);
-	        }
-	    });
-	}
-	
-	private void showFileDir(String path , FileFilter filefilter){  
-		names = new ArrayList<String>();  
-		paths = new ArrayList<String>();  
-		File file = new File(path);  
-		File[] files = file.listFiles(filefilter);  
-		  
-		for (File f : files){  
-		names.add(f.getName());  
-		paths.add(f.getPath());  
-		}
-	}
-	
-	private void showFileDir(String path){
-		names = new ArrayList<String>();  
-		paths = new ArrayList<String>();  
-		File file = new File(path);  
-		File[] files = file.listFiles();  
-		  
-		for (File f : files){  
-		names.add(f.getName());  
-		paths.add(f.getPath());  
-		}
-		
-		browseList = (SwipeListView) view.findViewById(R.id.item_listview);
-		
-		adapter = new BookAdapter(context, names, paths,browseList.getRightViewWidth(),
-	            new BookAdapter.IOnItemRightClickListener() {
-	                @Override
-	                public void onRightClick(View v, int position) {
-	                        // TODO Auto-generated method stub
-	                 File file = new File(paths.get(position));
-	                 file.delete();
-	                 DBBook book = new DBBook(context).open();
-	                 DBBookmark bookMark = new DBBookmark(context).open();
-	                 book.deleteBook(names.get(position));
-	                 bookMark.deleteAllFormBookName(names.get(position));
-	                 book.close();
-	                 bookMark.close();
-	                 handler.sendEmptyMessage(0);
-	             }
-	        });
-			
-			browseList.setAdapter(adapter);
-	}
-	
-	private void showHistoryDir(){
-			browseList.setAdapter(null);
 	}
 	
 	private void setMybookConsole(int which){
@@ -225,11 +150,4 @@ public class HomeFragment extends Fragment {
 
 		mCurIndicator = which;
 	}
-	
-	@Override
-	public void onResume() {
-		super.onResume();
-		//initLessonView(view);
-	}
-	
 }

@@ -1,20 +1,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="AppBaseTheme"></style>
     
-    <style name="DialogWindowTitle">  
-    	<item name="android:textSize">22sp</item>  
-    	<item name="android:textColor">@color/md_green</item>  
-	</style>  
-	<style name="DialogWindowTitle.DeviceDefault">  
-    	<item name="android:maxLines">1</item>  
-    	<item name="android:scrollHorizontally">true</item>
-    	<item name="android:textAppearance">@style/DialogWindowTitle</item>  
-	</style>  
-	<style name="Theme.DeviceDefault.Dialog" parent="@android:style/Theme.DeviceDefault.Light.Dialog" >  
-    	<item name="android:windowTitleStyle">@style/DialogWindowTitle.DeviceDefault</item> 
-    	<item name="android:shape">rectangle</item> 
-    	<item name="android:windowIsFloating">true</item>
-	</style> 
-	<style name="AppTheme" parent="AppBaseTheme"></style>
     <style name="AppThemeDarkActionBar" parent="AppBaseThemeDarkActionBar"></style>
     
      <style name="AppBaseThemeDarkActionBar" parent="@style/Theme.AppCompat.Light.DarkActionBar">
@@ -44,6 +31,7 @@
     <style name="ReaderFullScreen" parent="@style/AppBaseTheme">
         <item name="android:windowFullscreen">true</item>
         <item name="android:actionBarStyle">@style/ActionBarFullScreen</item>
+        <item name="searchViewSearchIcon">@drawable/ic_action_search</item>
     </style>
 
     <style name="ActionBarFullScreen" parent="@style/MyActionBar">
@@ -98,7 +86,7 @@
 
     <style name="Typography_Headline">
         <item name="android:fontFamily">sans-serif</item>
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">24sp</item>
     </style>
 
     <style name="Typography_Title">

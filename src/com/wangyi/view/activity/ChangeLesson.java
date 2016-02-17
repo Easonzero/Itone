@@ -1,11 +1,9 @@
 package com.wangyi.view.activity;
 
-import java.util.ArrayList;
-
-import com.wangyi.define.Event;
-import com.wangyi.define.LessonData;
+import org.xutils.view.annotation.*;
+import com.wangyi.define.EventName;
 import com.wangyi.function.ScheduleFunc;
-import com.wangyi.imp.database.DBLesson;
+import com.wangyi.view.BaseActivity;
 import com.wangyi.widget.PickWeeksDialog;
 import com.wangyi.widget.PickclassesDialog;
 import com.wangyi.reader.R;
@@ -24,304 +22,270 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class ChangeLesson extends Activity {
+@ContentView(R.layout.createlesson)
+public class ChangeLesson extends BaseActivity {
+	@ViewInject(R.id.lesson_name)
 	private EditText lessonName;
+	@ViewInject(R.id.location)
 	private EditText location;
+	@ViewInject(R.id.teacher)
 	private EditText teacher;
-	private Button confirm;
-	private Button cancel;
+	@ViewInject(R.id.ClassFromTo)
 	private LinearLayout classFromTo;
+	@ViewInject(R.id.WeekFromTo)
 	private LinearLayout weekFromTo;
+	@ViewInject(R.id.class_from_to)
 	private TextView _classFromTo;
+	@ViewInject(R.id.week_from_to)
 	private TextView _weekFromTo;
 	private String[] term = new String[25];
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.createlesson);
 		
-		lessonName = (EditText) findViewById(R.id.lesson_name);
-		location = (EditText) findViewById(R.id.location);
-		teacher = (EditText) findViewById(R.id.teacher);
-		confirm = (Button) findViewById(R.id.Confirm);
-		cancel = (Button) findViewById(R.id.Cancel);
-		classFromTo = (LinearLayout) findViewById(R.id.ClassFromTo);
-		weekFromTo = (LinearLayout) findViewById(R.id.WeekFromTo);
-		_classFromTo = (TextView) findViewById(R.id.class_from_to);
-		_weekFromTo = (TextView) findViewById(R.id.week_from_to);
-		
-		this.setTitle("添加课程");
-		initEditText();
-		initButton();
-		
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus(true);
-        }
+		initData();
 	}
 	
-	private void initEditText(){
+	private void initData(){
+		this.setTitle("修改课程");
 		_classFromTo.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().newlesson.weekDay))
 				+" " + ScheduleFunc.getInstance().newlesson.fromClass + " - " + ScheduleFunc.getInstance().newlesson.toClass + "节");
 		_weekFromTo.setText(ScheduleFunc.getInstance().newlesson.weeknumDelay);
 		lessonName.setText(ScheduleFunc.getInstance().newlesson.lessonName);
 		location.setText(ScheduleFunc.getInstance().newlesson.classRoom);
 		teacher.setText(ScheduleFunc.getInstance().newlesson.teacher);
-		classFromTo.setOnClickListener(new OnClickListener(){
-
-			@SuppressWarnings("deprecation")
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				final PickclassesDialog dialog = new PickclassesDialog(
-						ChangeLesson.this,
-						ScheduleFunc.getInstance().newlesson.weekDay,
-						ScheduleFunc.getInstance().newlesson.fromClass
-						);
-				dialog.setButton("确定",new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface arg0, int arg1) {
-						// TODO Auto-generated method stub
-						ScheduleFunc.getInstance().newlesson.weekDay = (dialog.date + 1) + "";
-						ScheduleFunc.getInstance().newlesson.fromClass = (dialog.fromClass + 1) + "";
-						ScheduleFunc.getInstance().newlesson.toClass = (dialog.toClass + 1) + "";
-						_classFromTo.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().newlesson.weekDay))
-								+" "+ScheduleFunc.getInstance().newlesson.fromClass+"-"+ScheduleFunc.getInstance().newlesson.toClass+"节");
-					}
-				});
-				
-				dialog.setButton2("取消", new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface arg0, int arg1) {
-						// TODO Auto-generated method stub
-						dialog.dismiss();
-					}
-				});
-				dialog.show();
-			}
+	}
+	
+	@Event(R.id.ClassFromTo)
+	private void onClassClick(View view){
+		final PickclassesDialog dialog = new PickclassesDialog(
+				ChangeLesson.this,
+				ScheduleFunc.getInstance().newlesson.weekDay,
+				ScheduleFunc.getInstance().newlesson.fromClass
+				);
+		dialog.setButton("确定",new DialogInterface.OnClickListener() {
 			
+			@Override
+			public void onClick(DialogInterface arg0, int arg1) {
+				// TODO Auto-generated method stub
+				ScheduleFunc.getInstance().newlesson.weekDay = (dialog.date + 1) + "";
+				ScheduleFunc.getInstance().newlesson.fromClass = (dialog.fromClass + 1) + "";
+				ScheduleFunc.getInstance().newlesson.toClass = (dialog.toClass + 1) + "";
+				_classFromTo.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().newlesson.weekDay))
+						+" "+ScheduleFunc.getInstance().newlesson.fromClass+"-"+ScheduleFunc.getInstance().newlesson.toClass+"节");
+			}
 		});
 		
-		weekFromTo.setOnClickListener(new OnClickListener(){
-
-			@SuppressWarnings("deprecation")
+		dialog.setButton2("取消", new DialogInterface.OnClickListener() {
+			
 			@Override
-			public void onClick(View arg0) {
+			public void onClick(DialogInterface arg0, int arg1) {
 				// TODO Auto-generated method stub
-				equalString(term,ScheduleFunc.getInstance().newlesson.weeks);
-				final PickWeeksDialog dialog = new PickWeeksDialog(ChangeLesson.this);
-				final View view = dialog.view;
-				final Button dan = (Button) view.findViewById(R.id.dan);
-				final Button shuang = (Button) view.findViewById(R.id.shuang);
-				final Button all = (Button) view.findViewById(R.id.all);
-				
-				dan.setOnClickListener(new OnClickListener(){
+				dialog.dismiss();
+			}
+		});
+		dialog.show();
+	}
 
-					@Override
-					public void onClick(View dan) {
-						// TODO Auto-generated method stub
-						dan.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
+	@Event(R.id.WeekFromTo)
+	private void onWeekClick(View view){
+		equalString(term,ScheduleFunc.getInstance().newlesson.weeks);
+		final PickWeeksDialog dialog = new PickWeeksDialog(ChangeLesson.this);
+		final View mView = dialog.view;
+		final Button dan = (Button) view.findViewById(R.id.dan);
+		final Button shuang = (Button) view.findViewById(R.id.shuang);
+		final Button all = (Button) view.findViewById(R.id.all);
+		
+		dan.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View dan) {
+				// TODO Auto-generated method stub
+				dan.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
+				shuang.setBackgroundResource(R.drawable.bg_weeks_choose_item);
+				all.setBackgroundResource(R.drawable.bg_weeks_choose_item);
+				for(int i = 0; i < 25;i = i + 2){
+					Button week = (Button) mView.findViewById(dialog.weeks[i]);
+					week.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
+					week.setTextColor(getResources().getColor(R.color.white));
+					term[i] = "true";
+				}
+				for(int i = 1; i < 25;i = i + 2){
+					Button week = (Button) mView.findViewById(dialog.weeks[i]);
+					week.setBackgroundResource(R.drawable.bg_weeks_choose_item);
+					week.setTextColor(getResources().getColor(R.color.black));
+					term[i] = "false";
+				}
+			}
+		
+		});
+		
+		shuang.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View shuang) {
+				shuang.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
+				dan.setBackgroundResource(R.drawable.bg_weeks_choose_item);
+				all.setBackgroundResource(R.drawable.bg_weeks_choose_item);
+				for(int i = 1; i < 25;i = i + 2){
+					Button week = (Button) mView.findViewById(dialog.weeks[i]);
+					week.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
+					week.setTextColor(getResources().getColor(R.color.white));
+					term[i] = "true";
+				}
+				for(int i = 0; i < 25;i = i + 2){
+					Button week = (Button) mView.findViewById(dialog.weeks[i]);
+					week.setBackgroundResource(R.drawable.bg_weeks_choose_item);
+					week.setTextColor(getResources().getColor(R.color.black));
+					term[i] = "false";
+				}
+			}
+		
+		});
+		
+		all.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View all) {
+				// TODO Auto-generated method stub
+				all.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
+				shuang.setBackgroundResource(R.drawable.bg_weeks_choose_item);
+				dan.setBackgroundResource(R.drawable.bg_weeks_choose_item);
+				for(int i = 0; i < 25;i++){
+					Button week = (Button) mView.findViewById(dialog.weeks[i]);
+					week.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
+					week.setTextColor(getResources().getColor(R.color.white));
+					term[i] = "true";
+				}
+			}
+		
+		});
+		
+		for(int i = 0;i < 25;i++){
+			Button week = (Button) view.findViewById(dialog.weeks[i]);
+			if(term[i].equals("true")){
+				week.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
+				week.setTextColor(getResources().getColor(R.color.white));
+			}
+			else{
+				week.setBackgroundResource(R.drawable.bg_weeks_choose_item);
+				week.setTextColor(getResources().getColor(R.color.black));
+			}
+			final int num = i;
+			week.setOnTouchListener(new View.OnTouchListener() {
+
+				@Override
+				public boolean onTouch(View view, MotionEvent event) {
+					// TODO Auto-generated method stub
+					if(event.getAction() == MotionEvent.ACTION_DOWN){
 						shuang.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-						all.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-						for(int i = 0; i < 25;i = i + 2){
-							Button week = (Button) view.findViewById(dialog.weeks[i]);
-							week.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
-							week.setTextColor(getResources().getColor(R.color.white));
-							term[i] = "true";
-						}
-						for(int i = 1; i < 25;i = i + 2){
-							Button week = (Button) view.findViewById(dialog.weeks[i]);
-							week.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-							week.setTextColor(getResources().getColor(R.color.black));
-							term[i] = "false";
-						}
-					}
-				
-				});
-				
-				shuang.setOnClickListener(new OnClickListener(){
-
-					@Override
-					public void onClick(View shuang) {
-						shuang.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
 						dan.setBackgroundResource(R.drawable.bg_weeks_choose_item);
 						all.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-						for(int i = 1; i < 25;i = i + 2){
-							Button week = (Button) view.findViewById(dialog.weeks[i]);
-							week.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
-							week.setTextColor(getResources().getColor(R.color.white));
-							term[i] = "true";
+						
+						if(term[num].equals("false")){
+							term[num] = "true";
+							((Button)view).setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
+							((Button)view).setTextColor(getResources().getColor(R.color.white));
 						}
-						for(int i = 0; i < 25;i = i + 2){
-							Button week = (Button) view.findViewById(dialog.weeks[i]);
-							week.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-							week.setTextColor(getResources().getColor(R.color.black));
-							term[i] = "false";
+						else if(term[num].equals("true")){
+							term[num] = "false";
+							((Button)view).setBackgroundResource(R.drawable.bg_weeks_choose_item);
+							((Button)view).setTextColor(getResources().getColor(R.color.black));
 						}
-					}
-				
-				});
-				
-				all.setOnClickListener(new OnClickListener(){
-
-					@Override
-					public void onClick(View all) {
-						// TODO Auto-generated method stub
-						all.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
-						shuang.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-						dan.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-						for(int i = 0; i < 25;i++){
-							Button week = (Button) view.findViewById(dialog.weeks[i]);
-							week.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
-							week.setTextColor(getResources().getColor(R.color.white));
-							term[i] = "true";
+						int danshuang = danshuang();
+						if(danshuang == 0){
+							dan.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
+							shuang.setBackgroundResource(R.drawable.bg_weeks_choose_item);
+							all.setBackgroundResource(R.drawable.bg_weeks_choose_item);
 						}
-					}
-				
-				});
-				
-				for(int i = 0;i < 25;i++){
-					Button week = (Button) view.findViewById(dialog.weeks[i]);
-					if(term[i].equals("true")){
-						week.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
-						week.setTextColor(getResources().getColor(R.color.white));
-					}
-					else{
-						week.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-						week.setTextColor(getResources().getColor(R.color.black));
-					}
-					final int num = i;
-					week.setOnTouchListener(new View.OnTouchListener() {
-
-						@Override
-						public boolean onTouch(View view, MotionEvent event) {
-							// TODO Auto-generated method stub
-							if(event.getAction() == MotionEvent.ACTION_DOWN){
+						else if(danshuang == 1){
+							shuang.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
+							dan.setBackgroundResource(R.drawable.bg_weeks_choose_item);
+							all.setBackgroundResource(R.drawable.bg_weeks_choose_item);
+						}
+						else{
+							if(danshuang == 3){
+								shuang.setBackgroundResource(R.drawable.bg_weeks_choose_item);
+								dan.setBackgroundResource(R.drawable.bg_weeks_choose_item);
+								all.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
+							}
+							else{
 								shuang.setBackgroundResource(R.drawable.bg_weeks_choose_item);
 								dan.setBackgroundResource(R.drawable.bg_weeks_choose_item);
 								all.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-								
-								if(term[num].equals("false")){
-									term[num] = "true";
-									((Button)view).setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
-									((Button)view).setTextColor(getResources().getColor(R.color.white));
-								}
-								else if(term[num].equals("true")){
-									term[num] = "false";
-									((Button)view).setBackgroundResource(R.drawable.bg_weeks_choose_item);
-									((Button)view).setTextColor(getResources().getColor(R.color.black));
-								}
-								int danshuang = danshuang();
-								if(danshuang == 0){
-									dan.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
-									shuang.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-									all.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-								}
-								else if(danshuang == 1){
-									shuang.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
-									dan.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-									all.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-								}
-								else{
-									if(danshuang == 3){
-										shuang.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-										dan.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-										all.setBackgroundResource(R.drawable.bg_weeks_choose_item_select);
-									}
-									else{
-										shuang.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-										dan.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-										all.setBackgroundResource(R.drawable.bg_weeks_choose_item);
-									}
-								}
-									
 							}
-							return false;
 						}
-					});
+							
+					}
+					return false;
 				}
-				
-				dialog.setButton("确定", new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface arg0, int arg1) {
-						// TODO Auto-generated method stub
-						equalString(ScheduleFunc.getInstance().newlesson.weeks,term);
-						int num = 0,j = 0;
-						String string = "";
-						if(danshuang() != 2||isAll()){
-							for(int i = 0;i < 25;i++){
-								if(ScheduleFunc.getInstance().newlesson.weeks[i].equals("true")){
-									num++;
-									j = i;
-									if(num == 1){
-										string = string + "第" + (i+1) + "周";
-									}
-								}
-							}
-							string = string + "至第" + (j+1) + "周";
-							if(danshuang() == 0){
-								string = string + "（单）";
-							}
-							else if(danshuang() == 1){
-								string = string + "（双）";
-							}
-						}
-						else if(!isAll()){
-							for(int i = 0;i < 25;i++){
-								if(ScheduleFunc.getInstance().newlesson.weeks[i].equals("true")){
-									string = string + (i+1) + " ";
-								}
-							}
-							string = string + "周";
-						}
-						_weekFromTo.setText(string);
-						ScheduleFunc.getInstance().newlesson.weeknumDelay = string;
-					}
-				});
-				
-				dialog.setButton2("取消", new DialogInterface.OnClickListener() {
-					
-					@Override
-					public void onClick(DialogInterface arg0, int arg1) {
-						// TODO Auto-generated method stub
-						dialog.dismiss();
-					}
-				});
-				dialog.show();
-			}
+			});
+		}
+		
+		dialog.setButton("确定", new DialogInterface.OnClickListener() {
 			
-		});
-	}
-	
-	private void initButton(){
-		confirm.setOnClickListener(new OnClickListener(){
-
 			@Override
-			public void onClick(View arg0) {
+			public void onClick(DialogInterface arg0, int arg1) {
 				// TODO Auto-generated method stub
-				if(lessonName.getText().toString().equals("")) return;
-				ScheduleFunc.getInstance().newlesson.classRoom = location.getText().toString();
-				ScheduleFunc.getInstance().newlesson.teacher = teacher.getText().toString();
-				ScheduleFunc.getInstance().newlesson.lessonName = lessonName.getText().toString();
-				ScheduleFunc.getInstance().change(Event.ScheduleFunc.CHANGELESSON);
-				ChangeLesson.this.finish();
-				WatchLesson.watchLesson.finish();
+				equalString(ScheduleFunc.getInstance().newlesson.weeks,term);
+				int num = 0,j = 0;
+				String string = "";
+				if(danshuang() != 2||isAll()){
+					for(int i = 0;i < 25;i++){
+						if(ScheduleFunc.getInstance().newlesson.weeks[i].equals("true")){
+							num++;
+							j = i;
+							if(num == 1){
+								string = string + "第" + (i+1) + "周";
+							}
+						}
+					}
+					string = string + "至第" + (j+1) + "周";
+					if(danshuang() == 0){
+						string = string + "（单）";
+					}
+					else if(danshuang() == 1){
+						string = string + "（双）";
+					}
+				}
+				else if(!isAll()){
+					for(int i = 0;i < 25;i++){
+						if(ScheduleFunc.getInstance().newlesson.weeks[i].equals("true")){
+							string = string + (i+1) + " ";
+						}
+					}
+					string = string + "周";
+				}
+				_weekFromTo.setText(string);
+				ScheduleFunc.getInstance().newlesson.weeknumDelay = string;
 			}
-			
 		});
 		
-		cancel.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				ChangeLesson.this.finish();
-			}
+		dialog.setButton2("取消", new DialogInterface.OnClickListener() {
 			
+			@Override
+			public void onClick(DialogInterface arg0, int arg1) {
+				// TODO Auto-generated method stub
+				dialog.dismiss();
+			}
 		});
+		dialog.show();
+	}
+
+	@Event(R.id.confirm)
+	private void onConfirmClick(View view){
+		if(lessonName.getText().toString().equals("")) return;
+		ScheduleFunc.getInstance().newlesson.classRoom = location.getText().toString();
+		ScheduleFunc.getInstance().newlesson.teacher = teacher.getText().toString();
+		ScheduleFunc.getInstance().newlesson.lessonName = lessonName.getText().toString();
+		ScheduleFunc.getInstance().change(EventName.ScheduleFunc.CHANGELESSON);
+		ChangeLesson.this.finish();
+	}
+	
+	@Event(R.id.Cancel)
+	private void onCancelClick(View view){
+		ChangeLesson.this.finish();
 	}
 	
 	private void equalString(String[] str1,String[] str2){
@@ -329,6 +293,7 @@ public class ChangeLesson extends Activity {
 			str1[i] = str2[i];
 		}
 	}
+	
 	private int danshuang(){
 		int[] danshuang = new int[25];
 		int num = 0;
@@ -384,17 +349,5 @@ public class ChangeLesson extends Activity {
 			break;
 		}
 		return false;
-	}
-	
-	protected void setTranslucentStatus(boolean on) {
-	    Window win = getWindow();
-	    WindowManager.LayoutParams winParams = win.getAttributes();
-	    final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-	    if (on) {
-	        winParams.flags |= bits;
-	    } else {
-	        winParams.flags &= ~bits;
-	    }
-	    win.setAttributes(winParams);
 	}
 }

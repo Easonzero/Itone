@@ -23,11 +23,14 @@ import android.widget.ImageView;
 
 import com.androidquery.AQuery;
 import com.artifex.mupdfdemo.AsyncTask;
+import com.artifex.mupdfdemo.MuPDFActivity;
 import com.artifex.mupdfdemo.MuPDFCore;
 import com.squareup.picasso.Picasso;
+import com.wangyi.adapter.ThumbnailViewAdapter.AsyncDrawable;
+import com.wangyi.adapter.ThumbnailViewAdapter.BitmapWorkerTask;
 import com.wangyi.define.BookmarkData;
-import com.wangyi.utils.PreferencesItOne;
 import com.wangyi.reader.R;
+import com.wangyi.utils.PreferencesReader;
 
 public class BookmarkViewAdapter extends BaseAdapter {
 
@@ -46,7 +49,7 @@ public class BookmarkViewAdapter extends BaseAdapter {
 		mContext = context;
 		bmDatas = bookmark;
 		mCore = core;
-		mPath = /*core.getFileDirectory()*/PreferencesItOne.getDataDir(mContext) + "/thumbnail";
+		mPath = /*core.getFileDirectory()*/PreferencesReader.getDataDir(mContext) + "/thumbnail";
 		File mCacheDirectory = new File(mPath);
 		if (!mCacheDirectory.exists())
 			mCacheDirectory.mkdirs();

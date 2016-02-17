@@ -30,5 +30,4 @@ public interface MuPDFView {
 	public void removeHq();
 	public void releaseResources();
 	public void releaseBitmaps();
-	public void invalidateView();
 }

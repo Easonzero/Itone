@@ -3,6 +3,8 @@ package com.wangyi.view.fragment;
 import java.util.ArrayList;
 import java.util.Random;
 
+import org.xutils.view.annotation.*;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +18,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
-import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -37,54 +38,97 @@ import com.wangyi.define.UserInfo;
 import com.wangyi.imp.database.DBBook;
 import com.wangyi.service.DownloadService;
 import com.wangyi.utils.MyHttps;
-import com.wangyi.utils.PreferencesItOne;
+import com.wangyi.utils.PreferencesReader;
+import com.wangyi.view.BaseFragment;
 import com.wangyi.widget.KeywordsFlow;
 import com.wangyi.widget.LessonListLayout;
 import com.wangyi.reader.R;
 
-public class AllSubjectFragment extends Fragment {
+@ContentView(R.layout.fragment_allsubject)
+public class AllSubjectFragment extends BaseFragment {
 	
-	public String[] keywords = {"工科数学","大学物理","大学英语","俄语","离散数学",
-			"西方建筑史","茶文化欣赏","音乐鉴赏","思修","马哲","形式与政治",
-			"交流技巧","数字逻辑","matlab","博弈论","西方文学","欧洲史",
-			"西方美术史","人机交互"};
-	private KeywordsFlow keywordsFlow;
-	private EditText editSearch;
 	private Context context;
 	private Activity act;
 	private SensorManager sensorManager; 
     private Vibrator vibrator; 
-	private LessonListLayout lessons;
-	private ListView bookList;
+	ArrayList<BookData> books;
 	private String URL = "/ItOne/GetBookList";
 	private String URLbook = "/ItOne/GetBook";
-	ArrayList<BookData> books;
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		super.onActivityCreated(savedInstanceState);
-	}
+	public String[] keywords = {"工科数学","大学物理","大学英语","俄语","离散数学",
+			"西方建筑史","茶文化欣赏","音乐鉴赏","思修","马哲","形式与政治",
+			"交流技巧","数字逻辑","matlab","博弈论","西方文学","欧洲史",
+			"西方美术史","人机交互"};
+	
+	@ViewInject(R.id.keywordsflow)
+	private KeywordsFlow keywordsFlow;
+	@ViewInject(R.id.search_edit)
+	private EditText editSearch;
+	@ViewInject(R.id.lessons)
+	private LessonListLayout lessons;
+	@ViewInject(R.id.booklist)
+	private ListView bookList;
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_allsubject, container, false);
+	public void onViewCreated(View view, Bundle savedInstanceState){
 		act = this.getActivity();
 		context = this.getActivity().getApplicationContext();
-		
-		keywordsFlow = (KeywordsFlow) view.findViewById(R.id.keywordsflow);
-		editSearch = (EditText) view.findViewById(R.id.search_edit);
-		lessons = (LessonListLayout) view.findViewById(R.id.lessons);
-		bookList = (ListView) view.findViewById(R.id.booklist);
 		
 		sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE); 
         vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
 		
 		initEditSearch();
-		initKeywordsFlow();
 		initLessons();
-		
-		return view;
+	}
+	
+	@Event(value=R.id.booklist,type=ListView.OnItemClickListener.class)
+	private void onListItemClick(AdapterView<?> adapter, View view, int pos,
+			long arg3){
+		BookData book = (BookData)adapter.getItemAtPosition(pos);
+		if(isNetworkConnected(context)){
+			if(UserInfo.sessionId != null){
+				Toast.makeText(context, book.bookName + "开始下载...", 3000).show();
+				PreferencesReader.saveDownloadList(act, book);
+				DBBook db = new DBBook(context).open();
+				db.addBook(book.bookName, book.subject, book.occupation, book.fromUniversity, book.downloadNumber, book.count, book.fileLength, book.url);
+				db.close();
+				Intent intent = new Intent(context,DownloadService.class);
+				intent.putExtra("book_url", book.url);
+				intent.putExtra("book_name",book.bookName);
+				context.startService(intent);
+			}
+			else{
+				Toast.makeText(context, "请先登录", 3000).show();
+			}
+		}
+		else{
+			Toast.makeText(context, "网络未连接", 3000).show();
+		}
+	}
+	
+	@Event(R.id.keywordsflow)
+	private void onKeywordsClick(View view){
+		editSearch.clearFocus();
+	}
+	
+	@Event(value=R.id.search_edit,type=View.OnFocusChangeListener.class)
+	private void onEditSearchFocusChange(View view, boolean is){
+		if(is){
+			keywordsFlow.setVisibility(View.VISIBLE);
+			keywordsFlow.setDuration(800l);  
+			keywordsFlow.rubKeywords();  
+			feedKeywordsFlow(keywordsFlow, keywords);  
+			keywordsFlow.go2Show(KeywordsFlow.ANIMATION_OUT);
+			if (sensorManager != null) {
+	            sensorManager.registerListener(sensorEventListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
+	        }
+		}
+		else{
+			keywordsFlow.setVisibility(View.GONE);
+			if (sensorManager != null) {
+	            sensorManager.unregisterListener(sensorEventListener); 
+	        } 
+			editSearch.setText("");
+		}
 	}
 	
 	private void initLessons(){
@@ -120,36 +164,6 @@ public class AllSubjectFragment extends Fragment {
 				}
 			}
 			
-		});
-		
-		bookList.setOnItemClickListener(new OnItemClickListener(){
-
-			@Override
-			public void onItemClick(AdapterView<?> adapter, View view, int pos,
-					long arg3) {
-				// TODO Auto-generated method stub
-				BookData book = (BookData)adapter.getItemAtPosition(pos);
-				if(isNetworkConnected(context)){
-					if(UserInfo.sessionId != null){
-						Toast.makeText(context, book.bookName + "开始下载...", 3000).show();
-						PreferencesItOne.saveDownloadList(act, book);
-						DBBook db = new DBBook(context).open();
-						db.addBook(book.bookName, book.subject, book.occupation, book.fromUniversity, book.downloadNumber, book.count, book.fileLength, book.url);
-						db.close();
-						Intent intent = new Intent(context,DownloadService.class);
-						intent.putExtra("book_url", book.url);
-						intent.putExtra("book_name",book.bookName);
-						context.startService(intent);
-					}
-					else{
-						Toast.makeText(context, "请先登录", 3000).show();
-					}
-				}
-				else{
-					Toast.makeText(context, "网络未连接", 3000).show();
-				}
-			}
-
 		});
 	}
 	
@@ -195,45 +209,7 @@ public class AllSubjectFragment extends Fragment {
 	          }  
 	        });
 	}
-	
-	private void initKeywordsFlow(){
-		
-		keywordsFlow.setOnClickListener(new OnClickListener(){
 
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				editSearch.clearFocus();
-			}
-			
-		});
-		
-		editSearch.setOnFocusChangeListener(new OnFocusChangeListener(){
-
-			@Override
-			public void onFocusChange(View view, boolean is) {
-				// TODO Auto-generated method stub
-				if(is){
-					keywordsFlow.setVisibility(View.VISIBLE);
-					keywordsFlow.setDuration(800l);  
-					keywordsFlow.rubKeywords();  
-					feedKeywordsFlow(keywordsFlow, keywords);  
-					keywordsFlow.go2Show(KeywordsFlow.ANIMATION_OUT);
-					if (sensorManager != null) {
-			            sensorManager.registerListener(sensorEventListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
-			        }
-				}
-				else{
-					keywordsFlow.setVisibility(View.GONE);
-					if (sensorManager != null) {
-			            sensorManager.unregisterListener(sensorEventListener); 
-			        } 
-					editSearch.setText("");
-				}
-			}
-			
-		});
-	}
 	
 	private static void feedKeywordsFlow(KeywordsFlow keywordsFlow, String[] arr) {  
         Random random = new Random();  

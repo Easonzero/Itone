@@ -1,6 +1,5 @@
 package com.artifex.mupdfdemo;
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +16,7 @@ public class MuPDFReaderView extends ReaderView {
 	private Mode mMode = Mode.Viewing;
 	private boolean tapDisabled = false;
 	private int tapPageMargin;
-	public MuPDFView pageView;
+
 	protected void onTapMainDocArea() {}
 	protected void onDocMotion() {}
 	protected void onHit(Hit item) {};
@@ -172,7 +171,7 @@ public class MuPDFReaderView extends ReaderView {
 
 	private void touch_start(float x, float y) {
 
-		pageView = (MuPDFView)getDisplayedView();
+		MuPDFView pageView = (MuPDFView)getDisplayedView();
 		if (pageView != null)
 		{
 			pageView.startDraw(x, y);

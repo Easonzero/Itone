@@ -15,7 +15,6 @@ import android.graphics.RectF;
 import android.net.Uri;
 import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
@@ -661,15 +660,5 @@ public class MuPDFPageView extends PageView implements MuPDFView {
 		}
 
 		super.releaseResources();
-	}
-	
-	private View getView(){
-		return super.mSearchView;
-	}
-	
-	@Override
-	public void invalidateView() {
-		// TODO Auto-generated method stub
-		getView().invalidate();
 	}
 }

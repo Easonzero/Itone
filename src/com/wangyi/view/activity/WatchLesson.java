@@ -1,18 +1,15 @@
 package com.wangyi.view.activity;
 
-import java.util.ArrayList;
-
-import com.wangyi.define.Event;
-import com.wangyi.define.LessonData;
+import org.xutils.view.annotation.*;
+import com.wangyi.define.EventName;
 import com.wangyi.function.ScheduleFunc;
-import com.wangyi.imp.database.DBLesson;
 import com.wangyi.reader.R;
+import com.wangyi.view.BaseActivity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -21,44 +18,50 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class WatchLesson extends Activity {
-
-	public static WatchLesson watchLesson;
-	private Button delete;
-	private Button cancel;
-	private ImageView edit;
+@ContentView(R.layout.watchlesson)
+public class WatchLesson extends BaseActivity {
+	@ViewInject(R.id.lessontitle)
 	private TextView title;
+	@ViewInject(R.id.lesson_name)
 	private TextView l_lessonName;
+	@ViewInject(R.id.location)
 	private TextView l_classroom;
+	@ViewInject(R.id.teacher)
 	private TextView l_teacher;
+	@ViewInject(R.id.classnum)
 	private TextView l_classnum;
+	@ViewInject(R.id.weeknum)
 	private TextView l_weeknum;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.watchlesson);
-		title = (TextView) findViewById(R.id.lessontitle);
-		delete = (Button) findViewById(R.id.delete);
-		cancel = (Button) findViewById(R.id.Cancel);
-		edit = (ImageView) findViewById(R.id.edit);
-		l_lessonName = (TextView) findViewById(R.id.lesson_name);
-		l_classroom = (TextView) findViewById(R.id.location);
-		l_teacher = (TextView) findViewById(R.id.teacher);
-		l_classnum = (TextView) findViewById(R.id.classnum);
-		l_weeknum = (TextView) findViewById(R.id.weeknum);
-		
-		watchLesson = this;
-		ScheduleFunc.getInstance().newlesson = ScheduleFunc.getInstance().find(Event.ScheduleFunc.FINDBYCLASS).getDataList().get(0);
-		initViewEvent();
-		
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus(true);
-        }
+		ScheduleFunc.getInstance().newlesson = ScheduleFunc.getInstance().find(EventName.ScheduleFunc.FINDBYCLASS).getDataList().get(0);
+		initData();
 	}
 	
-	private void initViewEvent(){
+	@Event(R.id.Cancel)
+	private void onCancelClick(View view){
+		WatchLesson.this.finish();
+	}
+	
+	@Event(R.id.edit)
+	private void onEditClick(View view){
+		WatchLesson.this.finish();
+		Intent intent = new Intent(WatchLesson.this,ChangeLesson.class);
+		ScheduleFunc.getInstance().newlesson = ScheduleFunc.getInstance().newlesson;
+		ScheduleFunc.getInstance().oldlesson = ScheduleFunc.getInstance().newlesson;
+		startActivity(intent);
+	}
+	
+	@Event(R.id.delete)
+	private void onDeleteClick(View view){
+		ScheduleFunc.getInstance().delete(EventName.ScheduleFunc.DELELESSON);
+		WatchLesson.this.finish();
+	}
+	
+	private void initData(){
 		title.setText(ScheduleFunc.getInstance().newlesson.lessonName);
 		l_lessonName.setText(ScheduleFunc.getInstance().newlesson.lessonName);
 		l_classroom.setText(ScheduleFunc.getInstance().newlesson.classRoom);
@@ -66,51 +69,5 @@ public class WatchLesson extends Activity {
 		l_classnum.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().newlesson.weekDay))
 				+ "  " + ScheduleFunc.getInstance().newlesson.fromClass + " - " + ScheduleFunc.getInstance().newlesson.toClass + "½Ú");
 		l_weeknum.setText(ScheduleFunc.getInstance().newlesson.weeknumDelay);
-		
-		cancel.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				WatchLesson.this.finish();
-			}
-			
-		});
-		
-		edit.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				Intent intent = new Intent(WatchLesson.this,ChangeLesson.class);
-				ScheduleFunc.getInstance().newlesson = ScheduleFunc.getInstance().newlesson;
-				ScheduleFunc.getInstance().oldlesson = ScheduleFunc.getInstance().newlesson;
-				startActivity(intent);
-			}
-			
-		});
-		
-		delete.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				ScheduleFunc.getInstance().delete(Event.ScheduleFunc.DELELESSON);
-				WatchLesson.this.finish();
-			}
-			
-		});
-	}
-	
-	protected void setTranslucentStatus(boolean on) {
-	    Window win = getWindow();
-	    WindowManager.LayoutParams winParams = win.getAttributes();
-	    final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-	    if (on) {
-	        winParams.flags |= bits;
-	    } else {
-	        winParams.flags &= ~bits;
-	    }
-	    win.setAttributes(winParams);
 	}
 }

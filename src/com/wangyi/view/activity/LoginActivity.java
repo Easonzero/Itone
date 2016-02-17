@@ -12,18 +12,18 @@ import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.protocol.ClientContext;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.impl.client.BasicCookieStore;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.protocol.HttpContext;
+import org.xutils.view.annotation.*;
 
 import com.wangyi.define.UserInfo;
 import com.wangyi.utils.MyHttps;
-import com.wangyi.utils.PreferencesItOne;
+import com.wangyi.utils.PreferencesReader;
+import com.wangyi.view.BaseActivity;
 import com.wangyi.reader.R;
 import android.app.Activity;
 import android.content.Context;
@@ -47,128 +47,93 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class LoginActivity extends Activity {
-
+@ContentView(R.layout.login)
+public class LoginActivity extends BaseActivity {
+	@ViewInject(R.id.editUserName)
 	private EditText userName;
+	@ViewInject(R.id.editPassWords)
 	private EditText passWords;
-	private Button confirm;
-	private Button close;
-	private TextView register;
-	private Handler handler;
+	
+	private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg){
+            if(msg.what == 1){
+            	LoginActivity.this.finish();
+            }
+            else if(msg.what == 2){
+            	Toast.makeText(LoginActivity.this, "登录失败", 5000).show();
+            }
+            else if(msg.what == 3){
+            	Toast.makeText(LoginActivity.this,"服务器抽风中...",5000).show();
+            }
+            super.handleMessage(msg);
+        }
+    };
 	Map<String, String> userInfo = new HashMap<String, String>();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.login);
-		
-		userName = (EditText) findViewById(R.id.editUserName);
-		passWords = (EditText) findViewById(R.id.editPassWords);
-		register = (TextView) findViewById(R.id.register);
-		confirm = (Button) findViewById(R.id.confirm);
-		close = (Button) findViewById(R.id.close);
-		
-		initHandler();
-		initListener();
-		Log.v("LoginActivity","onCreate");
-		
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus(true);
-        }
 	}
 
-	private void initListener(){
-		close.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				LoginActivity.this.finish();
-			}
-			
-		});
-		
-		register.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				if(isNetworkConnected(LoginActivity.this)){
-					Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
-					startActivity(intent);
-				}
-				else{
-					Toast.makeText(LoginActivity.this, "网络未连接", 5000).show();
-				}
-			}
-			
-		});
-		
-		confirm.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				if(isNetworkConnected(LoginActivity.this)){
-					new Thread() {  
-	                    public void run() {
-	                    	String url = "/ItOne/LoginServlet";
-	                    	userInfo.put("userName", userName.getText().toString());
-	        				userInfo.put("passWords", passWords.getText().toString());
-	        				List<BasicNameValuePair> postData = new ArrayList<BasicNameValuePair>();
-	        				for (Map.Entry<String, String> entry : userInfo.entrySet()) {
-	        		            postData.add(new BasicNameValuePair(entry.getKey(),entry.getValue()));
-	        		        }
-	        				MyHttps myHttps = new MyHttps(url);
-	        				HttpResponse httpResponse = myHttps.postLogin(postData);
-	        				if(httpResponse != null){
-	        					Header[] is = httpResponse.getHeaders("isChecked");
-		        				if(is[0].getValue().equals("true")){
-		        					Header[] id = httpResponse.getHeaders("sessionId");
-		        					UserInfo.sessionId = id[0].getValue();
-		        					Message message = new Message();
-		        					message.what = 1;
-		        					handler.sendMessage(message);
-		        				}
-		        				else{
-		        					Message message = new Message();
-		        					message.what = 2;
-		        					handler.sendMessage(message);
-		        				}
-	        				}
-	        				else{
-	        					Message message = new Message();
-	        					message.what = 3;
-	        					handler.sendMessage(message);
-	        				}
-	                    }
-	                }.start();
-				}
-				else{
-					Toast.makeText(LoginActivity.this, "网络未连接", 5000).show();
-				}
-			}
-        });
+	@Event(R.id.close)
+	private void onCloseClick(View view){
+		LoginActivity.this.finish();
 	}
 	
-	private void initHandler(){
-		handler = new Handler(){
-            @Override
-            public void handleMessage(Message msg){
-                if(msg.what == 1){
-                	LoginActivity.this.finish();
-                }
-                else if(msg.what == 2){
-                	Toast.makeText(LoginActivity.this, "登录失败", 5000).show();
-                }
-                else if(msg.what == 3){
-                	Toast.makeText(LoginActivity.this,"服务器抽风中...",5000).show();
-                }
-                super.handleMessage(msg);
-            }
-        };
+	@Event(R.id.register)
+	private void onRegisterClick(View view){
+		if(isNetworkConnected(LoginActivity.this)){
+			Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+			startActivity(intent);
+		}
+		else{
+			Toast.makeText(LoginActivity.this, "网络未连接", 5000).show();
+		}
 	}
 	
+	@Event(R.id.confirm)
+	private void onConfirmClick(View view){
+		if(isNetworkConnected(LoginActivity.this)){
+			new Thread() {  
+                public void run() {
+                	String url = "/ItOne/LoginServlet";
+                	userInfo.put("userName", userName.getText().toString());
+    				userInfo.put("passWords", passWords.getText().toString());
+    				List<BasicNameValuePair> postData = new ArrayList<BasicNameValuePair>();
+    				for (Map.Entry<String, String> entry : userInfo.entrySet()) {
+    		            postData.add(new BasicNameValuePair(entry.getKey(),entry.getValue()));
+    		        }
+    				MyHttps myHttps = new MyHttps(url);
+    				HttpResponse httpResponse = myHttps.postLogin(postData);
+    				if(httpResponse != null){
+    					Header[] is = httpResponse.getHeaders("isChecked");
+        				if(is[0].getValue().equals("true")){
+        					Header[] id = httpResponse.getHeaders("sessionId");
+        					UserInfo.sessionId = id[0].getValue();
+        					Message message = new Message();
+        					message.what = 1;
+        					handler.sendMessage(message);
+        				}
+        				else{
+        					Message message = new Message();
+        					message.what = 2;
+        					handler.sendMessage(message);
+        				}
+    				}
+    				else{
+    					Message message = new Message();
+    					message.what = 3;
+    					handler.sendMessage(message);
+    				}
+                }
+            }.start();
+		}
+		else{
+			Toast.makeText(LoginActivity.this, "网络未连接", 5000).show();
+		}
+	}
+		
 	public boolean isNetworkConnected(Context context) {
 		if (context != null) {
 		ConnectivityManager mConnectivityManager = (ConnectivityManager) context
@@ -179,17 +144,5 @@ public class LoginActivity extends Activity {
 		}
 		}
 		return false;
-	} 
-	
-	protected void setTranslucentStatus(boolean on) {
-	    Window win = getWindow();
-	    WindowManager.LayoutParams winParams = win.getAttributes();
-	    final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-	    if (on) {
-	        winParams.flags |= bits;
-	    } else {
-	        winParams.flags &= ~bits;
-	    }
-	    win.setAttributes(winParams);
 	}
 }

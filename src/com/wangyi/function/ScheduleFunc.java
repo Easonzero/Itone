@@ -12,7 +12,7 @@ import android.view.View.OnClickListener;
 import android.webkit.WebView.FindListener;
 
 import com.wangyi.Interface.DBInterface;
-import com.wangyi.define.Event;
+import com.wangyi.define.EventName;
 import com.wangyi.define.LessonData;
 import com.wangyi.define.Response;
 import com.wangyi.imp.database.DBLesson;
@@ -37,7 +37,7 @@ public class ScheduleFunc{
 		this.context = context;
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);//prefs´ýÖØ¹¹
 		initWeek = prefs.getInt("initWeek", 1);
-		initDate = prefs.getInt("initDate", 1);
+		initDate = prefs.getInt("initDate", 5);
 		_weekOfToday = initWeek + (getWeekNumber() - initDate);
 		_today = getWeekOfDate();
 		currentWeek = _weekOfToday;
@@ -110,7 +110,7 @@ public class ScheduleFunc{
         return weekDay;
     }
 	
-	private static int getWeekNumber(){
+	private int getWeekNumber(){
 		Date date = new Date();
 		Calendar calendar = Calendar.getInstance();
 		calendar.setTime(date);

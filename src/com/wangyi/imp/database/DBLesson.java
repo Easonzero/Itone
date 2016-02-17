@@ -3,7 +3,7 @@ package com.wangyi.imp.database;
 import java.util.ArrayList;
 
 import com.wangyi.Interface.DBInterface;
-import com.wangyi.define.Event;
+import com.wangyi.define.EventName;
 import com.wangyi.define.LessonData;
 import com.wangyi.define.Response;
 
@@ -201,7 +201,7 @@ public class DBLesson implements DBInterface<LessonData>{
 		// TODO Auto-generated method stub
 		String event = response.getEvent();
 		LessonData lesson = response.getDataList().get(0);
-		if(event.equals(Event.ScheduleFunc.ADDLESSON)){
+		if(event.equals(EventName.ScheduleFunc.ADDLESSON)){
 			addLesson(lesson.lessonName,lesson.classRoom,lesson.teacher,lesson.weekDay,lesson.fromClass,lesson.toClass,lesson.weeks,lesson.weeknumDelay);
 		}
 	}
@@ -211,7 +211,7 @@ public class DBLesson implements DBInterface<LessonData>{
 		// TODO Auto-generated method stub
 		String event = response.getEvent();
 		LessonData lesson = response.getDataList().get(0);
-		if(event.equals(Event.ScheduleFunc.DELELESSON)){
+		if(event.equals(EventName.ScheduleFunc.DELELESSON)){
 			delete(lesson.lessonName,lesson.weekDay);
 		}
 		
@@ -224,11 +224,11 @@ public class DBLesson implements DBInterface<LessonData>{
 		LessonData lesson = response.getDataList().get(0);
 		String weeknum = response.getAttr()+"";
 		ArrayList<LessonData> lessons = null;
-		if(event.equals(Event.ScheduleFunc.FINDBYCLASS))
+		if(event.equals(EventName.ScheduleFunc.FINDBYCLASS))
 			lessons = getAllFromWeeknum(weeknum,lesson.weekDay,lesson.fromClass);
-		else if(event.equals(Event.ScheduleFunc.FINDBYDAY))
+		else if(event.equals(EventName.ScheduleFunc.FINDBYDAY))
 			lessons = getAllFromWeeknum(weeknum,lesson.weekDay);
-		else if(event.equals(Event.ScheduleFunc.FINDBYWEEK))
+		else if(event.equals(EventName.ScheduleFunc.FINDBYWEEK))
 			lessons = getAllFromWeeknum(weeknum);
 		response.setDataList(lessons);
 		return response;
@@ -240,7 +240,7 @@ public class DBLesson implements DBInterface<LessonData>{
 		String event = response.getEvent();
 		LessonData oldLesson = (LessonData)response.getAttr();
 		LessonData newLesson = response.getDataList().get(0);
-		if(event.equals(Event.ScheduleFunc.CHANGELESSON)){
+		if(event.equals(EventName.ScheduleFunc.CHANGELESSON)){
 			delete(oldLesson.lessonName,oldLesson.weekDay);
 			addLesson(newLesson.lessonName,newLesson.classRoom,newLesson.teacher,newLesson.weekDay,newLesson.fromClass,newLesson.toClass,newLesson.weeks,newLesson.weeknumDelay);
 		}

@@ -9,9 +9,11 @@ import java.util.Map;
 
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
+import org.xutils.view.annotation.*;
 
 import com.wangyi.utils.ImageUtil;
 import com.wangyi.utils.MyHttps;
+import com.wangyi.view.BaseActivity;
 import com.wangyi.reader.R;
 
 import android.annotation.SuppressLint;
@@ -42,125 +44,113 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class RegisterActivity extends Activity {
-
-	private Button back;
-	private Button confirm;
+@ContentView(R.layout.register)
+public class RegisterActivity extends BaseActivity {
+	@ViewInject(R.id.userName)
 	private EditText userName;
+	@ViewInject(R.id.passWords)
 	private EditText passWords;
+	@ViewInject(R.id.confirmPassWords)
 	private EditText confirmPassWords;
+	@ViewInject(R.id.province)
 	private EditText province;
+	@ViewInject(R.id.city)
 	private EditText city;
+	@ViewInject(R.id.university)
 	private EditText university;
+	@ViewInject(R.id.faculty)
 	private EditText faculty;
+	@ViewInject(R.id.occupation)
 	private EditText occupation;
+	@ViewInject(R.id.picture)
 	private ImageView picture;
-	private Handler handler;
+	private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg){
+            if(msg.what == 1){
+            	Toast.makeText(RegisterActivity.this, "该用户名已注册", 5000).show();
+            }
+            else if(msg.what == 2){
+            	Toast.makeText(RegisterActivity.this, "注册成功", 5000).show();
+            	RegisterActivity.this.finish();
+            }
+            else if(msg.what == 3){
+            	Toast.makeText(RegisterActivity.this, "服务器抽风中...", 5000).show();
+            }
+            super.handleMessage(msg);
+        }
+    };
 	private boolean isAddPic = false;
 	Map<String, String> userInfo = new HashMap<String, String>();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.register);
-		
-		back = (Button)findViewById(R.id.back);
-		confirm = (Button)findViewById(R.id.confirm);
-		userName = (EditText)findViewById(R.id.userName);
-		passWords = (EditText)findViewById(R.id.passWords);
-		confirmPassWords = (EditText)findViewById(R.id.confirmPassWords);
-		province = (EditText)findViewById(R.id.province);
-		city = (EditText)findViewById(R.id.city);
-		university = (EditText)findViewById(R.id.university);
-		faculty = (EditText)findViewById(R.id.faculty);
-		occupation = (EditText)findViewById(R.id.occupation);
-		picture = (ImageView)findViewById(R.id.picture);
-		
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setTranslucentStatus(true);
-        }
-		
-		initListener();
-		initHandler();
 	}
 	
-	private void initListener(){
-		
-		picture.setOnClickListener(new OnClickListener(){
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				showSettingFaceDialog();
-			}
-		});
-		
-		back.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				RegisterActivity.this.finish();
-			}
-			
-		});
-		
-		confirm.setOnClickListener(new OnClickListener(){
-
-			@Override
-			public void onClick(View view) {
-				if(confirmPassWords.getText().toString().equals("")||
-						passWords.getText().toString().equals("")||
-						userName.getText().toString().equals("")){
-					Toast.makeText(RegisterActivity.this, "必填项填写不全", 5000).show();
-				}
-				else if(!confirmPassWords.getText().toString().equals(passWords.getText().toString())){
-					Toast.makeText(RegisterActivity.this, "前后密码输入不一致", 5000).show();
-				}
-				else{
-					new Thread(){
-						public void run(){
-							String url = "/ItOne/OpenFormServlet";
-							userInfo.put("userName", userName.getText().toString());
-		    				userInfo.put("passWords", passWords.getText().toString());
-		    				userInfo.put("province", province.getText().toString());
-		    				userInfo.put("city", city.getText().toString());
-		    				userInfo.put("university", university.getText().toString());
-		    				userInfo.put("faculty", faculty.getText().toString());
-		    				userInfo.put("occupation", occupation.getText().toString());
-		    				userInfo.put("imageUrl", isAddPic?"true":"false");
-							MyHttps myHttpsre = new MyHttps(url);
-							File file;
-							if(isAddPic){
-								file = new File("/sdcard/" + IMAGE_FILE_NAME);
-							}
-							else{
-								file = null;
-							}
-							HttpResponse httpResponse = myHttpsre.postForm(userInfo, file);
-							if(httpResponse != null){
-								Header[] is = httpResponse.getHeaders("isChecked");
-								if(is[0].getValue().equals("true")){
-									Message message = new Message();
-									message.what = 1;
-									handler.sendMessage(message);
-								}
-								else{
-									Message message = new Message();
-		        					message.what = 2;
-		        					handler.sendMessage(message);
-								}
-							}
-							else{
-								Message message = new Message();
-	        					message.what = 3;
-	        					handler.sendMessage(message);
-							}
+	@Event(R.id.picture)
+	private void onPictureClick(View view){
+		showSettingFaceDialog();
+	}
+	
+	@Event(R.id.back)
+	private void onBackClick(View view){
+		RegisterActivity.this.finish();
+	}
+	
+	@Event(R.id.confirm)
+	private void onConfirmClick(View view){
+		if(confirmPassWords.getText().toString().equals("")||
+				passWords.getText().toString().equals("")||
+				userName.getText().toString().equals("")){
+			Toast.makeText(RegisterActivity.this, "必填项填写不全", 5000).show();
+		}
+		else if(!confirmPassWords.getText().toString().equals(passWords.getText().toString())){
+			Toast.makeText(RegisterActivity.this, "前后密码输入不一致", 5000).show();
+		}
+		else{
+			new Thread(){
+				public void run(){
+					String url = "/ItOne/OpenFormServlet";
+					userInfo.put("userName", userName.getText().toString());
+    				userInfo.put("passWords", passWords.getText().toString());
+    				userInfo.put("province", province.getText().toString());
+    				userInfo.put("city", city.getText().toString());
+    				userInfo.put("university", university.getText().toString());
+    				userInfo.put("faculty", faculty.getText().toString());
+    				userInfo.put("occupation", occupation.getText().toString());
+    				userInfo.put("imageUrl", isAddPic?"true":"false");
+					MyHttps myHttpsre = new MyHttps(url);
+					File file;
+					if(isAddPic){
+						file = new File("/sdcard/" + IMAGE_FILE_NAME);
+					}
+					else{
+						file = null;
+					}
+					HttpResponse httpResponse = myHttpsre.postForm(userInfo, file);
+					if(httpResponse != null){
+						Header[] is = httpResponse.getHeaders("isChecked");
+						if(is[0].getValue().equals("true")){
+							Message message = new Message();
+							message.what = 1;
+							handler.sendMessage(message);
 						}
-					}.start();
+						else{
+							Message message = new Message();
+        					message.what = 2;
+        					handler.sendMessage(message);
+						}
+					}
+					else{
+						Message message = new Message();
+    					message.what = 3;
+    					handler.sendMessage(message);
+					}
 				}
-			}
-			
-		});
+			}.start();
+		}
 	}
 	
 	private String[] items = new String[] { "图库","拍照" };
@@ -415,36 +405,5 @@ public class RegisterActivity extends Activity {
 		}
 		}
 		return false;
-	} 
-
-	protected void setTranslucentStatus(boolean on) {
-	    Window win = getWindow();
-	    WindowManager.LayoutParams winParams = win.getAttributes();
-	    final int bits = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
-	    if (on) {
-	        winParams.flags |= bits;
-	    } else {
-	        winParams.flags &= ~bits;
-	    }
-	    win.setAttributes(winParams);
-	}
-	
-	private void initHandler(){
-		handler = new Handler(){
-            @Override
-            public void handleMessage(Message msg){
-                if(msg.what == 1){
-                	Toast.makeText(RegisterActivity.this, "该用户名已注册", 5000).show();
-                }
-                else if(msg.what == 2){
-                	Toast.makeText(RegisterActivity.this, "注册成功", 5000).show();
-                	RegisterActivity.this.finish();
-                }
-                else if(msg.what == 3){
-                	Toast.makeText(RegisterActivity.this, "服务器抽风中...", 5000).show();
-                }
-                super.handleMessage(msg);
-            }
-        };
 	}
 }
