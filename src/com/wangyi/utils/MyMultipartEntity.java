@@ -10,13 +10,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Random;
 
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
-import org.apache.http.message.BasicHeader;
-
 import android.text.TextUtils;
 
-public class MyMultipartEntity implements HttpEntity{
+public class MyMultipartEntity {
 	private final static char[] MULTIPART_CHARS = "-_1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
             .toCharArray();
     private final String NEW_LINE_STR = "\r\n";
@@ -140,44 +136,28 @@ public class MyMultipartEntity implements HttpEntity{
         return stringBuilder.append(NEW_LINE_STR).toString().getBytes();
     }
  
-    @Override
     public long getContentLength() {
         return mOutputStream.toByteArray().length;
     }
  
-    @Override
-    public Header getContentType() {
-        return new BasicHeader("Content-Type", "multipart/form-data; boundary=" + mBoundary);
-    }
- 
-    @Override
     public boolean isChunked() {
         return false;
     }
- 
-    @Override
+    
     public boolean isRepeatable() {
         return false;
     }
  
-    @Override
     public boolean isStreaming() {
         return false;
     }
  
-    @Override
     public void writeTo(final OutputStream outstream) throws IOException {
         final String endString = "--" + mBoundary + "--\r\n";
         mOutputStream.write(endString.getBytes());
         outstream.write(mOutputStream.toByteArray());
     }
  
-    @Override
-    public Header getContentEncoding() {
-        return null;
-    }
- 
-    @Override
     public void consumeContent() throws IOException,
             UnsupportedOperationException {
         if (isStreaming()) {
@@ -186,7 +166,6 @@ public class MyMultipartEntity implements HttpEntity{
         }
     }
  
-    @Override
     public InputStream getContent() {
         return new ByteArrayInputStream(mOutputStream.toByteArray());
     }

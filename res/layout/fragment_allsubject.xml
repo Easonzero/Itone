@@ -20,12 +20,12 @@
             android:textColor="#888888"
             android:textSize="15sp" />
         
-        <com.wangyi.widget.LessonListLayout 
+        <com.wangyi.UIview.widget.LessonListLayout 
             android:id="@+id/lessons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
-            android:layout_below="@+id/lessonTitle"></com.wangyi.widget.LessonListLayout>
+            android:layout_below="@+id/lessonTitle"></com.wangyi.UIview.widget.LessonListLayout>
 		<View
 		    android:layout_below="@+id/lessons"
             android:layout_width="match_parent"
@@ -38,13 +38,13 @@
 		    android:layout_width="fill_parent"
 		    android:layout_height="fill_parent" />
 
-		<com.wangyi.widget.KeywordsFlow
+		<com.wangyi.UIview.widget.KeywordsFlow
 		    android:id="@+id/keywordsflow"
 		    android:layout_width="match_parent"
 		    android:layout_height="match_parent"
 		    android:background="#50000000"
 		    android:visibility="gone" >
-		</com.wangyi.widget.KeywordsFlow>
+		</com.wangyi.UIview.widget.KeywordsFlow>
 
 		<RelativeLayout
 		    android:id="@+id/relativeLayout1"

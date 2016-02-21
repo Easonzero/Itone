@@ -35,7 +35,7 @@
         android:layout_marginRight="10dp" >
 
         <EditText
-            android:id="@+id/editUserName"
+            android:id="@+id/editUserID"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="帐号："

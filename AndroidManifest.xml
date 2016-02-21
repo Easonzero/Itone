@@ -21,7 +21,7 @@
         
  
         <activity
-            android:name="com.wangyi.view.activity.ItOneActivity"
+            android:name="com.wangyi.UIview.activity.ItOneActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
             <intent-filter>
@@ -90,38 +90,38 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.wangyi.view.activity.ScheduleActivity"
+            android:name="com.wangyi.UIview.activity.ScheduleActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" >
         </activity>
         <activity
-            android:name="com.wangyi.view.activity.CreateLesson"
+            android:name="com.wangyi.UIview.activity.CreateLesson"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
         <activity
-            android:name="com.wangyi.view.activity.ChangeLesson"
+            android:name="com.wangyi.UIview.activity.ChangeLesson"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
          <activity
-            android:name="com.wangyi.view.activity.WatchLesson"
+            android:name="com.wangyi.UIview.activity.WatchLesson"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
          <activity
-            android:name="com.wangyi.view.activity.LoginActivity"
+            android:name="com.wangyi.UIview.activity.LoginActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
          <activity
-            android:name="com.wangyi.view.activity.RegisterActivity"
+            android:name="com.wangyi.UIview.activity.RegisterActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" />
          <activity
-            android:name="com.wangyi.view.activity.DownloadActivity"
+            android:name="com.wangyi.UIview.activity.DownloadActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" />

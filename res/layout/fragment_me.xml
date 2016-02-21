@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_all"
-    tools:context="com.wangyi.view.activity.ItOneActivity" >
+    tools:context="com.wangyi.UIview.activity.ItOneActivity" >
 
     <RelativeLayout
         android:id="@+id/relativeLayout1"

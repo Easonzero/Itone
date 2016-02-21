@@ -14,9 +14,9 @@ import com.androidquery.AQuery;
 import com.astuetz.PagerSlidingTabStrip;
 import com.hidev.popupview.PopupView;
 import com.hidev.popupview.PopupView.OnDismissListener;
-import com.wangyi.adapter.BookmarkViewAdapter;
-import com.wangyi.adapter.ThumbnailViewAdapter;
-import com.wangyi.adapter.searchItemAdapter;
+import com.wangyi.UIview.adapter.BookmarkViewAdapter;
+import com.wangyi.UIview.adapter.ThumbnailViewAdapter;
+import com.wangyi.UIview.adapter.searchItemAdapter;
 import com.wangyi.define.BookmarkData;
 import com.wangyi.imp.database.DBBookmark;
 import com.wangyi.reader.R;
@@ -2062,8 +2062,7 @@ public class MuPDFActivity extends ActionBarActivity implements
 
 			int level = outlineData.get(position).level;
 			int margin = level * 16;
-			aq.id(R.id.outlineTitle).text(outlineData.get(position).title)
-					.margin(margin, 0, 0, 0);
+			aq.id(R.id.outlineTitle).text(outlineData.get(position).title).margin(margin, 0, 0, 0);
 			aq.id(R.id.outlinePage).text(outlineData.get(position).page + "");
 
 			return convertView;

@@ -1,7 +1,11 @@
 package com.wangyi.define;
 
+import org.xutils.http.annotation.HttpResponse;
+import com.wangyi.utils.JsonResponseParser;
+
+@HttpResponse(parser = JsonResponseParser.class)
 public class UserInfo {
-	public static String sessionId = null;
+	public String userID;
 	public String userName;
 	public String province;
 	public String city;

@@ -31,6 +31,9 @@ public class ScheduleFunc{
 	public LessonData oldlesson;
 	public LessonData newlesson;
 	private Context context;
+	
+	private void ScheduleFunc(){}
+	
 	public void init(Context context){
 		oldlesson = new LessonData();
 		newlesson = new LessonData();

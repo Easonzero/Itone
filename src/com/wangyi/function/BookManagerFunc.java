@@ -5,146 +5,97 @@ import java.util.ArrayList;
 
 import com.wangyi.Interface.DBInterface;
 import com.wangyi.define.BookData;
+import com.wangyi.define.EventName;
 import com.wangyi.define.LessonData;
 import com.wangyi.define.Response;
-import com.wangyi.imp.database.DBBook;
 import com.wangyi.imp.database.DBBookmark;
 import com.wangyi.imp.database.DBLesson;
 import com.wangyi.utils.PreferencesReader;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Handler;
 
 public class BookManagerFunc {
 	private static final BookManagerFunc INSTANCE = new BookManagerFunc();
 	private static final String FILEPATH = "/sdcard/textBook/";
-	private DBInterface<BookData> bookDB;
-	public BookData book = new BookData();
-	public int cur;
-	private File file;
-	private ArrayList<String> names;
-	private ArrayList<String> paths;
-	private ArrayList<BookData> bookHistory;
-	private int booknum = 0;
+	private ArrayList<BookData> books = new ArrayList();
+	private ArrayList<BookData> historyCache = new ArrayList();
 	private Context context;
+	private Handler handler;
+	private void BookManagerFunc(){}
 	
 	public void init(Context context){
 		this.context = context;
-		file = new File(FILEPATH);
+		File file = new File(FILEPATH);
 		if(!file.exists()){
 			file.mkdirs();
 		}
-		names = new ArrayList<String>();  
-		paths = new ArrayList<String>();  
-		bookHistory = PreferencesReader.getBookHistory((Activity)context);
+		
+		//books = new ArrayList();
+		//historyCache = PreferencesReader.getBookHistory((Activity)context);
 	}
 	
 	public static BookManagerFunc getInstance(){
 		return INSTANCE;
 	}
 	
-	public int getBooknum(){
-		return booknum;
+	public void connect(Handler handler){
+		this.handler = handler;
 	}
 	
-	public String getna(int pos){
-		return names.get(pos);
+	public BookData getBookData(int cur){
+		return cur < books.size()?books.get(cur):null;
 	}
 	
-	public String getpa(int pos){
-		return paths.get(pos);
+	public void setBooks(ArrayList<BookData> books){
+		this.books = books;
 	}
 	
-	public void changeIfRead(String name){
-		for(BookData x:bookHistory){
-			if(x.bookName.equals(name)){
-				bookHistory.remove(book);
+	public int getBooksNum(){
+		return books.size();
+	}
+	
+	public void changeIfRead(BookData book){
+		for(BookData a:historyCache){
+			if(a.bookName.equals(book.bookName)){
+				historyCache.remove(a);
 			}
 		}
-		bookHistory.add(book);
+		books.add(book);
 	}
 	
-	public Response<BookData> find(String event){
-		Response<BookData> response = new Response();
-		ArrayList<BookData> dataList = new ArrayList();
-		BookData book = new BookData();
-		dataList.add(book);
-		response.init(event, null, null, dataList);
-		bookDB = new DBBook(context).open();
-		response = bookDB.find(response);
-		bookDB.close();
-		return response;
+	public void saveIfNeed(){
+		PreferencesReader.saveBookHistory((Activity)context, historyCache);
 	}
 	
-	public void add(String event){
-		Response<BookData> response = new Response();
-		ArrayList<BookData> dataList = new ArrayList();
-		dataList.add(book);
-		response.init(event, null, null, dataList);
-		bookDB = new DBBook(context).open();
-		bookDB.add(response);
-		bookDB.close();
-	}
-	
-	public void delete(String event){
-		Response<BookData> response = new Response();
-		ArrayList<BookData> dataList = new ArrayList();
-		dataList.add(book);
-		response.init(event, null, null, dataList);
-		File file = new File(paths.get(cur));
+	public void delete(int cur){
+		File file = new File(books.get(cur).url);
         file.delete();
-		bookDB = new DBBook(context).open();
-		bookDB.delete(response);
-		bookDB.close();
-		DBBookmark bookMark = new DBBookmark(context).open();
-		bookMark.deleteAllFormBookName(names.get(cur));
-		bookMark.close();
-		for(BookData x:bookHistory){
-			if(x.bookName.equals(book.bookName)){
-				bookHistory.remove(book);
+        for(BookData a:historyCache){
+			if(a.bookName.equals(books.get(cur).bookName)){
+				historyCache.remove(a);
 			}
 		}
-	}
-	
-	public void change(String event){
-		Response<BookData> response = new Response();
-		ArrayList<BookData> dataList = new ArrayList();
-		dataList.add(book);
-		response.init(event, null, null, dataList);
-		//bookDB = new DBBook(context).open();
-		bookDB.change(response);
-		bookDB.close();
+        handler.sendEmptyMessage(EventName.UI.FINISH);
 	}
 	
 	public void showFileDir(){
-		File[] files = file.listFiles();
-		
-		names.clear();
-		paths.clear();
-		  
-		for (File f : files){  
-			names.add(f.getName());
-			paths.add(f.getPath());
+		if(!books.isEmpty()){
+			books.clear();
 		}
-		
-		booknum = names.size();
+		File[] files = new File(FILEPATH).listFiles();
+		for (File f : files){
+			BookData book = new BookData();
+			book.bookName = f.getName();
+			book.url = f.getPath();
+			books.add(book);
+		}
+		handler.sendEmptyMessage(EventName.UI.FINISH);
 	}
 	
 	public void showHistoryDir(){
-		names.clear();
-		paths.clear();
-		
-		int length = bookHistory.size();
-		
-		for(int i=0;i < length;i++){
-			names.add(bookHistory.get(length-i).bookName);
-			paths.add(bookHistory.get(length-i).url);
-		}
-		
-		booknum = names.size();
-	}
-	
-	public void finish(){
-		PreferencesReader.saveBookHistory((Activity)context, bookHistory);
+		books = (ArrayList)historyCache.clone();
+		handler.sendEmptyMessage(EventName.UI.FINISH);
 	}
 }
