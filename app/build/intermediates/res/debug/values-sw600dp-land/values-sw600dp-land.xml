@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/maxchanglove/ItOne/app/src/main/res/values-sw600dp-land/dimens.xml -->
+    <eat-comment/>
+    <integer name="num_columns">5</integer>
+</resources>

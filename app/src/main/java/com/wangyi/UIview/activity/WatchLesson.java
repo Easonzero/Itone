@@ -1,0 +1,67 @@
+package com.wangyi.UIview.activity;
+
+import org.xutils.view.annotation.*;
+
+import com.wangyi.UIview.BaseActivity;
+import com.wangyi.define.EventName;
+import com.wangyi.function.ScheduleFunc;
+import com.wangyi.reader.R;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+@ContentView(R.layout.watchlesson)
+public class WatchLesson extends BaseActivity {
+	@ViewInject(R.id.lessontitle)
+	private TextView title;
+	@ViewInject(R.id.lesson_name)
+	private TextView l_lessonName;
+	@ViewInject(R.id.location)
+	private TextView l_classroom;
+	@ViewInject(R.id.teacher)
+	private TextView l_teacher;
+	@ViewInject(R.id.classnum)
+	private TextView l_classnum;
+	@ViewInject(R.id.weeknum)
+	private TextView l_weeknum;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+
+		ScheduleFunc.getInstance().newlesson = ScheduleFunc.getInstance().find(EventName.ScheduleFunc.FINDBYCLASS).getDataList().get(0);
+		initData();
+	}
+
+	@Event(R.id.Cancel)
+	private void onCancelClick(View view){
+		WatchLesson.this.finish();
+	}
+
+	@Event(R.id.edit)
+	private void onEditClick(View view){
+		WatchLesson.this.finish();
+		Intent intent = new Intent(WatchLesson.this,ChangeLesson.class);
+		ScheduleFunc.getInstance().newlesson = ScheduleFunc.getInstance().newlesson;
+		ScheduleFunc.getInstance().oldlesson = ScheduleFunc.getInstance().newlesson;
+		startActivity(intent);
+	}
+
+	@Event(R.id.delete)
+	private void onDeleteClick(View view){
+		ScheduleFunc.getInstance().delete(EventName.ScheduleFunc.DELELESSON);
+		WatchLesson.this.finish();
+	}
+
+	private void initData(){
+		title.setText(ScheduleFunc.getInstance().newlesson.lessonName);
+		l_lessonName.setText(ScheduleFunc.getInstance().newlesson.lessonName);
+		l_classroom.setText(ScheduleFunc.getInstance().newlesson.classRoom);
+		l_teacher.setText(ScheduleFunc.getInstance().newlesson.teacher);
+		l_classnum.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().newlesson.weekDay))
+				+ "  " + ScheduleFunc.getInstance().newlesson.fromClass + " - " + ScheduleFunc.getInstance().newlesson.toClass + "节");
+		l_weeknum.setText(ScheduleFunc.getInstance().newlesson.weeknumDelay);
+	}
+}

@@ -19,12 +19,14 @@ LOCAL_C_INCLUDES := \
 	$(MUPDF_ROOT)/source/pdf
 LOCAL_CFLAGS :=
 LOCAL_MODULE    := mupdf
-LOCAL_SRC_FILES := mupdf.c
+LOCAL_SRC_FILES := amupdf.c bytebufferbitmapbridge.c
 LOCAL_STATIC_LIBRARIES := mupdfcore mupdfthirdparty
 ifdef NDK_PROFILER
 LOCAL_CFLAGS += -pg -DNDK_PROFILER
 LOCAL_STATIC_LIBRARIES += andprof
-else
+endif
+ifdef SUPPORT_GPROOF
+LOCAL_CFLAGS += -DSUPPORT_GPROOF
 endif
 
 LOCAL_LDLIBS    := -lm -llog -ljnigraphics
