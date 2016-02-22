@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:padding="@dimen/padding_step_s"
-            android:src="@drawable/ic_menu_moreoverflow_large_note" />
+            android:src="@drawable/ic_menu_moreoverflow_note" />
 
     </LinearLayout>
     

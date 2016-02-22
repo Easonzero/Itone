@@ -174,7 +174,7 @@ import android.os.Message;
  * {@link android.os.Build.VERSION_CODES#HONEYCOMB}, tasks are executed on a single
  * thread to avoid common application errors caused by parallel execution.</p>
  * <p>If you truly want parallel execution, you can invoke
- * {@link #executeOnExecutor(java.util.concurrent.Executor, Object[])} with
+ * {@link #executeOnExecutor(Executor, Object[])} with
  * {@link #THREAD_POOL_EXECUTOR}.</p>
  */
 public abstract class AsyncTask<Params, Progress, Result> {
@@ -528,9 +528,9 @@ public abstract class AsyncTask<Params, Progress, Result> {
      * @return This instance of AsyncTask.
      *
      * @throws IllegalStateException If {@link #getStatus()} returns either
-     *         {@link AsyncTask.Status#RUNNING} or {@link AsyncTask.Status#FINISHED}.
+     *         {@link Status#RUNNING} or {@link Status#FINISHED}.
      *
-     * @see #executeOnExecutor(java.util.concurrent.Executor, Object[])
+     * @see #executeOnExecutor(Executor, Object[])
      * @see #execute(Runnable)
      */
     public final AsyncTask<Params, Progress, Result> execute(Params... params) {
@@ -566,7 +566,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
      * @return This instance of AsyncTask.
      *
      * @throws IllegalStateException If {@link #getStatus()} returns either
-     *         {@link AsyncTask.Status#RUNNING} or {@link AsyncTask.Status#FINISHED}.
+     *         {@link Status#RUNNING} or {@link Status#FINISHED}.
      *
      * @see #execute(Object[])
      */
@@ -600,7 +600,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
      * information on the order of execution.
      *
      * @see #execute(Object[])
-     * @see #executeOnExecutor(java.util.concurrent.Executor, Object[])
+     * @see #executeOnExecutor(Executor, Object[])
      */
     public static void execute(Runnable runnable) {
         sDefaultExecutor.execute(runnable);

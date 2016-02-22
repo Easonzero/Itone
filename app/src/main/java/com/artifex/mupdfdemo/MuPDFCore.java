@@ -1,17 +1,12 @@
 package com.artifex.mupdfdemo;
-import java.io.File;
 import java.util.ArrayList;
-
-import com.wangyi.reader.R;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.PointF;
 import android.graphics.RectF;
+import com.wangyi.reader.R;
 
 public class MuPDFCore
 {
@@ -19,30 +14,6 @@ public class MuPDFCore
 	static {
 		System.loadLibrary("mupdf");
 	}
-	
-	//Custom Code//
-	public static final int PAPER_NORMAL = 0;
-	public static final int PAPER_INVERT = 1;
-	public static final int PAPER_GRAY = 2;
-	public static final int PAPER_GRAY_INVERT = 3;
-	public static final int PAPER_OPACIT_100 = 100;
-	public static final int PAPER_OPACIT_90 = 90;
-	public static final int PAPER_OPACIT_80 = 80;
-	public static final int PAPER_OPACIT_70 = 70;
-	public static final int PAPER_OPACIT_60 = 60;
-	public static final int PAPER_OPACIT_50 = 50;
-	public static final int PAPER_OPACIT_40 = 40;
-	public int themeMode = PAPER_NORMAL;
-	
-	public static final int SINGLE_PAGE_MODE = 0;
-	public static final int DOUBLE_PAGE_MODE = 1;
-	public static final int AUTO_PAGE_MODE = 2;
-	
-	private Context context;
-	private String filePath;
-	private boolean doubleMode = false;
-	private boolean coverPageMode = true;
-	private boolean reflow = false;
 
 	/* Readable members */
 	private int numPages = -1;
@@ -51,11 +22,14 @@ public class MuPDFCore
 	private long globals;
 	private byte fileBuffer[];
 	private String file_format;
+	private boolean isUnencryptedPDF;
+	private final boolean wasOpenedFromBuffer;
 
 	/* The native functions */
 	private native long openFile(String filename);
-	private native long openBuffer();
+	private native long openBuffer(String magic);
 	private native String fileFormatInternal();
+	private native boolean isUnencryptedPDFInternal();
 	private native int countPagesInternal();
 	private native void gotoPageInternal(int localActionPageNum);
 	private native float getPageWidth();
@@ -63,14 +37,14 @@ public class MuPDFCore
 	private native void drawPage(Bitmap bitmap,
 			int pageW, int pageH,
 			int patchX, int patchY,
-			int patchW, int patchH, int filterMode,
-			int background, int opacity);
+			int patchW, int patchH,
+			long cookiePtr);
 	private native void updatePageInternal(Bitmap bitmap,
 			int page,
 			int pageW, int pageH,
 			int patchX, int patchY,
 			int patchW, int patchH,
-			int mode, int bgValue, int opacity);
+			long cookiePtr);
 	private native RectF[] searchPage(String text);
 	private native TextChar[][][][] text();
 	private native byte[] textAsHtml();
@@ -101,108 +75,83 @@ public class MuPDFCore
 	private native void destroying();
 	private native boolean hasChangesInternal();
 	private native void saveInternal();
+	private native long createCookie();
+	private native void destroyCookie(long cookie);
+	private native void abortCookie(long cookie);
 
 	public native boolean javascriptSupported();
 
+	public class Cookie
+	{
+		private final long cookiePtr;
+
+		public Cookie()
+		{
+			cookiePtr = createCookie();
+			if (cookiePtr == 0)
+				throw new OutOfMemoryError();
+		}
+
+		public void abort()
+		{
+			abortCookie(cookiePtr);
+		}
+
+		public void destroy()
+		{
+			// We could do this in finalize, but there's no guarantee that
+			// a finalize will occur before the muPDF context occurs.
+			destroyCookie(cookiePtr);
+		}
+	}
+
 	public MuPDFCore(Context context, String filename) throws Exception
 	{
-		this.context = context;
-		this.filePath = filename;
 		globals = openFile(filename);
 		if (globals == 0)
 		{
 			throw new Exception(String.format(context.getString(R.string.cannot_open_file_Path), filename));
 		}
 		file_format = fileFormatInternal();
+		isUnencryptedPDF = isUnencryptedPDFInternal();
+		wasOpenedFromBuffer = false;
 	}
 
-	public MuPDFCore(Context context, byte buffer[]) throws Exception
-	{
-		this.context = context;
+	public MuPDFCore(Context context, byte buffer[], String magic) throws Exception {
 		fileBuffer = buffer;
-		globals = openBuffer();
+		globals = openBuffer(magic != null ? magic : "");
 		if (globals == 0)
 		{
 			throw new Exception(context.getString(R.string.cannot_open_buffer));
 		}
 		file_format = fileFormatInternal();
+		isUnencryptedPDF = isUnencryptedPDFInternal();
+		wasOpenedFromBuffer = true;
 	}
 
-	public  int countDocumentPages()
+	public  int countPages()
 	{
 		if (numPages < 0)
 			numPages = countPagesSynchronized();
 
 		return numPages;
 	}
-	
-	public int countDisplayPage(){
-		if (numPages < 0)
-			numPages = countPagesSynchronized();
-		
-		//Single
-		if(!doubleMode) return numPages;	
-		
-		//Double
-		if(coverPageMode) {
-			return (numPages - 1) % 2 == 1 ? (numPages / 2) + 1 : ((numPages - 1) / 2) + 1;
-		}else{
-			return numPages % 2 == 1 ? (numPages + 1) / 2 : numPages / 2;
-		}
-	}
-	
-	public int getDocumentPage(int page) {
-		if (!doubleMode || page == 0) {
-			return page;
-		} else {
-			if (!coverPageMode) {
-				return page * 2;
-			} else {
-				return (page * 2) - 1;
-			}
-		}
-	}
-
-	public boolean isLastSinglePage(int displayPage){
-		if(coverPageMode) {
-			int lastDisplay = (numPages+1) / 2;
-			if(lastDisplay != displayPage) return false;
-			return (numPages - 1) % 2 == 1 ? true : false;
-		}else{
-			int lastDisplay = numPages / 2;
-			if(lastDisplay != displayPage) return false;
-			return numPages % 2 == 1 ? true : false;
-		}
-	}
-	
-	
-	
-//	public int getDocumentPage(int disPlayPage){
-//		if(coverPageMode) {
-//			return (disPlayPage * 2) - 1;
-//		}else{
-//			return disPlayPage * 2;
-//		}
-//	}
 
 	public String fileFormat()
 	{
 		return file_format;
 	}
 
-	public String getFilePath(){
-		return filePath;
+	public boolean isUnencryptedPDF()
+	{
+		return isUnencryptedPDF;
 	}
-	
-	public String getFileDirectory() {
-		return (new File(filePath)).getParent();
+
+	public boolean wasOpenedFromBuffer()
+	{
+		return wasOpenedFromBuffer;
 	}
-	
-	public String getFilePathReplace() {
-		File file = new File(filePath);
-		return file.getName().replace("/", "_").replace(".", "_").replace(" ", "_");
-	}
-	
+
 	private synchronized int countPagesSynchronized() {
 		return countPagesInternal();
 	}
@@ -219,50 +168,9 @@ public class MuPDFCore
 		this.pageHeight = getPageHeight();
 	}
 
-//	public synchronized PointF getPageSize(int page) {
-//		gotoPage(page);
-//		return new PointF(pageWidth, pageHeight);
-//	}
-	
-	public synchronized PointF getDocumentPageSize(int page) {
+	public synchronized PointF getPageSize(int page) {
 		gotoPage(page);
 		return new PointF(pageWidth, pageHeight);
-	}
-	
-	public synchronized PointF getPageSize(int displayPage) {
-		if (!doubleMode) {
-			gotoPage(displayPage);
-			return new PointF(pageWidth, pageHeight);
-		} else {
-			if (coverPageMode && displayPage == 0) {
-				gotoPage(displayPage);
-				return new PointF(pageWidth, pageHeight);
-			}
-			if (isLastSinglePage(displayPage)) {
-				int page = 0;
-				if (coverPageMode) {
-					page = (displayPage * 2) - 1;
-				} else
-					page = displayPage * 2;
-				gotoPage(page);
-				return new PointF(pageWidth, pageHeight);
-			}
-
-			int page = 0;
-			if (coverPageMode) {
-				page = (displayPage * 2) - 1;
-			} else {
-				page = displayPage * 2;
-			}
-			gotoPage(page);
-			float leftWidth = pageWidth;
-			float leftHeight = pageHeight;
-			gotoPage(page + 1);
-			float screenWidth = leftWidth + pageWidth;
-			float screenHeight = Math.max(leftHeight, pageHeight);
-			return new PointF(screenWidth, screenHeight);
-
-		}
 	}
 
 	public MuPDFAlert waitForAlert() {
@@ -287,172 +195,21 @@ public class MuPDFCore
 		globals = 0;
 	}
 
-//	public synchronized void drawPage(Bitmap bm, int page,
-//			int pageW, int pageH,
-//			int patchX, int patchY,
-//			int patchW, int patchH) {
-//		gotoPage(page);
-//		drawPage(bm, pageW, pageH, patchX, patchY, patchW, patchH);
-//	}
-	
-	public int getDisplayPage(int page) {
-		if (!doubleMode || page == 0) {
-			return page;
-		} else {
-			if (coverPageMode) {
-				return (page + 1) / 2;
-			} else {
-				return page / 2;
-			}
-		}
-	}
-		
-	public synchronized Bitmap drawPage(Bitmap bitmap, final int disPlayPage, int pageW, int pageH, int patchX, int patchY,
-			int patchW, int patchH) {
-		Canvas canvas = null;
-		try {
-			canvas = new Canvas(bitmap);
-			canvas.drawColor(Color.TRANSPARENT);
-
-			// Single mode and first single
-			if (!doubleMode || (coverPageMode && disPlayPage == 0)) {
-				gotoPage(disPlayPage);
-				drawPage(bitmap, pageW, pageH, patchX, patchY, patchW, patchH, themeMode, 0xff, PAPER_OPACIT_100);
-				return bitmap;
-
-				// Last single in Double mode
-			} else if (isLastSinglePage(disPlayPage)) {
-				int page = 0;
-				if (coverPageMode) {
-					page = (disPlayPage * 2) - 1;
-				} else
-					page = disPlayPage * 2;
-
-				gotoPage(page);
-				drawPage(bitmap, pageW, pageH, patchX, patchY, patchW, patchH, themeMode, 0xff, PAPER_OPACIT_100);
-				return bitmap;
-			} else {
-				int drawPage = 0;
-				if (coverPageMode) {
-					drawPage = (disPlayPage == 0) ? 0 : (disPlayPage * 2) - 1;
-				} else {
-					drawPage = (disPlayPage == 0) ? 0 : disPlayPage * 2;
-				}
-
-				int leftPageW = pageW / 2;
-				int rightPageW = pageW - leftPageW;
-				int leftBmWidth = Math.min(leftPageW, leftPageW - patchX);
-				leftBmWidth = (leftBmWidth < 0) ? 0 : leftBmWidth;
-				int rightBmWidth = patchW - leftBmWidth;
-
-				Paint paint = new Paint(Paint.FILTER_BITMAP_FLAG);
-				if (leftBmWidth > 0) {
-					Bitmap leftBm = Bitmap.createBitmap(leftBmWidth, patchH, getBitmapConfig());
-					gotoPage(drawPage);
-					drawPage(leftBm, leftPageW, pageH, patchX, patchY, leftBmWidth, patchH, themeMode, 0xff,
-							PAPER_OPACIT_100);
-					canvas.drawBitmap(leftBm, 0, 0, paint);
-					leftBm.recycle();
-				}
-				if (rightBmWidth > 0) {
-					Bitmap rightBm = Bitmap.createBitmap(rightBmWidth, patchH, getBitmapConfig());
-					gotoPage(drawPage + 1);
-					drawPage(rightBm, rightPageW, pageH, (leftBmWidth == 0) ? patchX - leftPageW : 0, patchY,
-							rightBmWidth, patchH, themeMode, 0xff, PAPER_OPACIT_100);
-
-					canvas.drawBitmap(rightBm, (float) leftBmWidth, 0, paint);
-					rightBm.recycle();
-				}
-				return bitmap;
-			}
-		} catch (OutOfMemoryError e) {
-			if (canvas != null)
-				canvas.drawColor(Color.TRANSPARENT);
-			return bitmap;
-		}
-	}
-	
-	private Config getBitmapConfig() {
-		return Config.ARGB_8888;
-	}
-	
-	public synchronized Bitmap drawThumbnailPage(Bitmap bm, int page,
-			int pageW, int pageH, int patchX, int patchY, int patchW, int patchH) {
+	public synchronized void drawPage(Bitmap bm, int page,
+			int pageW, int pageH,
+			int patchX, int patchY,
+			int patchW, int patchH,
+			Cookie cookie) {
 		gotoPage(page);
-		drawPage(bm, pageW, pageH, patchX, patchY, patchW, patchH, PAPER_NORMAL,
-				0xff, PAPER_OPACIT_100);
-		return bm;
+		drawPage(bm, pageW, pageH, patchX, patchY, patchW, patchH, cookie.cookiePtr);
 	}
 
-//	public synchronized void updatePage(Bitmap bm, int page,
-//			int pageW, int pageH,
-//			int patchX, int patchY,
-//			int patchW, int patchH) {
-//		updatePageInternal(bm, page, pageW, pageH, patchX, patchY, patchW, patchH);
-//	}
-	
-	public synchronized Bitmap updatePage(Bitmap bitmap, int disPlayPage, int pageW,
-			int pageH, int patchX, int patchY, int patchW, int patchH) {
-		
-		// updatePageInternal(bitmap, page, pageW, pageH, patchX, patchY,
-		// patchW, patchH);
-		Canvas canvas = null;
-
-		try {
-			canvas = new Canvas(bitmap);
-			canvas.drawColor(Color.TRANSPARENT);
-			
-			if (!doubleMode || (coverPageMode && disPlayPage == 0)) {
-				updatePageInternal(bitmap, disPlayPage, pageW, pageH, patchX, patchY,
-						patchW, patchH, themeMode, 0xff, PAPER_OPACIT_100);
-				return bitmap;
-				// Last single in Double mode
-			} else if (isLastSinglePage(disPlayPage)) {
-				int page = 0;
-				if (coverPageMode) {
-					page = (disPlayPage * 2) - 1;
-				} else
-					page = disPlayPage * 2;
-
-				updatePageInternal(bitmap, page, pageW, pageH, patchX, patchY, patchW, patchH, themeMode, 0xff, PAPER_OPACIT_100);
-				return bitmap;
-			} else {
-				int drawPage = 0;
-				if (coverPageMode) {
-					drawPage = (disPlayPage == 0) ? 0 : (disPlayPage * 2) - 1;
-				} else {
-					drawPage = (disPlayPage == 0) ? 0 : disPlayPage * 2;
-				}
-
-				int leftPageW = pageW / 2;
-				int rightPageW = pageW - leftPageW;
-				int leftBmWidth = Math.min(leftPageW, leftPageW - patchX);
-				leftBmWidth = (leftBmWidth < 0) ? 0 : leftBmWidth;
-				int rightBmWidth = patchW - leftBmWidth;
-
-				Paint paint = new Paint(Paint.FILTER_BITMAP_FLAG);
-				if (leftBmWidth > 0) {
-					Bitmap leftBm = Bitmap.createBitmap(leftBmWidth, patchH, getBitmapConfig());
-					updatePageInternal(leftBm, drawPage, leftPageW, pageH, patchX, patchY, leftBmWidth, patchH, themeMode, 0xff,
-							PAPER_OPACIT_100);
-					canvas.drawBitmap(leftBm, 0, 0, paint);
-					leftBm.recycle();
-				}
-				if (rightBmWidth > 0) {
-					Bitmap rightBm = Bitmap.createBitmap(rightBmWidth, patchH, getBitmapConfig());
-					updatePageInternal(rightBm,drawPage + 1 , rightPageW, pageH, (leftBmWidth == 0) ? patchX - leftPageW : 0, patchY,
-							rightBmWidth, patchH, themeMode, 0xff, PAPER_OPACIT_100);
-
-					canvas.drawBitmap(rightBm, (float) leftBmWidth, 0, paint);
-					rightBm.recycle();
-				}
-				return bitmap;
-			}
-		} catch (OutOfMemoryError e) {
-			if (canvas != null)
-				canvas.drawColor(Color.TRANSPARENT);
-			return bitmap;
-		}
+	public synchronized void updatePage(Bitmap bm, int page,
+			int pageW, int pageH,
+			int patchX, int patchY,
+			int patchW, int patchH,
+			Cookie cookie) {
+		updatePageInternal(bm, page, pageW, pageH, patchX, patchY, patchW, patchH, cookie.cookiePtr);
 	}
 
 	public synchronized PassClickResult passClickEvent(int page, float x, float y) {
@@ -493,63 +250,8 @@ public class MuPDFCore
 		return signFocusedSignatureInternal(keyFile, password);
 	}
 
-//	public synchronized LinkInfo [] getPageLinks(int page) {
-//		return getPageLinksInternal(page);
-//	}
-	
 	public synchronized LinkInfo [] getPageLinks(int page) {
-		if(!doubleMode){
-			return getPageLinksInternal(page);
-		}
-		
-		if(coverPageMode && page == 0){
-			return getPageLinksInternal(page);
-		}
-		
-		LinkInfo[] leftPageLinkInfo = new LinkInfo[0];
-		LinkInfo[] rightPageLinkInfo = new LinkInfo[0];
-		LinkInfo[] combinedLinkInfo;
-		int combinedSize = 0;
-		int rightPage = 0;
-		if (coverPageMode) {
-			rightPage = page * 2;
-		} else
-			rightPage = (page * 2) + 1;
-		
-		int leftPage = rightPage - 1;
-		int count = countDisplayPage() * 2;
-		if (leftPage >= 0) {
-			LinkInfo[] leftPageLinkInfoInternal = getPageLinksInternal(leftPage);
-			if (null != leftPageLinkInfoInternal) {
-				leftPageLinkInfo = leftPageLinkInfoInternal;
-				combinedSize += leftPageLinkInfo.length;
-			}
-		}
-		if (rightPage < count) {
-			LinkInfo[] rightPageLinkInfoInternal = getPageLinksInternal(rightPage);
-			if (null != rightPageLinkInfoInternal) {
-				rightPageLinkInfo = rightPageLinkInfoInternal;
-				combinedSize += rightPageLinkInfo.length;
-			}
-		}
-
-		combinedLinkInfo = new LinkInfo[combinedSize];
-		for (int i = 0; i < leftPageLinkInfo.length; i++) {
-			combinedLinkInfo[i] = leftPageLinkInfo[i];
-		}
-
-		LinkInfo temp;
-		for (int i = 0, j = leftPageLinkInfo.length; i < rightPageLinkInfo.length; i++, j++) {
-			temp = rightPageLinkInfo[i];
-			temp.rect.left += pageWidth;
-			temp.rect.right += pageWidth;
-			combinedLinkInfo[j] = temp;
-		}
-		// for (LinkInfo linkInfo: combinedLinkInfo) {
-		// if(linkInfo instanceof LinkInfoExternal)
-		// Log.d(TAG, "return " + ((LinkInfoExternal)linkInfo).url);
-		// }
-		return combinedLinkInfo;
+		return getPageLinksInternal(page);
 	}
 
 	public synchronized RectF [] getWidgetAreas(int page) {
@@ -646,52 +348,4 @@ public class MuPDFCore
 	public synchronized void save() {
 		saveInternal();
 	}
-	
-	public boolean isReflowMode() {
-		return reflow;
-	}
-	
-	public void setReflow(boolean reflow) {
-		this.reflow = reflow;
-	}
-	
-	public boolean getDoubleMode() {
-		return doubleMode;
-	}
-
-	public boolean getCoverPageMode() {
-		return coverPageMode;
-	}
-
-	public void setDoubleMode(boolean doubleMode) {
-		this.doubleMode = doubleMode;
-	}
-
-	public void setCoverPageMode(boolean coverPageMode) {
-		this.coverPageMode = coverPageMode;
-	}
-	
-	public synchronized PointF getSinglePageSize(int page) {
-		gotoPage(page);
-		return new PointF(pageWidth, pageHeight);
-	}
-	
-	public int countSinglePages() {
-		return numPages;
-	}
-	
-	public void setThemeMode(int theme) {
-		themeMode = theme;
-	}
-	
-	public boolean isNoghtMode(){
-		switch (themeMode) {
-		case PAPER_GRAY_INVERT:
-			return true;
-
-		default:
-			return false;
-		}
-	}
-	
 }

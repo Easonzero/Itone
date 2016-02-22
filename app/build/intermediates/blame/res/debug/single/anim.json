@@ -8,20 +8,12 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\anim\\disappear.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\anim\\disappear.xml"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\anim\\fadein.xml",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\anim\\fadein.xml"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\anim\\base_slide_right_out.xml",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\anim\\base_slide_right_out.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\anim\\pump_top.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\anim\\pump_top.xml"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
@@ -34,10 +26,6 @@
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\anim\\base_slide_remain.xml",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\anim\\base_slide_remain.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\anim\\pump_bottom.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\anim\\pump_bottom.xml"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\anim\\base_slide_right_in.xml",

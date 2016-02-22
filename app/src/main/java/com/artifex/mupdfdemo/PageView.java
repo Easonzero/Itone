@@ -2,15 +2,13 @@ package com.artifex.mupdfdemo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
-import com.wangyi.reader.R;
+import java.util.List;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.CornerPathEffect;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -19,22 +17,16 @@ import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Handler;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-class PatchInfo {
-	public Point patchViewSize;
-	public Rect  patchArea;
-	public boolean completeRedraw;
-
-	public PatchInfo(Point aPatchViewSize, Rect aPatchArea, boolean aCompleteRedraw) {
-		patchViewSize = aPatchViewSize;
-		patchArea = aPatchArea;
-		completeRedraw = aCompleteRedraw;
-	}
-}
+import com.artifex.utils.DigitalizedEventCallback;
+import com.artifex.utils.PdfBitmap;
+import com.wangyi.reader.R;
 
 // Make our ImageViews opaque to optimize redraw
 class OpaqueImageView extends ImageView {
@@ -103,30 +95,35 @@ class TextSelector {
 
 public abstract class PageView extends ViewGroup {
 	private static final int HIGHLIGHT_COLOR = 0x802572AC;
-	private static final int LINK_COLOR = 0xfffa4b2a;
+	private static final int LINK_COLOR = 0x80AC7225;
 	private static final int BOX_COLOR = 0xFF4444FF;
 	private static final int INK_COLOR = 0xFFFF0000;
 	private static final float INK_THICKNESS = 10.0f;
 	private static final int BACKGROUND_COLOR = 0xFFFFFFFF;
 	private static final int PROGRESS_DIALOG_DELAY = 200;
+    private static final String TAG = "PageView";
+
+    private static final int SIGN_HEIGHT = 50;
+    private static final int SIGN_WIDTH = 100;
+
 	protected final Context   mContext;
 	protected     int       mPageNumber;
-	private       Point     mParentSize;
+	private       Point     mParentSize; // Size of the view containing the pdf viewer. It could be the same as the screen if this view is full screen.
 	protected     Point     mSize;   // Size of page at minimum zoom
 	protected     float     mSourceScale;
 
 	private       ImageView mEntire; // Image rendered at minimum zoom
-	private       Bitmap    mEntireBm;
+	private       Bitmap    mEntireBm; // Bitmap used to draw the entire page at minimum zoom.
 	private       Matrix    mEntireMat;
 	private       AsyncTask<Void,Void,TextWord[][]> mGetText;
 	private       AsyncTask<Void,Void,LinkInfo[]> mGetLinkInfo;
-	private       AsyncTask<Void,Void,Void> mDrawEntire;
+	private       CancellableAsyncTask<Void, Void> mDrawEntire;
 
-	private       Point     mPatchViewSize; // View size on the basis of which the patch was created
-	private       Rect      mPatchArea;
-	private       ImageView mPatch;
-	private       Bitmap    mPatchBm;
-	private       AsyncTask<PatchInfo,Void,PatchInfo> mDrawPatch;
+	private       Point     mPatchViewSize; // View size on the basis of which the patch was created. After zoom.
+	private       Rect      mPatchArea; // Area of the screen zoomed.
+	private       ImageView mPatch; // Image rendered at zoom resolution.
+    private       Bitmap    mPatchBm; // Bitmap used to draw the zoomed image.
+	private       CancellableAsyncTask<Void,Void> mDrawPatch;
 	private       RectF     mSearchBoxes[];
 	protected     LinkInfo  mLinks[];
 	private       RectF     mSelectBox;
@@ -140,19 +137,31 @@ public abstract class PageView extends ViewGroup {
 	private       ProgressBar mBusyIndicator;
 	private final Handler   mHandler = new Handler();
 
-	public PageView(Context c, Point parentSize, Bitmap sharedHqBm) {
+    private static boolean flagPositions = true; // Concurrency flag to avoid entering twice onDoubleTap method.
+	private Bitmap signBitmap; // Bitmap for signature at higher resolution. // *BACKWARD COMPATIBILITY*
+    private Point signBitmapSize; // Bitmap size, scaled to screen size and pdf.
+    private static DigitalizedEventCallback eventCallback; // Callback for the app. The library fires an event when the user touched longPress or doubleTap, and the app can manage the behaviour.
+
+	private Paint mBitmapPaint;
+    private MuPDFPageAdapter mAdapter;
+
+	private PointF pdfSize;
+	private PdfBitmap picturePdfBitmap; // *BACKWARD COMPATIBILITY*
+
+    private MuPDFCore core;
+
+	public PageView(Context c, Point parentSize, MuPDFPageAdapter adapter) {
 		super(c);
-		mContext    = c;
+		mContext = c;
+        flagPositions = true;
 		mParentSize = parentSize;
-//		setBackgroundColor(BACKGROUND_COLOR);
-		setBackgroundColor(MuPDFActivity.backGroundPage);
-		mEntireBm = Bitmap.createBitmap(parentSize.x, parentSize.y, Config.ARGB_8888);
-		mPatchBm = sharedHqBm;
+		setBackgroundColor(BACKGROUND_COLOR);
 		mEntireMat = new Matrix();
+        mAdapter = adapter;
 	}
 
-	protected abstract void drawPage(Bitmap bm, int sizeX, int sizeY, int patchX, int patchY, int patchWidth, int patchHeight);
-	protected abstract void updatePage(Bitmap bm, int sizeX, int sizeY, int patchX, int patchY, int patchWidth, int patchHeight);
+	protected abstract CancellableTaskDefinition<Void, Void> getDrawPageTask(Bitmap bm, int sizeX, int sizeY, int patchX, int patchY, int patchWidth, int patchHeight);
+	protected abstract CancellableTaskDefinition<Void, Void> getUpdatePageTask(Bitmap bm, int sizeX, int sizeY, int patchX, int patchY, int patchWidth, int patchHeight);
 	protected abstract LinkInfo[] getLinkInfo();
 	protected abstract TextWord[][] getText();
 	protected abstract void addMarkup(PointF[] quadPoints, Annotation.Type type);
@@ -160,12 +169,12 @@ public abstract class PageView extends ViewGroup {
 	private void reinit() {
 		// Cancel pending render task
 		if (mDrawEntire != null) {
-			mDrawEntire.cancel(true);
+			mDrawEntire.cancelAndWait();
 			mDrawEntire = null;
 		}
 
 		if (mDrawPatch != null) {
-			mDrawPatch.cancel(true);
+			mDrawPatch.cancelAndWait();
 			mDrawPatch = null;
 		}
 
@@ -194,7 +203,7 @@ public abstract class PageView extends ViewGroup {
 			mPatch.setImageBitmap(null);
 			mPatch.invalidate();
 		}
-
+        
 		mPatchViewSize = null;
 		mPatchArea = null;
 
@@ -206,6 +215,8 @@ public abstract class PageView extends ViewGroup {
 	}
 
 	public void releaseResources() {
+        releaseBitmaps();
+
 		reinit();
 
 		if (mBusyIndicator != null) {
@@ -215,8 +226,26 @@ public abstract class PageView extends ViewGroup {
 	}
 
 	public void releaseBitmaps() {
-		reinit();
+
+		if (mEntire != null) {
+			mEntire.setImageBitmap(null);
+			mEntire.invalidate();
+		}
+
+		if (mPatch != null) {
+			mPatch.setImageBitmap(null);
+			mPatch.invalidate();
+		}
+
+		if (mEntireBm != null) {
+			Log.i(TAG, "Recycle mEntire on releaseBitmaps");
+            mEntireBm.recycle();
+        }
 		mEntireBm = null;
+        if (mPatchBm != null) {
+			Log.i(TAG, "Recycle mPathBm on releaseBitmaps");
+            mPatchBm.recycle();
+        }
 		mPatchBm = null;
 	}
 
@@ -231,14 +260,23 @@ public abstract class PageView extends ViewGroup {
 			addView(mBusyIndicator);
 		}
 
-//		setBackgroundColor(BACKGROUND_COLOR);
-		setBackgroundColor(MuPDFActivity.backGroundPage);
+		setBackgroundColor(BACKGROUND_COLOR);
 	}
 
 	public void setPage(int page, PointF size) {
+        pdfSize = correctBugMuPdf(size);
+
+        if (mEntireBm == null) {
+            try {
+                mEntireBm = Bitmap.createBitmap(mParentSize.x, mParentSize.y, Config.ARGB_8888);
+            } catch (OutOfMemoryError e) {
+                e.printStackTrace();
+            }
+        }
+        
 		// Cancel pending render task
 		if (mDrawEntire != null) {
-			mDrawEntire.cancel(true);
+			mDrawEntire.cancelAndWait();
 			mDrawEntire = null;
 		}
 
@@ -278,44 +316,7 @@ public abstract class PageView extends ViewGroup {
 
 		mGetLinkInfo.execute();
 
-		// Render the page in the background
-		mDrawEntire = new AsyncTask<Void,Void,Void>() {
-			protected Void doInBackground(Void... v) {
-				drawPage(mEntireBm, mSize.x, mSize.y, 0, 0, mSize.x, mSize.y);
-				return null;
-			}
-
-			protected void onPreExecute() {
-//				setBackgroundColor(BACKGROUND_COLOR);
-				setBackgroundColor(MuPDFActivity.backGroundPage);
-				mEntire.setImageBitmap(null);
-				mEntire.invalidate();
-
-				if (mBusyIndicator == null) {
-					mBusyIndicator = new ProgressBar(mContext);
-					mBusyIndicator.setIndeterminate(true);
-					mBusyIndicator.setBackgroundResource(R.drawable.busy);
-					addView(mBusyIndicator);
-					mBusyIndicator.setVisibility(INVISIBLE);
-					mHandler.postDelayed(new Runnable() {
-						public void run() {
-							if (mBusyIndicator != null)
-								mBusyIndicator.setVisibility(VISIBLE);
-						}
-					}, PROGRESS_DIALOG_DELAY);
-				}
-			}
-
-			protected void onPostExecute(Void v) {
-				removeView(mBusyIndicator);
-				mBusyIndicator = null;
-				mEntire.setImageBitmap(mEntireBm);
-				mEntire.invalidate();
-				setBackgroundColor(Color.TRANSPARENT);
-			}
-		};
-
-		mDrawEntire.execute();
+		updateEntireCanvas(false);
 
 		if (mSearchView == null) {
 			mSearchView = new View(mContext) {
@@ -325,12 +326,10 @@ public abstract class PageView extends ViewGroup {
 					// Work out current total scale factor
 					// from source to view
 					final float scale = mSourceScale*(float)getWidth()/(float)mSize.x;
-//					final Paint paint = new Paint();
+					final Paint paint = new Paint();
 
 					if (!mIsBlank && mSearchBoxes != null) {
-						Paint paint = new Paint();
 						paint.setColor(HIGHLIGHT_COLOR);
-						paint.setStyle(Paint.Style.FILL);
 						for (RectF rect : mSearchBoxes)
 							canvas.drawRect(rect.left*scale, rect.top*scale,
 									        rect.right*scale, rect.bottom*scale,
@@ -338,15 +337,7 @@ public abstract class PageView extends ViewGroup {
 					}
 
 					if (!mIsBlank && mLinks != null && mHighlightLinks) {
-						Paint paint = new Paint();
 						paint.setColor(LINK_COLOR);
-						paint.setStyle(Paint.Style.STROKE);
-						paint.setStrokeWidth(1);
-						paint.setAntiAlias(true);
-						float radius = 4.0f;	
-						CornerPathEffect cornerPathEffect = new CornerPathEffect(radius);
-						paint.setPathEffect(cornerPathEffect);
-						
 						for (LinkInfo link : mLinks)
 							canvas.drawRect(link.rect.left*scale, link.rect.top*scale,
 									        link.rect.right*scale, link.rect.bottom*scale,
@@ -354,9 +345,7 @@ public abstract class PageView extends ViewGroup {
 					}
 
 					if (mSelectBox != null && mText != null) {
-						final Paint paint = new Paint();
 						paint.setColor(HIGHLIGHT_COLOR);
-						paint.setStyle(Paint.Style.FILL);
 						processSelectedText(new TextProcessor() {
 							RectF rect;
 
@@ -376,7 +365,6 @@ public abstract class PageView extends ViewGroup {
 					}
 
 					if (mItemSelectBox != null) {
-						Paint paint = new Paint();
 						paint.setStyle(Paint.Style.STROKE);
 						paint.setColor(BOX_COLOR);
 						canvas.drawRect(mItemSelectBox.left*scale, mItemSelectBox.top*scale, mItemSelectBox.right*scale, mItemSelectBox.bottom*scale, paint);
@@ -385,7 +373,7 @@ public abstract class PageView extends ViewGroup {
 					if (mDrawing != null) {
 						Path path = new Path();
 						PointF p;
-						Paint paint = new Paint();
+
 						paint.setAntiAlias(true);
 						paint.setDither(true);
 						paint.setStrokeJoin(Paint.Join.ROUND);
@@ -429,6 +417,58 @@ public abstract class PageView extends ViewGroup {
 		}
 		requestLayout();
 	}
+    
+    private void updateEntireCanvas(final boolean updateZoomed) {
+        // Render the page in the background
+        mDrawEntire = new CancellableAsyncTask<Void, Void>(getDrawPageTask(mEntireBm, mSize.x, mSize.y, 0, 0, mSize.x, mSize.y)) {
+
+            @Override
+            public void onPreExecute() {
+                setBackgroundColor(BACKGROUND_COLOR);
+                mEntire.setImageBitmap(null);
+                mEntire.invalidate();
+
+                if (mBusyIndicator == null) {
+                    mBusyIndicator = new ProgressBar(mContext);
+                    mBusyIndicator.setIndeterminate(true);
+                    mBusyIndicator.setBackgroundResource(R.drawable.busy);
+                    addView(mBusyIndicator);
+                    mBusyIndicator.setVisibility(INVISIBLE);
+                    mHandler.postDelayed(new Runnable() {
+                        public void run() {
+                            if (mBusyIndicator != null)
+                                mBusyIndicator.setVisibility(VISIBLE);
+                        }
+                    }, PROGRESS_DIALOG_DELAY);
+                }
+            }
+
+            @Override
+            public void onPostExecute(Void result) {
+                removeView(mBusyIndicator);
+                mBusyIndicator = null;
+                mEntire.setImageBitmap(mEntireBm);
+
+                // Draws the signatures on EntireCanvas after changing pages (post loading).
+                if (mEntireBm != null && !mEntireBm.isRecycled()) {
+                    Canvas entireCanvas = new Canvas(mEntireBm);
+                    drawBitmaps(entireCanvas, null, null);
+                }
+
+                if (updateZoomed && (mPatchBm != null) && !mPatchBm.isRecycled()) {
+                    Canvas zoomedCanvas = new Canvas(mPatchBm);
+                    drawBitmaps(zoomedCanvas, mPatchViewSize, mPatchArea);
+                }
+
+                mEntire.invalidate();
+                setBackgroundColor(Color.TRANSPARENT);
+
+            }
+        };
+
+        mDrawEntire.execute();
+        
+    }
 
 	public void setSearchBoxes(RectF searchBoxes[]) {
 		mSearchBoxes = searchBoxes;
@@ -535,26 +575,26 @@ public abstract class PageView extends ViewGroup {
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		int x, y;
-		switch(View.MeasureSpec.getMode(widthMeasureSpec)) {
-		case View.MeasureSpec.UNSPECIFIED:
+		switch(MeasureSpec.getMode(widthMeasureSpec)) {
+		case MeasureSpec.UNSPECIFIED:
 			x = mSize.x;
 			break;
 		default:
-			x = View.MeasureSpec.getSize(widthMeasureSpec);
+			x = MeasureSpec.getSize(widthMeasureSpec);
 		}
-		switch(View.MeasureSpec.getMode(heightMeasureSpec)) {
-		case View.MeasureSpec.UNSPECIFIED:
+		switch(MeasureSpec.getMode(heightMeasureSpec)) {
+		case MeasureSpec.UNSPECIFIED:
 			y = mSize.y;
 			break;
 		default:
-			y = View.MeasureSpec.getSize(heightMeasureSpec);
+			y = MeasureSpec.getSize(heightMeasureSpec);
 		}
 
 		setMeasuredDimension(x, y);
 
 		if (mBusyIndicator != null) {
 			int limit = Math.min(mParentSize.x, mParentSize.y)/2;
-			mBusyIndicator.measure(View.MeasureSpec.AT_MOST | limit, View.MeasureSpec.AT_MOST | limit);
+			mBusyIndicator.measure(MeasureSpec.AT_MOST | limit, MeasureSpec.AT_MOST | limit);
 		}
 	}
 
@@ -594,7 +634,7 @@ public abstract class PageView extends ViewGroup {
 			int bw = mBusyIndicator.getMeasuredWidth();
 			int bh = mBusyIndicator.getMeasuredHeight();
 
-			mBusyIndicator.layout((w-bw)/2, (h-bh)/2, (w+bw)/2, (h+bh)/2);
+			mBusyIndicator.layout((w - bw) / 2, (h - bh) / 2, (w + bw) / 2, (h + bh) / 2);
 		}
 	}
 
@@ -607,8 +647,8 @@ public abstract class PageView extends ViewGroup {
 				mPatch.invalidate();
 			}
 		} else {
-			Point patchViewSize = new Point(viewArea.width(), viewArea.height());
-			Rect patchArea = new Rect(0, 0, mParentSize.x, mParentSize.y);
+			final Point patchViewSize = new Point(viewArea.width(), viewArea.height());
+			final Rect patchArea = new Rect(0, 0, mParentSize.x, mParentSize.y);
 
 			// Intersect and test that there is an intersection
 			if (!patchArea.intersect(viewArea))
@@ -619,15 +659,16 @@ public abstract class PageView extends ViewGroup {
 
 			boolean area_unchanged = patchArea.equals(mPatchArea) && patchViewSize.equals(mPatchViewSize);
 
-			// If being asked for the same area as last time and not because of an update then nothing to do
-			if (area_unchanged && !update)
-				return;
-
-			boolean completeRedraw = !(area_unchanged && update);
+            // If being asked for the same area as last time and not because of an update then nothing to do
+//            if (area_unchanged && !update)
+//                return;
+//
+//            boolean completeRedraw = !(area_unchanged && update);
+			boolean completeRedraw = !area_unchanged || update;
 
 			// Stop the drawing of previous patch if still going
 			if (mDrawPatch != null) {
-				mDrawPatch.cancel(true);
+				mDrawPatch.cancelAndWait();
 				mDrawPatch = null;
 			}
 
@@ -639,71 +680,87 @@ public abstract class PageView extends ViewGroup {
 				mSearchView.bringToFront();
 			}
 
-			mDrawPatch = new AsyncTask<PatchInfo,Void,PatchInfo>() {
-				protected PatchInfo doInBackground(PatchInfo... v) {
-					if (v[0].completeRedraw) {
-						drawPage(mPatchBm, v[0].patchViewSize.x, v[0].patchViewSize.y,
-									v[0].patchArea.left, v[0].patchArea.top,
-									v[0].patchArea.width(), v[0].patchArea.height());
-					} else {
-						updatePage(mPatchBm, v[0].patchViewSize.x, v[0].patchViewSize.y,
-									v[0].patchArea.left, v[0].patchArea.top,
-									v[0].patchArea.width(), v[0].patchArea.height());
-					}
+			CancellableTaskDefinition<Void, Void> task;
 
-					return v[0];
-				}
+            if (mPatchBm != null) {
+				Log.i(TAG, "Recycle mPatchBm on updateHQ");
+				mPatchBm.recycle();
+            }
+            try {
+                int mPatchAreaHeight = patchArea.bottom - patchArea.top;
+                int mPatchAreaWidth = patchArea.right - patchArea.left;
+                mPatchBm = Bitmap.createBitmap(mPatchAreaWidth, mPatchAreaHeight, Config.ARGB_8888);
+                cancelDraw();
+            } catch (OutOfMemoryError e) {
+                Log.e(TAG, e.getMessage(), e);
+            }
 
-				protected void onPostExecute(PatchInfo v) {
-					mPatchViewSize = v.patchViewSize;
-					mPatchArea     = v.patchArea;
-					mPatch.setImageBitmap(mPatchBm);
-					mPatch.invalidate();
+			if (completeRedraw)
+				task = getDrawPageTask(mPatchBm, patchViewSize.x, patchViewSize.y,
+								patchArea.left, patchArea.top,
+								patchArea.width(), patchArea.height());
+			else
+				task = getUpdatePageTask(mPatchBm, patchViewSize.x, patchViewSize.y,
+						patchArea.left, patchArea.top,
+						patchArea.width(), patchArea.height());
+
+			mDrawPatch = new CancellableAsyncTask<Void,Void>(task) {
+
+				public void onPostExecute(Void result) {
+					mPatchViewSize = patchViewSize;
+					mPatchArea     = patchArea;
+
+                    if (mPatchBm != null && !mPatchBm.isRecycled()) {
+                        Canvas zoomedCanvas = new Canvas(mPatchBm);
+                        drawBitmaps(zoomedCanvas, mPatchViewSize, mPatchArea);
+                        mPatch.setImageBitmap(mPatchBm);
+                        mPatch.invalidate();
+                    }
+
 					//requestLayout();
 					// Calling requestLayout here doesn't lead to a later call to layout. No idea
 					// why, but apparently others have run into the problem.
 					mPatch.layout(mPatchArea.left, mPatchArea.top, mPatchArea.right, mPatchArea.bottom);
 				}
 			};
-
-			mDrawPatch.execute(new PatchInfo(patchViewSize, patchArea, completeRedraw));
+            
+			mDrawPatch.execute();
 		}
 	}
+    
+    public void update() {
+        // Cancel pending render task
+        if (mDrawEntire != null) {
+            mDrawEntire.cancelAndWait();
+            mDrawEntire = null;
+        }
 
-	public void update() {
-		// Cancel pending render task
-		if (mDrawEntire != null) {
-			mDrawEntire.cancel(true);
-			mDrawEntire = null;
-		}
+        if (mDrawPatch != null) {
+            mDrawPatch.cancelAndWait();
+            mDrawPatch = null;
+        }
 
-		if (mDrawPatch != null) {
-			mDrawPatch.cancel(true);
-			mDrawPatch = null;
-		}
+        mDrawEntire = new CancellableAsyncTask<Void, Void>(getUpdatePageTask(mEntireBm, mSize.x, mSize.y, 0, 0, mSize.x, mSize.y)) {
 
-		// Render the page in the background
-		mDrawEntire = new AsyncTask<Void,Void,Void>() {
-			protected Void doInBackground(Void... v) {
-				updatePage(mEntireBm, mSize.x, mSize.y, 0, 0, mSize.x, mSize.y);
-				return null;
-			}
+            public void onPostExecute(Void result) {
+				if (mEntireBm != null && !mEntireBm.isRecycled()) {
+					Canvas entireCanvas = new Canvas(mEntireBm);
+					drawBitmaps(entireCanvas, null, null);
+					mEntire.setImageBitmap(mEntireBm);
+					mEntire.invalidate();
+				}
+            }
+        };
 
-			protected void onPostExecute(Void v) {
-				mEntire.setImageBitmap(mEntireBm);
-				mEntire.invalidate();
-			}
-		};
+        mDrawEntire.execute();
 
-		mDrawEntire.execute();
-
-		updateHq(true);
-	}
+        updateHq(true);
+    }
 
 	public void removeHq() {
 			// Stop the drawing of the patch if still going
 			if (mDrawPatch != null) {
-				mDrawPatch.cancel(true);
+				mDrawPatch.cancelAndWait();
 				mDrawPatch = null;
 			}
 
@@ -724,4 +781,353 @@ public abstract class PageView extends ViewGroup {
 	public boolean isOpaque() {
 		return true;
 	}
+
+	public void setPdfBitmapList(List<PdfBitmap> pdfBitmaps) {
+		if (pdfBitmaps != null) {
+			for (PdfBitmap pdfBitmap : pdfBitmaps) {
+				addBitmapToAdapter(pdfBitmap);
+			}
+		}
+	}
+
+	private void addBitmapToAdapter(PdfBitmap pdfBitmap) {
+		if (pdfBitmap.getType() == PdfBitmap.Type.SIGNATURE) { //mAdapter null ???
+			mAdapter.setNumSignature(mAdapter.getNumSignature() + 1);
+		}
+		mAdapter.getPdfBitmapList().add(pdfBitmap);
+	}
+
+    public void addBitmap(PdfBitmap pdfBitmap) {
+        if (pdfBitmap != null) {
+			addBitmapToAdapter(pdfBitmap);
+            redrawEntireBitmaps(); // No repinta el zoomed si ya estoy zoomed.
+            updateHq(true);
+        }
+    }
+
+	public List<PdfBitmap> getBitmapList() {
+		if (mAdapter != null && mAdapter.getPdfBitmapList() != null) {
+			return new ArrayList<>(mAdapter.getPdfBitmapList());
+		} else {
+			return new ArrayList<>();
+		}
+	}
+
+    private void redrawEntireBitmaps() {
+        if (mEntireBm != null && !mEntireBm.isRecycled()) {
+            Canvas entireCanvas = new Canvas(mEntireBm);
+            drawBitmaps(entireCanvas, null, null);
+            mEntire.setImageBitmap(mEntireBm);
+            mEntire.invalidate();
+        }
+    }
+
+    private void redrawZoomedBitmaps() {
+        if (mPatchBm != null && !mPatchBm.isRecycled()) {
+            Canvas zoomedCanvas = new Canvas(mPatchBm);
+            drawBitmaps(zoomedCanvas, mPatchViewSize, mPatchArea);
+            mPatch.setImageBitmap(mPatchBm);
+            mPatch.invalidate();
+        }
+    }
+
+
+    public boolean removeBitmapOnPosition(Point point) {
+        boolean removed = false;
+        switch (removeIfExistSign(point)) {
+            case -1:
+                removed = false;
+                break;
+            case 0:
+                removed = true;
+                break;
+            case 1:
+                removed = true;
+                break;
+        }
+        //Forzamos pintado de pantalla
+        invalidate();
+
+        return removed;
+    }
+
+    public void onLongPress(MotionEvent e, float mScale) {
+        if (eventCallback != null) {
+            float x = e.getX();
+            float y = e.getY();
+
+            //Comprobamos si ha picado dentro o fuera del espacio del pdf
+            if (x < getLeft() || x > getRight()) {
+                eventCallback.error(DigitalizedEventCallback.ERROR_OUTSIDE_HORIZONTAL);
+            }
+
+            if (y < getTop() || y > getBottom()) {
+                eventCallback.error(DigitalizedEventCallback.ERROR_OUTSIDE_VERTICAL);
+            }
+
+            float[] coords = translateCoords(mScale, x, y);
+			if (coords != null) {
+				eventCallback.longPressOnPdfPosition(mPageNumber, coords[0], coords[1], coords[2], coords[3]);
+			}
+        }
+    }
+    
+    public void onSingleTap(MotionEvent e, float mScale) {
+        if (eventCallback != null) {
+            float x = e.getX();
+            float y = e.getY();
+
+            //Comprobamos si ha picado dentro o fuera del espacio del pdf
+            if (x < getLeft() || x > getRight()) {
+                eventCallback.error(DigitalizedEventCallback.ERROR_OUTSIDE_HORIZONTAL);
+            }
+
+            if (y < getTop() || y > getBottom()) {
+                eventCallback.error(DigitalizedEventCallback.ERROR_OUTSIDE_VERTICAL);
+            }
+
+            float[] coords = translateCoords(mScale, x, y);
+			if (coords != null) {
+				eventCallback.singleTapOnPdfPosition(mPageNumber, coords[0], coords[1], coords[2], coords[3]);
+			}
+        }
+    }
+
+    private float[] translateCoords(float mScale, float x, float y) {
+        float screenX, screenY, percentX, percentY;
+
+		if (pdfSize != null && mSize != null) {
+			//Factor de corrección por si se gira
+			float factorRotationX = ((float) mSize.x / (float) getWidth()) * mScale;
+			float factorRotationY = ((float) mSize.y / (float) getHeight()) * mScale;
+
+			//Posicion en la pantalla respecto a las coordenadas del pdf (el 0.0 es la esquina arriba izquierda del pdf). Usado para poder dibujar las firmas encima del PDF. En esta representación, el PDF tendría de alto valores similares al alto de la pantalla en la que se muestra.
+			screenX = ((x - getLeft()) / mScale) * factorRotationX;
+			screenY = ((y - getTop()) / mScale) * factorRotationY;
+
+			// Calculamos posicion en el pdf. No se usa en la visualización, pero es necesario para conocer la posición. En esta representación, el alto del pdf será de unos 900 píxeles, y no variará se muestre donde se muestre.
+			percentX = (x - getLeft()) / getWidth();
+			percentY = (y - getTop()) / getHeight(); //Se coge la posicion en porcentaje
+
+			float pdfX = percentX * pdfSize.x; //Se calcula X el punto en el pdf
+			float pdfY = (1 - percentY) * pdfSize.y;//Se calcula Y
+
+			// Proportions: screenX / mSize.x == pdfX / pdfSize.x !!!
+			return new float[]{screenX, screenY, pdfX, pdfY};
+		} else {
+			return null;
+		}
+    }
+    
+    private float[] pdfCoordsToScreen(float pdfX, float pdfY) {
+        float screenX = (pdfX * mSize.x) / pdfSize.x;
+        float screenY = ((pdfSize.y - pdfY) * mSize.y) / pdfSize.y;
+        return new float[]{screenX, screenY};
+    }
+
+    public boolean onDoubleTap(MotionEvent e, float mScale) {
+
+        if (flagPositions) {
+            flagPositions=false;
+
+            float x = e.getX();
+            float y = e.getY();
+
+            //Comprobamos si ha picado dentro o fuera del espacio del pdf
+            if (x <  getLeft() || x > getRight()) {
+                flagPositions = true;
+                if (eventCallback != null) {
+                    eventCallback.error(DigitalizedEventCallback.ERROR_OUTSIDE_HORIZONTAL);
+                }
+                return true;
+            }
+            if (y < getTop() || y > getBottom()) {
+                flagPositions = true;
+                if (eventCallback != null) {
+                    eventCallback.error(DigitalizedEventCallback.ERROR_OUTSIDE_VERTICAL);
+                }
+                return true;
+            }
+
+            float[] coords = translateCoords(mScale, x, y);
+			if (coords != null) {
+				float screenX = coords[0];
+				float screenY = coords[1];
+				float pdfX = coords[2];
+				float pdfY = coords[3];
+
+				if (eventCallback != null) {
+					flagPositions = true;
+					eventCallback.doubleTapOnPdfPosition(mPageNumber, screenX, screenY, pdfX, pdfY);
+					return true;
+				}
+
+				//Salvamos la posicion donde se ha elegido estampar la firma
+				Point point = new Point((int) screenX, (int) screenY);
+				boolean removed = removeBitmapOnPosition(point);
+
+				if (signBitmap != null && signBitmapSize != null && !removed) {
+					PdfBitmap newPdfBitmap = new PdfBitmap(signBitmap, SIGN_WIDTH, SIGN_HEIGHT, (int) screenX, (int) screenY, mPageNumber, PdfBitmap.Type.SIGNATURE);
+					mAdapter.getPdfBitmapList().add(newPdfBitmap);
+					mAdapter.setNumSignature(mAdapter.getNumSignature() + 1);
+				}
+			}
+			flagPositions = true;
+        }
+        return true;
+    }
+
+    /**
+     * Check if a Bitmap exists in the point coordinates, and remove it.
+     * @param screenPoint Point for the pdf to check
+     * @return
+     */
+    private int removeIfExistSign(Point screenPoint) {
+        PdfBitmap toRemove = null;
+        for (PdfBitmap pdfBitmap : mAdapter.getPdfBitmapList()) {
+            if (pdfBitmap.getPageNumber() == mPageNumber) {
+                float[] scaledSize = scaledSize(pdfBitmap.getWidth(), pdfBitmap.getHeight());
+                int originalW = (int) scaledSize[0];
+                int originalH = (int) scaledSize[1];
+                
+                float[] screenCoords = pdfCoordsToScreen(pdfBitmap.getPdfX(), pdfBitmap.getPdfY());
+                int screenX = (int)screenCoords[0];
+                int screenY = (int)screenCoords[1];
+                
+                Rect r = new Rect(screenX - (originalW / 2), screenY + (originalH / 2), screenX + (originalW / 2), screenY - (originalH / 2));
+                if (screenPoint.x > r.left && screenPoint.x < r.right && screenPoint.y < r.top && screenPoint.y > r.bottom) {
+                    toRemove = pdfBitmap;
+
+                    boolean indexOf = mAdapter.getPdfBitmapList().contains(toRemove);
+                    if (indexOf && toRemove.isRemovable()) {
+                        mAdapter.getPdfBitmapList().remove(toRemove);
+						mAdapter.setNumSignature(mAdapter.getNumSignature() - 1);
+
+                        // We need to remove the previous entireBm (with the bitmaps added), and create a new one empty (the bitmaps will be added on update)
+						Log.i(TAG, "Recycle mEntire on removeIfExistSign");
+                        mEntireBm.recycle();
+                        mEntireBm = Bitmap.createBitmap(mParentSize.x, mParentSize.y, Config.ARGB_8888);
+                        updateEntireCanvas(true);
+                        updateHq(true);
+
+                        // Bitmap removed
+                        return 0;
+                    }
+                }
+            }
+        }
+        // No bitmap removed
+        return -1;
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+    }
+
+    /**
+     * Por defecto la medida de pagina que devuelve MuPdf parece ser dos veces superior al correcto
+     * @param size
+     * @return
+     */
+    private PointF correctBugMuPdf(PointF size) {
+        return new PointF(size.x/2, size.y/2);
+    }
+
+    public int getPageNum() {
+        return mPageNumber;
+    }
+
+    public void setPageNum(int pageNum) {
+        this.mPageNumber = pageNum;
+    }
+
+    public DigitalizedEventCallback getEventCallback() {
+        return eventCallback;
+    }
+
+    public void setEventCallback(DigitalizedEventCallback eventCallback) {
+        this.eventCallback = eventCallback;
+    }
+
+    private void drawBitmaps(Canvas canvas, Point patchViewSize, Rect patchArea) {
+        // Sólo ejecutamos este código en caso de que tengamos un Bitmap de firma:
+        for (PdfBitmap pdfBitmap : mAdapter.getPdfBitmapList()) {
+
+            float[] scaledSize = scaledSize(pdfBitmap.getWidth(), pdfBitmap.getHeight());
+
+            float originalW = scaledSize[0];
+            float originalH = scaledSize[1];
+            float zoomRatio = patchViewSize != null ? (float) patchViewSize.y / (float) mSize.y : 1.0f;
+            float newWidth = originalW * zoomRatio;
+            float newHeight = originalH * zoomRatio;
+
+            if (pdfBitmap.getPageNumber() == getPageNum()) {
+
+                float[] screenCoords = pdfCoordsToScreen(pdfBitmap.getPdfX(), pdfBitmap.getPdfY());
+
+                float newGlobalPosX = (screenCoords[0] * zoomRatio);
+                float newGlobalPosY = (screenCoords[1] * zoomRatio);
+                float newZoomPosX = patchArea != null ? newGlobalPosX - patchArea.left : newGlobalPosX;
+                float newZoomPosY = patchArea != null ? newGlobalPosY - patchArea.top : newGlobalPosY;
+
+                float leftGlobalMargin = newGlobalPosX - newWidth / 2;
+                float rightGlobalMargin = newGlobalPosX + newWidth / 2;
+                float topGlobalMargin = newGlobalPosY - newHeight / 2;
+                float bottomGlobalMargin = newGlobalPosY + newHeight / 2;
+
+                Rect signZoomedRect = new Rect(
+                        (int) newZoomPosX - (int) newWidth / 2,
+                        (int) newZoomPosY - (int) newHeight / 2,
+                        (int) newZoomPosX + (int) newWidth / 2,
+                        (int) newZoomPosY + (int) newHeight / 2);
+
+                boolean outside;
+                if (patchArea == null) {
+                    outside = false;
+                } else {
+                    outside = (rightGlobalMargin <= patchArea.left ||
+                            leftGlobalMargin >= patchArea.right ||
+                            topGlobalMargin >= patchArea.bottom ||
+                            bottomGlobalMargin <= patchArea.top);
+                }
+
+                if (!outside) {
+                    Bitmap bitmap = pdfBitmap.getBitmapImage();
+					try {
+						if (!isBitmapRecycled(bitmap)) {
+							canvas.drawBitmap(bitmap, new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight()), signZoomedRect, mBitmapPaint);
+							canvas.save();
+						} else {
+							Log.i(TAG, "Avoided using recycled bitmap");
+						}
+					} catch (RuntimeException e) {
+						Log.e(TAG, e.getLocalizedMessage(), e);
+					}
+                }
+            }
+        }
+    }
+
+    private float[] scaledSize(int width, int height) {
+        float x = 0, y = 0;
+        if (pdfSize != null && mSize != null) {
+            x = (width * mSize.x) / pdfSize.x;
+            y = (height * mSize.y) / pdfSize.y;
+        }
+        return new float[]{x, y};
+    }
+
+    public void setParentSize(Point parentSize) {
+        this.mParentSize = parentSize;
+    }
+
+	public boolean isBitmapRecycled(Bitmap bitmap) {
+		if (android.os.Build.VERSION.SDK_INT < 17) {
+			return bitmap.isRecycled();
+		} else {
+			return bitmap.isRecycled() || (!bitmap.isPremultiplied() && bitmap.getConfig() == Config.ARGB_8888 && bitmap.hasAlpha());
+		}
+	}
+
 }

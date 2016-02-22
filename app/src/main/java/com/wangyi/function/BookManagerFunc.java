@@ -2,14 +2,8 @@ package com.wangyi.function;
 
 import java.io.File;
 import java.util.ArrayList;
-
-import com.wangyi.Interface.DBInterface;
 import com.wangyi.define.BookData;
 import com.wangyi.define.EventName;
-import com.wangyi.define.LessonData;
-import com.wangyi.define.Response;
-import com.wangyi.imp.database.DBBookmark;
-import com.wangyi.imp.database.DBLesson;
 import com.wangyi.utils.PreferencesReader;
 
 import android.app.Activity;

@@ -20,7 +20,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppBaseTheme" >
         <activity
             android:name="com.wangyi.UIview.activity.ItOneActivity"
             android:label="@string/app_name"
@@ -34,61 +34,12 @@
         <activity
             android:name="com.artifex.mupdfdemo.MuPDFActivity"
             android:label="@string/app_name"
-            android:theme="@style/ReaderFullScreen" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="application/vnd.ms-xpsdocument" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="application/pdf" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data android:mimeType="application/x-cbz" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="file" />
-                <data android:mimeType="*/*" />
-                <data android:pathPattern="/.*\\.xps" />
-                <data android:host="*" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="file" />
-                <data android:mimeType="*/*" />
-                <data android:pathPattern="/.*\\.pdf" />
-                <data android:host="*" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="file" />
-                <data android:mimeType="*/*" />
-                <data android:pathPattern="/.*\\.cbz" />
-                <data android:host="*" />
-            </intent-filter>
+            android:theme="@style/AppBaseTheme" >
+        </activity>
+        <activity
+            android:name="com.artifex.mupdfdemo.OutlineActivity"
+            android:label="@string/outline_title"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen" >
         </activity>
         <activity
             android:name="com.wangyi.UIview.activity.ScheduleActivity"

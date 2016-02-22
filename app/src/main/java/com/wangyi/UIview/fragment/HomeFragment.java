@@ -1,10 +1,7 @@
 package com.wangyi.UIview.fragment;
 
 import java.io.File;
-import java.util.ArrayList;
-
 import org.xutils.view.annotation.*;
-
 import com.artifex.mupdfdemo.MuPDFActivity;
 import com.wangyi.UIview.BaseFragment;
 import com.wangyi.UIview.activity.ScheduleActivity;
@@ -14,18 +11,13 @@ import com.wangyi.UIview.widget.SwipeListView;
 import com.wangyi.define.EventName;
 import com.wangyi.function.BookManagerFunc;
 import com.wangyi.reader.R;
-
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
@@ -101,7 +93,7 @@ public class HomeFragment extends BaseFragment {
 	@Event(value=R.id.item_listview,type=SwipeListView.OnItemClickListener.class)
 	private void onListItemClick(AdapterView<?> parent, View view, int position, long id){
 		File file = new File(BookManagerFunc.getInstance().getBookData(position).url);
-		Uri uri = Uri.fromFile(file);
+		Uri uri = Uri.parse(file.getAbsolutePath());
 		Intent intent = new Intent(HomeFragment.this.getActivity().getApplicationContext(),MuPDFActivity.class);
 		intent.setAction(Intent.ACTION_VIEW);
 		intent.setData(uri);

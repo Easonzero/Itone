@@ -56,24 +56,12 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_me_set.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\tab_unselected_hello.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\tab_unselected_hello.9.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\allsubject_select.jpg",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\allsubject_select.jpg"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bg_class.9.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\bg_class.9.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_content_remove.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_action_content_remove.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_menu_dropdown_panel_holo_dark.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\abc_menu_dropdown_panel_holo_dark.9.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bg_allsubject.jpg",
@@ -102,10 +90,6 @@
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\zhou7.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\zhou7.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_bookmark_before.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_action_bookmark_before.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_pressed_holo_light.9.png",
@@ -156,20 +140,12 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\download_ing_normal.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_collections_collection.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_action_collections_collection.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\back.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\back.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\download_deleted.PNG",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\download_deleted.PNG"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_device_access_screen_rotation.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_action_device_access_screen_rotation.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_pressed_holo_dark.9.png",
@@ -208,16 +184,8 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\mybook_normal.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bluetheme_scrubber_track_holo_dark.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\bluetheme_scrubber_track_holo_dark.9.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_menu_moreoverflow_mtrl_alpha.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-mdpi\\abc_ic_menu_moreoverflow_mtrl_alpha.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_menu_moreoverflow_note_normal.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_menu_moreoverflow_note_normal.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png",
@@ -228,16 +196,8 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\create_table_teacher.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_menu_moreoverflow_large_note_normal.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_menu_moreoverflow_large_note_normal.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\login_confirm.jpg",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\login_confirm.jpg"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bluetheme_scrubber_control_pressed_holo.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\bluetheme_scrubber_control_pressed_holo.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\zhou2.png",
@@ -260,10 +220,6 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\watch_lesson_lessonname.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\tab_selected_pressed_hello.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\tab_selected_pressed_hello.9.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\download_delete.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\download_delete.png"
     },
@@ -274,10 +230,6 @@
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\save.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\save.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_device_access_screen_locked_to_portrait.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_action_device_access_screen_locked_to_portrait.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
@@ -306,14 +258,6 @@
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\zhou4.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\zhou4.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_outline.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_action_outline.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_device_access_screen_locked_to_landscape.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_action_device_access_screen_locked_to_landscape.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
@@ -360,10 +304,6 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\save.PNG"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_menu_moreoverflow_note_focused.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_menu_moreoverflow_note_focused.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\zhou3.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\zhou3.png"
     },
@@ -378,10 +318,6 @@
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_focused_holo.9.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-mdpi\\abc_list_focused_holo.9.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\apptheme_list_pressed_holo_light.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\apptheme_list_pressed_holo_light.9.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\create_table_lessonname.png",
@@ -404,32 +340,8 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-mdpi\\abc_ic_ab_back_mtrl_am_alpha.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\tab_unselected_focused_hello.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\tab_unselected_focused_hello.9.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_donate.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_action_donate.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bluetheme_scrubber_control_normal_holo.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\bluetheme_scrubber_control_normal_holo.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bg_me_3kuang.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\bg_me_3kuang.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_menu_moreoverflow_large_note_focused.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_menu_moreoverflow_large_note_focused.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bluetheme_scrubber_primary_holo.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\bluetheme_scrubber_primary_holo.9.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bluetheme_scrubber_control_focused_holo.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\bluetheme_scrubber_control_focused_holo.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_go_search_api_mtrl_alpha.png",
@@ -452,10 +364,6 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\bg_me_kuang.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_content_copy.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_action_content_copy.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_todaylesson.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_todaylesson.png"
     },
@@ -466,10 +374,6 @@
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\home_unselect.jpg",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\home_unselect.jpg"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_clear_disabled.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\abc_ic_clear_disabled.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bg_lessonhead.png",
@@ -484,20 +388,12 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-mdpi\\abc_ic_voice_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bluetheme_scrubber_track_holo_light.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\bluetheme_scrubber_track_holo_light.9.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-mdpi\\abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bg_weeks_choose.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\bg_weeks_choose.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bluetheme_scrubber_secondary_holo.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\bluetheme_scrubber_secondary_holo.9.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_search.jpg",
@@ -516,20 +412,12 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\register_top.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_navigation_drawer.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_navigation_drawer.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\register_back.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\register_back.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\apptheme_list_longpressed_holo.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\apptheme_list_longpressed_holo.9.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_longpressed_holo.9.png",
@@ -540,20 +428,8 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\create_table_classroom.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\apptheme_list_selector_disabled_holo_light.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\apptheme_list_selector_disabled_holo_light.9.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\watch_lesson_teacher.PNG",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\watch_lesson_teacher.PNG"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_core_overflow.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_action_core_overflow.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_device_access_time.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_action_device_access_time.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
@@ -576,28 +452,8 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\watch_lesson_teacher.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\tab_unselected_pressed_hello.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\tab_unselected_pressed_hello.9.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\apptheme_list_focused_holo.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\apptheme_list_focused_holo.9.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\tab_selected_hello.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\tab_selected_hello.9.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_ab_back_holo_dark_am.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_ab_back_holo_dark_am.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\download_deleted.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\download_deleted.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_search.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_action_search.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\create_table_weeknum.png",
@@ -616,10 +472,6 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-mdpi\\abc_btn_check_to_on_mtrl_015.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_menu_moreoverflow_large_note_pressed.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_menu_moreoverflow_large_note_pressed.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\watch_lesson_edit.PNG",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\watch_lesson_edit.PNG"
     },
@@ -634,10 +486,6 @@
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-mdpi\\abc_list_selector_disabled_holo_light.9.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_clear_normal.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\abc_ic_clear_normal.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bg_weeks_choose_item.png",
@@ -658,10 +506,6 @@
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\create_table2.PNG",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\create_table2.PNG"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_allsubject_search.jpg",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_allsubject_search.jpg"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bottom_bg.png",
@@ -688,16 +532,8 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_me_ideaback.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\tab_selected_focused_hello.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\tab_selected_focused_hello.9.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\watch_lesson_edit.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\watch_lesson_edit.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\drawer_shadow.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\drawer_shadow.9.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\popupwindow.png",
@@ -706,10 +542,6 @@
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\class_lesson_tody.jpg",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\class_lesson_tody.jpg"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\apptheme_list_activated_holo.9.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\apptheme_list_activated_holo.9.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\home_select.jpg",
@@ -764,16 +596,8 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\login_table.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_action_bookmark_after.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\ic_action_bookmark_after.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\lesson_bottom_menu.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\lesson_bottom_menu.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bluetheme_scrubber_control_disabled_holo.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-mdpi\\bluetheme_scrubber_control_disabled_holo.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",

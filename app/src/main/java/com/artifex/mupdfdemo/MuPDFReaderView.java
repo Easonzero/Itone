@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
+import android.view.WindowManager;
 
 public class MuPDFReaderView extends ReaderView {
 	enum Mode {Viewing, Selecting, Drawing}
@@ -16,6 +18,8 @@ public class MuPDFReaderView extends ReaderView {
 	private Mode mMode = Mode.Viewing;
 	private boolean tapDisabled = false;
 	private int tapPageMargin;
+    
+    private final boolean TAP_PAGING_ENABLED = false;
 
 	protected void onTapMainDocArea() {}
 	protected void onDocMotion() {}
@@ -30,9 +34,8 @@ public class MuPDFReaderView extends ReaderView {
 		mMode = m;
 	}
 
-	public MuPDFReaderView(Activity act) {
-		super(act);
-		mContext = act;
+	private void setup()
+	{
 		// Get the screen size etc to customise tap margins.
 		// We calculate the size of 1 inch of the screen for tapping.
 		// On some devices the dpi values returned are wrong, so we
@@ -41,7 +44,8 @@ public class MuPDFReaderView extends ReaderView {
 		// dimension I've seen is 480 pixels or so). Then we check
 		// to ensure we are never more than 1/5 of the screen width.
 		DisplayMetrics dm = new DisplayMetrics();
-		act.getWindowManager().getDefaultDisplay().getMetrics(dm);
+		WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+		wm.getDefaultDisplay().getMetrics(dm);
 		tapPageMargin = (int)dm.xdpi;
 		if (tapPageMargin < 100)
 			tapPageMargin = 100;
@@ -49,7 +53,20 @@ public class MuPDFReaderView extends ReaderView {
 			tapPageMargin = dm.widthPixels/5;
 	}
 
-	public boolean onSingleTapConfirmed(MotionEvent e) {
+	public MuPDFReaderView(Context context) {
+		super(context);
+		mContext = context;
+		setup();
+	}
+
+	public MuPDFReaderView(Context context, AttributeSet attrs)
+	{
+		super(context, attrs);
+		mContext = context;
+		setup();
+	}
+
+	public boolean onSingleTapUp(MotionEvent e) {
 		LinkInfo link = null;
 
 		if (mMode == Mode.Viewing && !tapDisabled) {
@@ -63,7 +80,7 @@ public class MuPDFReaderView extends ReaderView {
 						@Override
 						public void visitInternal(LinkInfoInternal li) {
 							// Clicked on an internal (GoTo) link
-							setDisplayedViewIndex(((MuPDFActivity) mContext).getDisplayPage(li.pageNumber));
+							setDisplayedViewIndex(li.pageNumber);
 						}
 
 						@Override
@@ -78,20 +95,20 @@ public class MuPDFReaderView extends ReaderView {
 							// Clicked on a remote (GoToR) link
 						}
 					});
-				} else if (e.getX() < tapPageMargin) {
+				} else if (TAP_PAGING_ENABLED && e.getX() < tapPageMargin) {
 					super.smartMoveBackwards();
-				} else if (e.getX() > super.getWidth() - tapPageMargin) {
+				} else if (TAP_PAGING_ENABLED && e.getX() > super.getWidth() - tapPageMargin) {
 					super.smartMoveForwards();
-				} else if (e.getY() < tapPageMargin) {
+				} else if (TAP_PAGING_ENABLED && e.getY() < tapPageMargin) {
 					super.smartMoveBackwards();
-				} else if (e.getY() > super.getHeight() - tapPageMargin) {
+				} else if (TAP_PAGING_ENABLED && e.getY() > super.getHeight() - tapPageMargin) {
 					super.smartMoveForwards();
 				} else {
 					onTapMainDocArea();
 				}
 			}
 		}
-		return super.onSingleTapConfirmed(e);
+		return super.onSingleTapUp(e);
 	}
 
 	@Override
@@ -212,7 +229,7 @@ public class MuPDFReaderView extends ReaderView {
 
 		((MuPDFView) v).setChangeReporter(new Runnable() {
 			public void run() {
-				applyToChildren(new ReaderView.ViewMapper() {
+				applyToChildren(new ViewMapper() {
 					@Override
 					void applyToView(View view) {
 						((MuPDFView) view).update();

@@ -2,8 +2,9 @@ package com.artifex.mupdfdemo;
 
 import java.util.ArrayList;
 
+import com.artifex.mupdfdemo.MuPDFCore.Cookie;
 import com.wangyi.reader.R;
-
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.Context;
@@ -13,6 +14,7 @@ import android.graphics.Point;
 import android.graphics.PointF;
 import android.graphics.RectF;
 import android.net.Uri;
+import android.os.Build;
 import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.WindowManager;
@@ -111,8 +113,8 @@ public class MuPDFPageView extends PageView implements MuPDFView {
 	private AsyncTask<Void,Void,Boolean> mSign;
 	private Runnable changeReporter;
 
-	public MuPDFPageView(Context c, FilePicker.FilePickerSupport filePickerSupport, MuPDFCore core, Point parentSize, Bitmap sharedHqBm) {
-		super(c, parentSize, sharedHqBm);
+	public MuPDFPageView(Context c, FilePicker.FilePickerSupport filePickerSupport, MuPDFCore core, Point parentSize, MuPDFPageAdapter adapter) {
+		super(c, parentSize, adapter);
 		mFilePickerSupport = filePickerSupport;
 		mCore = core;
 		mTextEntryBuilder = new AlertDialog.Builder(c);
@@ -400,6 +402,7 @@ public class MuPDFPageView extends PageView implements MuPDFView {
 		return Hit.Nothing;
 	}
 
+	@TargetApi(11)
 	public boolean copySelection() {
 		final StringBuilder text = new StringBuilder();
 
@@ -426,8 +429,8 @@ public class MuPDFPageView extends PageView implements MuPDFView {
 		if (text.length() == 0)
 			return false;
 
-		int currentApiVersion = android.os.Build.VERSION.SDK_INT;
-		if (currentApiVersion >= android.os.Build.VERSION_CODES.HONEYCOMB) {
+		int currentApiVersion = Build.VERSION.SDK_INT;
+		if (currentApiVersion >= Build.VERSION_CODES.HONEYCOMB) {
 			android.content.ClipboardManager cm = (android.content.ClipboardManager)mContext.getSystemService(Context.CLIPBOARD_SERVICE);
 
 			cm.setPrimaryClip(ClipData.newPlainText("MuPDF", text));
@@ -550,16 +553,41 @@ public class MuPDFPageView extends PageView implements MuPDFView {
 		return true;
 	}
 
-	@Override
-	protected void drawPage(Bitmap bm, int sizeX, int sizeY,
-			int patchX, int patchY, int patchWidth, int patchHeight) {
-		mCore.drawPage(bm, mPageNumber, sizeX, sizeY, patchX, patchY, patchWidth, patchHeight);
-	}
 
 	@Override
-	protected void updatePage(Bitmap bm, int sizeX, int sizeY,
-			int patchX, int patchY, int patchWidth, int patchHeight) {
-		mCore.updatePage(bm, mPageNumber, sizeX, sizeY, patchX, patchY, patchWidth, patchHeight);
+	protected CancellableTaskDefinition<Void, Void> getDrawPageTask(final Bitmap bm, final int sizeX, final int sizeY,
+			final int patchX, final int patchY, final int patchWidth, final int patchHeight) {
+		return new MuPDFCancellableTaskDefinition<Void, Void>(mCore) {
+			@Override
+			public Void doInBackground(Cookie cookie, Void ... params) {
+				// Workaround bug in Android Honeycomb 3.x, where the bitmap generation count
+				// is not incremented when drawing.
+				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB &&
+						Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+					bm.eraseColor(0);
+				mCore.drawPage(bm, mPageNumber, sizeX, sizeY, patchX, patchY, patchWidth, patchHeight, cookie);
+				return null;
+			}
+		};
+
+	}
+
+	protected CancellableTaskDefinition<Void, Void> getUpdatePageTask(final Bitmap bm, final int sizeX, final int sizeY,
+			final int patchX, final int patchY, final int patchWidth, final int patchHeight)
+	{
+		return new MuPDFCancellableTaskDefinition<Void, Void>(mCore) {
+
+			@Override
+			public Void doInBackground(Cookie cookie, Void ... params) {
+				// Workaround bug in Android Honeycomb 3.x, where the bitmap generation count
+				// is not incremented when drawing.
+				if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB &&
+						Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+					bm.eraseColor(0);
+				mCore.updatePage(bm, mPageNumber, sizeX, sizeY, patchX, patchY, patchWidth, patchHeight, cookie);
+				return null;
+			}
+		};
 	}
 
 	@Override

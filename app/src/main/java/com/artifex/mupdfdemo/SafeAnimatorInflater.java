@@ -1,12 +1,11 @@
 package com.artifex.mupdfdemo;
 
-import com.wangyi.reader.R;
-
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.app.Activity;
 import android.view.View;
+import com.wangyi.reader.R;
 
 public class SafeAnimatorInflater
 {
