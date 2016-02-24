@@ -34,9 +34,9 @@
     <dimen name="card_buttom_pading">1dp</dimen>
     <dimen name="layout_maxwidth">650dp</dimen>
     
-    <dimen name="actionbar_height">48dp</dimen>
+    <dimen name="toobal_width">48dp</dimen>
     
-    <!-- zReader -->
+    <!-- mupdf -->
 	<dimen name="card_padding">4dp</dimen>
 	<dimen name="card_text_padding">4dp</dimen>
 	<dimen name="card_text_padding_buttom">2dp</dimen>
@@ -47,4 +47,7 @@
 	<integer name="showdialog">0</integer>
 	<dimen name="drawer_width">260dp</dimen>
 	<dimen name="bottombar_height">48dp</dimen>
+
+    <!-- widget -->
+    <dimen name="tab_max_width">70dp</dimen>
 </resources>

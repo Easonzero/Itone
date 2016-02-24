@@ -4,12 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.xutils.x;
-
-import com.wangyi.UIview.activity.ScheduleActivity;
-import com.wangyi.UIview.widget.ScrollingTextView;
 import com.wangyi.define.LessonData;
-import com.wangyi.imp.database.DBLesson;
 import com.wangyi.reader.R;
 
 import android.content.Context;
@@ -19,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class LessonGridAdapter extends BaseAdapter {

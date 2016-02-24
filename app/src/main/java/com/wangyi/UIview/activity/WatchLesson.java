@@ -31,37 +31,39 @@ public class WatchLesson extends BaseActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 
-		ScheduleFunc.getInstance().newlesson = ScheduleFunc.getInstance().find(EventName.ScheduleFunc.FINDBYCLASS).getDataList().get(0);
+        String classnum = ScheduleFunc.getInstance().lesson.getFromClass();
+        String weekDay = ScheduleFunc.getInstance().lesson.getWeekDay();
+        String weeknum = ScheduleFunc.getInstance().currentWeek+"";
+		
+		ScheduleFunc.getInstance().lesson = ScheduleFunc.getInstance().find(weeknum,weekDay,classnum);
 		initData();
 	}
-
+	
 	@Event(R.id.Cancel)
 	private void onCancelClick(View view){
 		WatchLesson.this.finish();
 	}
-
+	
 	@Event(R.id.edit)
 	private void onEditClick(View view){
 		WatchLesson.this.finish();
 		Intent intent = new Intent(WatchLesson.this,ChangeLesson.class);
-		ScheduleFunc.getInstance().newlesson = ScheduleFunc.getInstance().newlesson;
-		ScheduleFunc.getInstance().oldlesson = ScheduleFunc.getInstance().newlesson;
 		startActivity(intent);
 	}
-
+	
 	@Event(R.id.delete)
 	private void onDeleteClick(View view){
-		ScheduleFunc.getInstance().delete(EventName.ScheduleFunc.DELELESSON);
+		ScheduleFunc.getInstance().delete();
 		WatchLesson.this.finish();
 	}
-
+	
 	private void initData(){
-		title.setText(ScheduleFunc.getInstance().newlesson.lessonName);
-		l_lessonName.setText(ScheduleFunc.getInstance().newlesson.lessonName);
-		l_classroom.setText(ScheduleFunc.getInstance().newlesson.classRoom);
-		l_teacher.setText(ScheduleFunc.getInstance().newlesson.teacher);
-		l_classnum.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().newlesson.weekDay))
-				+ "  " + ScheduleFunc.getInstance().newlesson.fromClass + " - " + ScheduleFunc.getInstance().newlesson.toClass + "节");
-		l_weeknum.setText(ScheduleFunc.getInstance().newlesson.weeknumDelay);
+		title.setText(ScheduleFunc.getInstance().lesson.getLessonName());
+		l_lessonName.setText(ScheduleFunc.getInstance().lesson.getLessonName());
+		l_classroom.setText(ScheduleFunc.getInstance().lesson.getClassRoom());
+		l_teacher.setText(ScheduleFunc.getInstance().lesson.getTeacher());
+		l_classnum.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().lesson.getWeekDay()))
+				+ "  " + ScheduleFunc.getInstance().lesson.getFromClass() + " - " + ScheduleFunc.getInstance().lesson.getToClass() + "节");
+		l_weeknum.setText(ScheduleFunc.getInstance().lesson.getWeeknumDelay());
 	}
 }

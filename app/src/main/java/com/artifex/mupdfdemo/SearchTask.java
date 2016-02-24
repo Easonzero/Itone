@@ -1,12 +1,15 @@
 package com.artifex.mupdfdemo;
 
+import java.util.ArrayList;
+
+import com.wangyi.reader.R;
+
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.RectF;
 import android.os.Handler;
-import com.wangyi.reader.R;
 
 class ProgressDialogX extends ProgressDialog {
 	public ProgressDialogX(Context context) {
@@ -33,6 +36,7 @@ public abstract class SearchTask {
 	private final Handler mHandler;
 	private final AlertDialog.Builder mAlertBuilder;
 	private AsyncTask<Void,Integer,SearchTaskResult> mSearchTask;
+	private AsyncTask<Void, Void, ArrayList<SearchTaskResult>> mAllSearchTask;
 
 	public SearchTask(Context context, MuPDFCore core) {
 		mContext = context;
@@ -42,12 +46,43 @@ public abstract class SearchTask {
 	}
 
 	protected abstract void onTextFound(SearchTaskResult result);
+	protected abstract void onTextFounds(ArrayList<SearchTaskResult> result);
 
 	public void stop() {
 		if (mSearchTask != null) {
 			mSearchTask.cancel(true);
 			mSearchTask = null;
 		}
+		if (mAllSearchTask != null) {
+			mAllSearchTask.cancel(true);
+			mAllSearchTask = null;
+		}
+	}
+	
+	public void searchAll(final String text){
+		if (mCore == null)
+			return;
+		stop();
+		mAllSearchTask = new AsyncTask<Void, Void, ArrayList<SearchTaskResult>>() {
+
+			@Override
+			protected ArrayList<SearchTaskResult> doInBackground(Void... params) {
+				ArrayList<SearchTaskResult> results = new ArrayList<SearchTaskResult>();
+				for(int index=0; index<mCore.countSinglePages(); index++){
+					RectF searchHits[] = mCore.searchPage(index, text);
+					if (searchHits != null && searchHits.length > 0)
+						results.add(new SearchTaskResult(text, index, searchHits));
+				}
+				return results;
+			}
+			
+			@Override
+			protected void onPostExecute(ArrayList<SearchTaskResult> result) {
+				onTextFounds(result);
+			}
+			
+		};
+		mAllSearchTask.execute();
 	}
 
 	public void go(final String text, int direction, int displayPage, int searchPage) {
@@ -66,14 +101,14 @@ public abstract class SearchTask {
 				stop();
 			}
 		});
-		progressDialog.setMax(mCore.countPages());
+		progressDialog.setMax(mCore.countDisplayPage());
 
 		mSearchTask = new AsyncTask<Void,Integer,SearchTaskResult>() {
 			@Override
 			protected SearchTaskResult doInBackground(Void... params) {
 				int index = startIndex;
 
-				while (0 <= index && index < mCore.countPages() && !isCancelled()) {
+				while (0 <= index && index < mCore.countDisplayPage() && !isCancelled()) {
 					publishProgress(index);
 					RectF searchHits[] = mCore.searchPage(index, text);
 

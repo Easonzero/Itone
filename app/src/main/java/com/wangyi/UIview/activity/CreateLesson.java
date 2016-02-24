@@ -5,7 +5,6 @@ import org.xutils.view.annotation.*;
 import com.wangyi.UIview.BaseActivity;
 import com.wangyi.UIview.widget.PickWeeksDialog;
 import com.wangyi.UIview.widget.PickclassesDialog;
-import com.wangyi.define.EventName;
 import com.wangyi.function.ScheduleFunc;
 import com.wangyi.reader.R;
 import android.content.DialogInterface;
@@ -34,6 +33,7 @@ public class CreateLesson extends BaseActivity {
 	TextView _classFromTo;
 	@ViewInject(R.id.week_from_to)
 	TextView _weekFromTo;
+    String[] weeks = new String[25];
 	String[] term = new String[25];
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,30 +42,31 @@ public class CreateLesson extends BaseActivity {
 
 		initData();
 
-		ScheduleFunc.getInstance().newlesson.weeknumDelay = _weekFromTo.getText().toString();
+		ScheduleFunc.getInstance().lesson.setWeeknumDelay(_weekFromTo.getText().toString());
 	}
 
 	private void initData(){
 		this.setTitle("添加课程");
-		_classFromTo.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().newlesson.weekDay))
-				+" " + ScheduleFunc.getInstance().newlesson.fromClass + "节");
+		_classFromTo.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().lesson.getWeekDay()))
+				+" " + ScheduleFunc.getInstance().lesson.getFromClass() + "节");
 		for(int i = 0;i < 25;i++){
-			ScheduleFunc.getInstance().newlesson.weeks[i] = "false";
+			weeks[i] = "false";
 		}
 	}
 
 	@Event(R.id.ClassFromTo)
 	private void onClassClick(View view){
-		final PickclassesDialog dialog = new PickclassesDialog(CreateLesson.this,ScheduleFunc.getInstance().newlesson.weekDay,ScheduleFunc.getInstance().newlesson.fromClass);
+		final PickclassesDialog dialog = new PickclassesDialog(CreateLesson.this,ScheduleFunc.getInstance().lesson.getWeekDay(),ScheduleFunc.getInstance().lesson.getFromClass());
 		dialog.setButton("确定",new DialogInterface.OnClickListener() {
 
 			@Override
 			public void onClick(DialogInterface arg0, int arg1) {
 				// TODO Auto-generated method stub
-				ScheduleFunc.getInstance().newlesson.weekDay = (dialog.date + 1) + "";
-				ScheduleFunc.getInstance().newlesson.fromClass = (dialog.fromClass + 1) + "";
-				ScheduleFunc.getInstance().newlesson.toClass = (dialog.toClass + 1) + "";
-				_classFromTo.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().newlesson.weekDay))+" "+ScheduleFunc.getInstance().newlesson.fromClass+"-"+ScheduleFunc.getInstance().newlesson.toClass+"节");
+				ScheduleFunc.getInstance().lesson.setWeekDay((dialog.date + 1) + "");
+				ScheduleFunc.getInstance().lesson.setFromClass((dialog.fromClass + 1) + "");
+				ScheduleFunc.getInstance().lesson.setToClass((dialog.toClass + 1) + "");
+				_classFromTo.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().lesson.getWeekDay()))
+                        +" "+ScheduleFunc.getInstance().lesson.getFromClass()+"-"+ScheduleFunc.getInstance().lesson.getToClass()+"节");
 			}
 		});
 
@@ -82,7 +83,7 @@ public class CreateLesson extends BaseActivity {
 
 	@Event(R.id.WeekFromTo)
 	private void onWeekClick(View view){
-		equalString(term,ScheduleFunc.getInstance().newlesson.weeks);
+		equalString(term,weeks);
 		final PickWeeksDialog dialog = new PickWeeksDialog(CreateLesson.this);
 		final View mView = dialog.view;
 		final Button dan = (Button) mView.findViewById(R.id.dan);
@@ -220,12 +221,12 @@ public class CreateLesson extends BaseActivity {
 			@Override
 			public void onClick(DialogInterface arg0, int arg1) {
 				// TODO Auto-generated method stub
-				equalString(ScheduleFunc.getInstance().newlesson.weeks,term);
+				equalString(weeks,term);
 				int num = 0,j = 0;
 				String string = "";
 				if(danshuang() != 2||isAll()){
 					for(int i = 0;i < 25;i++){
-						if(ScheduleFunc.getInstance().newlesson.weeks[i].equals("true")){
+						if(weeks[i].equals("true")){
 							num++;
 							j = i;
 							if(num == 1){
@@ -243,14 +244,14 @@ public class CreateLesson extends BaseActivity {
 				}
 				else if(!isAll()){
 					for(int i = 0;i < 25;i++){
-						if(ScheduleFunc.getInstance().newlesson.weeks[i].equals("true")){
+						if(weeks[i].equals("true")){
 							string = string + (i+1) + " ";
 						}
 					}
 					string = string + "周";
 				}
 				_weekFromTo.setText(string);
-				ScheduleFunc.getInstance().newlesson.weeknumDelay = string;
+				ScheduleFunc.getInstance().lesson.setWeeknumDelay(string);
 			}
 		});
 
@@ -268,10 +269,15 @@ public class CreateLesson extends BaseActivity {
 	@Event(R.id.confirm)
 	private void onConfirmClick(View view){
 		if(lessonName.getText().toString().equals("")) return;
-		ScheduleFunc.getInstance().newlesson.classRoom = location.getText().toString();
-		ScheduleFunc.getInstance().newlesson.teacher = teacher.getText().toString();
-		ScheduleFunc.getInstance().newlesson.lessonName = lessonName.getText().toString();
-		ScheduleFunc.getInstance().add(EventName.ScheduleFunc.ADDLESSON);
+		ScheduleFunc.getInstance().lesson.setClassRoom(location.getText().toString());
+		ScheduleFunc.getInstance().lesson.setTeacher(teacher.getText().toString());
+		ScheduleFunc.getInstance().lesson.setLessonName(lessonName.getText().toString());
+        for(int weeknum=1;weeknum<=weeks.length;weeknum++){
+            if(weeks[weeknum-1].equals("true")){
+                ScheduleFunc.getInstance().lesson.setWeek(weeknum+"");
+                ScheduleFunc.getInstance().add();
+            }
+        }
 		CreateLesson.this.finish();
 	}
 

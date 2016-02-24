@@ -1,5 +1,7 @@
 package com.wangyi.UIview.fragment;
 
+import com.wangyi.define.BookData;
+import org.xutils.ex.DbException;
 import org.xutils.x;
 import org.xutils.view.annotation.*;
 import android.content.Context;
@@ -73,7 +75,7 @@ public class AllSubjectFragment extends BaseFragment {
 				if(s.toString().equals("")&&start - before != 0){
 					keywordsFlow.showKeywordsFlow(keywords);
 					SensorFunc.getInstance().registerListener();
-					HttpsFunc.getInstance().searchBookByName(s.toString());
+					HttpsFunc.getInstance().searchBookByName(s.toString(),UserManagerFunc.getInstance().getUserInfo().university);
 				}
 				else{
 					keywordsFlow.hideKeywordsFlow();
@@ -112,6 +114,15 @@ public class AllSubjectFragment extends BaseFragment {
 
 		});
 
+		keywordsFlow.setOnItemClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				UserInfo user = UserManagerFunc.getInstance().getUserInfo();
+				if(user != null)
+					HttpsFunc.getInstance().searchBooksBySubject(((TextView)view).getText().toString(),user.university);
+			}
+		});
+
 		adapter = new DLBookListAdapter(this.getActivity().getBaseContext());
 		bookList.setAdapter(adapter);
 	}
@@ -133,9 +144,13 @@ public class AllSubjectFragment extends BaseFragment {
 	}
 
 	@Event(value=R.id.booklist,type=ListView.OnItemClickListener.class)
-	private void onListItemClick(AdapterView<?> adapter, View view, int pos,
-								 long arg3){
-
+	private void onListItemClick(AdapterView<?> adapter, View view, int pos,long arg3){
+		try {
+			BookData book = BookManagerFunc.getInstance().getBookData(pos);
+			HttpsFunc.getInstance().download(book.url,book.bookName);
+		} catch (DbException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Event(R.id.keywordsflow)

@@ -11,7 +11,7 @@
         android:background="#e2fbdc" />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/select_state"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="35dp"
         android:layout_height="35dp"
@@ -43,12 +43,12 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/download_state"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:layout_marginTop="7dp"
         android:layout_marginRight="10dp"
         android:focusable="false"
-        android:background="@drawable/download_ing" />
+        android:background="@drawable/download_stop" />
 
 </LinearLayout>

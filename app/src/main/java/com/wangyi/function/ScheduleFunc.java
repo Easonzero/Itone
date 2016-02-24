@@ -3,44 +3,41 @@ package com.wangyi.function;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.webkit.WebView.FindListener;
-
-import com.wangyi.Interface.DBInterface;
-import com.wangyi.define.EventName;
 import com.wangyi.define.LessonData;
-import com.wangyi.define.Response;
-import com.wangyi.imp.database.DBLesson;
+import com.wangyi.utils.PreferencesReader;
+import org.xutils.DbManager;
+import org.xutils.ex.DbException;
+import org.xutils.x;
 
 public class ScheduleFunc{
 	private static final ScheduleFunc INSTANCE = new ScheduleFunc();
 	private static final String[] weekdays = new String[]{"周一","周二","周三","周四","周五","周六","周日"};
 	private static final String[] weeksNum = new String[]{"第1周","第2周","第3周","第4周","第5周","第6周","第7周","第8周","第9周","第10周","第11周","第12周",
 			"第13周","第14周","第15周","第16周","第17周","第18周","第19周","第20周","第21周","第22周","第23周","第24周","第25周",};
-	private DBInterface<LessonData> lessonDB;
 	public int initWeek;
-	public int initDate;//表示一年中第initdata周为校历第initweek周
+	public int initDate;//表示一年中第initdate周为校历第initweek周
 	public int _today;//表示今天星期几
 	public int _weekOfToday;//表示今天的周数
 	public int currentWeek;//当前访问周数
-	public LessonData oldlesson;
-	public LessonData newlesson;
-	private Context context;
+	public LessonData lesson;
+	private DbManager db;
 
 	private void ScheduleFunc(){}
 
 	public void init(Context context){
-		oldlesson = new LessonData();
-		newlesson = new LessonData();
-		this.context = context;
-		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);//prefs待重构
-		initWeek = prefs.getInt("initWeek", 1);
-		initDate = prefs.getInt("initDate", 5);
+		DbManager.DaoConfig daoConfig = new DbManager.DaoConfig()
+				.setDbName("schedule")
+				.setDbVersion(1);
+		db = x.getDb(daoConfig);
+		int[] data = PreferencesReader.getScheduleData((Activity) context);
+		initWeek = data[0];
+		initDate = data[1];
 		_weekOfToday = initWeek + (getWeekNumber() - initDate);
 		_today = getWeekOfDate();
 		currentWeek = _weekOfToday;
@@ -58,45 +55,58 @@ public class ScheduleFunc{
 		return INSTANCE;
 	}
 
-	public Response<LessonData> find(String event){
-		Response<LessonData> response = new Response();
-		ArrayList<LessonData> dataList = new ArrayList();
-		dataList.add(newlesson);
-		response.init(event, null, currentWeek, dataList);
-		lessonDB = new DBLesson(context).open();
-		response = lessonDB.find(response);
-		lessonDB.close();
-		return response;
+	public List<LessonData> find(String week) {
+		List<LessonData> dataList = null;
+		try {
+			dataList = db.selector(LessonData.class).where("week", "=", week).findAll();
+		} catch (DbException e) {
+			e.printStackTrace();
+		}
+		return dataList;
 	}
 
-	public void add(String event){
-		Response<LessonData> response = new Response();
-		ArrayList<LessonData> dataList = new ArrayList();
-		dataList.add(newlesson);
-		response.init(event, null, null, dataList);
-		lessonDB = new DBLesson(context).open();
-		lessonDB.add(response);
-		lessonDB.close();
+	public List<LessonData> find(String week,String weekDay) {
+		List<LessonData> dataList = null;
+		try {
+			dataList = db.selector(LessonData.class).where("week", "=", week).and("weekDay","=",weekDay).findAll();
+		} catch (DbException e) {
+			e.printStackTrace();
+		}
+		return dataList;
 	}
 
-	public void delete(String event){
-		Response<LessonData> response = new Response();
-		ArrayList<LessonData> dataList = new ArrayList();
-		dataList.add(newlesson);
-		response.init(event, null, null, dataList);
-		lessonDB = new DBLesson(context).open();
-		lessonDB.delete(response);
-		lessonDB.close();
+	public LessonData find(String week,String weekDay,String fromClass) {
+		LessonData dataList = null;
+		try {
+			dataList = db.selector(LessonData.class).where("week", "=", week).and("weekDay","=",weekDay).and("fromClass","=",fromClass).findFirst();
+		} catch (DbException e) {
+			e.printStackTrace();
+		}
+		return dataList;
 	}
 
-	public void change(String event){
-		Response<LessonData> response = new Response();
-		ArrayList<LessonData> dataList = new ArrayList();
-		dataList.add(newlesson);
-		response.init(event, null, oldlesson, dataList);
-		lessonDB = new DBLesson(context).open();
-		lessonDB.change(response);
-		lessonDB.close();
+	public void add() {
+		try {
+			db.save(lesson);
+		} catch (DbException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void delete() {
+		try {
+			db.delete(lesson);
+		} catch (DbException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void update() {
+		try {
+			db.saveOrUpdate(lesson);
+		} catch (DbException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private int getWeekOfDate() {

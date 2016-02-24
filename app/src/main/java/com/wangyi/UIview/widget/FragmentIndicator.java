@@ -32,19 +32,19 @@ public class FragmentIndicator extends LinearLayout implements OnClickListener {
 	private void init() {
 		mIndicators = new View[5];
 
-		mIndicators[0] = createIndicator(R.drawable.home_select, TAG_ICON_0);
+		mIndicators[0] = createIndicator(R.drawable.tab_home_select, TAG_ICON_0);
 		mIndicators[0].setBackgroundResource(R.drawable.bottom_bg);
 		mIndicators[0].setTag(Integer.valueOf(0));
 		mIndicators[0].setOnClickListener(this);
 		addView(mIndicators[0]);
 
-		mIndicators[1] = createIndicator(R.drawable.allsubject_unselect, TAG_ICON_1);
+		mIndicators[1] = createIndicator(R.drawable.tab_allsubject_unselect, TAG_ICON_1);
 		mIndicators[1].setBackgroundResource(R.drawable.bottom_bg);
 		mIndicators[1].setTag(Integer.valueOf(1));
 		mIndicators[1].setOnClickListener(this);
 		addView(mIndicators[1]);
 
-		mIndicators[2] = createIndicator(R.drawable.me_unselect, TAG_ICON_2);
+		mIndicators[2] = createIndicator(R.drawable.tab_me_unselect, TAG_ICON_2);
 		mIndicators[2].setBackgroundResource(R.drawable.bottom_bg);
 		mIndicators[2].setTag(Integer.valueOf(2));
 		mIndicators[2].setOnClickListener(this);
@@ -54,14 +54,14 @@ public class FragmentIndicator extends LinearLayout implements OnClickListener {
 	private View createIndicator(int iconResID, String iconTag) {
 		LinearLayout view = new LinearLayout(getContext());
 		view.setOrientation(LinearLayout.VERTICAL);
-		view.setLayoutParams(new LinearLayout.LayoutParams(
+		view.setLayoutParams(new LayoutParams(
 				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1));
 		view.setGravity(Gravity.CENTER_HORIZONTAL);
 		view.setPadding(0, 10, 0, 10);
 
 		ImageView iconView = new ImageView(getContext());
 		iconView.setTag(iconTag);
-		iconView.setLayoutParams(new LinearLayout.LayoutParams(
+		iconView.setLayoutParams(new LayoutParams(
 				LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 1));
 		iconView.setImageResource(iconResID);
 		view.addView(iconView);
@@ -75,17 +75,17 @@ public class FragmentIndicator extends LinearLayout implements OnClickListener {
 		case 0:
 			prevIcon = (ImageView) mIndicators[mCurIndicator]
 					.findViewWithTag(TAG_ICON_0);
-			prevIcon.setImageResource(R.drawable.home_unselect);
+			prevIcon.setImageResource(R.drawable.tab_home_unselect);
 			break;
 		case 1:
 			prevIcon = (ImageView) mIndicators[mCurIndicator]
 					.findViewWithTag(TAG_ICON_1);
-			prevIcon.setImageResource(R.drawable.allsubject_unselect);
+			prevIcon.setImageResource(R.drawable.tab_allsubject_unselect);
 			break;
 		case 2:
 			prevIcon = (ImageView) mIndicators[mCurIndicator]
 					.findViewWithTag(TAG_ICON_2);
-			prevIcon.setImageResource(R.drawable.me_unselect);
+			prevIcon.setImageResource(R.drawable.tab_me_unselect);
 			break;
 		}
 
@@ -95,17 +95,17 @@ public class FragmentIndicator extends LinearLayout implements OnClickListener {
 		case 0:
 			currIcon = (ImageView) mIndicators[which]
 					.findViewWithTag(TAG_ICON_0);
-			currIcon.setImageResource(R.drawable.home_select);
+			currIcon.setImageResource(R.drawable.tab_home_select);
 			break;
 		case 1:
 			currIcon = (ImageView) mIndicators[which]
 					.findViewWithTag(TAG_ICON_1);
-			currIcon.setImageResource(R.drawable.allsubject_select);
+			currIcon.setImageResource(R.drawable.tab_allsubject_select);
 			break;
 		case 2:
 			currIcon = (ImageView) mIndicators[which]
 					.findViewWithTag(TAG_ICON_2);
-			currIcon.setImageResource(R.drawable.me_select);
+			currIcon.setImageResource(R.drawable.tab_me_select);
 			break;
 		}
 

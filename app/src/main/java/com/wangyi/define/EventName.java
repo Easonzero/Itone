@@ -1,15 +1,12 @@
 package com.wangyi.define;
 
 public class EventName {
-	public static class ScheduleFunc{
-		public static final String ADDLESSON = "addlesson";
-		public static final String CHANGELESSON = "changelesson";
-		public static final String DELELESSON = "delelesson";
-		public static final String FINDBYWEEK = "findbyweek";
-		public static final String FINDBYDAY = "findbyday";
-		public static final String FINDBYCLASS = "findbyclass";
-	}
-	public static class BookFunc{
+	public static class Download{
+		public static final int WAITING = 0;
+		public static final int STARTED = 1;
+		public static final int FINISHED = 2;
+		public static final int STOPPED = 3;
+		public static final int ERROR = 4;
 	}
 	public static class Https{
 		public static final String OK = "ok";

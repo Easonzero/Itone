@@ -1,13 +1,9 @@
 package com.wangyi.UIview.activity;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
+
 import org.xutils.view.annotation.*;
 import com.wangyi.UIview.BaseActivity;
-import com.wangyi.UIview.widget.SildingFinishLayout;
-import com.wangyi.UIview.widget.SildingFinishLayout.OnSildingFinishListener;
 import com.wangyi.define.EventName;
 import com.wangyi.define.LessonData;
 import com.wangyi.function.ScheduleFunc;
@@ -66,7 +62,6 @@ public class ScheduleActivity extends BaseActivity {
 		initWeekOfToday();
 		initLesson(ScheduleFunc.getInstance()._weekOfToday);
 		initSetLessonListener();
-		initSlidFinish();
 	}
 
 	@Event(R.id.weekoftoday)
@@ -97,19 +92,6 @@ public class ScheduleActivity extends BaseActivity {
 			}
 		}
 		return false;
-	}
-
-	private void initSlidFinish(){
-		SildingFinishLayout mSildingFinishLayout = (SildingFinishLayout) findViewById(R.id.schedule);
-		mSildingFinishLayout.setOnSildingFinishListener(new OnSildingFinishListener() {
-
-			@Override
-			public void onSildingFinish() {
-				ScheduleActivity.this.finish();
-			}
-		});
-
-		mSildingFinishLayout.setTouchView(scroll);
 	}
 
 	private void initWeekOfToday(){
@@ -147,16 +129,16 @@ public class ScheduleActivity extends BaseActivity {
 	}
 
 	private void initLesson(int week){
-		ArrayList<LessonData> lessonDatas = ScheduleFunc.getInstance().find(EventName.ScheduleFunc.FINDBYWEEK).getDataList();
+		List<LessonData> lessonDatas = ScheduleFunc.getInstance().find(week+"");
 		if(lessonDatas != null){
 			for(int i = 0;i < lessonDatas.size();i++){
 				LessonData ld= lessonDatas.get(i);
-				TextView lesson = (TextView) findViewById(lessonLocation[Integer.parseInt(ld.fromClass)][Integer.parseInt(ld.weekDay)]);
-				lesson.setText(ld.lessonName+"@"+ld.classRoom);
+				TextView lesson = (TextView) findViewById(lessonLocation[Integer.parseInt(ld.getFromClass())][Integer.parseInt(ld.getWeekDay())]);
+				lesson.setText(ld.getLessonName()+"@"+ld.getClassRoom());
 				setLessonBackground(lesson);
-				int dt = Integer.parseInt(ld.toClass) - Integer.parseInt(ld.fromClass);
+				int dt = Integer.parseInt(ld.getToClass()) - Integer.parseInt(ld.getFromClass());
 				for(int j = 1;j <= dt;j++){
-					TextView lessongone = (TextView) findViewById(lessonLocation[Integer.parseInt(ld.fromClass)+j][Integer.parseInt(ld.weekDay)]);
+					TextView lessongone = (TextView) findViewById(lessonLocation[Integer.parseInt(ld.getFromClass())+j][Integer.parseInt(ld.getWeekDay())]);
 					lessongone.setVisibility(View.GONE);
 				}
 				lesson.setPadding(0, 0, 0, 0);
@@ -188,8 +170,8 @@ public class ScheduleActivity extends BaseActivity {
 								id = -1;
 							}
 							Intent intent = new Intent(ScheduleActivity.this,WatchLesson.class);
-							ScheduleFunc.getInstance().newlesson.weekDay = weekday+"";
-							ScheduleFunc.getInstance().newlesson.fromClass = classnum+"";
+							ScheduleFunc.getInstance().lesson.setWeekDay(weekday+"");
+							ScheduleFunc.getInstance().lesson.setFromClass(classnum+"");
 							startActivityForResult(intent,1);
 						}
 						else{
@@ -207,8 +189,8 @@ public class ScheduleActivity extends BaseActivity {
 								view.setTag("none");
 								id = -1;
 								Intent intent = new Intent(ScheduleActivity.this,CreateLesson.class);
-								ScheduleFunc.getInstance().newlesson.weekDay = weekday+"";
-								ScheduleFunc.getInstance().newlesson.fromClass = classnum+"";
+                                ScheduleFunc.getInstance().lesson.setWeekDay(weekday+"");
+                                ScheduleFunc.getInstance().lesson.setFromClass(classnum+"");
 								startActivityForResult(intent,0);
 								view.setBackgroundResource(R.drawable.bg_lesson);
 							}
@@ -238,7 +220,6 @@ public class ScheduleActivity extends BaseActivity {
 
 	public void onBackPressed() {
 		super.onBackPressed();
-		overridePendingTransition(0, R.anim.base_slide_right_out);
 	}
 
 	@Override
@@ -248,11 +229,9 @@ public class ScheduleActivity extends BaseActivity {
 			case 0:
 				ScheduleFunc.getInstance().currentWeek = ScheduleFunc.getInstance()._weekOfToday;
 				reset(ScheduleFunc.getInstance().currentWeek);
-				initSlidFinish();
 				break;
 			case 1:
 				reset(ScheduleFunc.getInstance().currentWeek);
-				initSlidFinish();
 				break;
 		}
 	}

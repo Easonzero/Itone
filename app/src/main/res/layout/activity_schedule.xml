@@ -1,18 +1,31 @@
-<com.wangyi.UIview.widget.SildingFinishLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#00000000"
-    android:id="@+id/schedule"
+	android:orientation="vertical"
     tools:context=".ScheduleActivity" >
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_weight="1.5"
+            android:background="@drawable/title_menu" >
+
+        <TextView
+                android:id="@+id/weekoftoday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:id="@+id/date"
-        android:layout_marginTop="70dp" >
+        android:layout_weight="1.5"
+        android:id="@+id/date" >
 
         <TextView
             android:id="@+id/date_month"
@@ -87,6 +100,7 @@
         android:layout_height="450dp"
         android:layout_below="@+id/date"
         android:scrollbars="none"
+        android:layout_weight="10"
         android:layout_centerHorizontal="true" >
 
         <LinearLayout
@@ -1115,26 +1129,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/title_menu" >
-        
-        <TextView
-            android:id="@+id/weekoftoday"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/lessons"
-        android:background="@drawable/lesson_bottom_menu" >
+        android:background="@drawable/lesson_bottom_menu"
+        android:layout_weight="2">
     </RelativeLayout>
 
-</com.wangyi.UIview.widget.SildingFinishLayout>
+</LinearLayout>

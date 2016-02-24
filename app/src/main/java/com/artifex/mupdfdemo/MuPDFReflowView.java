@@ -1,5 +1,9 @@
 package com.artifex.mupdfdemo;
 
+import java.io.UnsupportedEncodingException;
+
+import com.wangyi.reader.R;
+
 import android.content.Context;
 import android.graphics.Point;
 import android.graphics.PointF;
@@ -44,6 +48,7 @@ public class MuPDFReflowView extends WebView implements MuPDFView {
 				setScale(mScale);
 			}
 		});
+		setBackgroundColor(MuPDFActivity.backGroundPage);
 	}
 
 	private void requestHeight() {
@@ -64,8 +69,23 @@ public class MuPDFReflowView extends WebView implements MuPDFView {
 			}
 			@Override
 			protected void onPostExecute(byte[] result) {
-				String b64 = Base64.encodeToString(result, Base64.DEFAULT);
-				loadData(b64, "text/html; charset=utf-8", "base64");
+				String str;
+				try {
+					str = new String(result, "UTF-8");
+					
+					if(mCore.isNoghtMode()){
+						str = str.replace("background-color:white", "background-color:black");
+					}else {
+						str = str.replace("background-color:black", "background-color:white");
+					}
+					
+					loadData(str, "text/html", "UTF-8");
+				} catch (UnsupportedEncodingException e) {
+					e.printStackTrace();
+				}
+				
+//				String b64 = Base64.encodeToString(result, Base64.DEFAULT);
+//				loadData(b64, "text/html; charset=utf-8", "base64");
 			}
 		};
 		mLoadHTML.execute();
@@ -79,6 +99,20 @@ public class MuPDFReflowView extends WebView implements MuPDFView {
 		mScale = scale;
 		loadUrl("javascript:document.getElementById('content').style.zoom=\""+(int)(mScale*100)+"%\"");
 		requestHeight();
+		
+		if(mCore.isNoghtMode()){
+			toNightMode();
+		}else {
+			toDayMode();
+		}
+	}
+	
+	public void toNightMode() {
+		loadUrl("javascript:document.getElementById('content').style.color='f2f2f2'");
+	}
+	
+	public void toDayMode() {
+		loadUrl("javascript:document.getElementById('content').style.color='black'");
 	}
 
 	public void blank(int page) {

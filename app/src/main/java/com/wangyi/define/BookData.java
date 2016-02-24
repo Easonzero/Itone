@@ -5,6 +5,7 @@ import com.wangyi.utils.JsonResponseParser;
 
 @HttpResponse(parser = JsonResponseParser.class)
 public class BookData {
+	public long id;
 	public String bookName;
 	public String subject;
 	public String occupation;

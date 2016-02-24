@@ -2,7 +2,6 @@ package com.wangyi.UIview.activity;
 
 import org.xutils.x;
 import org.xutils.view.annotation.ContentView;
-
 import com.wangyi.UIview.BaseActivity;
 import com.wangyi.UIview.BaseFragment;
 import com.wangyi.UIview.widget.FragmentIndicator;
@@ -13,12 +12,8 @@ import com.wangyi.function.ScheduleFunc;
 import com.wangyi.function.SensorFunc;
 import com.wangyi.function.UserManagerFunc;
 import com.wangyi.reader.R;
-
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
 @ContentView(R.layout.activity_main)
 public class ItOneActivity extends BaseActivity{
@@ -41,11 +36,11 @@ public class ItOneActivity extends BaseActivity{
 
 	private void setFragmentIndicator(int whichIsDefault) {
 		mFragments = new BaseFragment[3];
-		mFragments[0] = (BaseFragment)getFragmentManager().findFragmentById(R.id.home);
-		mFragments[1] = (BaseFragment)getFragmentManager().findFragmentById(R.id.allsubject);
-		mFragments[2] = (BaseFragment)getFragmentManager().findFragmentById(R.id.me);
+		mFragments[0] = (BaseFragment)getSupportFragmentManager().findFragmentById(R.id.home);
+		mFragments[1] = (BaseFragment)getSupportFragmentManager().findFragmentById(R.id.allsubject);
+		mFragments[2] = (BaseFragment)getSupportFragmentManager().findFragmentById(R.id.me);
 
-		getFragmentManager().beginTransaction().hide(mFragments[0])
+		getSupportFragmentManager().beginTransaction().hide(mFragments[0])
 				.hide(mFragments[1]).hide(mFragments[2])
 				.show(mFragments[whichIsDefault]).commit();
 
@@ -55,7 +50,7 @@ public class ItOneActivity extends BaseActivity{
 
 			@Override
 			public void onIndicate(View v, int which) {
-				getFragmentManager().beginTransaction()
+				getSupportFragmentManager().beginTransaction()
 						.hide(mFragments[0]).hide(mFragments[1])
 						.hide(mFragments[2]).show(mFragments[which]).commit();
 			}

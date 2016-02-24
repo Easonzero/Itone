@@ -16,6 +16,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Handler;
+import org.xutils.ex.DbException;
 
 public class HttpsFunc {
 	public static String host = "http://192.168.0.102:8080";
@@ -130,7 +131,7 @@ public class HttpsFunc {
 
 	}
 
-	public void searchBookByName(String bookName){
+	public void searchBookByName(String bookName,String university){
 		if(!isNetworkConnected()){
 			ItOneUtils.showToast(context,"网络未连接");
 			return;
@@ -138,6 +139,7 @@ public class HttpsFunc {
 		handler.sendEmptyMessage(EventName.UI.START);
 		Map<String,Object> map=new HashMap<>();
 		map.put("bookName", bookName);
+		map.put("university",university);
 		HttpsUtils.Post(host+"/ItOne/GetBook", map, new Callback.CommonCallback<ArrayList<BookData>>(){
 
 			@Override
@@ -222,58 +224,14 @@ public class HttpsFunc {
 		});
 	}
 
-	public void download(String path){
+	public void download(String path,String label) throws DbException {
 		if(!isNetworkConnected()){
 			ItOneUtils.showToast(context,"网络未连接");
 			return;
 		}
-		if(handler!=null) handler.sendEmptyMessage(EventName.UI.START);
-		HttpsUtils.DownLoadFile(host+path, BookManagerFunc.FILEPATH, new Callback.ProgressCallback() {
-
-			@Override
-			public void onCancelled(CancelledException arg0) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void onError(Throwable arg0, boolean arg1) {
-				// TODO Auto-generated method stub
-				if(handler!=null) ItOneUtils.showToast(context,"服务器抽风中...");
-			}
-
-			@Override
-			public void onFinished() {
-				// TODO Auto-generated method stub
-				if(handler!=null) handler.sendEmptyMessage(EventName.UI.FINISH);
-			}
-
-			@Override
-			public void onSuccess(Object arg0) {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void onLoading(long arg0, long arg1, boolean arg2) {
-				// TODO Auto-generated method stub
-				if(handler!=null){
-
-				}
-			}
-
-			@Override
-			public void onStarted() {
-				// TODO Auto-generated method stub
-
-			}
-
-			@Override
-			public void onWaiting() {
-				// TODO Auto-generated method stub
-
-			}
-		});
+        DownloadManagerFunc.getInstance().startDownload(
+                path, label,
+               BookManagerFunc.FILEPATH + label + ".pdf", true, false, null);
 	}
 
 	private boolean isNetworkConnected() {

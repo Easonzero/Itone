@@ -1,6 +1,12 @@
 <resources>
-    <style name="AppBaseTheme" parent="@android:style/Theme.NoTitleBar.Fullscreen">
-   </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+
+    </style>
     <style name="Typography_Display2">
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textSize">45sp</item>

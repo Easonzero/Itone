@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="daynight_mode">
+        <item>日间模式</item>
+        <item>夜间模式</item>
+    </string-array>
+    <string-array name="main_category_list">
+        <item>Recents</item>
+        <item>All PDFs</item>
+        <item>Folder View</item>
+    </string-array>
+    <string-array name="orientation_mode">
+        <item>Auto</item>
+        <item>Lock on current orientation</item>
+    </string-array>
+    <string-array name="page_mode">
+        <item>单页模式</item>
+        <item>双页模式</item>
+        <item>自动模式</item>
+    </string-array>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
     <attr format="boolean" name="isLightTheme"/>
@@ -29,6 +47,8 @@
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="base_background_color">#f1f1f1</color>
     <color name="bg_thumbnail">#424242</color>
     <color name="bg_thumbnail2">#666666</color>
     <color name="bg_thumbnail_white">#ffffff</color>
@@ -145,6 +165,7 @@
     <declare-styleable name="MenuGroup"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:checkableBehavior"/><attr name="android:visible"/><attr name="android:enabled"/></declare-styleable>
     <declare-styleable name="MenuItem"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:title"/><attr name="android:titleCondensed"/><attr name="android:icon"/><attr name="android:alphabeticShortcut"/><attr name="android:numericShortcut"/><attr name="android:checkable"/><attr name="android:checked"/><attr name="android:visible"/><attr name="android:enabled"/><attr name="android:onClick"/><attr name="showAsAction"><flag name="never" value="0"/><flag name="ifRoom" value="1"/><flag name="always" value="2"/><flag name="withText" value="4"/><flag name="collapseActionView" value="8"/></attr><attr format="reference" name="actionLayout"/><attr format="string" name="actionViewClass"/><attr format="string" name="actionProviderClass"/></declare-styleable>
     <declare-styleable name="MenuView"><attr name="android:itemTextAppearance"/><attr name="android:horizontalDivider"/><attr name="android:verticalDivider"/><attr name="android:headerBackground"/><attr name="android:itemBackground"/><attr name="android:windowAnimationStyle"/><attr name="android:itemIconDisabledAlpha"/><attr format="boolean" name="preserveIconSpacing"/></declare-styleable>
+    <declare-styleable name="PagerSlidingTabStrip"><attr format="color" name="pstsIndicatorColor"/><attr format="color" name="pstsUnderlineColor"/><attr format="color" name="pstsDividerColor"/><attr format="dimension" name="pstsIndicatorHeight"/><attr format="dimension" name="pstsUnderlineHeight"/><attr format="dimension" name="pstsDividerPadding"/><attr format="dimension" name="pstsTabPaddingLeftRight"/><attr format="dimension" name="pstsScrollOffset"/><attr format="reference" name="pstsTabBackground"/><attr format="boolean" name="pstsShouldExpand"/><attr format="boolean" name="pstsTextAllCaps"/></declare-styleable>
     <declare-styleable name="PopupWindow"><attr format="boolean" name="overlapAnchor"/><attr name="android:popupBackground"/></declare-styleable>
     <declare-styleable name="PopupWindowBackgroundState"><attr format="boolean" name="state_above_anchor"/></declare-styleable>
     <declare-styleable name="SearchView"><attr format="reference" name="layout"/><attr format="boolean" name="iconifiedByDefault"/><attr name="android:maxWidth"/><attr format="string" name="queryHint"/><attr format="string" name="defaultQueryHint"/><attr name="android:imeOptions"/><attr name="android:inputType"/><attr format="reference" name="closeIcon"/><attr format="reference" name="goIcon"/><attr format="reference" name="searchIcon"/><attr format="reference" name="searchHintIcon"/><attr format="reference" name="voiceIcon"/><attr format="reference" name="commitIcon"/><attr format="reference" name="suggestionRowLayout"/><attr format="reference" name="queryBackground"/><attr format="reference" name="submitBackground"/><attr name="android:focusable"/></declare-styleable>
@@ -156,6 +177,7 @@
     <declare-styleable name="View"><attr format="dimension" name="paddingStart"/><attr format="dimension" name="paddingEnd"/><attr name="android:focusable"/><attr format="reference" name="theme"/><attr name="android:theme"/></declare-styleable>
     <declare-styleable name="ViewBackgroundHelper"><attr name="android:background"/><attr format="color" name="backgroundTint"/><attr name="backgroundTintMode"><enum name="src_over" value="3"/><enum name="src_in" value="5"/><enum name="src_atop" value="9"/><enum name="multiply" value="14"/><enum name="screen" value="15"/></attr></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
+    <declare-styleable name="WaveLoadingView"><attr format="integer" name="borderWidth"/><attr format="color" name="borderColor"/><attr format="integer" name="progressValue"/><attr name="shapeType"><flag name="circle" value="0"/><flag name="square" value="1"/></attr><attr format="color" name="waveColor"/><attr format="float" name="waveAmplitude"/><attr format="float" name="titleTopSize"/><attr format="float" name="titleCenterSize"/><attr format="float" name="titleBottomSize"/><attr format="color" name="titleTopColor"/><attr format="color" name="titleCenterColor"/><attr format="color" name="titleBottomColor"/><attr format="string" name="titleTop"/><attr format="string" name="titleCenter"/><attr format="string" name="titleBottom"/></declare-styleable>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
     <dimen name="abc_action_bar_default_padding_end_material">0dp</dimen>
@@ -223,7 +245,6 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <dimen name="actionbar_height">48dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="big_card_image_height">200dp</dimen>
@@ -268,6 +289,8 @@
     <dimen name="padding_step_s">4dp</dimen>
     <dimen name="padding_step_ss">6dp</dimen>
     <dimen name="scheduleListHeight">80dp</dimen>
+    <dimen name="tab_max_width">70dp</dimen>
+    <dimen name="toobal_width">48dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
@@ -285,7 +308,7 @@
     <integer name="num_columns">3</integer>
     <integer name="showdialog">0</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
-    <string name="OkKey">Ok</string>
+    <string name="Auto_Rotate">自动旋转</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
     <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
@@ -306,6 +329,9 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="accept">Accept</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_bookmark">添加书签</string>
+    <string name="allsubject">所有课程</string>
     <string name="app_name">ItOne</string>
     <string name="cancel">Cancel</string>
     <string name="cannot_open_buffer">Cannot open buffer</string>
@@ -314,26 +340,28 @@
     <string name="cannot_open_file_Path">Cannot open file: %1$s</string>
     <string name="choose_value">Choose value</string>
     <string name="copied_to_clipboard">Copied to clipboard</string>
-    <string name="copy">Copy</string>
+    <string name="copy">复制</string>
     <string name="copy_text">copy text</string>
     <string name="copy_text_to_the_clipboard">Copy text to the clipboard</string>
     <string name="delete">Delete</string>
-    <string name="dismiss">Dismiss</string>
-    <string name="document_has_changes_save_them_">Document has changes. Save them?</string>
+    <string name="delete_bookmark">删除书签</string>
+    <string name="dismiss">dismiss</string>
+    <string name="document_has_changes_save_them_">内容有变，是否保存？</string>
     <string name="draw_annotation">Draw annotation</string>
-    <string name="edit_annotations">Edit annotations</string>
+    <string name="edit_annotations">注释</string>
     <string name="enter_password">Enter password</string>
     <string name="entering_reflow_mode">Entering reflow mode</string>
     <string name="fill_out_text_field">Fill out text field</string>
     <string name="format_currently_not_supported">Format currently not supported</string>
-    <string name="helpPutSign">Double-tap where you want to place your signature</string>
-    <string name="highlight">Highlight</string>
-    <string name="ink">Ink</string>
+    <string name="highlight">荧光笔</string>
+    <string name="home">主页</string>
+    <string name="ink">涂鸦</string>
     <string name="leaving_reflow_mode">Leaving reflow mode</string>
+    <string name="lock_screen">锁定屏幕</string>
+    <string name="loren_ipsum">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque. Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi. Curabitur ligula sapien, tincidunt non, euismod vitae, posuere imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Vestibulum fringilla pede sit amet augue. In turpis. Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis. Nullam sagittis. Suspendisse pulvinar, augue ac venenatis condimentum, sem libero volutpat nibh, nec pellentesque velit pede quis nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id purus. Ut varius tincidunt libero. Phasellus dolor. Maecenas vestibulum mollis diam. Pellentesque ut neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. In ac felis quis tortor malesuada pretium. Pellentesque auctor neque nec urna. Proin sapien ipsum, porta a, auctor quis, euismod ut, mi. Aenean viverra rhoncus pede. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut non enim eleifend felis pretium feugiat. Vivamus quis mi. Phasellus a est. Phasellus magna. In hac habitasse platea dictumst. Curabitur at lacus ac velit ornare lobortis. Curabitur a felis in nunc fringilla tristique.</string>
+    <string name="me">我</string>
     <string name="more">More</string>
-    <string name="no">No</string>
-    <string name="noSignOnPdf">The document has not been signed. Please, double-tap where you want to place your signature</string>
-    <string name="noSignOnPdfTitle">Warning</string>
+    <string name="no">取消</string>
     <string name="no_further_occurrences_found">No further occurrences found</string>
     <string name="no_media_hint">Sharing the storage media with a PC can make it inaccessible</string>
     <string name="no_media_warning">Storage media not present</string>
@@ -341,34 +369,62 @@
     <string name="not_supported">Not supported</string>
     <string name="nothing_to_save">Nothing to save</string>
     <string name="okay">Okay</string>
-    <string name="open_failed">Unable to open the document</string>
     <string name="outline_title">Table of Contents</string>
     <string name="parent_directory">[Up one level]</string>
     <string name="picker_title_App_Ver_Dir">%1$s %2$s: %3$s</string>
+    <string name="press_again_to_exit">Press again to exit</string>
     <string name="print">Print</string>
     <string name="print_failed">Print failed</string>
-    <string name="save">Save</string>
-    <string name="search">Search</string>
+    <string name="save">保存</string>
+    <string name="search">搜索</string>
     <string name="search_backwards">Search backwards</string>
     <string name="search_document">Search document</string>
     <string name="search_forwards">Search forwards</string>
-    <string name="searching_">Searching…</string>
-    <string name="select">Select</string>
+    <string name="search_global_description">Search book</string>
+    <string name="search_hint">Search text</string>
+    <string name="search_label">搜索</string>
+    <string name="searching_">搜索中...</string>
+    <string name="select">选择</string>
     <string name="select_text">Select text</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="strike_out">Strike-out</string>
-    <string name="text_not_found">Text not found</string>
+    <string name="strike_out">删除线</string>
+    <string name="text_not_found">找不到该文本</string>
+    <string name="title_section1">News</string>
+    <string name="title_section2">Promotions</string>
+    <string name="title_section3">Recommend</string>
+    <string name="title_section4">YouTube</string>
+    <string name="title_section5">MediaPoint</string>
     <string name="toggle_links">Highlight and enable links</string>
     <string name="toggle_reflow_mode">Toggle reflow mode</string>
-    <string name="underline">Underline</string>
-    <string name="version">1.6 (git build)</string>
-    <string name="yes">Yes</string>
+    <string name="underline">下划线</string>
+    <string name="version">1.5 (git build)</string>
+    <string name="yes">好的</string>
+    <style name="ActionBarFullScreen" parent="@style/MyActionBar">
+        <item name="android:background">@drawable/bg_top_actionbar</item>
+    </style>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
-    <style name="AppBaseTheme" parent="@android:style/Theme.NoTitleBar.Fullscreen">
-   </style>
+    <style name="Animations"/>
+    <style name="Animations.PopDownMenu"/>
+    <style name="Animations.PopDownMenu.Reflect">
+        <item name="@android:windowEnterAnimation">@anim/pump_top</item>
+        <item name="@android:windowExitAnimation">@anim/disappear</item>
+    </style>
+    <style name="Animations.PopUpMenu"/>
+    <style name="Animations.PopUpMenu.Reflect">
+        <item name="@android:windowEnterAnimation">@anim/pump_bottom</item>
+        <item name="@android:windowExitAnimation">@anim/disappear</item>
+    </style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
         <item name="listLayout">@layout/abc_select_dialog_material</item>
@@ -1304,6 +1360,16 @@
         <item name="android:minWidth">56dp</item>
         <item name="android:scaleType">center</item>
     </style>
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/apptheme_color</item>
+        <item name="android:backgroundStacked">@color/apptheme_color</item>
+    </style>
+    <style name="PDFReaderTheme" parent="@style/AppTheme">
+        <item name="windowActionBarOverlay">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:actionBarStyle">@style/ActionBarFullScreen</item>
+        <item name="android:seekBarStyle">@style/SeekBarBlueTheme</item>
+    </style>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>
 
@@ -1447,6 +1513,11 @@
     <style name="RtlUnderlay.Widget.AppCompat.ActionButton.Overflow" parent="Base.Widget.AppCompat.ActionButton">
         <item name="android:paddingLeft">@dimen/abc_action_bar_overflow_padding_start_material</item>
         <item name="android:paddingRight">@dimen/abc_action_bar_overflow_padding_end_material</item>
+    </style>
+    <style name="SeekBarBlueTheme" parent="android:Widget.Holo.SeekBar">
+        <item name="android:progressDrawable">@drawable/bluetheme_scrubber_progress_horizontal_holo_dark</item>
+        <item name="android:indeterminateDrawable">@drawable/bluetheme_scrubber_progress_horizontal_holo_dark</item>
+        <item name="android:thumb">@drawable/bluetheme_scrubber_control_selector_holo_dark</item>
     </style>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>

@@ -17,7 +17,7 @@ public class MuPDFReflowAdapter extends BaseAdapter {
 	}
 
 	public int getCount() {
-		return mCore.countPages();
+		return mCore.countDisplayPage();
 	}
 
 	public Object getItem(int arg0) {
@@ -30,7 +30,7 @@ public class MuPDFReflowAdapter extends BaseAdapter {
 
 	public View getView(int position, View convertView, ViewGroup parent) {
 		final MuPDFReflowView reflowView;
-		if (convertView == null) {
+		if (convertView == null) {			
 			reflowView = new MuPDFReflowView(mContext, mCore, new Point(parent.getWidth(), parent.getHeight()));
 		} else {
 			reflowView = (MuPDFReflowView) convertView;

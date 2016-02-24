@@ -39,8 +39,8 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
     public static final long ANIM_DURATION = 800l;  
     public static final int MAX = 10;  
     public static final int TEXT_SIZE_MAX = 25;  
-    public static final int TEXT_SIZE_MIN = 15;  
-    private OnClickListener itemClickListener; 
+    public static final int TEXT_SIZE_MIN = 15;
+    private OnClickListener itemClickListener;
     private static Interpolator interpolator;  
     private static AlphaAnimation animAlpha2Opaque;  
     private static AlphaAnimation animAlpha2Transparent;  
@@ -336,12 +336,12 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
   
     private void rubAllViews() {  
         removeAllViews();  
-    }  
-  
-    private void setOnItemClickListener(OnClickListener listener) {  
-        itemClickListener = listener;  
-    }  
-    
+    }
+
+    public void setOnItemClickListener(OnClickListener listener) {
+        itemClickListener = listener;
+    }
+
     private void feedKeywordsFlow(String[] arr) {  
         Random random = new Random();  
         for (int i = 0; i < KeywordsFlow.MAX; i++) {  
