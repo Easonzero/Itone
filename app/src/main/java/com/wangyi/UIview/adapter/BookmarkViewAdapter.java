@@ -92,7 +92,7 @@ public class BookmarkViewAdapter extends BaseAdapter {
 //			aq.id(R.id.ThumbnailLayoutView).background(R.color.accent_color);
 //			aq.id(R.id.ThumbnailNumber).textColorId(android.R.color.secondary_text_light);
 //		} else {
-//			aq.id(R.id.ThumbnailLayoutView).background(R.drawable.button);
+//			aq.id(R.id.ThumbnailLayoutView).background(R.drawable.buttondark);
 //			aq.id(R.id.ThumbnailNumber).textColorId(android.R.color.secondary_text_dark);
 //		}
 

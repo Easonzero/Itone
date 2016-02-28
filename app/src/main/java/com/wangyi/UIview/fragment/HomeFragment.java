@@ -63,10 +63,9 @@ public class HomeFragment extends BaseFragment {
 	@Override
 	public void onHiddenChanged(boolean hidden) {
 		if(!hidden){
-			BookManagerFunc.getInstance().connect(handler);
-			BookManagerFunc.getInstance().showFileDir();
+			BookManagerFunc.getInstance().connect(handler).showFileDir();
 		}else{
-			BookManagerFunc.getInstance().clear();
+			BookManagerFunc.getInstance().connect(handler).clear();
 		}
 	}
 	
@@ -74,14 +73,14 @@ public class HomeFragment extends BaseFragment {
 	private void onMyBookClick(View view){
 		setMybookConsole(0);
 		bookHead.setBackgroundResource(R.drawable.ic_mybook);
-		BookManagerFunc.getInstance().showFileDir();
+		BookManagerFunc.getInstance().connect(handler).showFileDir();
 	}
 	
 	@Event(R.id.read_history)
 	private void onReadHistoryClick(View view){
 		setMybookConsole(1);
 		bookHead.setBackgroundResource(R.drawable.ic_readhistory);
-		BookManagerFunc.getInstance().showHistoryDir();
+		BookManagerFunc.getInstance().connect(handler).showHistoryDir();
 	}
 	
 	@Event(R.id.lesson_table)

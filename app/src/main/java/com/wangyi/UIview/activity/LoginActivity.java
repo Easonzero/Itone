@@ -1,5 +1,6 @@
 package com.wangyi.UIview.activity;
 
+import com.wangyi.UIview.widget.LoadingDialog;
 import org.xutils.view.annotation.*;
 
 import com.wangyi.UIview.BaseActivity;
@@ -23,15 +24,16 @@ public class LoginActivity extends BaseActivity {
 	private EditText passWords;
 	@ViewInject(R.id.confirm)
 	private Button confirm;
+	LoadingDialog loading;
 	private final Handler handler = new Handler(){
 		@Override
 		public void handleMessage(Message msg){
 			switch(msg.what){
 				case EventName.UI.START:
-					confirm.setText("登陆中。。。");
+					loading.show();
 					break;
 				case EventName.UI.FINISH:
-					confirm.setText("登陆");
+					loading.dismiss();
 					break;
 				case EventName.UI.SUCCESS:
 					LoginActivity.this.finish();
@@ -43,7 +45,7 @@ public class LoginActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		HttpsFunc.getInstance().connect(handler);
+		loading = new LoadingDialog(this);
 	}
 
 	@Event(R.id.close)
@@ -59,6 +61,6 @@ public class LoginActivity extends BaseActivity {
 
 	@Event(R.id.confirm)
 	private void onConfirmClick(View view){
-		HttpsFunc.getInstance().Login(userID.getText().toString(), passWords.getText().toString());
+		HttpsFunc.getInstance().connect(handler).Login(userID.getText().toString(), passWords.getText().toString());
 	}
 }

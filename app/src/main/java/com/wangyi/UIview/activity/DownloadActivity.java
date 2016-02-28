@@ -19,6 +19,7 @@ public class DownloadActivity extends BaseActivity{
 	private ListView downloadList;
 
     private DownloadListAdapter dla;
+	private int editTag = 0;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,14 +37,14 @@ public class DownloadActivity extends BaseActivity{
 
 	@Event(R.id.edit)
 	private void onEditClick(View view){
-		if(view.getTag() == 0){
+		if(editTag == 0){
 			((Button)view).setText("完成");
 			control.setVisibility(View.VISIBLE);
-            view.setTag(1);
+            editTag = 1;
 		}else{
 			((Button)view).setText("编辑");
 			control.setVisibility(View.GONE);
-            view.setTag(0);
+            editTag = 0;
 		}
 	}
 

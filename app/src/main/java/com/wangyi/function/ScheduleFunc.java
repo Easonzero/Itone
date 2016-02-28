@@ -28,7 +28,7 @@ public class ScheduleFunc{
 	public LessonData lesson;
 	private DbManager db;
 
-	private void ScheduleFunc(){}
+	private ScheduleFunc(){}
 
 	public void init(Context context){
 		DbManager.DaoConfig daoConfig = new DbManager.DaoConfig()
@@ -41,6 +41,7 @@ public class ScheduleFunc{
 		_weekOfToday = initWeek + (getWeekNumber() - initDate);
 		_today = getWeekOfDate();
 		currentWeek = _weekOfToday;
+		lesson = new LessonData();
 	}
 
 	public String getWeekStr(int weekday){
@@ -65,10 +66,10 @@ public class ScheduleFunc{
 		return dataList;
 	}
 
-	public List<LessonData> find(String week,String weekDay) {
+	public List<LessonData> find() {
 		List<LessonData> dataList = null;
 		try {
-			dataList = db.selector(LessonData.class).where("week", "=", week).and("weekDay","=",weekDay).findAll();
+			dataList = db.selector(LessonData.class).where("week", "=", _weekOfToday).and("weekDay","=",_today).findAll();
 		} catch (DbException e) {
 			e.printStackTrace();
 		}

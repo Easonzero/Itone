@@ -15,7 +15,7 @@ public class UserManagerFunc {
 		return INSTANCE;
 	}
 
-	private void UserManagerFunc(){}
+	private UserManagerFunc(){}
 
 	public void init(Context context){
 		this.context = context;

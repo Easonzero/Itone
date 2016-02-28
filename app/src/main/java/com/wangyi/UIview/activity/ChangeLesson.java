@@ -55,32 +55,25 @@ public class ChangeLesson extends BaseActivity {
 
 	@Event(R.id.ClassFromTo)
 	private void onClassClick(View view){
-		final PickclassesDialog dialog = new PickclassesDialog(
-				ChangeLesson.this,
-				ScheduleFunc.getInstance().lesson.getWeekDay(),
-				ScheduleFunc.getInstance().lesson.getFromClass()
-		);
-		dialog.setButton("确定",new DialogInterface.OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface arg0, int arg1) {
-				// TODO Auto-generated method stub
-				ScheduleFunc.getInstance().lesson.setWeekDay((dialog.date + 1) + "");
-				ScheduleFunc.getInstance().lesson.setFromClass((dialog.fromClass + 1) + "");
-				ScheduleFunc.getInstance().lesson.setToClass((dialog.toClass + 1) + "");
-				_classFromTo.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().lesson.getWeekDay()))
-						+" "+ScheduleFunc.getInstance().lesson.getFromClass()+"-"+ScheduleFunc.getInstance().lesson.getToClass()+"节");
-			}
-		});
-
-		dialog.setButton2("取消", new DialogInterface.OnClickListener() {
-
-			@Override
-			public void onClick(DialogInterface arg0, int arg1) {
-				// TODO Auto-generated method stub
-				dialog.dismiss();
-			}
-		});
+		final PickclassesDialog dialog = new PickclassesDialog(ChangeLesson.this,ScheduleFunc.getInstance().lesson.getWeekDay(),ScheduleFunc.getInstance().lesson.getFromClass());
+		dialog.setTitle("上课节数选择")
+		.setPositiveButton("确定", new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						ScheduleFunc.getInstance().lesson.setWeekDay((dialog.date + 1) + "");
+						ScheduleFunc.getInstance().lesson.setFromClass((dialog.fromClass + 1) + "");
+						ScheduleFunc.getInstance().lesson.setToClass((dialog.toClass + 1) + "");
+						_classFromTo.setText(ScheduleFunc.getInstance().getWeekStr(Integer.parseInt(ScheduleFunc.getInstance().lesson.getWeekDay()))
+								+" "+ScheduleFunc.getInstance().lesson.getFromClass()+"-"+ScheduleFunc.getInstance().lesson.getToClass()+"节");
+						dialog.dismiss();
+					}
+				})
+				.setNegativeButton("取消", new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						dialog.dismiss();
+					}
+				});
 		dialog.show();
 	}
 

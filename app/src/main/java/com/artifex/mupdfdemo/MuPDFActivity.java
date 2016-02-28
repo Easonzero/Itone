@@ -66,6 +66,7 @@ import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
+import me.drakeet.materialdialog.MaterialDialog;
 
 class ThreadPerTaskExecutor implements Executor {
     public void execute(Runnable r) {
@@ -1236,21 +1237,20 @@ public class MuPDFActivity extends AppCompatActivity implements
     @Override
     public void onBackPressed() {
         if (core.hasChanges()) {
-            DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    if (which == AlertDialog.BUTTON_POSITIVE)
-                        core.save();
-
-                    finish();
-                }
-            };
-            AlertDialog alert = mAlertBuilder.create();
-            alert.setTitle("ItOne");
-            alert.setMessage(getString(R.string.document_has_changes_save_them_));
-            alert.setButton(AlertDialog.BUTTON_POSITIVE,
-                    getString(R.string.yes), listener);
-            alert.setButton(AlertDialog.BUTTON_NEGATIVE,
-                    getString(R.string.no), listener);
+            MaterialDialog alert = new MaterialDialog(this);
+            alert.setTitle("ItOne")
+                 .setMessage(getString(R.string.document_has_changes_save_them_))
+                 .setPositiveButton(getString(R.string.yes),new View.OnClickListener() {
+                     public void onClick(View view) {
+                         core.save();
+                         finish();
+                     }
+                 })
+                 .setNegativeButton(getString(R.string.no),new View.OnClickListener() {
+                     public void onClick(View view) {
+                         finish();
+                     }
+                 });
             alert.show();
         } else {
             super.onBackPressed();
@@ -1382,21 +1382,20 @@ public class MuPDFActivity extends AppCompatActivity implements
     public boolean onOptionsItemSelected(final MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             if (core.hasChanges()) {
-                DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (which == AlertDialog.BUTTON_POSITIVE)
-                            core.save();
-
-                        finish();
-                    }
-                };
-                AlertDialog alert = mAlertBuilder.create();
-                alert.setTitle("ItOne");
-                alert.setMessage(getString(R.string.document_has_changes_save_them_));
-                alert.setButton(AlertDialog.BUTTON_POSITIVE,
-                        getString(R.string.yes), listener);
-                alert.setButton(AlertDialog.BUTTON_NEGATIVE,
-                        getString(R.string.no), listener);
+                MaterialDialog alert = new MaterialDialog(this);
+                alert.setTitle("Itone")
+                        .setMessage(getString(R.string.document_has_changes_save_them_))
+                        .setPositiveButton(getString(R.string.yes),new View.OnClickListener() {
+                            public void onClick(View view) {
+                                core.save();
+                                finish();
+                            }
+                        })
+                        .setNegativeButton(getString(R.string.no),new View.OnClickListener() {
+                            public void onClick(View view) {
+                                finish();
+                            }
+                        });
                 alert.show();
             }else{
                 finish();

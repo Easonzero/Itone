@@ -4,13 +4,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.lang.ref.WeakReference;
-import java.net.URI;
 
 import com.androidquery.AQuery;
 import com.artifex.mupdfdemo.AsyncTask;
 import com.artifex.mupdfdemo.MuPDFActivity;
 import com.artifex.mupdfdemo.MuPDFCore;
-import com.squareup.picasso.Picasso;
 import com.wangyi.utils.PreferencesReader;
 import com.wangyi.utils.ItOneUtils;
 import com.wangyi.reader.R;
@@ -21,19 +19,13 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.TransitionDrawable;
-import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.graphics.PointF;
-import android.net.Uri;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.DecelerateInterpolator;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
@@ -100,7 +92,7 @@ public class ThumbnailViewAdapter extends BaseAdapter {
             aq.id(R.id.ThumbnailLayoutView).background(R.color.accent_color);
             aq.id(R.id.ThumbnailNumber).textColorId(android.R.color.secondary_text_light);
         } else {
-            aq.id(R.id.ThumbnailLayoutView).background(R.drawable.button);
+            aq.id(R.id.ThumbnailLayoutView).background(R.drawable.buttondark);
             aq.id(R.id.ThumbnailNumber).textColorId(android.R.color.secondary_text_dark);
         }
 

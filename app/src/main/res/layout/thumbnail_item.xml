@@ -3,7 +3,7 @@
     android:id="@+id/ThumbnailLayoutView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@drawable/button"
+    android:background="@drawable/buttondark"
     android:gravity="center"
     android:orientation="vertical" >
 

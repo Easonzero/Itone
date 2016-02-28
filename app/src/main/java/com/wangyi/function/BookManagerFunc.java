@@ -17,7 +17,7 @@ public class BookManagerFunc {
 	private ArrayList<BookData> historyCache;
 	private Context context;
 	private Handler handler;
-	private void BookManagerFunc(){}
+	private BookManagerFunc(){}
 	
 	public void init(Context context){
 		this.context = context;
@@ -32,9 +32,11 @@ public class BookManagerFunc {
 	public static BookManagerFunc getInstance(){
 		return INSTANCE;
 	}
-	
-	public void connect(Handler handler){
-		this.handler = handler;
+
+	public BookManagerFunc connect(Handler handler){
+        if(this.handler != handler)
+		    this.handler = handler;
+		return INSTANCE;
 	}
 	
 	public BookData getBookData(int cur){

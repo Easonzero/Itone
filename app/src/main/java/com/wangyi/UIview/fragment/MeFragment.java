@@ -37,7 +37,7 @@ public class MeFragment extends BaseFragment {
 	private Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg){
-            if(msg.what == EventName.UI.FINISH){
+            if(msg.what == EventName.UI.SUCCESS){
             	UserInfo userInfo = UserManagerFunc.getInstance().getUserInfo();
             	userName.setText(userInfo.userName);
             	other.setText(userInfo.university + " " + userInfo.faculty + " " + userInfo.occupation);
@@ -80,6 +80,6 @@ public class MeFragment extends BaseFragment {
 		// TODO Auto-generated method stub
 		super.onResume();
 		if(UserManagerFunc.getInstance().isLogin())
-			handler.sendEmptyMessage(EventName.UI.FINISH);
+			handler.sendEmptyMessage(EventName.UI.SUCCESS);
 	}
 }

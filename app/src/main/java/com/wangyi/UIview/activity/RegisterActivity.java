@@ -1,49 +1,38 @@
 package com.wangyi.UIview.activity;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+
+import com.wangyi.UIview.widget.LoadingDialog;
+import com.wangyi.define.UserInfo;
+import com.wangyi.function.HttpsFunc;
 import org.xutils.view.annotation.*;
 
 import com.wangyi.utils.ImagePicker;
-import com.wangyi.utils.ItOneUtils;
 import com.wangyi.UIview.BaseActivity;
 import com.wangyi.define.EventName;
 import com.wangyi.reader.R;
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.content.ContentUris;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+import org.xutils.x;
 
 @ContentView(R.layout.register)
 public class RegisterActivity extends BaseActivity {
+    @ViewInject(R.id.id)
+    private EditText id;
     @ViewInject(R.id.userName)
     private EditText userName;
     @ViewInject(R.id.passWords)
     private EditText passWords;
-    @ViewInject(R.id.confirmPassWords)
-    private EditText confirmPassWords;
     @ViewInject(R.id.province)
     private EditText province;
     @ViewInject(R.id.city)
@@ -57,28 +46,30 @@ public class RegisterActivity extends BaseActivity {
     @ViewInject(R.id.picture)
     private ImageView picture;
     private boolean isAddPic = false;
+    private LoadingDialog loading;
     private Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg){
-            if(msg.what == 1){
-                Toast.makeText(RegisterActivity.this, "该用户名已注册", 5000).show();
-            }
-            else if(msg.what == 2){
-                Toast.makeText(RegisterActivity.this, "注册成功", 5000).show();
-                RegisterActivity.this.finish();
-            }
-            else if(msg.what == 3){
-                Toast.makeText(RegisterActivity.this, "服务器抽风中...", 5000).show();
+            switch (msg.what){
+                case EventName.UI.FINISH:
+                    loading.dismiss();
+                    break;
+                case EventName.UI.START:
+                    loading.show();
+                    break;
+                case EventName.UI.SUCCESS:
+                    RegisterActivity.this.finish();
+                    break;
             }
             super.handleMessage(msg);
         }
     };
-    Map<String, String> userInfo = new HashMap<String, String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
+        loading = new LoadingDialog(this);
     }
 
     @Event(R.id.picture)
@@ -93,48 +84,23 @@ public class RegisterActivity extends BaseActivity {
 
     @Event(R.id.confirm)
     private void onConfirmClick(View view){
-        if(confirmPassWords.getText().toString().equals("")||
-                passWords.getText().toString().equals("")||
-                userName.getText().toString().equals("")){
+        if(passWords.getText().toString().equals("")||
+                userName.getText().toString().equals("")||
+                id.getText().toString().equals("")){
             Toast.makeText(RegisterActivity.this, "必填项填写不全", 5000).show();
         }
-        else if(!confirmPassWords.getText().toString().equals(passWords.getText().toString())){
-            Toast.makeText(RegisterActivity.this, "前后密码输入不一致", 5000).show();
-        }
         else{
-            new Thread(){
-                public void run(){
-                    String url = "/ItOne/OpenFormServlet";
-                    userInfo.put("userName", userName.getText().toString());
-                    userInfo.put("passWords", passWords.getText().toString());
-                    userInfo.put("province", province.getText().toString());
-                    userInfo.put("city", city.getText().toString());
-                    userInfo.put("university", university.getText().toString());
-                    userInfo.put("faculty", faculty.getText().toString());
-                    userInfo.put("occupation", occupation.getText().toString());
-                    userInfo.put("imageUrl", isAddPic?"true":"false");
-                    //MyHttps myHttpsre = new MyHttps(url);
-                    //HttpResponse httpResponse = myHttpsre.postForm(userInfo, file);
-					/*if(httpResponse != null){
-						Header[] is = httpResponse.getHeaders("isChecked");
-						if(is[0].getValue().equals("true")){
-							Message message = new Message();
-							message.what = 1;
-							handler.sendMessage(message);
-						}
-						else{
-							Message message = new Message();
-        					message.what = 2;
-        					handler.sendMessage(message);
-						}
-					}
-					else{
-						Message message = new Message();
-    					message.what = 3;
-    					handler.sendMessage(message);
-					}*/
-                }
-            }.start();
+            UserInfo user = new UserInfo();
+            user.id = id.getText().toString();
+            user.userName = id.getText().toString();
+            user.passWords = passWords.getText().toString();
+            user.university = university.getText().toString();
+            user.city = city.getText().toString();
+            user.faculty = faculty.getText().toString();
+            user.province = province.getText().toString();
+            user.occupation = occupation.getText().toString();
+            user.imageUrl = isAddPic+"";
+            HttpsFunc.getInstance().connect(handler).register(user);
         }
     }
 

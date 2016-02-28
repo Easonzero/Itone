@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import com.wangyi.UIview.widget.PopupView;
 import org.xutils.x;
 
 import com.wangyi.reader.R;
@@ -41,7 +44,6 @@ import android.util.DisplayMetrics;
 import android.widget.Toast;
 
 public class ItOneUtils {
-	
 	static List<File> listFile = new ArrayList<File>();
 	static String fileType;
 	public static int[] colorBg = { 

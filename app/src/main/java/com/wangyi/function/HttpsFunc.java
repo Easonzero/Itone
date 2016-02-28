@@ -4,6 +4,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.google.gson.Gson;
+import com.wangyi.utils.ImagePicker;
 import org.xutils.common.Callback;
 
 import com.wangyi.define.BookData;
@@ -19,7 +22,7 @@ import android.os.Handler;
 import org.xutils.ex.DbException;
 
 public class HttpsFunc {
-	public static String host = "http://192.168.0.102:8080";
+	public static String host = "http://192.168.0.102:3000";
 
 	private static final HttpsFunc INSTANCE = new HttpsFunc();
 
@@ -35,8 +38,10 @@ public class HttpsFunc {
 		this.context = context;
 	}
 
-	public void connect(Handler handler){
-		this.handler = handler;
+	public HttpsFunc connect(Handler handler){
+        if(this.handler != handler)
+            this.handler = handler;
+        return INSTANCE;
 	}
 
 	public void Login(String userID,String passWords){
@@ -44,11 +49,15 @@ public class HttpsFunc {
 			ItOneUtils.showToast(context,"网络未连接");
 			return;
 		}
+		if(userID.equals("")||passWords.equals("")){
+			ItOneUtils.showToast(context,"账号密码不能为空");
+            return;
+		}
 		if(handler!=null) handler.sendEmptyMessage(EventName.UI.START);
 		Map<String,Object> map=new HashMap<>();
-		map.put("userID", userID);
+		map.put("id", userID);
 		map.put("passWords", passWords);
-		HttpsUtils.Post(host+"/ItOne/LoginServlet", map, new Callback.CommonCallback<String>(){
+		HttpsUtils.Post(host+"/users/login", map, new Callback.CommonCallback<String>(){
 
 			@Override
 			public void onCancelled(CancelledException arg0) {}
@@ -79,56 +88,43 @@ public class HttpsFunc {
 		});
 	}
 
-	public void register(UserInfo user,String passWords){
+	public void register(UserInfo user){
 		if(!isNetworkConnected()){
 			ItOneUtils.showToast(context,"网络未连接");
 			return;
 		}
+        Map<String,Object> map=new HashMap<>();
+        map.put("userinfo",new Gson().toJson(user));
+		if(user.imageUrl.equals("true"))
+			map.put("file", new File(ImagePicker.SAVE_PATH));
+        handler.sendEmptyMessage(EventName.UI.START);
+        HttpsUtils.UpLoadFile(host+"/users/register", map, new Callback.CommonCallback<String>(){
 
-		Map<String,Object> map=new HashMap<>();
-		map.put("userID", user.userID);
-		map.put("passWords",passWords);
-		map.put("userName", user.userName);
-		map.put("province", user.province);
-		map.put("city", user.city);
-		map.put("university", user.university);
-		map.put("faculty", user.faculty);
-		map.put("occupation", user.occupation);
-		map.put("imageUrl", user.imageUrl);
-		map.put("file", new File(user.imageUrl));
+            @Override
+            public void onCancelled(CancelledException arg0) {}
 
-		if(user.imageUrl!=null){
-			HttpsUtils.UpLoadFile(host+"/ItOne/OpenFormServlet", map, new Callback.CommonCallback<String>(){
+            @Override
+            public void onError(Throwable ex, boolean isCheck) {
+                ItOneUtils.showToast(context,"服务器抽风中...");
+            }
 
-				@Override
-				public void onCancelled(CancelledException arg0) {}
+            @Override
+            public void onFinished() {
+                handler.sendEmptyMessage(EventName.UI.FINISH);
+            }
 
-				@Override
-				public void onError(Throwable ex, boolean isCheck) {
-					ItOneUtils.showToast(context,"服务器抽风中...");
-				}
+            @Override
+            public void onSuccess(String result) {
+                // TODO Auto-generated method stub
+                if(result.equals(EventName.Https.OK)){
+                    ItOneUtils.showToast(context,"注册成功");
+                    if(handler!=null) handler.sendEmptyMessage(EventName.UI.SUCCESS);
+                }else if(result.equals(EventName.Https.ERROR)){
+                    ItOneUtils.showToast(context,"用户名已经存在");
+                }
+            }
 
-				@Override
-				public void onFinished() {
-					handler.sendEmptyMessage(EventName.UI.FINISH);
-				}
-
-				@Override
-				public void onSuccess(String result) {
-					// TODO Auto-generated method stub
-					if(result.equals(EventName.Https.OK)){
-						ItOneUtils.showToast(context,"注册成功");
-						visitUserInfo();
-						UserManagerFunc.getInstance().setLoginStatus(true);
-						if(handler!=null) handler.sendEmptyMessage(EventName.UI.SUCCESS);
-					}else if(result.equals(EventName.Https.ERROR)){
-						ItOneUtils.showToast(context,"用户名已经存在");
-					}
-				}
-
-			});
-		}
-
+        });
 	}
 
 	public void searchBookByName(String bookName,String university){
@@ -140,7 +136,8 @@ public class HttpsFunc {
 		Map<String,Object> map=new HashMap<>();
 		map.put("bookName", bookName);
 		map.put("university",university);
-		HttpsUtils.Post(host+"/ItOne/GetBook", map, new Callback.CommonCallback<ArrayList<BookData>>(){
+        handler.sendEmptyMessage(EventName.UI.START);
+		HttpsUtils.Post(host+"/books/search", map, new Callback.CommonCallback<ArrayList<BookData>>(){
 
 			@Override
 			public void onCancelled(CancelledException arg0) {}
@@ -174,7 +171,8 @@ public class HttpsFunc {
 		Map<String,Object> map=new HashMap<>();
 		map.put("subject", subject);
 		map.put("university", university);
-		HttpsUtils.Post(host+"/ItOne/GetBookList", map, new Callback.CommonCallback<ArrayList<BookData>>(){
+		handler.sendEmptyMessage(EventName.UI.START);
+		HttpsUtils.Post(host+"/books/booklist", map, new Callback.CommonCallback<ArrayList<BookData>>(){
 
 			@Override
 			public void onCancelled(CancelledException arg0) {}
@@ -199,7 +197,7 @@ public class HttpsFunc {
 	}
 
 	private void visitUserInfo(){
-		HttpsUtils.Post(host+"/ItOne/GetUserInfo", null, new Callback.CommonCallback<UserInfo>(){
+		HttpsUtils.Post(host+"/users/userinfo", null, new Callback.CommonCallback<UserInfo>(){
 
 			@Override
 			public void onCancelled(CancelledException arg0) {}

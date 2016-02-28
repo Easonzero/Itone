@@ -49,10 +49,12 @@
     <color name="background_material_light">@color/material_grey_50</color>
     <color name="background_tab_pressed">#6633B5E5</color>
     <color name="base_background_color">#f1f1f1</color>
+    <color name="basebar_color">#2D7E55</color>
     <color name="bg_thumbnail">#424242</color>
     <color name="bg_thumbnail2">#666666</color>
     <color name="bg_thumbnail_white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="black_de">#DE000000</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
@@ -65,8 +67,13 @@
     <color name="button_normal">#00000000</color>
     <color name="button_pressed">#FF2572AC</color>
     <color name="canvas">#404040</color>
+    <color name="card_background">#ffffff</color>
     <color name="card_selected_color">#f5f5f5</color>
+    <color name="card_shadow">#10000000</color>
+    <color name="card_text_color">#212121</color>
+    <color name="circle">#aa738ffe</color>
     <color name="daytext_color">#ffa9aaaa</color>
+    <color name="dialog_bg">#f5f5f5</color>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
@@ -78,6 +85,8 @@
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
     <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
     <color name="line_gray_color">#e5e5e5</color>
+    <color name="lite_blue">#ff359ff2</color>
+    <color name="loading_background">#bbfff7fb</color>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
     <color name="material_blue_grey_950">#ff21272b</color>
@@ -116,6 +125,7 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
+    <color name="rect">#aae84e40</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
     <color name="search_text_color">#FFFFFF</color>
@@ -126,6 +136,7 @@
     <color name="secondary_text_disabled_material_light">#24000000</color>
     <color name="seek_progress">#FFFFFF</color>
     <color name="seek_thumb">#2572AC</color>
+    <color name="shadow">#25808080</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
@@ -141,13 +152,17 @@
     <color name="text_normal">#FFFFFF</color>
     <color name="text_pressed">#FFFFFF</color>
     <color name="text_title_color">#404040</color>
+    <color name="title_text_color">#f5f6d3</color>
     <color name="toolbar">#C0000000</color>
+    <color name="triangle">#aa72d572</color>
     <color name="typography_color_caption">#8A000000</color>
     <color name="typography_color_dividers">#1F000000</color>
     <color name="typography_color_hinttext">#43000000</color>
     <color name="typography_color_secondarytext_icons">#8A000000</color>
     <color name="typography_color_text">#DE000000</color>
+    <color name="view_bg">#00000000</color>
     <color name="white">#ffffff</color>
+    <color name="window_background">#00000000</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode"><enum name="normal" value="0"/><enum name="listMode" value="1"/><enum name="tabMode" value="2"/></attr><attr name="displayOptions"><flag name="none" value="0"/><flag name="useLogo" value="0x1"/><flag name="showHome" value="0x2"/><flag name="homeAsUp" value="0x4"/><flag name="showTitle" value="0x8"/><flag name="showCustom" value="0x10"/><flag name="disableHome" value="0x20"/></attr><attr name="title"/><attr format="string" name="subtitle"/><attr format="reference" name="titleTextStyle"/><attr format="reference" name="subtitleTextStyle"/><attr format="reference" name="icon"/><attr format="reference" name="logo"/><attr format="reference" name="divider"/><attr format="reference" name="background"/><attr format="reference|color" name="backgroundStacked"/><attr format="reference|color" name="backgroundSplit"/><attr format="reference" name="customNavigationLayout"/><attr name="height"/><attr format="reference" name="homeLayout"/><attr format="reference" name="progressBarStyle"/><attr format="reference" name="indeterminateProgressStyle"/><attr format="dimension" name="progressBarPadding"/><attr name="homeAsUpIndicator"/><attr format="dimension" name="itemPadding"/><attr format="boolean" name="hideOnContentScroll"/><attr format="dimension" name="contentInsetStart"/><attr format="dimension" name="contentInsetEnd"/><attr format="dimension" name="contentInsetLeft"/><attr format="dimension" name="contentInsetRight"/><attr format="dimension" name="elevation"/><attr format="reference" name="popupTheme"/></declare-styleable>
     <declare-styleable name="ActionBarLayout"><attr name="android:layout_gravity"/></declare-styleable>
     <declare-styleable name="ActionMenuItemView"><attr name="android:minWidth"/></declare-styleable>
@@ -162,6 +177,7 @@
     <declare-styleable name="LinearLayoutCompat"><attr name="android:orientation"/><attr name="android:gravity"/><attr name="android:baselineAligned"/><attr name="android:baselineAlignedChildIndex"/><attr name="android:weightSum"/><attr format="boolean" name="measureWithLargestChild"/><attr name="divider"/><attr name="showDividers"><flag name="none" value="0"/><flag name="beginning" value="1"/><flag name="middle" value="2"/><flag name="end" value="4"/></attr><attr format="dimension" name="dividerPadding"/></declare-styleable>
     <declare-styleable name="LinearLayoutCompat_Layout"><attr name="android:layout_width"/><attr name="android:layout_height"/><attr name="android:layout_weight"/><attr name="android:layout_gravity"/></declare-styleable>
     <declare-styleable name="ListPopupWindow"><attr name="android:dropDownVerticalOffset"/><attr name="android:dropDownHorizontalOffset"/></declare-styleable>
+    <declare-styleable name="LoadingView"><attr format="string" name="loadingText"/><attr format="reference" name="loadingTextAppearance"/></declare-styleable>
     <declare-styleable name="MenuGroup"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:checkableBehavior"/><attr name="android:visible"/><attr name="android:enabled"/></declare-styleable>
     <declare-styleable name="MenuItem"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:title"/><attr name="android:titleCondensed"/><attr name="android:icon"/><attr name="android:alphabeticShortcut"/><attr name="android:numericShortcut"/><attr name="android:checkable"/><attr name="android:checked"/><attr name="android:visible"/><attr name="android:enabled"/><attr name="android:onClick"/><attr name="showAsAction"><flag name="never" value="0"/><flag name="ifRoom" value="1"/><flag name="always" value="2"/><flag name="withText" value="4"/><flag name="collapseActionView" value="8"/></attr><attr format="reference" name="actionLayout"/><attr format="string" name="actionViewClass"/><attr format="string" name="actionProviderClass"/></declare-styleable>
     <declare-styleable name="MenuView"><attr name="android:itemTextAppearance"/><attr name="android:horizontalDivider"/><attr name="android:verticalDivider"/><attr name="android:headerBackground"/><attr name="android:itemBackground"/><attr name="android:windowAnimationStyle"/><attr name="android:itemIconDisabledAlpha"/><attr format="boolean" name="preserveIconSpacing"/></declare-styleable>
@@ -177,7 +193,6 @@
     <declare-styleable name="View"><attr format="dimension" name="paddingStart"/><attr format="dimension" name="paddingEnd"/><attr name="android:focusable"/><attr format="reference" name="theme"/><attr name="android:theme"/></declare-styleable>
     <declare-styleable name="ViewBackgroundHelper"><attr name="android:background"/><attr format="color" name="backgroundTint"/><attr name="backgroundTintMode"><enum name="src_over" value="3"/><enum name="src_in" value="5"/><enum name="src_atop" value="9"/><enum name="multiply" value="14"/><enum name="screen" value="15"/></attr></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
-    <declare-styleable name="WaveLoadingView"><attr format="integer" name="borderWidth"/><attr format="color" name="borderColor"/><attr format="integer" name="progressValue"/><attr name="shapeType"><flag name="circle" value="0"/><flag name="square" value="1"/></attr><attr format="color" name="waveColor"/><attr format="float" name="waveAmplitude"/><attr format="float" name="titleTopSize"/><attr format="float" name="titleCenterSize"/><attr format="float" name="titleBottomSize"/><attr format="color" name="titleTopColor"/><attr format="color" name="titleCenterColor"/><attr format="color" name="titleBottomColor"/><attr format="string" name="titleTop"/><attr format="string" name="titleCenter"/><attr format="string" name="titleBottom"/></declare-styleable>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
     <dimen name="abc_action_bar_default_padding_end_material">0dp</dimen>
@@ -274,6 +289,7 @@
     <dimen name="icon_menu_padding_right">-8dp</dimen>
     <dimen name="icon_menu_width">46dp</dimen>
     <dimen name="layout_maxwidth">650dp</dimen>
+    <dimen name="menuitemSize">25dp</dimen>
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_subtext_size">12dp</dimen>
@@ -289,8 +305,8 @@
     <dimen name="padding_step_s">4dp</dimen>
     <dimen name="padding_step_ss">6dp</dimen>
     <dimen name="scheduleListHeight">80dp</dimen>
-    <dimen name="tab_max_width">70dp</dimen>
     <dimen name="toobal_width">48dp</dimen>
+    <dimen name="toobarHeight">70dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
@@ -353,6 +369,7 @@
     <string name="entering_reflow_mode">Entering reflow mode</string>
     <string name="fill_out_text_field">Fill out text field</string>
     <string name="format_currently_not_supported">Format currently not supported</string>
+    <string name="hello_world">Hello world!</string>
     <string name="highlight">荧光笔</string>
     <string name="home">主页</string>
     <string name="ink">涂鸦</string>
@@ -417,13 +434,8 @@
         <item name="@android:windowEnterAnimation">@anim/pump_bottom</item>
         <item name="@android:windowExitAnimation">@anim/disappear</item>
     </style>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-
-    </style>
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
     </style>
     <style name="Base.AlertDialog.AppCompat" parent="android:Widget">
         <item name="android:layout">@layout/abc_alert_dialog_material</item>
@@ -1360,11 +1372,26 @@
         <item name="android:minWidth">56dp</item>
         <item name="android:scaleType">center</item>
     </style>
+    <style name="Container">
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:padding">@dimen/padding_step2</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/base_background_color</item>
+        <item name="android:layout_weight">1</item>
+    </style>
     <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/apptheme_color</item>
         <item name="android:backgroundStacked">@color/apptheme_color</item>
     </style>
-    <style name="PDFReaderTheme" parent="@style/AppTheme">
+    <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textColor">@color/foreground_material_light</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_material_light</item>
+    </style>
+    <style name="PDFReaderTheme" parent="@style/ReadTheme">
         <item name="windowActionBarOverlay">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:actionBarStyle">@style/ActionBarFullScreen</item>
@@ -1468,6 +1495,9 @@
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
     </style>
     <style name="Platform.Widget.AppCompat.Spinner" parent="android:Widget.Spinner"/>
+    <style name="ReadTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
     <style name="RtlOverlay.DialogWindowTitle.AppCompat" parent="Base.DialogWindowTitle.AppCompat">
     </style>
     <style name="RtlOverlay.Widget.AppCompat.ActionBar.TitleItem" parent="android:Widget">
@@ -1749,4 +1779,41 @@
     <style name="Widget.AppCompat.TextView.SpinnerItem" parent="Base.Widget.AppCompat.TextView.SpinnerItem"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
+    <style name="card">
+        <item name="android:paddingLeft">@dimen/padding_step2</item>
+        <item name="android:paddingRight">@dimen/padding_step2</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="cardtext">
+        <item name="android:textAppearance">?android:attr/textAppearance</item>
+        <item name="android:textColor">@color/card_text_color</item>
+    </style>
+    <style name="custom_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+    <style name="titletext">
+        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/title_text_color</item>
+    </style>
+    <style name="toolbar">
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:padding">@dimen/padding_step1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/toobarHeight</item>
+        <item name="android:background">@color/basebar_color</item>
+    </style>
 </resources>

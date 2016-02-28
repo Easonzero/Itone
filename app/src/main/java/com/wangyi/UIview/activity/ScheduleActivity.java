@@ -73,14 +73,6 @@ public class ScheduleActivity extends BaseActivity {
 		}
 	}
 
-	@Event(value=R.id.lv_popup_list,type=ListView.OnItemClickListener.class)
-	private void onListItemClick(AdapterView<?> parent, View view,
-								 int position, long id){
-		ScheduleFunc.getInstance().currentWeek = position+1;
-		reset(ScheduleFunc.getInstance().currentWeek);
-		pwMyPopWindow.dismiss();
-	}
-
 	@Event(value=R.id.lessons,type=View.OnTouchListener.class)
 	private boolean onLessonsTouch(View arg0, MotionEvent event){
 		if(MotionEvent.ACTION_MOVE == event.getAction()){
@@ -111,6 +103,14 @@ public class ScheduleActivity extends BaseActivity {
 				.getSystemService(LAYOUT_INFLATER_SERVICE);
 		View layout = inflater.inflate(R.layout.task_detail_popupwindow, null);
 		lvPopupList = (ListView) layout.findViewById(R.id.lv_popup_list);
+		lvPopupList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+				ScheduleFunc.getInstance().currentWeek = position+1;
+				reset(ScheduleFunc.getInstance().currentWeek);
+				pwMyPopWindow.dismiss();
+			}
+		});
 		pwMyPopWindow = new PopupWindow(layout);
 		pwMyPopWindow.setFocusable(true);
 		lvPopupList.setAdapter(new SimpleAdapter(ScheduleActivity.this, setList,

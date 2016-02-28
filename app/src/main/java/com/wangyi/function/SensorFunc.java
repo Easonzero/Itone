@@ -20,15 +20,17 @@ public class SensorFunc {
     	return INSTANCE;
     }
     
-	private void SensorFunc(){}
+	private SensorFunc(){}
 	
 	public void init(Context context){
 		sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE); 
         vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
 	}
-	
-	public void connect(Handler handler){
-		this.handler = handler;
+
+	public SensorFunc connect(Handler handler){
+        if(this.handler != handler)
+            this.handler = handler;
+        return INSTANCE;
 	}
 	
 	public void registerListener(){

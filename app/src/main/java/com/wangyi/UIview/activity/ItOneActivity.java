@@ -1,16 +1,12 @@
 package com.wangyi.UIview.activity;
 
+import com.wangyi.function.*;
 import org.xutils.x;
 import org.xutils.view.annotation.ContentView;
 import com.wangyi.UIview.BaseActivity;
 import com.wangyi.UIview.BaseFragment;
 import com.wangyi.UIview.widget.FragmentIndicator;
 import com.wangyi.UIview.widget.FragmentIndicator.OnIndicateListener;
-import com.wangyi.function.BookManagerFunc;
-import com.wangyi.function.HttpsFunc;
-import com.wangyi.function.ScheduleFunc;
-import com.wangyi.function.SensorFunc;
-import com.wangyi.function.UserManagerFunc;
 import com.wangyi.reader.R;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +25,8 @@ public class ItOneActivity extends BaseActivity{
 		BookManagerFunc.getInstance().init(this);
 		UserManagerFunc.getInstance().init(this);
 		HttpsFunc.getInstance().init(this);
-		SensorFunc.getInstance().init(getApplication());//该context必须为application context
+		//以下context必须为application context
+		SensorFunc.getInstance().init(getApplication());
 
 		setFragmentIndicator(0);
 	}

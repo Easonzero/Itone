@@ -1,154 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ececec" >
-    <RelativeLayout
-        	android:id="@+id/relativeLayout1"
-        	android:layout_width="match_parent"
-        	android:layout_height="70dp"
-        	android:layout_alignParentTop="true"
-        	android:layout_centerHorizontal="true"
-        	android:background="#307e56" >
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+    <RelativeLayout style="@style/toolbar">
         <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp"
-            android:text="IT1帐号注册"
-            android:textSize="20sp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#FFFFFFFF" />
-
+                style="@style/titletext"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="IT1帐号注册"/>
         <Button
-            android:id="@+id/back"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="23dp"
-            android:layout_height="25dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="10dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/register_back" />
-
+                android:id="@+id/back"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/menuitemSize"
+                android:layout_height="@dimen/menuitemSize"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/register_back" />
         <Button
-            android:id="@+id/confirm"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="28dp"
-            android:layout_height="30dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginRight="10dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/register_confirm" />
-
+                android:id="@+id/confirm"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/menuitemSize"
+                android:layout_height="@dimen/menuitemSize"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/register_confirm" />
     </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/register_top"
-        android:layout_marginLeft="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_width="wrap_content"
-        android:layout_height="230dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/relativeLayout1"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/register_top"
-        android:orientation="vertical" >
-
-        <ImageView
-            android:id="@+id/picture"
-            android:layout_width="70dp"
-            android:layout_height="45dp"
-            android:layout_marginLeft="95dp"
-            android:layout_weight="2"
-            android:src="@drawable/register_addpic" />
-
-        <EditText
-            android:id="@+id/userName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:layout_marginLeft="95dp"
-            android:background="#00000000"
-            android:layout_weight="1" />
-
-        <EditText
-            android:id="@+id/passWords"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:layout_marginLeft="95dp"
-            android:background="#00000000"
-            android:layout_weight="1" />
-
-        <EditText
-            android:id="@+id/confirmPassWords"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:layout_marginLeft="95dp"
-            android:background="#00000000"
-            android:layout_weight="1" />
-
+    <LinearLayout style="@style/Container">
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/register_card"
+                android:layout_weight="1"
+                android:orientation="vertical">
+            <LinearLayout style="@style/card"
+                          android:layout_weight="0">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:text="头像:" style="cardtext"/>
+                <ImageView android:layout_width="50dp"
+                           android:layout_height="50dp"
+                           android:adjustViewBounds="true"
+                           android:layout_marginLeft="50dp"
+                           android:layout_marginTop="10dp"
+                           android:layout_marginBottom="10dp"
+                           android:background="@drawable/register_addpic" android:id="@+id/picture"/>
+            </LinearLayout>
+            <LinearLayout style="@style/card">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                        android:text="账号:       " style="cardtext"/>
+                <EditText android:layout_width="fill_parent"
+                          android:layout_height="fill_parent"
+                          android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                          android:layout_gravity="center_vertical"
+                          android:id="@+id/id"/>
+            </LinearLayout>
+            <LinearLayout style="@style/card" >
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:text="用户名:   " style="cardtext"/>
+                <EditText android:layout_width="fill_parent"
+                          android:layout_height="fill_parent"
+                          android:layout_gravity="center_vertical"
+                          android:id="@+id/userName"/>
+            </LinearLayout>
+            <LinearLayout style="@style/card" >
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:text="密码:       " style="cardtext"/>
+                <EditText android:layout_width="fill_parent"
+                          android:layout_height="fill_parent"
+                          android:layout_gravity="center_vertical"
+                          android:inputType="textPassword"
+                          android:id="@+id/passWords"/>
+            </LinearLayout>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+              android:layout_height="@dimen/padding_step1"/>
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/register_card"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+            <LinearLayout style="@style/card">
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:text="省份:       " style="cardtext"/>
+                <EditText android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:id="@+id/province"/>
+            </LinearLayout>
+            <LinearLayout style="@style/card" >
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:text="市区:       " style="cardtext"/>
+                <EditText android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:id="@+id/city"/>
+            </LinearLayout>
+            <LinearLayout style="@style/card" >
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:text="大学:       " style="cardtext"/>
+                <EditText android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:id="@+id/university"/>
+            </LinearLayout>
+            <LinearLayout style="@style/card" >
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:text="院系:       " style="cardtext"/>
+                <EditText android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:id="@+id/faculty"/>
+            </LinearLayout>
+            <LinearLayout style="@style/card" >
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:text="专业:       " style="cardtext"/>
+                <EditText android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_vertical"
+                          android:id="@+id/occupation"/>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
-    
-    <LinearLayout
-        android:layout_marginLeft="18dp"
-        android:layout_marginRight="18dp"
-        android:layout_width="wrap_content"
-        android:layout_height="230dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/register_top"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/register_bottom"
-        android:orientation="vertical" >
-        <EditText
-            android:id="@+id/province"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_marginLeft="95dp"
-            android:background="#00000000"
-            android:layout_weight="1" />
-        <EditText
-            android:id="@+id/city"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_marginLeft="95dp"
-            android:background="#00000000"
-            android:layout_weight="1" />
-        <EditText
-            android:id="@+id/university"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_marginLeft="95dp"
-            android:background="#00000000"
-            android:layout_weight="1" />
-        <EditText
-            android:id="@+id/faculty"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_marginLeft="95dp"
-            android:background="#00000000"
-            android:layout_weight="1" />
-        <EditText
-            android:id="@+id/occupation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:layout_marginLeft="95dp"
-            android:background="#00000000"
-            android:layout_weight="1" />
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

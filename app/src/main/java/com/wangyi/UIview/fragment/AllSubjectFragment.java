@@ -1,5 +1,6 @@
 package com.wangyi.UIview.fragment;
 
+import com.wangyi.UIview.widget.LoadingDialog;
 import com.wangyi.define.BookData;
 import org.xutils.ex.DbException;
 import org.xutils.x;
@@ -44,6 +45,7 @@ public class AllSubjectFragment extends BaseFragment {
 	@ViewInject(R.id.booklist)
 	private ListView bookList;
 	DLBookListAdapter adapter;
+    LoadingDialog loading;
 
 	private Handler handler = new Handler() {
 
@@ -55,9 +57,13 @@ public class AllSubjectFragment extends BaseFragment {
 					if(msg.obj.equals(EventName.SensorFunc.SENSOR)){
 						keywordsFlow.showKeywordsFlow(keywords);
 					}
+                    loading.dismiss();
 					break;
 				case EventName.UI.SUCCESS:
 					adapter.notifyDataSetChanged();
+					break;
+				case EventName.UI.START:
+					loading.show();
 					break;
 			}
 		}
@@ -67,19 +73,19 @@ public class AllSubjectFragment extends BaseFragment {
 	@Override
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
-		SensorFunc.getInstance().connect(handler);
+        loading = new LoadingDialog(this.getContext());
 		editSearch.addTextChangedListener( new TextWatcher() {
 
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
 				if(s.toString().equals("")&&start - before != 0){
 					keywordsFlow.showKeywordsFlow(keywords);
-					SensorFunc.getInstance().registerListener();
-					HttpsFunc.getInstance().searchBookByName(s.toString(),UserManagerFunc.getInstance().getUserInfo().university);
+					SensorFunc.getInstance().connect(handler).registerListener();
+					HttpsFunc.getInstance().connect(handler).searchBookByName(s.toString(),UserManagerFunc.getInstance().getUserInfo().university);
 				}
 				else{
 					keywordsFlow.hideKeywordsFlow();
-					SensorFunc.getInstance().unregisterListener();
+					SensorFunc.getInstance().connect(handler).unregisterListener();
 				}
 			}
 
@@ -109,7 +115,7 @@ public class AllSubjectFragment extends BaseFragment {
 				String subject = ((TextView)view).getText().toString();
 				UserInfo user = UserManagerFunc.getInstance().getUserInfo();
 				if(user != null)
-					HttpsFunc.getInstance().searchBooksBySubject(subject,user.university);
+					HttpsFunc.getInstance().connect(handler).searchBooksBySubject(subject,user.university);
 			}
 
 		});
@@ -119,7 +125,7 @@ public class AllSubjectFragment extends BaseFragment {
 			public void onClick(View view) {
 				UserInfo user = UserManagerFunc.getInstance().getUserInfo();
 				if(user != null)
-					HttpsFunc.getInstance().searchBooksBySubject(((TextView)view).getText().toString(),user.university);
+					HttpsFunc.getInstance().connect(handler).searchBooksBySubject(((TextView)view).getText().toString(),user.university);
 			}
 		});
 
@@ -132,14 +138,13 @@ public class AllSubjectFragment extends BaseFragment {
 		// TODO Auto-generated method stub
 		super.onHiddenChanged(hidden);
 		if(!hidden){
-			HttpsFunc.getInstance().connect(handler);
 			UserInfo user = UserManagerFunc.getInstance().getUserInfo();
 			if(user != null)
-				HttpsFunc.getInstance().searchBooksBySubject("全部",user.university);
+				HttpsFunc.getInstance().connect(handler).searchBooksBySubject("全部",user.university);
 		}else{
-			BookManagerFunc.getInstance().clear();
+			BookManagerFunc.getInstance().connect(handler).clear();
 			keywordsFlow.hideKeywordsFlow();
-			SensorFunc.getInstance().unregisterListener();
+			SensorFunc.getInstance().connect(handler).unregisterListener();
 		}
 	}
 
@@ -147,7 +152,7 @@ public class AllSubjectFragment extends BaseFragment {
 	private void onListItemClick(AdapterView<?> adapter, View view, int pos,long arg3){
 		try {
 			BookData book = BookManagerFunc.getInstance().getBookData(pos);
-			HttpsFunc.getInstance().download(book.url,book.bookName);
+			HttpsFunc.getInstance().connect(handler).download(book.url,book.bookName);
 		} catch (DbException e) {
 			e.printStackTrace();
 		}
@@ -162,11 +167,11 @@ public class AllSubjectFragment extends BaseFragment {
 	private void onEditSearchFocusChange(View view, boolean is){
 		if(is){
 			keywordsFlow.showKeywordsFlow(keywords);
-			SensorFunc.getInstance().registerListener();
+			SensorFunc.getInstance().connect(handler).registerListener();
 		}
 		else{
 			keywordsFlow.hideKeywordsFlow();
-			SensorFunc.getInstance().unregisterListener();
+			SensorFunc.getInstance().connect(handler).unregisterListener();
 			editSearch.setText("");
 		}
 	}

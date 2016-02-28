@@ -53,7 +53,7 @@
 
     </RelativeLayout>
 
-    <!-- Checkbox, and/or radio button will be inserted here. -->
+    <!-- Checkbox, and/or radio buttondark will be inserted here. -->
 
 </android.support.v7.internal.view.menu.ListMenuItemView>
 <!-- From: file:/usr/local/google/buildbot/repo_clients/https___googleplex-android.googlesource.com_a_platform_manifest.git/klp-ub-dev/frameworks/support/v7/appcompat/res/layout/abc_list_menu_item_layout.xml -->

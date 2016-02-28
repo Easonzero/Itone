@@ -43,7 +43,7 @@ public class HttpsUtils {
             }
         }
         params.setMultipart(true);
-        Cancelable cancelable = x.http().get(params, callback);
+        Cancelable cancelable = x.http().post(params, callback);
         return cancelable;
     }
 

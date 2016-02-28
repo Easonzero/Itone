@@ -1,11 +1,15 @@
 <resources>
-    <style name="AppTheme.NoActionBar">
+    <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:textColor">@color/foreground_material_light</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_material_light</item>
     </style>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-
+    </style>
+    <style name="ReadTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
     </style>
     <style name="Typography_Display2">
         <item name="android:fontFamily">sans-serif</item>

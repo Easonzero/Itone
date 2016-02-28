@@ -29,6 +29,7 @@ import android.provider.MediaStore;
 import android.widget.ImageView;
 
 public class ImagePicker {
+    public static String SAVE_PATH = "/sdcard/headPic.jpg";
     public static void setImageToView(Intent data,ImageView imageView) {
         Bundle extras = data.getExtras();
         if (extras != null) {
@@ -40,7 +41,7 @@ public class ImagePicker {
     }
     
     public static void saveBitmap(Bitmap mBitmap) {
-        File f = new File("/sdcard/headPic.jpg");
+        File f = new File(SAVE_PATH);
         try {
             f.createNewFile();
             FileOutputStream fOut = null;

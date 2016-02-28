@@ -11,19 +11,10 @@
         android:layout_centerInParent="true"
         android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="周数选择"
-            android:textColor="@color/md_blue_gray"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
         <LinearLayout
-            android:layout_width="256dp"
+            android:layout_width="wrap_content"
             android:layout_height="160dp"
             android:layout_centerInParent="true"
-            android:background="@drawable/bg_weeks_choose"
             android:orientation="vertical" >
 
             <LinearLayout
