@@ -19,7 +19,8 @@ public class LessonGridAdapter extends BaseAdapter {
 	private List<LessonData> lessonDatas = null;
 
 	public LessonGridAdapter(Context context){
-		//lessonDatas = ScheduleFunc.getInstance().find();
+		ScheduleFunc.getInstance().init(context);
+		lessonDatas = ScheduleFunc.getInstance().find();
 		if(lessonDatas == null) lessonDatas = new ArrayList();
 		inflater = LayoutInflater.from(context);
 	}
