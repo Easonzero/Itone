@@ -1,5 +1,7 @@
 package com.wangyi.UIview.fragment;
 
+import com.wangyi.UIview.activity.IdeaBackActivity;
+import com.wangyi.UIview.activity.SettingActivity;
 import org.xutils.x;
 import org.xutils.image.ImageOptions;
 import org.xutils.view.annotation.*;
@@ -49,7 +51,7 @@ public class MeFragment extends BaseFragment {
             			.setCircular(true)  
             			.setIgnoreGif(false)  
             			.build();
-				x.image().bind(pic, HttpsFunc.host+userInfo.imageUrl+"headPic.jpg",options);
+				x.image().bind(pic, HttpsFunc.host+userInfo.picture+"headPic.jpg",options);
             	
             	notLogin.setVisibility(View.GONE);
             	isLogin.setVisibility(View.VISIBLE);
@@ -63,7 +65,19 @@ public class MeFragment extends BaseFragment {
 		Intent intent = new Intent(x.app(),DownloadActivity.class);
 		startActivity(intent);
 	}
-	
+
+	@Event(R.id.ideaback)
+	private void onIdeabackClick(View view){
+		Intent intent = new Intent(x.app(),IdeaBackActivity.class);
+		startActivity(intent);
+	}
+
+	@Event(R.id.setting)
+	private void onSettingClick(View view){
+		Intent intent = new Intent(x.app(),SettingActivity.class);
+		startActivity(intent);
+	}
+
 	@Event(R.id.back)
 	private void onBackClick(View view){
 		MeFragment.this.getActivity().finish();

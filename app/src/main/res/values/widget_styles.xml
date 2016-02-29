@@ -14,7 +14,7 @@
         <item name="android:layout_margin">0dp</item>
         <item name="android:padding">@dimen/padding_step1</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/toobarHeight</item>
+        <item name="android:layout_height">@dimen/toolbarHeight</item>
         <item name="android:background">@color/basebar_color</item>
     </style>
 
@@ -28,6 +28,32 @@
         <item name="android:orientation">horizontal</item>
     </style>
 
+    <style name="tableitem">
+        <item name="android:paddingLeft">@dimen/padding_step1</item>
+        <item name="android:paddingRight">@dimen/padding_step2</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/tableHeight</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:background">@drawable/me_tableitem2_selecter</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="tableitemnoline">
+        <item name="android:paddingLeft">@dimen/padding_step1</item>
+        <item name="android:paddingRight">@dimen/padding_step2</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/tableHeight</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:background">@drawable/me_tableitem_selecter</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dip</item>
+        <item name="android:background">@color/line_color</item>
+    </style>
+
     <style name="titletext">
         <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
         <item name="android:layout_width">wrap_content</item>
@@ -36,7 +62,12 @@
     </style>
 
     <style name="cardtext">
-        <item name="android:textAppearance">?android:attr/textAppearance</item>
+        <item name="android:textSize">@dimen/card_text_info_size</item>
+        <item name="android:textColor">@color/card_text_color</item>
+    </style>
+
+    <style name="bodytext">
+        <item name="android:textSize">@dimen/body_text_size</item>
         <item name="android:textColor">@color/card_text_color</item>
     </style>
 

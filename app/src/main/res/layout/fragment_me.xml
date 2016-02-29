@@ -1,16 +1,13 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_all"
+    android:orientation="vertical"
     tools:context="com.wangyi.UIview.activity.ItOneActivity" >
-
     <RelativeLayout
-        android:id="@+id/relativeLayout1"
+        android:id="@+id/toolbar"
         android:layout_width="wrap_content"
-        android:layout_height="250dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_height="@dimen/meToolbarHeight"
         android:background="@drawable/bg_me" >
 
         <LinearLayout
@@ -71,151 +68,84 @@
                 android:layout_gravity="center" />
         </LinearLayout>
     </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="171dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/relativeLayout1"
-        android:layout_marginTop="41dp"
-        android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp" >
-		<View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dip"
-            android:background="#cccccc" />
-
+    <LinearLayout style="@style/Container" >
+		<View style="@style/line" />
 		<LinearLayout
-		    android:id="@+id/download"
-		    android:layout_width="match_parent"
-		    android:layout_height="55dp"
-		    android:background="@drawable/me_tableitem_selecter"
-		    android:clickable="true"
-		    android:orientation="horizontal" >
-
+                android:id="@+id/download"
+                style="@style/tableitemnoline" >
 		    <ImageView
 		        android:layout_width="25dp"
 		        android:layout_height="30dp"
 		        android:layout_gravity="center_vertical"
-		        android:layout_marginLeft="10dp"
 		        android:src="@drawable/ic_me_download" />
-
-		    <TextView
-		        android:layout_width="163dp"
-		        android:layout_height="55dp"
+		    <TextView style="@style/bodytext"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
 		        android:layout_marginLeft="10dp"
-		        android:layout_weight="0.85"
+		        android:layout_weight="1"
 		        android:gravity="center_vertical|left"
-		        android:text="我的下载"
-		        android:textColor="#1d0d0d"
-		        android:textSize="18sp" />
-
+		        android:text="我的下载" />
 		    <ImageView
 		        android:layout_width="10dp"
 		        android:layout_height="20dp"
-		        android:layout_marginRight="18dp"
 		        android:layout_gravity="center_vertical"
 		        android:src="@drawable/ic_me_right" />
 		</LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dip"
-            android:background="#cccccc" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:background="@drawable/me_tableitem_selecter"
-            android:clickable="true" >
-
+        <View style="@style/line" />
+        <LinearLayout style="@style/tableitemnoline"
+                      android:id="@+id/ideaback">
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
                 android:src="@drawable/ic_me_ideaback" />
-
-            <TextView
-                android:layout_width="163dp"
-                android:layout_height="55dp"
+            <TextView style="@style/bodytext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
-                android:layout_weight="0.85"
+                android:layout_weight="1"
                 android:gravity="center_vertical|left"
-                android:text="意见反馈"
-                android:textColor="#1d0d0d"
-                android:textSize="18sp" />
-
+                android:text="意见反馈" />
             <ImageView
                 android:layout_width="10dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginRight="18dp"
                 android:src="@drawable/ic_me_right" />
         </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dip"
-            android:background="#cccccc" />
-
-        <LinearLayout
-		    android:layout_width="match_parent"
-		    android:layout_height="55dp"
-		    android:clickable="true"
-		    android:background="@drawable/me_tableitem_selecter" >
+        <View style="@style/line" />
+        <LinearLayout style="@style/tableitemnoline"
+                      android:id="@+id/setting">
 
             <ImageView
                 android:layout_width="25dp"
 			    android:layout_height="30dp"
-			    android:layout_marginLeft="10dp"
 			    android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_me_set" />
-			<TextView
-			    android:layout_marginLeft="10dp"
-			    android:layout_width="163dp"
-			    android:layout_height="55dp"
+			<TextView style="@style/bodytext"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+					  android:layout_marginLeft="10dp"
 			    android:gravity="center_vertical|left"
-			    android:layout_weight="0.85"
-			    android:text="设置"
-			    android:textColor="#1d0d0d"
-			    android:textSize="18sp" />
+			    android:layout_weight="1"
+			    android:text="设置" />
 			<ImageView
 		        android:layout_width="10dp"
 		        android:layout_height="20dp"
-		        android:layout_marginRight="18dp"
 		        android:layout_gravity="center_vertical"
 		        android:src="@drawable/ic_me_right" />
 		</LinearLayout>
-        
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dip"
-            android:background="#cccccc" />
+        <View style="@style/line" />
+        <LinearLayout style="@style/tableitem"
+                      android:id="@+id/back"
+                      android:layout_marginTop="@dimen/tableMargin">
+
+            <TextView style="@style/bodytext"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:gravity="center"
+                      android:text="退出程序" />
+
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/back"
-		android:layout_width="match_parent"
-		android:layout_height="55dp"
-		android:layout_below="@+id/linearLayout1"
-		android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:clickable="true"
-        android:background="@drawable/me_tableitem2_selecter" >
-
-		<TextView
-			android:layout_width="match_parent"
-			android:layout_height="55dp"
-			android:gravity="center"
-			android:text="退出程序"
-			android:textColor="#1d0d0d"
-			android:textSize="20sp" />
-
-	</LinearLayout>
 	
-</RelativeLayout>
+</LinearLayout>

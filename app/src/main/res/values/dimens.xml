@@ -1,7 +1,10 @@
 <resources>
     <dimen name="scheduleListHeight">80dp</dimen>
-    <dimen name="toobarHeight">70dp</dimen>
+    <dimen name="toolbarHeight">70dp</dimen>
+    <dimen name="meToolbarHeight">250dp</dimen>
     <dimen name="menuitemSize">25dp</dimen>
+    <dimen name="tableHeight">55dp</dimen>
+    <dimen name="tableMargin">38dp</dimen>
     
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
@@ -17,8 +20,7 @@
     <dimen name="icon_menu_height">36dp</dimen>
     <dimen name="icon_menu_padding">4dp</dimen>
     <dimen name="icon_menu_padding_right">-8dp</dimen>
-    
-    <dimen name="body_text_size">18sp</dimen>
+
     <dimen name="big_card_image_height">200dp</dimen>
 
     <dimen name="padding_step_0">2dp</dimen>
@@ -43,6 +45,7 @@
 	<dimen name="card_text_padding">4dp</dimen>
 	<dimen name="card_text_padding_buttom">2dp</dimen>
 	<dimen name="card_text_info_size">12sp</dimen>
+    <dimen name="body_text_size">18sp</dimen>
 	<integer name="num_columns">3</integer>
 	<dimen name="gridview_padding">6dp</dimen>
 	<dimen name="cover_height">120dp</dimen>

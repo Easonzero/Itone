@@ -51,13 +51,14 @@ public class RegisterActivity extends BaseActivity {
         @Override
         public void handleMessage(Message msg){
             switch (msg.what){
-                case EventName.UI.FINISH:
+                case EventName.UI.FAULT:
                     loading.dismiss();
                     break;
                 case EventName.UI.START:
                     loading.show();
                     break;
                 case EventName.UI.SUCCESS:
+                    loading.dismiss();
                     RegisterActivity.this.finish();
                     break;
             }
@@ -99,7 +100,7 @@ public class RegisterActivity extends BaseActivity {
             user.faculty = faculty.getText().toString();
             user.province = province.getText().toString();
             user.occupation = occupation.getText().toString();
-            user.imageUrl = isAddPic+"";
+            user.picture = isAddPic+"";
             HttpsFunc.getInstance().connect(handler).register(user);
         }
     }

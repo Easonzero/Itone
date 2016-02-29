@@ -56,8 +56,9 @@ public class AllSubjectFragment extends BaseFragment {
 				case EventName.UI.FINISH:
 					if(msg.obj.equals(EventName.SensorFunc.SENSOR)){
 						keywordsFlow.showKeywordsFlow(keywords);
+					}else{
+						loading.dismiss();
 					}
-                    loading.dismiss();
 					break;
 				case EventName.UI.SUCCESS:
 					adapter.notifyDataSetChanged();

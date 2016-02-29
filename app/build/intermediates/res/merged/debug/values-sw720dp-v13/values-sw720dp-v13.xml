@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="big_card_image_height">240dp</dimen>
-    <dimen name="body_text_size">20sp</dimen>
+    <dimen name="body_text_size">21sp</dimen>
     <dimen name="bottombar_height">56dp</dimen>
     <dimen name="card_buttom_pading">2dp</dimen>
     <dimen name="card_radius">3dp</dimen>
@@ -15,6 +15,12 @@
     <dimen name="icon_menu_height">42dp</dimen>
     <dimen name="icon_menu_width">52dp</dimen>
     <dimen name="layout_maxwidth">800dp</dimen>
+    <dimen name="meToolbarHeight">500dp</dimen>
+    <dimen name="menuitemSize">50dp</dimen>
+    <dimen name="scheduleListHeight">160dp</dimen>
+    <dimen name="tableHeight">110dp</dimen>
+    <dimen name="tableMargin">76dp</dimen>
+    <dimen name="toolbarHeight">140dp</dimen>
     <integer name="num_columns">8</integer>
     <integer name="showdialog">1</integer>
 </resources>

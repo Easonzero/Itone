@@ -14,27 +14,27 @@ public final class R {
 	public static final class color {
 		public static final int circle = 0x7f0c0029;
 		public static final int dialog_bg = 0x7f0c002b;
-		public static final int rect = 0x7f0c005f;
-		public static final int shadow = 0x7f0c006a;
-		public static final int triangle = 0x7f0c007c;
-		public static final int view_bg = 0x7f0c0082;
+		public static final int rect = 0x7f0c0060;
+		public static final int shadow = 0x7f0c006b;
+		public static final int triangle = 0x7f0c007d;
+		public static final int view_bg = 0x7f0c0083;
 	}
 	public static final class drawable {
 		public static final int aa_dialog_bg = 0x7f020000;
-		public static final int shadow = 0x7f0200e1;
+		public static final int shadow = 0x7f0200de;
 	}
 	public static final class id {
-		public static final int indication = 0x7f0d0128;
-		public static final int loadView = 0x7f0d0118;
-		public static final int promptTV = 0x7f0d0129;
-		public static final int shapeLoadingView = 0x7f0d012a;
+		public static final int indication = 0x7f0d012e;
+		public static final int loadView = 0x7f0d011e;
+		public static final int promptTV = 0x7f0d012f;
+		public static final int shapeLoadingView = 0x7f0d0130;
 	}
 	public static final class layout {
-		public static final int layout_dialog = 0x7f030026;
-		public static final int load_view = 0x7f03002c;
+		public static final int layout_dialog = 0x7f030027;
+		public static final int load_view = 0x7f03002d;
 	}
 	public static final class style {
-		public static final int custom_dialog = 0x7f09014e;
+		public static final int custom_dialog = 0x7f09014f;
 	}
 	public static final class styleable {
 		public static final int[] LoadingView = { 0x7f010033, 0x7f010034 };

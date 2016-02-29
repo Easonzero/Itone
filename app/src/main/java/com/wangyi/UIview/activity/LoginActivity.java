@@ -32,10 +32,11 @@ public class LoginActivity extends BaseActivity {
 				case EventName.UI.START:
 					loading.show();
 					break;
-				case EventName.UI.FINISH:
+				case EventName.UI.FAULT:
 					loading.dismiss();
 					break;
 				case EventName.UI.SUCCESS:
+					loading.dismiss();
 					LoginActivity.this.finish();
 					break;
 			}

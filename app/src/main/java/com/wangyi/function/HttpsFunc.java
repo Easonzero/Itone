@@ -65,12 +65,11 @@ public class HttpsFunc {
 			@Override
 			public void onError(Throwable ex, boolean isCheck) {
 				ItOneUtils.showToast(context,"服务器抽风中...");
+				if(handler!=null) handler.sendEmptyMessage(EventName.UI.FAULT);
 			}
 
 			@Override
-			public void onFinished() {
-				if(handler!=null) handler.sendEmptyMessage(EventName.UI.FINISH);
-			}
+			public void onFinished() {}
 
 			@Override
 			public void onSuccess(String result) {
@@ -79,9 +78,9 @@ public class HttpsFunc {
 					ItOneUtils.showToast(context,"登陆成功");
 					visitUserInfo();
 					UserManagerFunc.getInstance().setLoginStatus(true);
-					if(handler!=null) handler.sendEmptyMessage(EventName.UI.SUCCESS);
 				}else if(result.equals(EventName.Https.ERROR)){
 					ItOneUtils.showToast(context,"用户名或密码错误");
+					if(handler!=null) handler.sendEmptyMessage(EventName.UI.FAULT);
 				}
 			}
 
@@ -95,7 +94,7 @@ public class HttpsFunc {
 		}
         Map<String,Object> map=new HashMap<>();
         map.put("userinfo",new Gson().toJson(user));
-		if(user.imageUrl.equals("true"))
+		if(user.picture.equals("true"))
 			map.put("file", new File(ImagePicker.SAVE_PATH));
         handler.sendEmptyMessage(EventName.UI.START);
         HttpsUtils.UpLoadFile(host+"/users/register", map, new Callback.CommonCallback<String>(){
@@ -106,12 +105,11 @@ public class HttpsFunc {
             @Override
             public void onError(Throwable ex, boolean isCheck) {
                 ItOneUtils.showToast(context,"服务器抽风中...");
+                if(handler!=null) handler.sendEmptyMessage(EventName.UI.FAULT);
             }
 
             @Override
-            public void onFinished() {
-                handler.sendEmptyMessage(EventName.UI.FINISH);
-            }
+            public void onFinished() {}
 
             @Override
             public void onSuccess(String result) {
@@ -121,6 +119,7 @@ public class HttpsFunc {
                     if(handler!=null) handler.sendEmptyMessage(EventName.UI.SUCCESS);
                 }else if(result.equals(EventName.Https.ERROR)){
                     ItOneUtils.showToast(context,"用户名已经存在");
+                    if(handler!=null) handler.sendEmptyMessage(EventName.UI.FAULT);
                 }
             }
 
@@ -216,6 +215,7 @@ public class HttpsFunc {
 				// TODO Auto-generated method stub
 				if(result != null){
 					UserManagerFunc.getInstance().setUserInfo(result);
+                    if(handler!=null) handler.sendEmptyMessage(EventName.UI.SUCCESS);
 				}
 			}
 

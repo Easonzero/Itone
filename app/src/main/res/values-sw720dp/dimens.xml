@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="scheduleListHeight">160dp</dimen>
+    <dimen name="toolbarHeight">140dp</dimen>
+    <dimen name="meToolbarHeight">500dp</dimen>
+    <dimen name="menuitemSize">50dp</dimen>
+    <dimen name="tableHeight">110dp</dimen>
+    <dimen name="tableMargin">76dp</dimen>
 
     <dimen name="default_spacing_major_up">48dp</dimen>
     <dimen name="default_spacing_major">32dp</dimen>
@@ -9,8 +15,7 @@
     
     <dimen name="icon_menu_width">52dp</dimen>
     <dimen name="icon_menu_height">42dp</dimen>
-    
-    <dimen name="body_text_size">20sp</dimen>
+
     <dimen name="big_card_image_height">240dp</dimen>
     <dimen name="card_radius">3dp</dimen>
     <dimen name="card_buttom_pading">2dp</dimen>
@@ -19,6 +24,7 @@
     <!-- zReader -->
 	<integer name="num_columns">8</integer>
 	<dimen name="card_text_info_size">14sp</dimen>
+    <dimen name="body_text_size">21sp</dimen>
 	<integer name="showdialog">1</integer>
 	<dimen name="drawer_width">280dp</dimen>
 	<dimen name="bottombar_height">56dp</dimen>

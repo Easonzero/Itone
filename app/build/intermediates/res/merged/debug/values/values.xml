@@ -70,7 +70,7 @@
     <color name="card_background">#ffffff</color>
     <color name="card_selected_color">#f5f5f5</color>
     <color name="card_shadow">#10000000</color>
-    <color name="card_text_color">#212121</color>
+    <color name="card_text_color">#343031</color>
     <color name="circle">#aa738ffe</color>
     <color name="daytext_color">#ffa9aaaa</color>
     <color name="dialog_bg">#f5f5f5</color>
@@ -84,6 +84,7 @@
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
     <color name="hint_foreground_material_light">@color/bright_foreground_disabled_material_light</color>
+    <color name="line_color">#cccccc</color>
     <color name="line_gray_color">#e5e5e5</color>
     <color name="lite_blue">#ff359ff2</color>
     <color name="loading_background">#bbfff7fb</color>
@@ -289,6 +290,7 @@
     <dimen name="icon_menu_padding_right">-8dp</dimen>
     <dimen name="icon_menu_width">46dp</dimen>
     <dimen name="layout_maxwidth">650dp</dimen>
+    <dimen name="meToolbarHeight">250dp</dimen>
     <dimen name="menuitemSize">25dp</dimen>
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
@@ -305,8 +307,10 @@
     <dimen name="padding_step_s">4dp</dimen>
     <dimen name="padding_step_ss">6dp</dimen>
     <dimen name="scheduleListHeight">80dp</dimen>
+    <dimen name="tableHeight">55dp</dimen>
+    <dimen name="tableMargin">38dp</dimen>
     <dimen name="toobal_width">48dp</dimen>
-    <dimen name="toobarHeight">70dp</dimen>
+    <dimen name="toolbarHeight">70dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
@@ -1779,6 +1783,10 @@
     <style name="Widget.AppCompat.TextView.SpinnerItem" parent="Base.Widget.AppCompat.TextView.SpinnerItem"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
+    <style name="bodytext">
+        <item name="android:textSize">@dimen/body_text_size</item>
+        <item name="android:textColor">@color/card_text_color</item>
+    </style>
     <style name="card">
         <item name="android:paddingLeft">@dimen/padding_step2</item>
         <item name="android:paddingRight">@dimen/padding_step2</item>
@@ -1789,7 +1797,7 @@
         <item name="android:orientation">horizontal</item>
     </style>
     <style name="cardtext">
-        <item name="android:textAppearance">?android:attr/textAppearance</item>
+        <item name="android:textSize">@dimen/card_text_info_size</item>
         <item name="android:textColor">@color/card_text_color</item>
     </style>
     <style name="custom_dialog" parent="@android:style/Theme.Dialog">
@@ -1803,6 +1811,29 @@
         <item name="android:backgroundDimEnabled">true</item>
         <item name="android:backgroundDimAmount">0.6</item>
     </style>
+    <style name="line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dip</item>
+        <item name="android:background">@color/line_color</item>
+    </style>
+    <style name="tableitem">
+        <item name="android:paddingLeft">@dimen/padding_step1</item>
+        <item name="android:paddingRight">@dimen/padding_step2</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/tableHeight</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:background">@drawable/me_tableitem2_selecter</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="tableitemnoline">
+        <item name="android:paddingLeft">@dimen/padding_step1</item>
+        <item name="android:paddingRight">@dimen/padding_step2</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/tableHeight</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:background">@drawable/me_tableitem_selecter</item>
+        <item name="android:clickable">true</item>
+    </style>
     <style name="titletext">
         <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
         <item name="android:layout_width">wrap_content</item>
@@ -1813,7 +1844,7 @@
         <item name="android:layout_margin">0dp</item>
         <item name="android:padding">@dimen/padding_step1</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/toobarHeight</item>
+        <item name="android:layout_height">@dimen/toolbarHeight</item>
         <item name="android:background">@color/basebar_color</item>
     </style>
 </resources>

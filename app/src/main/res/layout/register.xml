@@ -16,7 +16,7 @@
                 android:layout_height="@dimen/menuitemSize"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
-                android:background="@drawable/register_back" />
+                android:background="@drawable/back2" />
         <Button
                 android:id="@+id/confirm"
                 style="?android:attr/buttonStyleSmall"
@@ -30,7 +30,7 @@
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/register_card"
+                android:background="@drawable/bg_card"
                 android:layout_weight="1"
                 android:orientation="vertical">
             <LinearLayout style="@style/card"
@@ -85,7 +85,7 @@
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/register_card"
+                android:background="@drawable/bg_card"
                 android:layout_weight="1"
                 android:orientation="vertical" >
             <LinearLayout style="@style/card">

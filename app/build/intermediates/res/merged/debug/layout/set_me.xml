@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout style="@style/toolbar" >
+        <TextView
+                style="@style/titletext"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="设置"/>
+        <Button
+                android:id="@+id/back"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="23dp"
+                android:layout_height="25dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/back2" />
+    </RelativeLayout>
+    <LinearLayout style="@style/Container">
+        <View style="@style/line" />
+        <LinearLayout style="@style/tableitemnoline" >
+            <TextView style="@style/bodytext"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_weight="1"
+                      android:gravity="center_vertical|left"
+                      android:text="允许离线更新" />
+            <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/item1" android:checked="false"/>
+        </LinearLayout>
+        <View style="@style/line"/>
+        <LinearLayout style="@style/tableitemnoline" >
+
+            <TextView style="@style/bodytext"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_weight="1"
+                      android:gravity="center_vertical|left"
+                      android:text="允许2G/3G/4G网络下下载" />
+            <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/item2" android:checked="false"/>
+        </LinearLayout>
+        <View style="@style/line" />
+        <LinearLayout style="@style/tableitem"
+                      android:id="@+id/back"
+                      android:layout_marginTop="@dimen/tableMargin">
+            <TextView style="@style/bodytext"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_weight="1"
+                      android:gravity="center_vertical|left"
+                      android:text="使用说明" />
+            <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_me_right" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
