@@ -25,7 +25,7 @@ public class PreferencesReader {
         SharedPreferences prefs = act.getSharedPreferences("schedule",Context.MODE_PRIVATE);
         int[] data = new int[2];
         data[0] = prefs.getInt("initWeek",1);
-        data[1] = prefs.getInt("initDate",5);
+        data[1] = prefs.getInt("initDate",10);
         return data;
     }
 

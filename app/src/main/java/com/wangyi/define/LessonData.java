@@ -3,9 +3,9 @@ package com.wangyi.define;
 import org.xutils.db.annotation.Column;
 import org.xutils.db.annotation.Table;
 
-@Table(name = "schedule", onCreated = "CREATE UNIQUE INDEX index_name ON schedule(weekDay,fromClass,week)")
+@Table(name = "schedule")
 public class LessonData {
-    @Column(name = "id",isId=true)
+    @Column(name = "id",isId=true,autoGen=true)
     private int id;
 	@Column(name = "lessonName")
     private String lessonName;

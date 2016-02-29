@@ -1,7 +1,6 @@
 package com.wangyi.UIview.activity;
 
 import com.wangyi.function.*;
-import org.xutils.x;
 import org.xutils.view.annotation.ContentView;
 import com.wangyi.UIview.BaseActivity;
 import com.wangyi.UIview.BaseFragment;
@@ -18,16 +17,11 @@ public class ItOneActivity extends BaseActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		x.Ext.init(getApplication());
-
 		ScheduleFunc.getInstance().init(this);
 		BookManagerFunc.getInstance().init(this);
 		UserManagerFunc.getInstance().init(this);
 		HttpsFunc.getInstance().init(this);
-		//以下context必须为application context
-		SensorFunc.getInstance().init(getApplication());
-
+		SensorFunc.getInstance().init(this);
 		setFragmentIndicator(0);
 	}
 

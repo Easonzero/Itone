@@ -72,8 +72,8 @@ public class AllSubjectFragment extends BaseFragment {
 	};
 
 	@Override
-	public void onViewCreated(View view, Bundle savedInstanceState) {
-		super.onViewCreated(view, savedInstanceState);
+	public void onActivityCreated(Bundle savedInstanceState){
+		super.onActivityCreated(savedInstanceState);
         loading = new LoadingDialog(this.getContext());
 		editSearch.addTextChangedListener( new TextWatcher() {
 
@@ -82,7 +82,6 @@ public class AllSubjectFragment extends BaseFragment {
 				if(s.toString().equals("")&&start - before != 0){
 					keywordsFlow.showKeywordsFlow(keywords);
 					SensorFunc.getInstance().connect(handler).registerListener();
-					HttpsFunc.getInstance().connect(handler).searchBookByName(s.toString(),UserManagerFunc.getInstance().getUserInfo().university);
 				}
 				else{
 					keywordsFlow.hideKeywordsFlow();
@@ -175,5 +174,13 @@ public class AllSubjectFragment extends BaseFragment {
 			SensorFunc.getInstance().connect(handler).unregisterListener();
 			editSearch.setText("");
 		}
+	}
+
+	@Event(R.id.search_enter)
+	private void onEnterClick(View view){
+		UserInfo user = UserManagerFunc.getInstance().getUserInfo();
+		if(user != null)
+			HttpsFunc.getInstance().connect(handler).searchBookByName(
+				editSearch.getText().toString(),UserManagerFunc.getInstance().getUserInfo().university);
 	}
 }

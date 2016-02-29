@@ -12,16 +12,16 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\z_spinner_item.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\z_spinner_item.xml"
+        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\register.xml",
+        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\register.xml"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\register.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\register.xml"
+        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\z_spinner_item.xml",
+        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\z_spinner_item.xml"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",

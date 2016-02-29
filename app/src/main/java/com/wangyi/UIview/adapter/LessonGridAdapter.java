@@ -13,13 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import org.xutils.x;
 
 public class LessonGridAdapter extends BaseAdapter {
 	private LayoutInflater inflater;
 	private List<LessonData> lessonDatas = null;
 
 	public LessonGridAdapter(Context context){
-		ScheduleFunc.getInstance().init(context);
 		lessonDatas = ScheduleFunc.getInstance().find();
 		if(lessonDatas == null) lessonDatas = new ArrayList();
 		inflater = LayoutInflater.from(context);

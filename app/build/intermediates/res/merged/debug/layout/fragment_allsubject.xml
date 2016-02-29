@@ -66,6 +66,7 @@
 						android:id="@+id/search_enter"
 						android:layout_width="25dp"
 						android:layout_height="25dp"
+						android:background="@android:drawable/ic_menu_search"
 						android:text="  " android:layout_centerVertical="true"/>
 
 		        <EditText
