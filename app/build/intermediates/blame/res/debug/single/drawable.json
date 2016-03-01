@@ -12,12 +12,12 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\loadbackground.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_clipboard.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_clipboard.png"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\me_tableitem_selecter.xml",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\me_tableitem_selecter.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_clipboard.png",
+        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_clipboard.png"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
@@ -62,10 +62,6 @@
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\seek_progress.xml",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\seek_progress.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bluetheme_scrubber_progress_horizontal_holo_dark.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\bluetheme_scrubber_progress_horizontal_holo_dark.xml"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_lesson_grey_selector.xml",
@@ -156,12 +152,12 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_seekbar_track_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bluetheme_scrubber_control_selector_holo_dark.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\bluetheme_scrubber_control_selector_holo_dark.xml"
-    },
-    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\drag_frame.xml",
+        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\drawable\\drag_frame.xml"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_arrow_left.png",

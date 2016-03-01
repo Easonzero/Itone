@@ -27,7 +27,7 @@
                       android:layout_weight="1"
                       android:gravity="center_vertical|left"
                       android:text="离线更新" />
-            <Switch
+            <android.support.v7.widget.SwitchCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/item1" android:checked="false"/>
@@ -41,7 +41,7 @@
                       android:layout_weight="1"
                       android:gravity="center_vertical|left"
                       android:text="移动网络下下载" />
-            <Switch
+            <android.support.v7.widget.SwitchCompat
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/item2" android:checked="false"/>

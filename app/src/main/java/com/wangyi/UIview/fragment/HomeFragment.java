@@ -66,6 +66,7 @@ public class HomeFragment extends BaseFragment {
 			BookManagerFunc.getInstance().connect(handler).showFileDir();
 		}else{
 			BookManagerFunc.getInstance().connect(handler).clear();
+			BookManagerFunc.getInstance().saveIfNeed();
 		}
 	}
 	
@@ -73,6 +74,12 @@ public class HomeFragment extends BaseFragment {
 	private void onMyBookClick(View view){
 		setMybookConsole(0);
 		bookHead.setBackgroundResource(R.drawable.ic_mybook);
+        adapter.setRightClickListener(new BookAdapter.IOnItemRightClickListener() {
+            @Override
+            public void onRightClick(View v, int position) {
+                BookManagerFunc.getInstance().connect(handler).delete(position);
+            }
+        });
 		BookManagerFunc.getInstance().connect(handler).showFileDir();
 	}
 	
@@ -80,6 +87,13 @@ public class HomeFragment extends BaseFragment {
 	private void onReadHistoryClick(View view){
 		setMybookConsole(1);
 		bookHead.setBackgroundResource(R.drawable.ic_readhistory);
+        adapter.setRightClickListener(new BookAdapter.IOnItemRightClickListener() {
+            @Override
+            public void onRightClick(View v, int position) {
+                BookManagerFunc.getInstance().deletehistory(position);
+                BookManagerFunc.getInstance().connect(handler).showHistoryDir();
+            }
+        });
 		BookManagerFunc.getInstance().connect(handler).showHistoryDir();
 	}
 	
@@ -91,6 +105,7 @@ public class HomeFragment extends BaseFragment {
 	
 	@Event(value=R.id.item_listview,type=SwipeListView.OnItemClickListener.class)
 	private void onListItemClick(AdapterView<?> parent, View view, int position, long id){
+		BookManagerFunc.getInstance().changeIfRead(position);
 		File file = new File(BookManagerFunc.getInstance().getBookData(position).url);
 		Uri uri = Uri.parse(file.getAbsolutePath());
 		Intent intent = new Intent(HomeFragment.this.getActivity().getApplicationContext(),MuPDFActivity.class);
@@ -105,7 +120,7 @@ public class HomeFragment extends BaseFragment {
 	            new BookAdapter.IOnItemRightClickListener() {
 	                @Override
 	                public void onRightClick(View v, int position) {
-	                BookManagerFunc.getInstance().delete(position);
+	                BookManagerFunc.getInstance().connect(handler).delete(position);
 	             }
 	    });
 		browseList.setAdapter(adapter);

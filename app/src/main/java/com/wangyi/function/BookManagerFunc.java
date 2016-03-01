@@ -26,7 +26,7 @@ public class BookManagerFunc {
 			file.mkdirs();
 		}
 		
-		//historyCache = PreferencesReader.getBookHistory((Activity)context);
+		historyCache = PreferencesReader.getBookHistory((Activity)context);
 	}
 	
 	public static BookManagerFunc getInstance(){
@@ -46,32 +46,41 @@ public class BookManagerFunc {
 	public void setBooks(ArrayList<BookData> books){
 		this.books = books;
 	}
+
+	public void insertBooks(ArrayList<BookData> books){
+		if(this.books != null){
+			this.books.addAll(books);
+		}else{
+			setBooks(books);
+		}
+	}
 	
 	public int getBooksNum(){
 		return books.size();
 	}
 	
-	public void changeIfRead(BookData book){
-		for(BookData a:historyCache){
-			if(a.bookName.equals(book.bookName)){
-				historyCache.remove(a);
-			}
-		}
-		books.add(book);
+	public void changeIfRead(int position){
+		deletehistory(position);
+		historyCache.add(0,books.get(position));
 	}
 	
 	public void saveIfNeed(){
 		PreferencesReader.saveBookHistory((Activity)context, historyCache);
 	}
+
+	public void deletehistory(int cur){
+		for(BookData a:historyCache){
+			if(a.url.equals(books.get(cur).url)){
+				historyCache.remove(a);
+				break;
+			}
+		}
+	}
 	
 	public void delete(int cur){
 		File file = new File(books.get(cur).url);
         file.delete();
-        for(BookData a:historyCache){
-			if(a.bookName.equals(books.get(cur).bookName)){
-				historyCache.remove(a);
-			}
-		}
+		deletehistory(cur);
         handler.sendEmptyMessage(EventName.UI.FINISH);
 	}
 	
@@ -88,7 +97,8 @@ public class BookManagerFunc {
 	}
 	
 	public void showHistoryDir(){
-		books = (ArrayList)historyCache.clone();
+		clear();
+		books.addAll(historyCache);
 		handler.sendEmptyMessage(EventName.UI.FINISH);
 	}
 	

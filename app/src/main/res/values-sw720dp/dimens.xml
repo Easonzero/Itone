@@ -6,6 +6,7 @@
     <dimen name="menuitemSize">50dp</dimen>
     <dimen name="tableHeight">110dp</dimen>
     <dimen name="tableMargin">76dp</dimen>
+    <dimen name="tableheadHeight">64dp</dimen>
 
     <dimen name="default_spacing_major_up">48dp</dimen>
     <dimen name="default_spacing_major">32dp</dimen>

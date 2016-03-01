@@ -5,6 +5,7 @@
     <dimen name="menuitemSize">25dp</dimen>
     <dimen name="tableHeight">55dp</dimen>
     <dimen name="tableMargin">38dp</dimen>
+    <dimen name="tableheadHeight">32dp</dimen>
     
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>

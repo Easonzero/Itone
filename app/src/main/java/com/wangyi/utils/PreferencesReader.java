@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Environment;
+import com.wangyi.function.BookManagerFunc;
 
 public class PreferencesReader {
     public static void saveScheduleData(Activity act,int initWeek,int initDate){
@@ -33,13 +34,10 @@ public class PreferencesReader {
 		SharedPreferences prefs = act.getSharedPreferences("bookhistory",Context.MODE_PRIVATE);
 		SharedPreferences.Editor edit = prefs.edit();
 		Set<String> book_Name = new HashSet();
-		Set<String> book_URL = new HashSet();
 		for(BookData bditem:bdh){
 			book_Name.add(bditem.bookName);
-			book_URL.add(bditem.url);
 		}
 		edit.putStringSet("book_Name", book_Name);
-		edit.putStringSet("book_URL", book_URL);
 		edit.commit();
 	}
 	
@@ -47,14 +45,12 @@ public class PreferencesReader {
 		SharedPreferences prefs = act.getSharedPreferences("bookhistory",Context.MODE_PRIVATE);
 		ArrayList<BookData> bd = new ArrayList<BookData>();
 		Set<String> book_Names = prefs.getStringSet("book_Name", null);
-		Set<String> book_URLs = prefs.getStringSet("book_URL", null);
 		if(book_Names != null){
 			String[] book_Name = (String[])(book_Names.toArray(new String[book_Names.size()]));
-			String[] book_URL = (String[])(book_URLs.toArray(new String[book_URLs.size()]));
 			for(int i = 0;i < book_Name.length;i++){
 				BookData bditem = new BookData();
 				bditem.bookName = book_Name[i];
-				bditem.url = book_URL[i];
+				bditem.url = BookManagerFunc.FILEPATH+book_Name[i];
 				bd.add(bditem);
 			}
 		}

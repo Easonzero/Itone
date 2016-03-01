@@ -1,32 +1,72 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_all"
+	android:orientation="vertical"
+    android:background="@color/base_background_color"
     tools:context="com.wangyi.UIview.activity.ItOneActivity" >
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/title_home" >
-
+	<RelativeLayout style="@style/toolbar"
+					android:id="@+id/toolbar">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Itone电子图书" style="@style/titletext"
+        android:layout_alignParentBottom="true"/>
 	</RelativeLayout>
+	<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="160dp"
+            android:layout_marginTop="10dp"
+			android:orientation="vertical" >
+		<View
+				android:id="@+id/lesson_table"
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/tableheadHeight"
+				android:background="@drawable/ic_todaylesson" />
+		<View
+				android:layout_width="match_parent"
+				android:layout_height="2dp" />
+		<GridView
+				android:id="@+id/today_lesson"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:numColumns="2"
+				android:paddingLeft="0dp"
+				android:scrollbars="none"
+				android:listSelector="#00000000"
+				android:background="#fcfdfd" >
+		</GridView>
+
+		<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:id="@+id/lessonNoItem"
+				android:visibility="gone" >
+			<TextView
+					style="@style/Typography_Subhead"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerHorizontal="true"
+					android:layout_centerVertical="true"
+					android:fontFamily="sans-serif"
+					android:text="今天没有课感觉自己萌萌哒"
+					android:textAppearance="?android:attr/textAppearanceMedium"
+					android:textColor="@color/typography_color_hinttext" />
+		</RelativeLayout>
+
+	</LinearLayout>
 	
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="360dp"
-        android:layout_alignParentBottom="true"
+		android:layout_weight="1"
         android:background="#f2f2f2"
         android:orientation="vertical" >
         
 		<RelativeLayout
 		    android:id="@+id/book_head"
             android:layout_width="match_parent"
-            android:layout_height="32dp"
+            android:layout_height="@dimen/tableheadHeight"
             android:background="@drawable/ic_mybook" >
 
 			<Button
@@ -36,7 +76,7 @@
 			    android:layout_height="20dp"
 			    android:layout_alignParentRight="true"
 			    android:layout_centerVertical="true"
-			    android:layout_marginRight="8dp"
+			    android:layout_marginRight="@dimen/padding_step2"
 			    android:background="@drawable/readhistory_normal" />
 
 			<Button
@@ -46,7 +86,7 @@
 			    android:layout_height="20dp"
 			    android:layout_centerVertical="true"
 			    android:layout_toLeftOf="@+id/read_history"
-			    android:layout_marginRight="5dp"
+			    android:layout_marginRight="@dimen/padding_step2"
 			    android:background="@drawable/mybook_normal" />
 
 		</RelativeLayout>
@@ -55,9 +95,10 @@
 		    android:layout_width="match_parent"
 		    android:layout_height="2dp" />
 		
-        <FrameLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <com.wangyi.UIview.widget.SwipeListView
                 android:id="@+id/item_listview"
@@ -83,57 +124,6 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="@color/typography_color_hinttext"
                 android:visibility="gone" />
-        </FrameLayout>
+        </LinearLayout>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/relativeLayout1"
-        android:layout_above="@+id/linearLayout1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical" >
-        
-		<View
-		    android:id="@+id/lesson_table"
-            android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:background="@drawable/ic_todaylesson" />
-		
-		<View
-            android:layout_width="match_parent"
-            android:layout_height="2dp" />
-		
-        <GridView
-            android:id="@+id/today_lesson"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numColumns="2"
-            android:paddingLeft="0dp"
-            android:scrollbars="none"
-            android:listSelector="#00000000"
-            android:background="#fcfdfd" >
-        </GridView>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:id="@+id/lessonNoItem"
-            android:visibility="gone" >
-            <TextView
-                style="@style/Typography_Subhead"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:fontFamily="sans-serif"
-                android:text="今天没有课感觉自己萌萌哒"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/typography_color_hinttext" />
-        </RelativeLayout>
-
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

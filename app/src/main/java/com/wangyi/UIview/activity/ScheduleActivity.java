@@ -4,7 +4,6 @@ import java.util.*;
 
 import org.xutils.view.annotation.*;
 import com.wangyi.UIview.BaseActivity;
-import com.wangyi.define.EventName;
 import com.wangyi.define.LessonData;
 import com.wangyi.function.ScheduleFunc;
 import com.wangyi.reader.R;
@@ -114,7 +113,7 @@ public class ScheduleActivity extends BaseActivity {
 		pwMyPopWindow = new PopupWindow(layout);
 		pwMyPopWindow.setFocusable(true);
 		lvPopupList.setAdapter(new SimpleAdapter(ScheduleActivity.this, setList,
-				R.layout.list_item_popupwindow, new String[] { "share_key" },
+				R.layout.list_item_text, new String[] { "share_key" },
 				new int[] { R.id.tv_list_item }));
 		lvPopupList.setSelection(ScheduleFunc.getInstance()._weekOfToday-2);
 		pwMyPopWindow.setBackgroundDrawable(ScheduleActivity.this.getResources().getDrawable(R.drawable.popupwindow));

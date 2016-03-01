@@ -72,6 +72,7 @@ public class LessonListLayout extends RelativeLayout {
 		lesson.setIncludeFontPadding(false);
 		lesson.setText(lessonName);
 		lesson.setTextSize(15);
+		lesson.setTextColor(0xffaaaaaa);
 		lesson.setId(num);
 		LayoutParams lp = getLessonLayoutParams(num);
 		lesson.setLayoutParams(lp);

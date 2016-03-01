@@ -40,6 +40,10 @@
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-hdpi\\abc_ic_commit_search_api_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\urv_floating_action_button_ic_fab_star.png",
+        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\drawable-hdpi-v4\\urv_floating_action_button_ic_fab_star.png"
+    },
+    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_action_core_overflow.png",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable-hdpi\\ic_action_core_overflow.png"
     },

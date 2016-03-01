@@ -32,6 +32,11 @@ public class BookAdapter extends BaseAdapter {
         mListener = l;
         inflater = LayoutInflater.from(context);
     }
+
+    public void setRightClickListener(IOnItemRightClickListener l){
+        mListener = l;
+    }
+
     @Override
     public int getCount() {
         return BookManagerFunc.getInstance().getBooksNum();

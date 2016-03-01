@@ -161,7 +161,7 @@ public class HttpsFunc {
 		});
 	}
 
-	public void searchBooksBySubject(String subject,String university){
+	public void searchBooksBySubject(String subject,String university,int count){
 		if(!isNetworkConnected()){
 			ItOneUtils.showToast(context,"网络未连接");
 			return;
@@ -222,13 +222,13 @@ public class HttpsFunc {
 		});
 	}
 
-	public void download(String path,String label) throws DbException {
+	public void download(long id,String label) throws DbException {
 		if(!isNetworkConnected()){
 			ItOneUtils.showToast(context,"网络未连接");
 			return;
 		}
         DownloadManagerFunc.getInstance().startDownload(
-                path, label,
+                host+"/download?id="+id, label,
                BookManagerFunc.FILEPATH + label + ".pdf", true, false, null);
 	}
 

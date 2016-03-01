@@ -107,14 +107,7 @@
                     "endOffset": 637
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml",
-                    "position": {
-                        "startLine": 25,
-                        "startColumn": 4,
-                        "startOffset": 892,
-                        "endColumn": 45,
-                        "endOffset": 933
-                    }
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml"
                 }
             },
             {
@@ -270,14 +263,7 @@
                     "endOffset": 1287
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 1,
-                        "startOffset": 143,
-                        "endColumn": 44,
-                        "endOffset": 186
-                    }
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml"
                 }
             },
             {
@@ -289,14 +275,7 @@
                     "endOffset": 1331
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 1,
-                        "startOffset": 188,
-                        "endColumn": 40,
-                        "endOffset": 227
-                    }
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml"
                 }
             },
             {
@@ -308,14 +287,7 @@
                     "endOffset": 1382
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 1,
-                        "startOffset": 52,
-                        "endColumn": 47,
-                        "endOffset": 98
-                    }
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml"
                 }
             },
             {
@@ -327,14 +299,7 @@
                     "endOffset": 1425
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 232,
-                        "endColumn": 42,
-                        "endOffset": 270
-                    }
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml"
                 }
             },
             {
@@ -346,14 +311,7 @@
                     "endOffset": 1468
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 1,
-                        "startOffset": 272,
-                        "endColumn": 39,
-                        "endOffset": 310
-                    }
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml"
                 }
             },
             {
@@ -361,17 +319,17 @@
                     "startLine": 28,
                     "startColumn": 4,
                     "startOffset": 1473,
-                    "endColumn": 45,
-                    "endOffset": 1514
+                    "endColumn": 46,
+                    "endOffset": 1515
                 },
                 "from": {
                     "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml",
                     "position": {
-                        "startLine": 3,
+                        "startLine": 8,
                         "startColumn": 1,
-                        "startOffset": 100,
-                        "endColumn": 42,
-                        "endOffset": 141
+                        "startOffset": 312,
+                        "endColumn": 43,
+                        "endOffset": 354
                     }
                 }
             },
@@ -379,21 +337,9 @@
                 "to": {
                     "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 1519,
-                    "endColumn": 54,
-                    "endOffset": 1569
-                },
-                "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-sw600dp\\values-sw600dp.xml"
-                }
-            },
-            {
-                "to": {
-                    "startLine": 30,
-                    "startColumn": 4,
-                    "startOffset": 1574,
-                    "endColumn": 43,
-                    "endOffset": 1613
+                    "startOffset": 1520,
+                    "endColumn": 45,
+                    "endOffset": 1561
                 },
                 "from": {
                     "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml"
@@ -401,11 +347,35 @@
             },
             {
                 "to": {
+                    "startLine": 30,
+                    "startColumn": 4,
+                    "startOffset": 1566,
+                    "endColumn": 54,
+                    "endOffset": 1616
+                },
+                "from": {
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-sw600dp\\values-sw600dp.xml"
+                }
+            },
+            {
+                "to": {
                     "startLine": 31,
                     "startColumn": 4,
-                    "startOffset": 1618,
+                    "startOffset": 1621,
+                    "endColumn": 43,
+                    "endOffset": 1660
+                },
+                "from": {
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 1665,
                     "endColumn": 42,
-                    "endOffset": 1656
+                    "endOffset": 1703
                 },
                 "from": {
                     "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw600dp\\dimens.xml"

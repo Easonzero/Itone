@@ -23,14 +23,7 @@
                     "endOffset": 150
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml",
-                    "position": {
-                        "startLine": 26,
-                        "startColumn": 4,
-                        "startOffset": 1009,
-                        "endColumn": 45,
-                        "endOffset": 1050
-                    }
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml"
                 }
             },
             {
@@ -198,14 +191,7 @@
                     "endOffset": 848
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 152,
-                        "endColumn": 47,
-                        "endOffset": 195
-                    }
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml"
                 }
             },
             {
@@ -217,14 +203,7 @@
                     "endOffset": 892
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 200,
-                        "endColumn": 43,
-                        "endOffset": 239
-                    }
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml"
                 }
             },
             {
@@ -236,14 +215,7 @@
                     "endOffset": 943
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 50,
-                        "endOffset": 101
-                    }
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml"
                 }
             },
             {
@@ -255,14 +227,7 @@
                     "endOffset": 987
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 244,
-                        "endColumn": 43,
-                        "endOffset": 283
-                    }
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml"
                 }
             },
             {
@@ -274,14 +239,7 @@
                     "endOffset": 1030
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 288,
-                        "endColumn": 42,
-                        "endOffset": 326
-                    }
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml"
                 }
             },
             {
@@ -289,17 +247,17 @@
                     "startLine": 22,
                     "startColumn": 4,
                     "startOffset": 1035,
-                    "endColumn": 45,
-                    "endOffset": 1076
+                    "endColumn": 46,
+                    "endOffset": 1077
                 },
                 "from": {
                     "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml",
                     "position": {
-                        "startLine": 3,
+                        "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 106,
-                        "endColumn": 45,
-                        "endOffset": 147
+                        "startOffset": 331,
+                        "endColumn": 46,
+                        "endOffset": 373
                     }
                 }
             },
@@ -307,9 +265,9 @@
                 "to": {
                     "startLine": 23,
                     "startColumn": 4,
-                    "startOffset": 1081,
-                    "endColumn": 43,
-                    "endOffset": 1120
+                    "startOffset": 1082,
+                    "endColumn": 45,
+                    "endOffset": 1123
                 },
                 "from": {
                     "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml"
@@ -319,9 +277,21 @@
                 "to": {
                     "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 1125,
+                    "startOffset": 1128,
+                    "endColumn": 43,
+                    "endOffset": 1167
+                },
+                "from": {
+                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 25,
+                    "startColumn": 4,
+                    "startOffset": 1172,
                     "endColumn": 42,
-                    "endOffset": 1163
+                    "endOffset": 1210
                 },
                 "from": {
                     "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp\\dimens.xml"

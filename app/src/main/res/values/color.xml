@@ -7,6 +7,7 @@
     <color name="card_text_color">#343031</color>
     <color name="loading_background">#bbfff7fb</color>
     <color name="line_color">#cccccc</color>
+    <color name="basebottombar_color">#E4E4E4</color>
     <!-- ColorRef -->
     <color name="md_bookitem">#fcfdfd</color>
     <color name="md_cyam">#00bcd4</color>

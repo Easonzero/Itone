@@ -25,6 +25,10 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener {
+    public interface OnItemClickListener extends OnClickListener{
+        @Override
+        void onClick(View view);
+    }
 
 	public static final int IDX_X = 0;  
     public static final int IDX_Y = 1;  
@@ -40,7 +44,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
     public static final int MAX = 10;  
     public static final int TEXT_SIZE_MAX = 25;  
     public static final int TEXT_SIZE_MIN = 15;
-    private OnClickListener itemClickListener;
+    private OnItemClickListener itemClickListener;
     private static Interpolator interpolator;  
     private static AlphaAnimation animAlpha2Opaque;  
     private static AlphaAnimation animAlpha2Transparent;  
@@ -53,7 +57,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
     
     private int txtAnimInType, txtAnimOutType;  
     private long lastStartAnimationTime;  
-    private long animDuration; 
+    private long animDuration;
     
     public KeywordsFlow(Context context) {
 		super(context);
@@ -338,7 +342,7 @@ public class KeywordsFlow extends FrameLayout implements OnGlobalLayoutListener 
         removeAllViews();  
     }
 
-    public void setOnItemClickListener(OnClickListener listener) {
+    public void setOnItemClickListener(OnItemClickListener listener) {
         itemClickListener = listener;
     }
 

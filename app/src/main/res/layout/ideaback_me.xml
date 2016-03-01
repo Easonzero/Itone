@@ -40,6 +40,8 @@
                 android:background="@drawable/bg_card"
                 android:layout_weight="0"
                 android:layout_height="@dimen/big_card_image_height"
+                android:inputType="textMultiLine"
+                android:gravity="left|top"
                 android:id="@+id/editText"/>
         <Button
                 android:layout_width="70dp"

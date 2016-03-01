@@ -1,45 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_all" >
+    android:orientation="vertical"
+    android:background="@color/base_background_color" >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentTop="true"
-        android:id="@+id/title"
-        android:background="@drawable/bg_create_table" >
+    <RelativeLayout style="@style/toolbar"
+        android:id="@+id/title" >
 
         <Button
             android:id="@+id/Cancel"
-            android:layout_width="42dp"
+            android:layout_width="38dp"
             android:layout_height="30dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="5dp"
             android:background="@drawable/back1" />
 
         <Button
             android:id="@+id/Confirm"
-            style="?android:buttonBarButtonStyle"
-            android:layout_width="45dp"
-            android:layout_height="30dp"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/save" />
+            android:background="#00000000"
+            android:textColor="#FFFFFFFF"
+            android:layout_marginBottom="-10dp"
+            android:text="保存" />
 
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/bg_edit_lessson_title" />
+        <TextView style="@style/titletext"
+        android:text="编辑课程"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"/>
     </RelativeLayout>
 
     <LinearLayout
@@ -230,4 +222,4 @@
         </LinearLayout>
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

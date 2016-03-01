@@ -1,11 +1,16 @@
 package com.wangyi.UIview.fragment;
 
+import android.content.Context;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.widget.RelativeLayout;
+import com.marshalchen.ultimaterecyclerview.*;
+import com.marshalchen.ultimaterecyclerview.uiUtils.ScrollSmoothLineaerLayoutManager;
 import com.wangyi.UIview.widget.LoadingDialog;
 import com.wangyi.define.BookData;
 import org.xutils.ex.DbException;
-import org.xutils.x;
 import org.xutils.view.annotation.*;
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,10 +20,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
 import com.wangyi.UIview.BaseFragment;
-import com.wangyi.UIview.adapter.DLBookListAdapter;
+import com.wangyi.UIview.adapter.SearchBookListAdapter;
 import com.wangyi.UIview.widget.KeywordsFlow;
 import com.wangyi.UIview.widget.LessonListLayout;
 import com.wangyi.define.EventName;
@@ -43,8 +47,10 @@ public class AllSubjectFragment extends BaseFragment {
 	@ViewInject(R.id.lessons)
 	private LessonListLayout lessons;
 	@ViewInject(R.id.booklist)
-	private ListView bookList;
-	DLBookListAdapter adapter;
+	private UltimateRecyclerView bookList;
+    @ViewInject(R.id.measure)
+    private RelativeLayout measure;
+	SearchBookListAdapter adapter;
     LoadingDialog loading;
 
 	private Handler handler = new Handler() {
@@ -115,23 +121,65 @@ public class AllSubjectFragment extends BaseFragment {
 				String subject = ((TextView)view).getText().toString();
 				UserInfo user = UserManagerFunc.getInstance().getUserInfo();
 				if(user != null)
-					HttpsFunc.getInstance().connect(handler).searchBooksBySubject(subject,user.university);
+					HttpsFunc.getInstance().connect(handler).searchBooksBySubject(subject,user.university,0);
 			}
 
 		});
 
-		keywordsFlow.setOnItemClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				UserInfo user = UserManagerFunc.getInstance().getUserInfo();
-				if(user != null)
-					HttpsFunc.getInstance().connect(handler).searchBooksBySubject(((TextView)view).getText().toString(),user.university);
-			}
-		});
-
-		adapter = new DLBookListAdapter(this.getActivity().getBaseContext());
+        bookList.setHasFixedSize(false);
+		adapter = new SearchBookListAdapter();
+        bookList.setLayoutManager(new ScrollSmoothLineaerLayoutManager(
+                getActivity().getBaseContext(), LinearLayoutManager.VERTICAL, false, 300));
 		bookList.setAdapter(adapter);
-	}
+        //bookList.enableLoadmore();  等待有数据之后，或者该开源库版本更新后再做测试
+        bookList.setEmptyView(R.layout.emptylist);
+        adapter.setCustomLoadMoreView(createListBottomView(this.getContext()));
+        bookList.setScrollViewCallbacks(new ObservableScrollViewCallbacks(){
+            @Override
+            public void onScrollChanged(int i, boolean b, boolean b1) {
+            }
+
+            @Override
+            public void onDownMotionEvent() {
+            }
+
+            @Override
+            public void onUpOrCancelMotionEvent(ObservableScrollState observableScrollState) {
+                if (observableScrollState == ObservableScrollState.UP) {
+                    bookList.hideView(lessons,bookList,getWindowHeight());
+                }else if (observableScrollState == ObservableScrollState.DOWN) {
+                    bookList.showView(lessons,bookList,getWindowHeight());
+                }
+            }
+        });
+        ItemTouchListenerAdapter itemTouchListenerAdapter = new ItemTouchListenerAdapter(bookList.mRecyclerView,
+                new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
+                    @Override
+                    public void onItemClick(RecyclerView parent, View clickedView, int position) {
+                        try {
+                            BookData book = BookManagerFunc.getInstance().getBookData(position);
+                            HttpsFunc.getInstance().connect(handler).download(book.id,book.bookName);
+                        } catch (DbException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onItemLongClick(RecyclerView recyclerView, View view, int i) {}
+                });
+        bookList.mRecyclerView.addOnItemTouchListener(itemTouchListenerAdapter);
+    }
+
+    private int getWindowHeight(){
+        return measure.getHeight();
+    }
+
+    private View createListBottomView(Context context){
+        View view = LayoutInflater.from(context)
+                .inflate(R.layout.list_item_text, null);
+        ((TextView)view.findViewById(R.id.tv_list_item)).setText("加载更多...");
+        return view;
+    }
 
 	@Override
 	public void onHiddenChanged(boolean hidden) {
@@ -140,7 +188,7 @@ public class AllSubjectFragment extends BaseFragment {
 		if(!hidden){
 			UserInfo user = UserManagerFunc.getInstance().getUserInfo();
 			if(user != null)
-				HttpsFunc.getInstance().connect(handler).searchBooksBySubject("全部",user.university);
+				HttpsFunc.getInstance().connect(handler).searchBooksBySubject("全部",user.university,0);
 		}else{
 			BookManagerFunc.getInstance().connect(handler).clear();
 			keywordsFlow.hideKeywordsFlow();
@@ -148,15 +196,24 @@ public class AllSubjectFragment extends BaseFragment {
 		}
 	}
 
-	@Event(value=R.id.booklist,type=ListView.OnItemClickListener.class)
-	private void onListItemClick(AdapterView<?> adapter, View view, int pos,long arg3){
-		try {
-			BookData book = BookManagerFunc.getInstance().getBookData(pos);
-			HttpsFunc.getInstance().connect(handler).download(book.url,book.bookName);
-		} catch (DbException e) {
-			e.printStackTrace();
-		}
-	}
+    @Event(value=R.id.booklist,type=UltimateRecyclerView.OnLoadMoreListener.class)
+    private void loadMore(int itemsCount, final int maxLastVisiblePosition){
+        UserInfo user = UserManagerFunc.getInstance().getUserInfo();
+        if(user != null){
+            HttpsFunc.getInstance().connect(handler).searchBooksBySubject(
+                        ((TextView)lessons.obj).getText().toString(),
+                        user.university,
+                        itemsCount);
+            bookList.disableLoadmore();
+        }
+    }
+
+    @Event(value=R.id.keywordsflow,type=KeywordsFlow.OnItemClickListener.class)
+    private void onKeywordsItemClick(View view){
+        UserInfo user = UserManagerFunc.getInstance().getUserInfo();
+        if(user != null)
+            HttpsFunc.getInstance().connect(handler).searchBooksBySubject(((TextView)view).getText().toString(),user.university,0);
+    }
 
 	@Event(R.id.keywordsflow)
 	private void onKeywordsClick(View view){

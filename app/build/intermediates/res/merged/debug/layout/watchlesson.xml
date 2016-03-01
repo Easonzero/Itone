@@ -1,38 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_all" >
+    android:background="@color/base_background_color"
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/title"
-        android:background="@drawable/bg_create_table" >
+    <RelativeLayout style="@style/toolbar"
+        android:id="@+id/title" >
         
         <Button
             android:id="@+id/Cancel"
-            android:layout_width="42dp"
+            android:layout_width="38dp"
             android:layout_height="30dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
-            android:layout_marginBottom="5dp"
-            android:layout_marginLeft="5dp"
             android:background="@drawable/back1" />
 
-        <TextView
+        <TextView style="@style/titletext"
             android:id="@+id/lessontitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:text="Large Text"
-            android:textSize="25sp"
-            android:textColor="#FFFFFFFF"
-            android:layout_marginBottom="5dp"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:text="Large Text"/>
         
     </RelativeLayout>
 
@@ -220,4 +210,4 @@
        android:layout_marginTop="20dp"
        android:background="@drawable/watch_lesson_delete" />
 
-</RelativeLayout>
+</LinearLayout>

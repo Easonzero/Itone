@@ -2,23 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00000000"
 	android:orientation="vertical"
     tools:context=".ScheduleActivity" >
 
-    <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_weight="1.5"
-            android:background="@drawable/title_menu" >
-
-        <TextView
-                android:id="@+id/weekoftoday"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
+    <RelativeLayout style="@style/toolbar"
+					android:id="@+id/toolbar">
+        <TextView style="@style/titletext"
+				  android:layout_centerHorizontal="true"
+				  android:layout_alignParentBottom="true"
+				  android:text="textview"
+                android:id="@+id/weekoftoday"/>
     </RelativeLayout>
 
     <LinearLayout
