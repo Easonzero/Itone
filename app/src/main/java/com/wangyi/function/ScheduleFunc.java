@@ -10,12 +10,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import com.wangyi.define.LessonData;
+import com.wangyi.function.funchelp.Function;
 import com.wangyi.utils.PreferencesReader;
 import org.xutils.DbManager;
 import org.xutils.ex.DbException;
 import org.xutils.x;
 
-public class ScheduleFunc{
+public class ScheduleFunc implements Function {
 	private static final ScheduleFunc INSTANCE = new ScheduleFunc();
 	private static final String[] weekdays = new String[]{"周一","周二","周三","周四","周五","周六","周日"};
 	private static final String[] weeksNum = new String[]{"第1周","第2周","第3周","第4周","第5周","第6周","第7周","第8周","第9周","第10周","第11周","第12周",
@@ -30,6 +31,7 @@ public class ScheduleFunc{
 
 	private ScheduleFunc(){}
 
+	@Override
 	public void init(Context context){
 		DbManager.DaoConfig daoConfig = new DbManager.DaoConfig()
 				.setDbName("schedule")

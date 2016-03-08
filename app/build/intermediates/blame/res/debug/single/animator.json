@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\animator\\info.xml",
+        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\animator\\info.xml"
+    },
+    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\animator\\info.xml",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\animator\\info.xml"
     }

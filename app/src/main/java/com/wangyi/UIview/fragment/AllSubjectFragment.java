@@ -9,6 +9,8 @@ import com.marshalchen.ultimaterecyclerview.*;
 import com.marshalchen.ultimaterecyclerview.uiUtils.ScrollSmoothLineaerLayoutManager;
 import com.wangyi.UIview.widget.LoadingDialog;
 import com.wangyi.define.BookData;
+import com.wangyi.define.SettingName;
+import com.wangyi.utils.ItOneUtils;
 import org.xutils.ex.DbException;
 import org.xutils.view.annotation.*;
 import android.os.Bundle;
@@ -32,6 +34,7 @@ import com.wangyi.function.HttpsFunc;
 import com.wangyi.function.SensorFunc;
 import com.wangyi.function.UserManagerFunc;
 import com.wangyi.reader.R;
+import org.xutils.x;
 
 @ContentView(R.layout.fragment_allsubject)
 public class AllSubjectFragment extends BaseFragment {
@@ -156,6 +159,11 @@ public class AllSubjectFragment extends BaseFragment {
                 new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
                     @Override
                     public void onItemClick(RecyclerView parent, View clickedView, int position) {
+						if(!UserManagerFunc.getInstance().getSetting(SettingName.NOWIFIDOWNLOAD)){
+                            if(!ItOneUtils.getWifiState(x.app())){
+                                ItOneUtils.showToast(x.app(),"已设置流量状态下不可下载图书");
+                            }
+                        }
                         try {
                             BookData book = BookManagerFunc.getInstance().getBookData(position);
                             HttpsFunc.getInstance().connect(handler).download(book.id,book.bookName);

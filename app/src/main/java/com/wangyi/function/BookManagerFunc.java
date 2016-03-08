@@ -4,13 +4,14 @@ import java.io.File;
 import java.util.ArrayList;
 import com.wangyi.define.BookData;
 import com.wangyi.define.EventName;
+import com.wangyi.function.funchelp.Function;
 import com.wangyi.utils.PreferencesReader;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Handler;
 
-public class BookManagerFunc {
+public class BookManagerFunc implements Function {
 	private static final BookManagerFunc INSTANCE = new BookManagerFunc();
 	public static final String FILEPATH = "/sdcard/textBook/";
 	private ArrayList<BookData> books = new ArrayList();
@@ -18,7 +19,8 @@ public class BookManagerFunc {
 	private Context context;
 	private Handler handler;
 	private BookManagerFunc(){}
-	
+
+	@Override
 	public void init(Context context){
 		this.context = context;
 		File file = new File(FILEPATH);

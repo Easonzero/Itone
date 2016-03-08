@@ -21,13 +21,13 @@ public final class R {
 	}
 	public static final class drawable {
 		public static final int aa_dialog_bg = 0x7f020000;
-		public static final int shadow = 0x7f0200d0;
+		public static final int shadow = 0x7f0200cf;
 	}
 	public static final class id {
-		public static final int indication = 0x7f0d0150;
-		public static final int loadView = 0x7f0d013f;
-		public static final int promptTV = 0x7f0d0151;
-		public static final int shapeLoadingView = 0x7f0d0152;
+		public static final int indication = 0x7f0d014f;
+		public static final int loadView = 0x7f0d013e;
+		public static final int promptTV = 0x7f0d0150;
+		public static final int shapeLoadingView = 0x7f0d0151;
 	}
 	public static final class layout {
 		public static final int layout_dialog = 0x7f03002e;

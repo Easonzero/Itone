@@ -9,8 +9,9 @@ import android.hardware.SensorManager;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
+import com.wangyi.function.funchelp.Function;
 
-public class SensorFunc {
+public class SensorFunc implements Function {
 	private static final SensorFunc INSTANCE = new SensorFunc();
 	private SensorManager sensorManager; 
     private Vibrator vibrator; 
@@ -21,7 +22,8 @@ public class SensorFunc {
     }
     
 	private SensorFunc(){}
-	
+
+    @Override
 	public void init(Context context){
 		sensorManager = (SensorManager) context.getSystemService(Context.SENSOR_SERVICE); 
         vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);

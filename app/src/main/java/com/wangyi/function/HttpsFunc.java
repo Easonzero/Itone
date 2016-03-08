@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.google.gson.Gson;
+import com.wangyi.function.funchelp.Function;
 import com.wangyi.utils.ImagePicker;
 import org.xutils.common.Callback;
 
@@ -21,7 +22,7 @@ import android.net.NetworkInfo;
 import android.os.Handler;
 import org.xutils.ex.DbException;
 
-public class HttpsFunc {
+public class HttpsFunc implements Function {
 	public static String host = "http://192.168.0.102:3000";
 
 	private static final HttpsFunc INSTANCE = new HttpsFunc();
@@ -34,6 +35,7 @@ public class HttpsFunc {
 		return INSTANCE;
 	}
 
+	@Override
 	public void init(Context context){
 		this.context = context;
 	}
@@ -96,7 +98,7 @@ public class HttpsFunc {
         map.put("userinfo",new Gson().toJson(user));
 		if(user.picture.equals("true"))
 			map.put("file", new File(ImagePicker.SAVE_PATH));
-        handler.sendEmptyMessage(EventName.UI.START);
+        if(handler!=null) handler.sendEmptyMessage(EventName.UI.START);
         HttpsUtils.UpLoadFile(host+"/users/register", map, new Callback.CommonCallback<String>(){
 
             @Override
@@ -131,11 +133,10 @@ public class HttpsFunc {
 			ItOneUtils.showToast(context,"网络未连接");
 			return;
 		}
-		handler.sendEmptyMessage(EventName.UI.START);
+        if(handler!=null) handler.sendEmptyMessage(EventName.UI.START);
 		Map<String,Object> map=new HashMap<>();
 		map.put("bookName", bookName);
 		map.put("university",university);
-        handler.sendEmptyMessage(EventName.UI.START);
 		HttpsUtils.Post(host+"/books/search", map, new Callback.CommonCallback<ArrayList<BookData>>(){
 
 			@Override
@@ -170,7 +171,6 @@ public class HttpsFunc {
 		Map<String,Object> map=new HashMap<>();
 		map.put("subject", subject);
 		map.put("university", university);
-		handler.sendEmptyMessage(EventName.UI.START);
 		HttpsUtils.Post(host+"/books/booklist", map, new Callback.CommonCallback<ArrayList<BookData>>(){
 
 			@Override
@@ -230,6 +230,39 @@ public class HttpsFunc {
         DownloadManagerFunc.getInstance().startDownload(
                 host+"/download?id="+id, label,
                BookManagerFunc.FILEPATH + label + ".pdf", true, false, null);
+	}
+
+	public void commitIdea(String ideas){
+        if(!isNetworkConnected()){
+            ItOneUtils.showToast(context,"网络未连接");
+            return;
+        }
+        handler.sendEmptyMessage(EventName.UI.START);
+        Map<String,Object> map=new HashMap<>();
+        map.put("idea", ideas);
+        HttpsUtils.Post(host+"/ideas", map, new Callback.CommonCallback<ArrayList<BookData>>(){
+
+            @Override
+            public void onCancelled(CancelledException arg0) {}
+
+            @Override
+            public void onError(Throwable ex, boolean isCheck) {
+                ItOneUtils.showToast(context,"服务器抽风中...");
+            }
+
+            @Override
+            public void onFinished() {
+                if(handler!=null) handler.sendEmptyMessage(EventName.UI.FINISH);
+            }
+
+            @Override
+            public void onSuccess(ArrayList<BookData> result) {
+                // TODO Auto-generated method stub
+                ItOneUtils.showToast(context,"提交成功");
+                if(handler!=null) handler.sendEmptyMessage(EventName.UI.SUCCESS);
+            }
+
+        });
 	}
 
 	private boolean isNetworkConnected() {

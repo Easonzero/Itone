@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import android.net.wifi.WifiManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import com.wangyi.UIview.widget.PopupView;
@@ -186,5 +187,13 @@ public class ItOneUtils {
 		} else {
 			r.run();
 		}
+	}
+
+	public static boolean getWifiState(Context context){
+		WifiManager wifiManager = (WifiManager)context.getSystemService(Context.WIFI_SERVICE);
+		if(wifiManager != null){
+			return wifiManager.getWifiState() == wifiManager.WIFI_STATE_ENABLED;
+		}
+		return false;
 	}
 }

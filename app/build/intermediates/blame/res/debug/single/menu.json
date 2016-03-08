@@ -1,15 +1,39 @@
 [
     {
+        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\menu\\reader_menu.xml",
+        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\menu\\reader_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main_menu.xml",
+        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\menu\\main_menu.xml"
+    },
+    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\menu\\reader_menu.xml",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\menu\\reader_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\menu\\cart_menu.xml",
+        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\menu\\cart_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\menu\\core_menu.xml",
+        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\menu\\core_menu.xml"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\menu\\search_file.xml",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\menu\\search_file.xml"
     },
     {
+        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\menu\\file_menu.xml",
+        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\menu\\file_menu.xml"
+    },
+    {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\menu\\main_menu.xml",
         "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\menu\\main_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\menu\\search_file.xml",
+        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\menu\\search_file.xml"
     },
     {
         "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\menu\\core_menu.xml",

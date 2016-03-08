@@ -12,8 +12,25 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Environment;
 import com.wangyi.function.BookManagerFunc;
+import org.xutils.x;
 
 public class PreferencesReader {
+	public static void saveApplicationSetting(boolean[] setting){
+		SharedPreferences prefs = x.app().getSharedPreferences("setting",Context.MODE_PRIVATE);
+		SharedPreferences.Editor edit = prefs.edit();
+		edit.putBoolean("autoupdate", setting[0]);
+		edit.putBoolean("wifidownload",setting[1]);
+		edit.commit();
+	}
+
+	public static boolean[] getApplicationSetting(){
+		SharedPreferences prefs = x.app().getSharedPreferences("setting",Context.MODE_PRIVATE);
+		boolean[] setting = new boolean[2];
+		setting[0] = prefs.getBoolean("autoupdate",false);
+		setting[1] = prefs.getBoolean("wifidownload",false);
+		return setting;
+	}
+
     public static void saveScheduleData(Activity act,int initWeek,int initDate){
         SharedPreferences prefs = act.getSharedPreferences("schedule",Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = prefs.edit();

@@ -1,8 +1,10 @@
 package com.wangyi.function;
 
+import android.content.Context;
 import com.wangyi.UIview.widget.DownloadViewHolder;
 import com.wangyi.define.DownloadInfo;
 import com.wangyi.define.EventName;
+import com.wangyi.function.funchelp.Function;
 import org.xutils.DbManager;
 import org.xutils.common.Callback;
 import org.xutils.common.task.PriorityExecutor;
@@ -20,7 +22,7 @@ import java.util.concurrent.Executor;
 /**
  * Created by maxchanglove on 2016/2/24.
  */
-public class DownloadManagerFunc {
+public class DownloadManagerFunc implements Function {
     private static DownloadManagerFunc instance;
 
     private final static int MAX_DOWNLOAD_THREAD = 2; // 有效的值范围[1, 3], 设置为3时, 可能阻塞图片加载.
@@ -60,6 +62,11 @@ public class DownloadManagerFunc {
             }
         }
         return instance;
+    }
+
+    @Override
+    public void init(Context context) {
+
     }
 
     public void updateDownloadInfo(DownloadInfo info) throws DbException {

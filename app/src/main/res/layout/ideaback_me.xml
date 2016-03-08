@@ -43,12 +43,5 @@
                 android:inputType="textMultiLine"
                 android:gravity="left|top"
                 android:id="@+id/editText"/>
-        <Button
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:text="     "
-                android:background="@drawable/ideaback_addpic"
-                android:id="@+id/addpic"/>
-
     </LinearLayout>
 </LinearLayout>
