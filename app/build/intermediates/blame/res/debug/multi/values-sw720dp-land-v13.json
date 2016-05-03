@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
+        "outputFile": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,31 +11,7 @@
                     "endOffset": 94
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\values-sw720dp-land\\dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 1,
-                        "startOffset": 74,
-                        "endColumn": 40,
-                        "endOffset": 113
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\values-sw720dp-land-v13\\values-sw720dp-land-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 43,
-                    "endOffset": 94
-                },
-                "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\values-sw720dp-land\\dimens.xml",
+                    "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp-land/dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 1,

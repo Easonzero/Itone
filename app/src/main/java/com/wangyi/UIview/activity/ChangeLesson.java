@@ -77,7 +77,7 @@ public class ChangeLesson extends BaseActivity {
 		dialog.show();
 	}
 
-	@Event(R.id.confirm)
+	@Event(R.id.Confirm)
 	private void onConfirmClick(View view){
 		if(lessonName.getText().toString().equals("")) return;
         ScheduleFunc.getInstance().lesson.setClassRoom(location.getText().toString());

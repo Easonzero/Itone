@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import com.mingle.widget.LoadingView;
 import com.wangyi.reader.R;
 
 /**

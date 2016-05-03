@@ -1,7 +1,7 @@
 package com.wangyi.define;
 
 import org.xutils.http.annotation.HttpResponse;
-import com.wangyi.utils.JsonResponseParser;
+import com.wangyi.function.funchelp.JsonResponseParser;
 
 @HttpResponse(parser = JsonResponseParser.class)
 public class UserInfo {

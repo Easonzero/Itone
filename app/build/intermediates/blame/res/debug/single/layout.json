@@ -1,766 +1,458 @@
 [
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\outline_item.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\outline_item.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_menu_item_layout.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/emptylist.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/emptylist.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_menu_item_action_area.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_container.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_container.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\register.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\register.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_layout_snackbar_include.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_switch.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_switch.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\z_spinner_item.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\z_spinner_item.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_profile_setting.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_profile_setting.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_big_media_narrow.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/popup_search.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/popup_search.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/createlesson.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/createlesson.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_search.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\popup_search.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\download_ing_listitem.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\download_ing_listitem.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/select_dialog_multichoice_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_dialog_title_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/byorderlist.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/byorderlist.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\thumbnail_item.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\thumbnail_item.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_menu_layout.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_mode_close_item_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_mini.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_mini.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\picker_entry.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\picker_entry.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/cube_ptr_classic_default_header.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.10/res/layout/cube_ptr_classic_default_header.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_menu_item_layout.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/book_list_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/book_list_item.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_big_media_narrow.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_simple.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/activity_schedule.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/activity_schedule.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_icon.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/register.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/register.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ideaback_me.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\ideaback_me.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_part_chronometer.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_me.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\fragment_me.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_compact_header.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_compact_header.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/cube_ptr_simple_loading.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.10/res/layout/cube_ptr_simple_loading.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_cancel_action.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/browseitem.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/browseitem.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\outline_entry.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\outline_entry.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/login.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/login.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/list_item_text.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/list_item_text.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_layout.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/download_me.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/download_me.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_dialog.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.github.zzz40500\\android-shapeLoadingView\\1.0.3.2\\res\\layout\\layout_dialog.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/pager_gridview_layout.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/pager_gridview_layout.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\empty_progressbar.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\layout\\empty_progressbar.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/search_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/search_item.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\search_item.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\search_item.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_bar_up_container.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/vertical_recycler_view.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.marshalchen.ultimaterecyclerview/library/0.4.0/res/layout/vertical_recycler_view.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\download_me.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\download_me.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/watchlesson.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/watchlesson.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_layout_tab_icon.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/seed_popupview_no_bg.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/seed_popupview_no_bg.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\watchlesson.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\watchlesson.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_part_time.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\createlesson.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\createlesson.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/outline_entry.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/outline_entry.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_action.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_search_view.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pick_weeks_dialog.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\pick_weeks_dialog.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/layout_materialdialog.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/res/layout/layout_materialdialog.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\bottom_progressbar.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\layout\\bottom_progressbar.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pick_classes_dialog.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\pick_classes_dialog.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_alert_dialog_button_bar_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_home.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\fragment_home.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/textentry.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/textentry.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\seed_popupview_no_bg.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\seed_popupview_no_bg.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_bar_up_container.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_lines.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/message_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/message_item.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\download_ing_listitem.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\download_ing_listitem.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_secondary.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_secondary.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\swipeable_ultimate_recycler_view_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\layout\\swipeable_ultimate_recycler_view_layout.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_header.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_header.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_schedule.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\activity_schedule.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_bar_title_item.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_allsubject.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\fragment_allsubject.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/picker_entry.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/picker_entry.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\loadingview.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\loadingview.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_simple.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\emptylist.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\emptylist.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_slider.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_slider.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\register.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\register.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/fragment_me.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/fragment_me.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\watchlesson.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\watchlesson.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/watchbooks.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/watchbooks.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_mode_bar.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_alert_dialog_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_recycler_view_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\layout\\custom_recycler_view_layout.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_list_menu_item_checkbox.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/turntodialog.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/turntodialog.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_navigation_menu.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/download_ing_listitem.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/download_ing_listitem.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\lesson_gird_item.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\lesson_gird_item.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/notification_template_lines.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_lines.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/pick_weeks_dialog.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/pick_weeks_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_search_view.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/activity_current.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/activity_current.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\turntodialog.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\turntodialog.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/custom_recycler_view_layout.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.marshalchen.ultimaterecyclerview/library/0.4.0/res/layout/custom_recycler_view_layout.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_select_dialog_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/fragment_allsubject.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/fragment_allsubject.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\z_spinner_dropdown_item.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\z_spinner_dropdown_item.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/pick_classes_dialog.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/pick_classes_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\option_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\option_layout.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/layout_listview.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/layout_listview.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_schedule.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\activity_schedule.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_mini_profile.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_mini_profile.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_lines.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_dialog_title_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_bar_up_container.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_secondary_toggle.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_secondary_toggle.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_allsubject.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\fragment_allsubject.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_activity_chooser_view.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/byorderlist_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/byorderlist_item.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_toolbar.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_divider.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_divider.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_dialog.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.github.zzz40500\\android-shapeLoadingView\\1.0.3.2\\res\\layout\\layout_dialog.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_mode_bar.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/thumbnail_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/thumbnail_item.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/outline_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/outline_item.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_home.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\fragment_home.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/ideaback_me.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/ideaback_me.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\vertical_recycler_view.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\layout\\vertical_recycler_view.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_mode_bar.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pick_classes_dialog.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\pick_classes_dialog.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_media_action.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_radio.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_screen_content_include.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_expanded_menu_layout.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/watchuser.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/watchuser.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\seed_popupview.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\seed_popupview.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/z_spinner_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/z_spinner_item.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/bottom_progressbar.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.marshalchen.ultimaterecyclerview/library/0.4.0/res/layout/bottom_progressbar.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_materialdialog.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\me.drakeet.materialdialog\\library\\1.2.8\\res\\layout\\layout_materialdialog.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_recycler_view.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_recycler_view.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\set_me.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\set_me.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_primary.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_primary.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\swipeable_ultimate_recycler_view_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\layout\\swipeable_ultimate_recycler_view_layout.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/buttons.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/buttons.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\classes_item.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\classes_item.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/swipeable_ultimate_recycler_view_layout.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.marshalchen.ultimaterecyclerview/library/0.4.0/res/layout/swipeable_ultimate_recycler_view_layout.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\option_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\option_layout.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/classes_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/classes_item.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_listview.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\layout_listview.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_big_media.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_header.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_navigation_item_header.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/horizontal_recycler_view.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.marshalchen.ultimaterecyclerview/library/0.4.0/res/layout/horizontal_recycler_view.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_listview.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\layout_listview.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/loadingview.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/loadingview.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_action.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_toggle.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_toggle.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_menu_layout.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_current.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\activity_current.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_navigation_item.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/materialize.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/layout/materialize.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_recycler_view_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\layout\\custom_recycler_view_layout.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_section.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_section.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_icon.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/empty_progressbar.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.marshalchen.ultimaterecyclerview/library/0.4.0/res/layout/empty_progressbar.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\task_detail_popupwindow.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\task_detail_popupwindow.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_search_view.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/lesson_gird_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/lesson_gird_item.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pager_gridview_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\pager_gridview_layout.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/load_view.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/load_view.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_text.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\list_item_text.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/layout_gridview.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/layout_gridview.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_menu_layout.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/seed_popupview.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/seed_popupview.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\outline_entry.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\outline_entry.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/option_layout.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/option_layout.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\login.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_secondary_switch.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_secondary_switch.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_simple.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_profile.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_profile.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_layout_snackbar.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/ultimate_recycler_view_layout.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.marshalchen.ultimaterecyclerview/library/0.4.0/res/layout/ultimate_recycler_view_layout.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cube_ptr_classic_default_header.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\in.srain.cube\\ultra-ptr\\1.0.10\\res\\layout\\cube_ptr_classic_default_header.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/fragment_home.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/fragment_home.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\download_me.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\download_me.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/drawer_message.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/drawer_message.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_part_chronometer.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/task_detail_popupwindow.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/task_detail_popupwindow.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_navigation_item_subheader.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_select_dialog_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\textentry.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\textentry.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/notification_media_cancel_action.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_media_cancel_action.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\classes_item.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\classes_item.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_activity_chooser_view.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\popup_search.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\popup_search.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/set_me.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/set_me.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_activity_chooser_view.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/notification_template_media.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\load_view.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.github.zzz40500\\android-shapeLoadingView\\1.0.3.2\\res\\layout\\load_view.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_layout.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/select_dialog_item_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\seed_popupview_no_bg.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\seed_popupview_no_bg.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/z_spinner_dropdown_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/z_spinner_dropdown_item.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\task_detail_popupwindow.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\task_detail_popupwindow.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\book_list_item.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\book_list_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cube_ptr_classic_default_header.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\in.srain.cube\\ultra-ptr\\1.0.10\\res\\layout\\cube_ptr_classic_default_header.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\browseitem.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\browseitem.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\bottom_progressbar.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\layout\\bottom_progressbar.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\createlesson.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\createlesson.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_toolbar.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\load_view.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.github.zzz40500\\android-shapeLoadingView\\1.0.3.2\\res\\layout\\load_view.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\select_dialog_multichoice_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_materialdialog.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\me.drakeet.materialdialog\\library\\1.2.8\\res\\layout\\layout_materialdialog.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_current.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\activity_current.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_media.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\horizontal_recycler_view.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\layout\\horizontal_recycler_view.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\outline_item.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\outline_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buttons.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\buttons.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_navigation_menu_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_alert_dialog_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\empty_progressbar.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\layout\\empty_progressbar.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\emptylist.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\emptylist.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\search_item.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\search_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\buttons.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\buttons.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_part_chronometer.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\activity_main.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\horizontal_recycler_view.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\layout\\horizontal_recycler_view.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_popup_menu_item_layout.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cube_ptr_simple_loading.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\in.srain.cube\\ultra-ptr\\1.0.10\\res\\layout\\cube_ptr_simple_loading.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_bar_title_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pick_weeks_dialog.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\pick_weeks_dialog.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\z_spinner_dropdown_item.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\z_spinner_dropdown_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\picker_entry.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\picker_entry.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\turntodialog.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\turntodialog.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_gridview.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\layout_gridview.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_navigation_item_separator.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ideaback_me.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\ideaback_me.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\set_me.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\set_me.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_content_include.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\z_spinner_item.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\z_spinner_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\pager_gridview_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\pager_gridview_layout.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ultimate_recycler_view_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\layout\\ultimate_recycler_view_layout.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_media.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\textentry.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\textentry.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\cube_ptr_simple_loading.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\in.srain.cube\\ultra-ptr\\1.0.10\\res\\layout\\cube_ptr_simple_loading.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\lesson_gird_item.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\lesson_gird_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\select_dialog_singlechoice_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\select_dialog_singlechoice_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\browseitem.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\browseitem.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\loadingview.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\loadingview.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\ultimate_recycler_view_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\layout\\ultimate_recycler_view_layout.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_select_dialog_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\book_list_item.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\book_list_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\login.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_me.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\fragment_me.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\select_dialog_item_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_dialog_title_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_mode_close_item_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_content_include.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\vertical_recycler_view.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\layout\\vertical_recycler_view.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_big_media.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_gridview.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\layout_gridview.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\seed_popupview.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\layout\\seed_popupview.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\thumbnail_item.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\thumbnail_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_bar_title_item.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_radio.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_expanded_menu_layout.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_alert_dialog_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_text.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_layout_tab_text.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_popup_menu_item_layout.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_part_time.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_big_media.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_media_cancel_action.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_part_time.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\select_dialog_item_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\select_dialog_multichoice_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item_text.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\layout\\list_item_text.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/support_simple_spinner_dropdown_item.xml"
     }
 ]

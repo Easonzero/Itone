@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/add_bookmark" android:title="Add Bookmark"></item>
-    
-
-</menu>
-<!-- From: file:/C:/Users/maxchanglove/ItOne/app/src/main/res/menu/cart_menu.xml -->

@@ -1,646 +1,338 @@
 [
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_highlight.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_highlight.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/darkdenim3.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/darkdenim3.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_dir.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_dir.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/circle_color.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/circle_color.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_select.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_select.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_strike.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_strike.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\me_tableitem_selecter.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\me_tableitem_selecter.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_badge.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_badge.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\material_card.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\me.drakeet.materialdialog\\library\\1.2.8\\res\\drawable\\material_card.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/search.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/search.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_check_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/apptheme_list_selector_holo_light.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/apptheme_list_selector_holo_light.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\loadbackground.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\loadbackground.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_lesson_blue_selector.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_lesson_blue_selector.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_arrow_up.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_arrow_up.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_card_nos.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/res/drawable/material_card_nos.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_print.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_print.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_underline.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_underline.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_folder.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_folder.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_select.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_select.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_colored_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_btn_default_mtrl_shape.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_cab_background_top_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_print.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_print.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\search.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\search.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_share.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_share.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_strike.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_strike.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_btn_borderless_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_top_actionbar.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\bg_top_actionbar.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_cab_background_internal_bg.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\seek_progress.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\seek_progress.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_list_selector_holo_dark.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_lesson_grey_selector.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\bg_lesson_grey_selector.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/button.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/res/drawable/button.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_list_selector_holo_light.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_annotation.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_annotation.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_seekbar_thumb_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_folder.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_folder.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\drag_frame.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\drawable\\drag_frame.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_annot.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_annot.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_lesson_purple_selector.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\bg_lesson_purple_selector.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_shadow_left.9.png",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_shadow_left.9.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_btn_radio_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_ratingbar_full_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_shadow_bottom.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_shadow_bottom.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_dark.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_dialog_material_background_dark.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_cab_background_top_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_magnifying_glass.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_magnifying_glass.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_shadow_right.9.png",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_shadow_right.9.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_sdcard.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_sdcard.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_light.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_dialog_material_background_light.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\material_dialog_window.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\me.drakeet.materialdialog\\library\\1.2.8\\res\\drawable\\material_dialog_window.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/me_tableitem_selecter.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/me_tableitem_selecter.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\page_num.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\page_num.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\drawable\\design_fab_background.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_lesson_grey_selector.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_lesson_grey_selector.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\buttondark.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\buttondark.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_tab_indicator_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_cab_background_top_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/loadbackground.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/loadbackground.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_annotation.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_annotation.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/shadow.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/shadow.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\material_card.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\me.drakeet.materialdialog\\library\\1.2.8\\res\\drawable\\material_card.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_lesson_green_selector.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_lesson_green_selector.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_lesson_green_selector.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\bg_lesson_green_selector.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_lowerbutton.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_lowerbutton.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_colored_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_arrow_right.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_arrow_right.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_lesson_purple_selector.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\bg_lesson_purple_selector.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_btn_check_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_cab_background_internal_bg.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_edit_text_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_lesson_blue_selector.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\bg_lesson_blue_selector.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/seek_thumb.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/seek_thumb.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_seekbar_thumb_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_more.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_more.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_text_cursor_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_seekbar_track_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\tableitem.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\tableitem.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_dark.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_dialog_material_background_dark.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_dir.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_dir.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_text_cursor_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_borderless_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_shadow_top.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_shadow_top.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_tab_indicator_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_action_arrow_left.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_action_arrow_left.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\aa_dialog_bg.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.github.zzz40500\\android-shapeLoadingView\\1.0.3.2\\res\\drawable\\aa_dialog_bg.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_textfield_search_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_clipboard.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_clipboard.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_card_nos_pressed.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/res/drawable/material_card_nos_pressed.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_cancel.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_cancel.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_top_actionbar.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_top_actionbar.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_annot.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_annot.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_arrow_up.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_arrow_up.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_annotation.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_annotation.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_clipboard.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_clipboard.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\seek_thumb.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\seek_thumb.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_doc.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_doc.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_folder.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_folder.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_sdcard.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_sdcard.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_annot.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_annot.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_highlight.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_highlight.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_reflow.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_reflow.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/me_tableitem2_selecter.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/me_tableitem2_selecter.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\me.drakeet.materialdialog\\library\\1.2.8\\res\\drawable\\button.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_check.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_check.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_list.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_list.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_trash.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_trash.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_trash.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_trash.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_item_background_holo_light.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_doc.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_doc.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_list.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_list.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shadow.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.github.zzz40500\\android-shapeLoadingView\\1.0.3.2\\res\\drawable\\shadow.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_magnifying_glass.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_magnifying_glass.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_underline.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_underline.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_btn_colored_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_switch_thumb_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_cancel.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_cancel.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_list_selector_holo_dark.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_circle_mask.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_circle_mask.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\busy.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\busy.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_text_cursor_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_switch_thumb_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\darkdenim3.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\darkdenim3.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_seekbar_thumb_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\seek_progress.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\seek_progress.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/page_num.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/page_num.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_item_background_holo_light.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_full_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_ratingbar_full_material.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_list_selector_holo_light.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_menu_moreoverflow_note.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_menu_moreoverflow_note.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_switch_thumb_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/abc_ic_clear.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_item_background_holo_dark.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_card.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/res/drawable/material_card.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_dir.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_dir.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\me_tableitem_selecter.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\me_tableitem_selecter.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_link.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_link.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_item_background_holo_dark.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_reflow.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_reflow.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_pen.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_pen.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_list_selector_holo_dark.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_arrow_left.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_arrow_left.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\me_tableitem2_selecter.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\me_tableitem2_selecter.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/drag_frame.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.marshalchen.ultimaterecyclerview/library/0.4.0/res/drawable/drag_frame.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\abc_ic_clear.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/busy.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/busy.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_lesson_purple_selector.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_lesson_purple_selector.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background_tab.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.astuetz\\pagerslidingtabstrip\\1.0.1\\res\\drawable\\background_tab.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_list_selector_background_transition_holo_light.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_lesson_blue_selector.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\bg_lesson_blue_selector.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_pen.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_pen.png"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_dialog_material_background_light.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/seek_progress.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/seek_progress.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\shadow.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.github.zzz40500\\android-shapeLoadingView\\1.0.3.2\\res\\drawable\\shadow.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable/abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_arrow_left.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_arrow_left.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/buttondark.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/buttondark.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_seekbar_track_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_dialog_window.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/res/drawable/material_dialog_window.xml"
     },
     {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\loadbackground.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\loadbackground.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_clipboard.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_clipboard.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_dialog_material_background_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\me_tableitem2_selecter.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\me_tableitem2_selecter.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_radio_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_cab_background_internal_bg.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_color.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\circle_color.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\buttondark.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\buttondark.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_underline.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_underline.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_ratingbar_full_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_edit_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_link.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_link.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\page_num.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\page_num.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\me.drakeet.materialdialog\\library\\1.2.8\\res\\drawable\\button.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_item_background_holo_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_action_arrow_left.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_action_arrow_left.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_spinner_textfield_background_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_check.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_check.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_top_actionbar.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\bg_top_actionbar.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_moreoverflow_note.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_menu_moreoverflow_note.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_textfield_search_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_more.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_more.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_list.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_list.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_lowerbutton.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\bg_lowerbutton.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_trash.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_trash.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_print.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_print.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_reflow.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_reflow.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_cancel.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_cancel.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\background_tab.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.astuetz\\pagerslidingtabstrip\\1.0.1\\res\\drawable\\background_tab.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_seekbar_track_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_textfield_search_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\drag_frame.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.marshalchen.ultimaterecyclerview\\library\\0.4.0\\res\\drawable\\drag_frame.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_arrow_left.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_arrow_left.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\darkdenim3.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\darkdenim3.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\material_card_nos_pressed.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\me.drakeet.materialdialog\\library\\1.2.8\\res\\drawable\\material_card_nos_pressed.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_arrow_right.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_arrow_right.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_sdcard.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_sdcard.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_radio_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\busy.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\busy.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_color.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\circle_color.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_highlight.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_highlight.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\material_dialog_window.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\me.drakeet.materialdialog\\library\\1.2.8\\res\\drawable\\material_dialog_window.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_borderless_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\seek_thumb.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\seek_thumb.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_btn_check_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_arrow_right.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_arrow_right.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\search.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\search.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_edit_text_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_edit_text_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_link.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_link.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_lesson_grey_selector.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\bg_lesson_grey_selector.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\apptheme_list_selector_holo_light.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\apptheme_list_selector_holo_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_share.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_share.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_action_arrow_left.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_action_arrow_left.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_menu_moreoverflow_note.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_menu_moreoverflow_note.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_arrow_up.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_arrow_up.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_check.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_check.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\apptheme_list_selector_holo_light.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\apptheme_list_selector_holo_light.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_magnifying_glass.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_magnifying_glass.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_dark.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_dialog_material_background_dark.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\material_card_nos.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\me.drakeet.materialdialog\\library\\1.2.8\\res\\drawable\\material_card_nos.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_doc.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_doc.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\aa_dialog_bg.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.github.zzz40500\\android-shapeLoadingView\\1.0.3.2\\res\\drawable\\aa_dialog_bg.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_strike.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_strike.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\drawable\\design_snackbar_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_lowerbutton.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\bg_lowerbutton.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_share.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_share.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_more.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_more.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_lesson_green_selector.xml",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\bg_lesson_green_selector.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\material_card_nos_pressed.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\me.drakeet.materialdialog\\library\\1.2.8\\res\\drawable\\material_card_nos_pressed.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\material_card_nos.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\me.drakeet.materialdialog\\library\\1.2.8\\res\\drawable\\material_card_nos.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable\\abc_tab_indicator_material.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_pen.png",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\ic_pen.png"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear.xml",
-        "source": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\src\\main\\res\\drawable\\abc_ic_clear.xml"
-    },
-    {
-        "merged": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_select.png",
-        "source": "C:\\Users\\maxchanglove\\ItOne\\app\\src\\main\\res\\drawable\\ic_select.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/background_tab.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.astuetz/pagerslidingtabstrip/1.0.1/res/drawable/background_tab.xml"
     }
 ]

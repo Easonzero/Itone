@@ -21,6 +21,7 @@
     <dimen name="drawer_width">280dp</dimen>
     <dimen name="gridview_padding">8dp</dimen>
     <dimen name="layout_maxwidth">700dp</dimen>
+    <dimen name="material_drawer_vertical_padding">24dp</dimen>
     <dimen name="meToolbarHeight">375dp</dimen>
     <dimen name="menuitemSize">30dp</dimen>
     <dimen name="scheduleListHeight">120dp</dimen>

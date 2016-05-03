@@ -8,6 +8,15 @@
     <color name="loading_background">#bbfff7fb</color>
     <color name="line_color">#cccccc</color>
     <color name="basebottombar_color">#E4E4E4</color>
+
+    <!-- LoadingView Color -->
+    <color name="triangle">#aa72d572</color>
+    <color name="circle">#aa738ffe</color>
+    <color name="rect">#aae84e40</color>
+    <color name="view_bg">#00000000</color>
+    <color name="shadow">#25808080</color>
+    <color name="dialog_bg">#f5f5f5</color>
+
     <!-- ColorRef -->
     <color name="md_bookitem">#fcfdfd</color>
     <color name="md_cyam">#00bcd4</color>

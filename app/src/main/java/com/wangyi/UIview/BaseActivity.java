@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.DrawerBuilder;
+
 public class BaseActivity extends AppCompatActivity {
 
     @Override

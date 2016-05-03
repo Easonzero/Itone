@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <declare-styleable name="WaveLoadingView"><attr format="integer" name="borderWidth"/><attr format="color" name="borderColor"/><attr format="integer" name="progressValue"/><attr name="shapeType"><flag name="circle" value="0"/><flag name="square" value="1"/></attr><attr format="color" name="waveColor"/><attr format="float" name="waveAmplitude"/><attr format="float" name="titleTopSize"/><attr format="float" name="titleCenterSize"/><attr format="float" name="titleBottomSize"/><attr format="color" name="titleTopColor"/><attr format="color" name="titleCenterColor"/><attr format="color" name="titleBottomColor"/><attr format="string" name="titleTop"/><attr format="string" name="titleCenter"/><attr format="string" name="titleBottom"/></declare-styleable>
-    <string name="app_name">Library</string>
-</resources>

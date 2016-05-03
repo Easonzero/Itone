@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
+        "outputFile": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/values-v11/values-v11.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 469
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -33,7 +33,7 @@
                     "endOffset": 894
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -54,7 +54,7 @@
                     "endOffset": 1322
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -75,7 +75,7 @@
                     "endOffset": 1748
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -96,7 +96,7 @@
                     "endOffset": 2175
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 4,
@@ -117,7 +117,7 @@
                     "endOffset": 2600
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 34,
                         "startColumn": 4,
@@ -137,7 +137,7 @@
                     "endOffset": 2689
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 42,
                         "startColumn": 4,
@@ -156,7 +156,7 @@
                     "endOffset": 2790
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 43,
                         "startColumn": 4,
@@ -176,7 +176,7 @@
                     "endOffset": 3198
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 44,
                         "startColumn": 4,
@@ -197,7 +197,7 @@
                     "endOffset": 3618
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 49,
                         "startColumn": 4,
@@ -218,7 +218,7 @@
                     "endOffset": 3725
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 56,
                         "startColumn": 4,
@@ -239,7 +239,7 @@
                     "endOffset": 3854
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 58,
                         "startColumn": 4,
@@ -255,363 +255,221 @@
                     "startLine": 54,
                     "startColumn": 4,
                     "startOffset": 3859,
-                    "endColumn": 70,
-                    "endOffset": 3925
-                },
-                "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
-                    "position": {
-                        "startLine": 62,
-                        "startColumn": 4,
-                        "startOffset": 4580,
-                        "endColumn": 70,
-                        "endOffset": 4646
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 55,
-                    "startColumn": 4,
-                    "startOffset": 3930,
-                    "endColumn": 82,
-                    "endOffset": 4008
-                },
-                "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
-                    "position": {
-                        "startLine": 63,
-                        "startColumn": 4,
-                        "startOffset": 4651,
-                        "endColumn": 82,
-                        "endOffset": 4729
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 56,
-                    "startColumn": 4,
-                    "startOffset": 4013,
-                    "endLine": 106,
+                    "endLine": 59,
                     "endColumn": 12,
-                    "endOffset": 7716
+                    "endOffset": 4130
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
-                    "position": {
-                        "startLine": 64,
-                        "startColumn": 4,
-                        "startOffset": 4734,
-                        "endLine": 114,
-                        "endColumn": 12,
-                        "endOffset": 8437
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 107,
-                    "startColumn": 4,
-                    "startOffset": 7721,
-                    "endLine": 158,
-                    "endColumn": 12,
-                    "endOffset": 11564
-                },
-                "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
-                    "position": {
-                        "startLine": 115,
-                        "startColumn": 4,
-                        "startOffset": 8442,
-                        "endLine": 166,
-                        "endColumn": 12,
-                        "endOffset": 12285
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 159,
-                    "startColumn": 4,
-                    "startOffset": 11569,
-                    "endColumn": 90,
-                    "endOffset": 11655
-                },
-                "from": {
-                    "file": "C:\\Users\\maxchanglove\\repos\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
-                    "position": {
-                        "startLine": 169,
-                        "startColumn": 4,
-                        "startOffset": 12469,
-                        "endColumn": 90,
-                        "endOffset": 12555
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\res\\merged\\debug\\values-v11\\values-v11.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endLine": 7,
-                    "endColumn": 12,
-                    "endOffset": 469
-                },
-                "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 239,
+                        "startOffset": 204,
                         "endLine": 9,
                         "endColumn": 12,
-                        "endOffset": 653
+                        "endOffset": 475
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 8,
+                    "startLine": 60,
                     "startColumn": 4,
-                    "startOffset": 474,
-                    "endLine": 13,
+                    "startOffset": 4135,
+                    "endLine": 63,
                     "endColumn": 12,
-                    "endOffset": 894
+                    "endOffset": 4414
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 658,
-                        "endLine": 15,
+                        "startOffset": 480,
+                        "endLine": 13,
                         "endColumn": 12,
-                        "endOffset": 1078
+                        "endOffset": 759
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 14,
+                    "startLine": 64,
                     "startColumn": 4,
-                    "startOffset": 899,
-                    "endLine": 19,
+                    "startOffset": 4419,
+                    "endLine": 68,
                     "endColumn": 12,
-                    "endOffset": 1322
+                    "endOffset": 4714
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
                     "position": {
-                        "startLine": 16,
+                        "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 1083,
-                        "endLine": 21,
+                        "startOffset": 764,
+                        "endLine": 18,
                         "endColumn": 12,
-                        "endOffset": 1506
+                        "endOffset": 1059
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 20,
+                    "startLine": 69,
                     "startColumn": 4,
-                    "startOffset": 1327,
-                    "endLine": 25,
+                    "startOffset": 4719,
+                    "endLine": 74,
                     "endColumn": 12,
-                    "endOffset": 1748
+                    "endOffset": 5014
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
                     "position": {
-                        "startLine": 22,
+                        "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 1511,
-                        "endLine": 27,
+                        "startOffset": 1064,
+                        "endLine": 24,
                         "endColumn": 12,
-                        "endOffset": 1932
+                        "endOffset": 1359
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 26,
+                    "startLine": 75,
                     "startColumn": 4,
-                    "startOffset": 1753,
-                    "endLine": 31,
+                    "startOffset": 5019,
+                    "endLine": 78,
                     "endColumn": 12,
-                    "endOffset": 2175
+                    "endOffset": 5310
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
                     "position": {
-                        "startLine": 28,
+                        "startLine": 25,
                         "startColumn": 4,
-                        "startOffset": 1937,
-                        "endLine": 33,
+                        "startOffset": 1364,
+                        "endLine": 28,
                         "endColumn": 12,
-                        "endOffset": 2359
+                        "endOffset": 1655
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 32,
+                    "startLine": 79,
                     "startColumn": 4,
-                    "startOffset": 2180,
-                    "endLine": 37,
+                    "startOffset": 5315,
+                    "endLine": 87,
                     "endColumn": 12,
-                    "endOffset": 2600
+                    "endOffset": 5732
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
                     "position": {
-                        "startLine": 34,
+                        "startLine": 29,
                         "startColumn": 4,
-                        "startOffset": 2364,
-                        "endLine": 39,
+                        "startOffset": 1660,
+                        "endLine": 37,
                         "endColumn": 12,
-                        "endOffset": 2784
+                        "endOffset": 2077
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 38,
+                    "startLine": 88,
                     "startColumn": 4,
-                    "startOffset": 2605,
-                    "endColumn": 88,
-                    "endOffset": 2689
+                    "startOffset": 5737,
+                    "endLine": 92,
+                    "endColumn": 12,
+                    "endOffset": 6044
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
                     "position": {
-                        "startLine": 42,
+                        "startLine": 38,
                         "startColumn": 4,
-                        "startOffset": 2968,
-                        "endColumn": 88,
-                        "endOffset": 3052
+                        "startOffset": 2082,
+                        "endLine": 42,
+                        "endColumn": 12,
+                        "endOffset": 2389
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 39,
+                    "startLine": 93,
                     "startColumn": 4,
-                    "startOffset": 2694,
-                    "endColumn": 100,
-                    "endOffset": 2790
+                    "startOffset": 6049,
+                    "endLine": 96,
+                    "endColumn": 12,
+                    "endOffset": 6220
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 43,
                         "startColumn": 4,
-                        "startOffset": 3057,
-                        "endColumn": 100,
-                        "endOffset": 3153
+                        "startOffset": 2394,
+                        "endLine": 46,
+                        "endColumn": 12,
+                        "endOffset": 2565
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 40,
+                    "startLine": 97,
                     "startColumn": 4,
-                    "startOffset": 2795,
-                    "endLine": 44,
+                    "startOffset": 6225,
+                    "endLine": 100,
                     "endColumn": 12,
-                    "endOffset": 3198
+                    "endOffset": 6408
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
                     "position": {
-                        "startLine": 44,
+                        "startLine": 47,
                         "startColumn": 4,
-                        "startOffset": 3158,
-                        "endLine": 48,
+                        "startOffset": 2570,
+                        "endLine": 50,
                         "endColumn": 12,
-                        "endOffset": 3561
+                        "endOffset": 2753
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 45,
+                    "startLine": 101,
                     "startColumn": 4,
-                    "startOffset": 3203,
-                    "endLine": 49,
+                    "startOffset": 6413,
+                    "endLine": 104,
                     "endColumn": 12,
-                    "endOffset": 3618
+                    "endOffset": 6620
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
                     "position": {
-                        "startLine": 49,
+                        "startLine": 51,
                         "startColumn": 4,
-                        "startOffset": 3566,
-                        "endLine": 53,
+                        "startOffset": 2758,
+                        "endLine": 54,
                         "endColumn": 12,
-                        "endOffset": 3981
+                        "endOffset": 2965
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 50,
+                    "startLine": 105,
                     "startColumn": 4,
-                    "startOffset": 3623,
-                    "endLine": 51,
-                    "endColumn": 12,
-                    "endOffset": 3725
-                },
-                "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
-                    "position": {
-                        "startLine": 56,
-                        "startColumn": 4,
-                        "startOffset": 4165,
-                        "endLine": 57,
-                        "endColumn": 12,
-                        "endOffset": 4267
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 52,
-                    "startColumn": 4,
-                    "startOffset": 3730,
-                    "endLine": 53,
-                    "endColumn": 12,
-                    "endOffset": 3854
-                },
-                "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
-                    "position": {
-                        "startLine": 58,
-                        "startColumn": 4,
-                        "startOffset": 4272,
-                        "endLine": 59,
-                        "endColumn": 12,
-                        "endOffset": 4396
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 54,
-                    "startColumn": 4,
-                    "startOffset": 3859,
+                    "startOffset": 6625,
                     "endColumn": 70,
-                    "endOffset": 3925
+                    "endOffset": 6691
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 62,
                         "startColumn": 4,
@@ -623,14 +481,14 @@
             },
             {
                 "to": {
-                    "startLine": 55,
+                    "startLine": 106,
                     "startColumn": 4,
-                    "startOffset": 3930,
+                    "startOffset": 6696,
                     "endColumn": 82,
-                    "endOffset": 4008
+                    "endOffset": 6774
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 63,
                         "startColumn": 4,
@@ -642,15 +500,15 @@
             },
             {
                 "to": {
-                    "startLine": 56,
+                    "startLine": 107,
                     "startColumn": 4,
-                    "startOffset": 4013,
-                    "endLine": 106,
+                    "startOffset": 6779,
+                    "endLine": 157,
                     "endColumn": 12,
-                    "endOffset": 7716
+                    "endOffset": 10482
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 64,
                         "startColumn": 4,
@@ -663,15 +521,15 @@
             },
             {
                 "to": {
-                    "startLine": 107,
+                    "startLine": 158,
                     "startColumn": 4,
-                    "startOffset": 7721,
-                    "endLine": 158,
+                    "startOffset": 10487,
+                    "endLine": 209,
                     "endColumn": 12,
-                    "endOffset": 11564
+                    "endOffset": 14330
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 115,
                         "startColumn": 4,
@@ -684,14 +542,14 @@
             },
             {
                 "to": {
-                    "startLine": 159,
+                    "startLine": 210,
                     "startColumn": 4,
-                    "startOffset": 11569,
+                    "startOffset": 14335,
                     "endColumn": 90,
-                    "endOffset": 11655
+                    "endOffset": 14421
                 },
                 "from": {
-                    "file": "C:\\Users\\maxchanglove\\ItOne\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\values-v11\\values-v11.xml",
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values-v11/values-v11.xml",
                     "position": {
                         "startLine": 169,
                         "startColumn": 4,

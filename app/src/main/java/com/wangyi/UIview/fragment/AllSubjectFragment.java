@@ -83,7 +83,7 @@ public class AllSubjectFragment extends BaseFragment {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState){
 		super.onActivityCreated(savedInstanceState);
-        loading = new LoadingDialog(this.getContext());
+        loading = new LoadingDialog(x.app());
 		editSearch.addTextChangedListener( new TextWatcher() {
 
 			@Override

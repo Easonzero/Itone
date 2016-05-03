@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
-        android:src="@drawable/ic_ab_back_holo_dark_am">
-        <!-- android:autoMirrored="true" -->
-</bitmap>
-<!-- From: file:/C:/Users/maxchanglove/ItOne/app/src/main/res/drawable/ic_ab_back_holo_dark.xml -->
