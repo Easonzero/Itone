@@ -83,26 +83,10 @@ public class BookmarkViewAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.thumbnail_item, parent, false);
         }
 
-//		int mPage = mCore.getDocumentPage(((MuPDFActivity) mContext).mCurrentPage);
-
         AQuery aq = new AQuery(convertView);
         aq.id(R.id.ThumbnailNumber).text("" + (bmDatas.get(position).page + 1));
 
-//		if (mPage == position) {
-//			aq.id(R.id.ThumbnailLayoutView).background(R.color.accent_color);
-//			aq.id(R.id.ThumbnailNumber).textColorId(android.R.color.secondary_text_light);
-//		} else {
-//			aq.id(R.id.ThumbnailLayoutView).background(R.drawable.buttondark);
-//			aq.id(R.id.ThumbnailNumber).textColorId(android.R.color.secondary_text_dark);
-//		}
-
         convertView.setTag(bmDatas.get(position).page);
-
-//		if (pageWidth == 100 && pageHeight == 100) {
-//			PointF point = mCore.getSinglePageSize(0);
-//			pageWidth = point.x;
-//			pageHeight = point.y;
-//		}
         if (fixHeight == 0) {
             fixHeight = (float) aq.id(R.id.ThumbnailPageImageView).getImageView().getMeasuredHeight();
         }

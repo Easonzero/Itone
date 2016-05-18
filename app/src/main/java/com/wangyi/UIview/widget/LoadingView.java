@@ -17,16 +17,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wangyi.reader.R;
-import com.nineoldandroids.animation.Animator;
-import com.nineoldandroids.animation.AnimatorSet;
-import com.nineoldandroids.animation.ObjectAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 
 /**
  * Created by eason on 3/30/16.
  */
 
 public class LoadingView extends FrameLayout {
-
     private static final int ANIMATION_DURATION = 500;
 
     private static float mDistance = 200;

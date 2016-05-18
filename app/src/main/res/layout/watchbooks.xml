@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/base_background_color"
     android:layout_height="match_parent">
     <RelativeLayout style="@style/toolbar" >
         <Button
@@ -11,27 +12,40 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:background="@drawable/back2" />
+        <TextView
+            android:layout_toRightOf="@+id/back"
+            android:layout_alignParentBottom="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/title_text_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="详情"/>
     </RelativeLayout>
     <LinearLayout
+        android:background="@color/white"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
             android:orientation="horizontal"
+            android:padding="20dp"
+            android:layout_weight="3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/pic"
+                android:background="@color/lite_blue"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="2"/>
+                android:minWidth="@dimen/thumbnailWidth"
+                android:layout_height="match_parent"/>
             <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="3">
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
                 <TextView
                     android:id="@+id/name"
+                    android:textSize="@dimen/nameTextSize"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"/>
@@ -57,17 +71,62 @@
                     android:layout_weight="1"/>
             </LinearLayout>
         </LinearLayout>
+        <View style="@style/line"
+            android:background="@color/md_grey_400"/>
         <LinearLayout
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/downloadbt"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="40dp"
+                    android:background="@drawable/ic_download" />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="下载"
+                    android:textColor="@color/basebar_color"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/correctbt"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:background="@drawable/ic_correct" />
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="纠错"
+                    android:textColor="@color/basebar_color"/>
+            </LinearLayout>
         </LinearLayout>
+        <View style="@style/line"
+            android:background="@color/md_grey_400"/>
         <TextView
+            android:background="@color/white"
+            android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="其他相关"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"/>
         <ListView
+            android:layout_weight="7"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 </LinearLayout>

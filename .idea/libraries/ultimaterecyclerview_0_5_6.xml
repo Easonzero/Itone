@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="ultimaterecyclerview-0.5.6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.hkm.ui/ultimaterecyclerview/0.5.6/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.hkm.ui/ultimaterecyclerview/0.5.6/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.hkm.ui/ultimaterecyclerview/0.5.6/630bf666f8781abcf565a8cafa5932af37e756db/ultimaterecyclerview-0.5.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

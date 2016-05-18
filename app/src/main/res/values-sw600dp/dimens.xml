@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<dimen name="thumbnailWidth">195dp</dimen>
 	<dimen name="scheduleListHeight">120dp</dimen>
 	<dimen name="toolbarHeight">105dp</dimen>
 	<dimen name="meToolbarHeight">375dp</dimen>

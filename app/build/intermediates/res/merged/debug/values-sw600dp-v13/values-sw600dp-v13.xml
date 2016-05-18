@@ -28,6 +28,7 @@
     <dimen name="tableHeight">66dp</dimen>
     <dimen name="tableMargin">54dp</dimen>
     <dimen name="tableheadHeight">48dp</dimen>
+    <dimen name="thumbnailWidth">195dp</dimen>
     <dimen name="toolbarHeight">105dp</dimen>
     <integer name="abc_max_action_buttons">5</integer>
     <integer name="num_columns">4</integer>

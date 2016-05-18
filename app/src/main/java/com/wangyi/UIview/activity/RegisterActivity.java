@@ -88,7 +88,7 @@ public class RegisterActivity extends BaseActivity {
         if(passWords.getText().toString().equals("")||
                 userName.getText().toString().equals("")||
                 id.getText().toString().equals("")){
-            Toast.makeText(RegisterActivity.this, "必填项填写不全", 5000).show();
+            Toast.makeText(RegisterActivity.this, "必填项填写不全", Toast.LENGTH_SHORT).show();
         }
         else{
             UserInfo user = new UserInfo();
@@ -96,12 +96,9 @@ public class RegisterActivity extends BaseActivity {
             user.userName = id.getText().toString();
             user.passWords = passWords.getText().toString();
             user.university = university.getText().toString();
-            user.city = city.getText().toString();
             user.faculty = faculty.getText().toString();
-            user.province = province.getText().toString();
-            user.occupation = occupation.getText().toString();
             user.picture = isAddPic+"";
-            HttpsFunc.getInstance().connect(handler).register(user);
+            HttpsFunc.getInstance().connect(handler).commitForm(user,EventName.Https.REGISTERFORM);
         }
     }
 

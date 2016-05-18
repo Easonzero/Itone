@@ -4,26 +4,26 @@
     api-level="19"
     density="xxhdpi"
     format="7"
-    timestamp="33958331005548" >
+    timestamp="40760904327164" >
 
     <task
         name="javac"
-        duration="6734" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="1879" />
+        duration="0" />
     <task
         name="verifier"
-        duration="71" />
+        duration="0" />
 
     <artifact
         location="/home/eason/Repos/ItOne/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="33958331005548" >
+    <build timestamp="40760904327164" >
         <artifact
             location="/home/eason/Repos/ItOne/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />

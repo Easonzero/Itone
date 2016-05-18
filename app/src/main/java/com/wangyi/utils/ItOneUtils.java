@@ -10,37 +10,12 @@ import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
 import android.net.wifi.WifiManager;
-import android.view.LayoutInflater;
-import android.view.View;
-import com.wangyi.UIview.widget.PopupView;
-import org.xutils.x;
-
 import com.wangyi.reader.R;
-
-import android.annotation.SuppressLint;
-import android.content.ContentUris;
 import android.content.Context;
 import android.content.res.Resources;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.Build;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
-import android.provider.DocumentsContract;
-import android.provider.MediaStore;
-import android.graphics.Bitmap.Config;
-import android.graphics.PorterDuff.Mode;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.net.Uri;
 import android.util.DisplayMetrics;
 import android.widget.Toast;
 
@@ -195,5 +170,13 @@ public class ItOneUtils {
 			return wifiManager.getWifiState() == wifiManager.WIFI_STATE_ENABLED;
 		}
 		return false;
+	}
+
+	public static String[] parseMessage(String str){
+		return str.split("@");
+	}
+
+	public static String generateMessage(String str1,String str2){
+		return str1+"@"+str2;
 	}
 }

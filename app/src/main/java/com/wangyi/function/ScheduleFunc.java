@@ -1,14 +1,11 @@
 package com.wangyi.function;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import com.wangyi.define.LessonData;
 import com.wangyi.function.funchelp.Function;
 import com.wangyi.utils.PreferencesReader;

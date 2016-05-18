@@ -3,6 +3,7 @@ package com.wangyi.UIview.adapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.wangyi.UIview.adapter.viewholder.LessonGridVH;
 import com.wangyi.define.LessonData;
 import com.wangyi.function.ScheduleFunc;
 import com.wangyi.reader.R;
@@ -46,17 +47,14 @@ public class LessonGridAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
-		ViewHolder holder = null;
+		LessonGridVH holder = null;
 		if (null == convertView){
 			convertView = inflater.inflate(R.layout.lesson_gird_item,parent,false);
-			holder = new ViewHolder();
-			holder.lesson_name = (TextView) convertView.findViewById(R.id.lesson_name);
-			holder.location = (TextView) convertView.findViewById(R.id.location);
-			holder.class_from_to = (TextView) convertView.findViewById(R.id.class_from_to);
+			holder = new LessonGridVH(convertView);
 			convertView.setTag(holder);
 		}
 		else{
-			holder = (ViewHolder)convertView.getTag();
+			holder = (LessonGridVH)convertView.getTag();
 		}
 		holder.lesson_name.setText(lessonDatas.get(position).getLessonName());
 		holder.location.setText(lessonDatas.get(position).getClassRoom());
@@ -72,9 +70,4 @@ public class LessonGridAdapter extends BaseAdapter {
 		return convertView;
 	}
 
-	private class ViewHolder{
-		private TextView lesson_name;
-		private TextView location;
-		private TextView class_from_to;
-	}
 }

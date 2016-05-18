@@ -5,35 +5,51 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_height="@dimen/toolbarHeight">
         <ImageView
             android:id="@+id/pic"
             android:layout_width="@dimen/toolbarHeight"
             android:layout_height="match_parent" />
         <LinearLayout
+            android:layout_marginLeft="10dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
-            <TextView
-                android:id="@+id/name"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:textColor="@color/apptheme_third_color"
+                    android:textSize="@dimen/nameTextSize"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="bottom"
+                    android:textColor="@color/apptheme_second_color"
+                    android:id="@+id/downloadnum"/>
+            </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/downloadnum"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:gravity="top"
+                android:textColor="@color/apptheme_second_color"
                 android:layout_weight="1"
                 android:id="@+id/from"/>
         </LinearLayout>
-        <ImageView
+        <com.wangyi.UIview.widget.NumberView
             android:id="@+id/number"
-            android:layout_width="@dimen/toolbarHeight"
-            android:layout_height="match_parent" />
+            android:layout_width="@dimen/ic_numberWidth"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_rank"/>
     </LinearLayout>
 </LinearLayout>

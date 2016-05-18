@@ -29,7 +29,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-public class searchItemAdapter  extends BaseAdapter{
+public class searchItemAdapter extends BaseAdapter{
 
 	private ArrayList<SearchTaskResult> searchItem = new ArrayList<SearchTaskResult>();
 	private Context mContext;

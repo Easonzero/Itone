@@ -1,6 +1,6 @@
 package com.wangyi.function.funchelp;
 
-import com.wangyi.UIview.widget.DownloadViewHolder;
+import com.wangyi.UIview.adapter.template.DownloadViewHolder;
 import com.wangyi.define.DownloadInfo;
 import com.wangyi.define.EventName;
 import com.wangyi.function.DownloadManagerFunc;

@@ -8,10 +8,7 @@ public class UserInfo {
 	public String id;
 	public String passWords;
 	public String userName;
-	public String province;
-	public String city;
 	public String university;
 	public String faculty;
-	public String occupation;
 	public String picture;
 }

@@ -1,27 +1,15 @@
 package com.wangyi.UIview.adapter;
 
-import java.io.File;
-import java.util.ArrayList;
-
 import android.widget.*;
-import com.wangyi.UIview.widget.DownloadViewHolder;
+import com.wangyi.UIview.adapter.viewholder.DownloadItemVH;
 import com.wangyi.define.DownloadInfo;
 import com.wangyi.define.EventName;
 import com.wangyi.function.DownloadManagerFunc;
 import com.wangyi.utils.ItOneUtils;
-import org.xutils.common.Callback;
 import org.xutils.ex.DbException;
-import org.xutils.view.annotation.Event;
-import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
-
-import com.wangyi.define.BookData;
 import com.wangyi.reader.R;
-
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,16 +79,16 @@ public class DownloadListAdapter extends BaseAdapter {
 	@Override
 	public View getView(int pos, View view, ViewGroup parent) {
 		// TODO Auto-generated method stub
-        DownloadItemViewHolder holder = null;
+        DownloadItemVH holder = null;
         DownloadInfo downloadInfo = downloadManager.getDownloadInfo(pos);
 		if (null == view){
         	view = inflater.inflate(R.layout.download_ing_listitem,parent,false);
-            holder = new DownloadItemViewHolder(view,downloadInfo,pos);
+            holder = new DownloadItemVH(view,downloadInfo,pos,selectInfo,downloadManager);
             view.setTag(holder);
             holder.refresh();
         }
 		else{
-			holder = (DownloadItemViewHolder)view.getTag();
+			holder = (DownloadItemVH)view.getTag();
             holder.update(downloadInfo);
 		}
         if (downloadInfo.getState() < EventName.Download.FINISHED) {
@@ -129,119 +117,4 @@ public class DownloadListAdapter extends BaseAdapter {
         }
 		return view;
 	}
-
-    public class DownloadItemViewHolder extends DownloadViewHolder {
-        @ViewInject(R.id.book_name)
-        TextView bookname;
-        @ViewInject(R.id.count)
-        TextView progress;
-        @ViewInject(R.id.select_state)
-        Button selectBtn;
-        @ViewInject(R.id.download_state)
-        Button stopBtn;
-
-        private int pos;
-
-        public DownloadItemViewHolder(View view, DownloadInfo downloadInfo,int pos) {
-            super(view, downloadInfo);
-            this.pos = pos;
-            refresh();
-        }
-
-        @Event(R.id.select_state)
-        private void selectEvent(View view){
-            selectInfo[pos] = ~selectInfo[pos];
-        }
-
-        @Event(R.id.download_state)
-        private void toggleEvent(View view) {
-            int state = downloadInfo.getState();
-            switch (state) {
-                case EventName.Download.WAITING:
-                case EventName.Download.STARTED:
-                    downloadManager.stopDownload(downloadInfo);
-                    break;
-                case EventName.Download.ERROR:
-                case EventName.Download.STOPPED:
-                    try {
-                        downloadManager.startDownload(
-                                downloadInfo.getUrl(),
-                                downloadInfo.getLabel(),
-                                downloadInfo.getFileSavePath(),
-                                downloadInfo.isAutoResume(),
-                                downloadInfo.isAutoRename(),
-                                this);
-                    } catch (DbException ex) {
-                        ItOneUtils.showToast(x.app(),downloadInfo.getLabel()+"开始下载失败");
-                    }
-                    break;
-                case EventName.Download.FINISHED:
-                    ItOneUtils.showToast(x.app(),downloadInfo.getLabel()+"下载完成");
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        @Override
-        public void update(DownloadInfo downloadInfo) {
-            super.update(downloadInfo);
-            refresh();
-        }
-
-        @Override
-        public void onWaiting() {
-            refresh();
-        }
-
-        @Override
-        public void onStarted() {
-            refresh();
-        }
-
-        @Override
-        public void onLoading(long total, long current) {
-            refresh();
-        }
-
-        @Override
-        public void onSuccess(File result) {
-            refresh();
-        }
-
-        @Override
-        public void onError(Throwable ex, boolean isOnCallback) {
-            refresh();
-        }
-
-        @Override
-        public void onCancelled(Callback.CancelledException cex) {
-            refresh();
-        }
-
-        public void refresh() {
-            bookname.setText(downloadInfo.getLabel());
-            progress.setText(downloadInfo.getProgress());
-
-            stopBtn.setVisibility(View.VISIBLE);
-            int state = downloadInfo.getState();
-            switch (state) {
-                case EventName.Download.WAITING:
-                case EventName.Download.STARTED:
-                    stopBtn.setBackgroundResource(R.drawable.download_ing);
-                    break;
-                case EventName.Download.ERROR:
-                case EventName.Download.STOPPED:
-                    stopBtn.setBackgroundResource(R.drawable.download_stop);
-                    break;
-                case EventName.Download.FINISHED:
-                    stopBtn.setVisibility(View.INVISIBLE);
-                    break;
-                default:
-                    stopBtn.setBackgroundResource(R.drawable.download_stop);
-                    break;
-            }
-        }
-    }
-
 }

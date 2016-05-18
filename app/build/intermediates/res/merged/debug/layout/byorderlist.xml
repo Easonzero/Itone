@@ -18,12 +18,11 @@
             android:background="@drawable/back2" />
     </RelativeLayout>
 
-    <ListView
+    <com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
         android:id="@+id/byorderlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#f5f5f5"
         android:layout_centerHorizontal="true"
-        android:layout_weight="1">
-    </ListView>
+        android:layout_weight="1"/>
 </LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:id="@id/exp_section_ripple_wrapper_click"
+    android:layout_height="@dimen/tableheadHeight"
+    android:layout_margin="0dp"
+    android:padding="0dp">
+
+    <RelativeLayout
+        android:id="@id/exp_section_adjustment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="0dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:padding="0dp">
+        <TextView
+            android:id="@id/exp_section_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            android:gravity="left"
+            android:lines="1"
+            android:textColor="@color/apptheme_third_color"
+            android:textSize="@dimen/body_text_size"/>
+
+        <TextView
+            android:id="@id/exp_section_notification_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@id/exp_indication_arrow"
+            android:elegantTextHeight="false"
+            android:gravity="center_horizontal"
+            android:maxLength="5"
+            android:singleLine="true"
+            android:text="(99)"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/exp_indication_arrow"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/default_spacing_major"
+            android:scaleType="fitCenter"
+            android:layout_width="10dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_me_right" />
+    </RelativeLayout>
+
+</RelativeLayout>

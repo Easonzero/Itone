@@ -42,7 +42,7 @@ public class MeFragment extends BaseFragment {
             if(msg.what == EventName.UI.SUCCESS){
             	UserInfo userInfo = UserManagerFunc.getInstance().getUserInfo();
             	userName.setText(userInfo.userName);
-            	other.setText(userInfo.university + " " + userInfo.faculty + " " + userInfo.occupation);
+            	other.setText(userInfo.university + " " + userInfo.faculty + " ");
             	
             	ImageOptions options=new ImageOptions.Builder() 
             			.setLoadingDrawableId(R.drawable.ic_me) 

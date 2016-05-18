@@ -12,7 +12,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 
 import com.wangyi.reader.R;
-import com.nineoldandroids.animation.ArgbEvaluator;
+import android.animation.ArgbEvaluator;
 
 /**
  * Created by eason on 3/30/16.

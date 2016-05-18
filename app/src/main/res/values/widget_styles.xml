@@ -71,16 +71,17 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/title_text_color</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="cardtext">
         <item name="android:textSize">@dimen/card_text_info_size</item>
-        <item name="android:textColor">@color/card_text_color</item>
+        <item name="android:textColor">@color/apptheme_third_color</item>
     </style>
 
     <style name="bodytext">
         <item name="android:textSize">@dimen/body_text_size</item>
-        <item name="android:textColor">@color/card_text_color</item>
+        <item name="android:textColor">@color/apptheme_third_color</item>
     </style>
 
     <style name="Animations" />

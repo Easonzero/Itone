@@ -1,12 +1,18 @@
 package com.wangyi.UIview.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
-import com.marshalchen.ultimaterecyclerview.*;
-import com.marshalchen.ultimaterecyclerview.uiUtils.ScrollSmoothLineaerLayoutManager;
+
+import com.marshalchen.ultimaterecyclerview.ItemTouchListenerAdapter;
+import com.marshalchen.ultimaterecyclerview.ObservableScrollState;
+import com.marshalchen.ultimaterecyclerview.ObservableScrollViewCallbacks;
+import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
+import com.marshalchen.ultimaterecyclerview.layoutmanagers.ScrollSmoothLineaerLayoutManager;
+import com.wangyi.UIview.activity.WatchBook;
 import com.wangyi.UIview.widget.LoadingDialog;
 import com.wangyi.define.BookData;
 import com.wangyi.define.SettingName;
@@ -20,7 +26,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.wangyi.UIview.BaseFragment;
@@ -35,6 +40,8 @@ import com.wangyi.function.SensorFunc;
 import com.wangyi.function.UserManagerFunc;
 import com.wangyi.reader.R;
 import org.xutils.x;
+
+import java.util.ArrayList;
 
 @ContentView(R.layout.fragment_allsubject)
 public class AllSubjectFragment extends BaseFragment {
@@ -70,7 +77,8 @@ public class AllSubjectFragment extends BaseFragment {
 					}
 					break;
 				case EventName.UI.SUCCESS:
-					adapter.notifyDataSetChanged();
+					ArrayList<BookData> books = (ArrayList<BookData>) msg.obj;
+					adapter.insert(books);
 					break;
 				case EventName.UI.START:
 					loading.show();
@@ -129,13 +137,11 @@ public class AllSubjectFragment extends BaseFragment {
 
 		});
 
-        bookList.setHasFixedSize(false);
-		adapter = new SearchBookListAdapter();
+		adapter = new SearchBookListAdapter(new ArrayList<BookData>());
         bookList.setLayoutManager(new ScrollSmoothLineaerLayoutManager(
                 getActivity().getBaseContext(), LinearLayoutManager.VERTICAL, false, 300));
 		bookList.setAdapter(adapter);
-        //bookList.enableLoadmore();  等待有数据之后，或者该开源库版本更新后再做测试
-        bookList.setEmptyView(R.layout.emptylist);
+        bookList.setEmptyView(R.layout.emptylist,UltimateRecyclerView.EMPTY_SHOW_LOADMORE_ONLY);
         adapter.setCustomLoadMoreView(createListBottomView(this.getContext()));
         bookList.setScrollViewCallbacks(new ObservableScrollViewCallbacks(){
             @Override
@@ -159,17 +165,11 @@ public class AllSubjectFragment extends BaseFragment {
                 new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
                     @Override
                     public void onItemClick(RecyclerView parent, View clickedView, int position) {
-						if(!UserManagerFunc.getInstance().getSetting(SettingName.NOWIFIDOWNLOAD)){
-                            if(!ItOneUtils.getWifiState(x.app())){
-                                ItOneUtils.showToast(x.app(),"已设置流量状态下不可下载图书");
-                            }
-                        }
-                        try {
-                            BookData book = BookManagerFunc.getInstance().getBookData(position);
-                            HttpsFunc.getInstance().connect(handler).download(book.id,book.bookName);
-                        } catch (DbException e) {
-                            e.printStackTrace();
-                        }
+						Intent intent = new Intent(AllSubjectFragment.this.getActivity().getApplicationContext(),WatchBook.class);
+						Bundle bundle = new Bundle();
+						bundle.putSerializable("book", BookManagerFunc.getInstance().getBookData(position));
+						intent.putExtras(bundle);
+						startActivity(intent);
                     }
 
                     @Override

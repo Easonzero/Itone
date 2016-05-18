@@ -21,6 +21,7 @@
     <dimen name="tableHeight">110dp</dimen>
     <dimen name="tableMargin">76dp</dimen>
     <dimen name="tableheadHeight">64dp</dimen>
+    <dimen name="thumbnailWidth">260dp</dimen>
     <dimen name="toolbarHeight">140dp</dimen>
     <integer name="num_columns">8</integer>
     <integer name="showdialog">1</integer>

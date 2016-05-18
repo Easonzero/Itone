@@ -24,8 +24,8 @@ public class LoginActivity extends BaseActivity {
 	private EditText passWords;
 	@ViewInject(R.id.confirm)
 	private Button confirm;
-	LoadingDialog loading;
-	private final Handler handler = new Handler(){
+	private LoadingDialog loading;
+	private Handler handler = new Handler(){
 		@Override
 		public void handleMessage(Message msg){
 			switch(msg.what){

@@ -34,6 +34,10 @@ public class SensorFunc implements Function {
             this.handler = handler;
         return INSTANCE;
 	}
+
+    public void disconnect(){
+        this.handler = null;
+    }
 	
 	public void registerListener(){
 		if (sensorManager != null) {

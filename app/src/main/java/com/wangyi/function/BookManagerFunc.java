@@ -40,6 +40,10 @@ public class BookManagerFunc implements Function {
 		    this.handler = handler;
 		return INSTANCE;
 	}
+
+	public void disconnect(){
+		this.handler = null;
+	}
 	
 	public BookData getBookData(int cur){
 		return cur < books.size()?books.get(cur):null;
@@ -49,14 +53,6 @@ public class BookManagerFunc implements Function {
 		this.books = books;
 	}
 
-	public void insertBooks(ArrayList<BookData> books){
-		if(this.books != null){
-			this.books.addAll(books);
-		}else{
-			setBooks(books);
-		}
-	}
-	
 	public int getBooksNum(){
 		return books.size();
 	}

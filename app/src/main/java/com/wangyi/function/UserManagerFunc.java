@@ -2,6 +2,7 @@ package com.wangyi.function;
 
 import com.wangyi.define.SettingName;
 import com.wangyi.define.UserInfo;
+import com.wangyi.define.UserPlus;
 import com.wangyi.function.funchelp.Function;
 import com.wangyi.utils.ItOneUtils;
 import android.content.Context;
@@ -10,6 +11,9 @@ import com.wangyi.utils.PreferencesReader;
 public class UserManagerFunc implements Function {
 	private static final UserManagerFunc INSTANCE = new UserManagerFunc();
 	private UserInfo userInfo;
+	private UserPlus userPlus;
+
+	private int rank;
 	private boolean isLogin = false;
 	private boolean[] setting;
 	private Context context;
@@ -24,6 +28,22 @@ public class UserManagerFunc implements Function {
 	public void init(Context context){
 		this.context = context;
 		setting = PreferencesReader.getApplicationSetting();
+	}
+
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
+	public void setUserPlus(UserPlus userPlus) {
+		this.userPlus = userPlus;
+	}
+
+	public UserPlus getUserPlus() {
+		return userPlus;
 	}
 
 	public void setLoginStatus(boolean isLogin){
