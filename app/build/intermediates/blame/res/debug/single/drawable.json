@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/circle_color.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/circle_color.xml"
-    },
-    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/darkdenim3.png",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/darkdenim3.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/circle_color.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/circle_color.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_strike.png",
@@ -228,6 +228,10 @@
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_item_background_holo_light.xml"
     },
     {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_subjecttab.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_subjecttab.xml"
+    },
+    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_list.png",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_list.png"
     },
@@ -280,6 +284,10 @@
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/res/drawable/material_card.xml"
     },
     {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_search.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_search.xml"
+    },
+    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_dir.png",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_dir.png"
     },
@@ -330,6 +338,10 @@
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_register_bt.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_register_bt.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/buttondark.xml",

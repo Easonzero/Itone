@@ -35,8 +35,8 @@
             <ImageView
                 android:id="@+id/pic"
                 android:background="@color/lite_blue"
-                android:layout_width="wrap_content"
-                android:minWidth="@dimen/thumbnailWidth"
+                android:layout_width="@dimen/thumbnailWidth"
+                android:scaleType="centerInside"
                 android:layout_height="match_parent"/>
             <LinearLayout
                 android:layout_marginLeft="10dp"

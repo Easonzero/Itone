@@ -26,6 +26,7 @@ import android.os.Handler;
 import android.os.Message;
 
 import org.xutils.ex.DbException;
+import org.xutils.view.annotation.Event;
 
 public class HttpsFunc implements Function {
 	public static String host = "http://itone.azurewebsites.net";
@@ -166,21 +167,26 @@ public class HttpsFunc implements Function {
 			@Override
 			public void onSuccess(ArrayList<BookData> result) {
 				// TODO Auto-generated method stub
-				Message msg = new Message();
-				msg.what = EventName.UI.SUCCESS;
-				msg.obj = result;
-				if(handler!=null) handler.sendMessage(msg);
+				handler.obtainMessage(EventName.UI.SUCCESS,result).sendToTarget();
 			}
 
 		});
 	}
 
-	public void searchBookByName(String bookName,String university){
-		if(!isNetworkConnected()){
-			ItOneUtils.showToast(context,"网络未连接");
+	public void searchBookByName(String bookName){
+		if(!isNetworkConnected()) {
+			ItOneUtils.showToast(context, "网络未连接");
 			return;
 		}
-        if(handler!=null) handler.sendEmptyMessage(EventName.UI.START);
+
+		if(!UserManagerFunc.getInstance().isLogin()) {
+			ItOneUtils.showToast(context, "请先登录");
+			return;
+		}
+
+		if(handler!=null) handler.sendEmptyMessage(EventName.UI.START);
+		String university = UserManagerFunc.getInstance().getUserInfo().university;
+
 		Map<String,String> map=new HashMap<>();
 		map.put("bookName", bookName);
 		map.put("university",university);
@@ -202,10 +208,7 @@ public class HttpsFunc implements Function {
 			@Override
 			public void onSuccess(ArrayList<BookData> result) {
 				// TODO Auto-generated method stub
-				Message msg = new Message();
-				msg.obj = result;
-				msg.what = EventName.UI.SUCCESS;
-				if(handler!=null) handler.sendMessage(msg);
+				handler.obtainMessage(EventName.UI.SUCCESS,result).sendToTarget();
 			}
 
 		});
@@ -237,10 +240,7 @@ public class HttpsFunc implements Function {
 
 			@Override
 			public void onSuccess(ArrayList<BookData> result) {
-				Message msg = new Message();
-				msg.obj = result;
-				msg.what = EventName.UI.SUCCESS;
-				if(handler!=null) handler.sendMessage(msg);
+				handler.obtainMessage(EventName.UI.SUCCESS,result).sendToTarget();
 			}
 
 		});
@@ -350,10 +350,7 @@ public class HttpsFunc implements Function {
 
 			@Override
 			public void onSuccess(ArrayList<UserRank> result) {
-				Message msg = new Message();
-				msg.obj = result;
-				msg.what = EventName.UI.SUCCESS;
-				if(handler!=null) handler.sendMessage(msg);
+				handler.obtainMessage(EventName.UI.SUCCESS,result).sendToTarget();
 			}
 
 		});
@@ -405,7 +402,7 @@ public class HttpsFunc implements Function {
         });
 	}
 
-	public void getMessage(String date, String category){
+	public void getMessage(String date){
 		if(!isNetworkConnected()){
 			ItOneUtils.showToast(context,"网络未连接");
 			return;
@@ -416,8 +413,42 @@ public class HttpsFunc implements Function {
 				UserManagerFunc.getInstance().getUserInfo().id:null;
 		map.put("id", id);
 		map.put("date", date);
-		map.put("category",category);
-		HttpsUtils.Post(host+"/advice", map, new Callback.CommonCallback<List<com.wangyi.define.Message>>(){
+		HttpsUtils.Post(host+"/message", map, new Callback.CommonCallback<List<com.wangyi.define.Message>>(){
+
+			@Override
+			public void onCancelled(CancelledException arg0) {}
+
+			@Override
+			public void onError(Throwable ex, boolean isCheck) {
+			}
+
+			@Override
+			public void onFinished() {
+				if(handler != null) handler.sendEmptyMessage(EventName.UI.FINISH);
+			}
+
+			@Override
+			public void onSuccess(List<com.wangyi.define.Message> result) {
+				// TODO Auto-generated method stub
+				if(handler != null) handler.sendEmptyMessage(EventName.UI.SUCCESS);
+				MessageFunc.getInstance().addMessages(result);
+			}
+
+		});
+	}
+
+	public void getHomework(String date){
+		if(!isNetworkConnected()){
+			ItOneUtils.showToast(context,"网络未连接");
+			return;
+		}
+		if(handler != null) handler.sendEmptyMessage(EventName.UI.START);
+		Map<String,Object> map=new HashMap<>();
+		String id = UserManagerFunc.getInstance().isLogin()?
+				UserManagerFunc.getInstance().getUserInfo().id:null;
+		map.put("id", id);
+		map.put("date", date);
+		HttpsUtils.Post(host+"/homework", map, new Callback.CommonCallback<List<com.wangyi.define.Message>>(){
 
 			@Override
 			public void onCancelled(CancelledException arg0) {}

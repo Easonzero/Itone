@@ -36,8 +36,7 @@
                 android:layout_height="wrap_content"
                 android:text="请输入你的反馈意见" />
         <EditText
-                style="@style/card"
-                android:background="@drawable/bg_card"
+                style="@style/tableitem"
                 android:layout_weight="0"
                 android:layout_height="@dimen/big_card_image_height"
                 android:inputType="textMultiLine"

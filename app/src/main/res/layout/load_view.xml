@@ -32,7 +32,7 @@
             android:textSize="14sp"
             android:visibility="gone" />
 
-        <com.wangyi.UIview.widget.ShapeLoadingView
+        <com.wangyi.UIview.widget.view.ShapeLoadingView
             android:id="@+id/shapeLoadingView"
             android:layout_width="24dp"
             android:layout_height="24dp"

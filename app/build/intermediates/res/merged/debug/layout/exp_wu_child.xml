@@ -39,13 +39,12 @@
 
         <ImageView
             android:id="@+id/arrow"
+            style="@style/arrow"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/default_spacing_major"
-            android:scaleType="fitCenter"
-            android:layout_width="10dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_me_right" />
+            android:scaleType="fitCenter" />
     </RelativeLayout>
-
+    <View style="@style/line"
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>

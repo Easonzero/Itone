@@ -68,7 +68,6 @@
 		    <ImageView
 		        android:layout_width="25dp"
 		        android:layout_height="30dp"
-		        android:layout_gravity="center_vertical"
 		        android:src="@drawable/ic_me_download" />
 		    <TextView style="@style/bodytext"
 		        android:layout_width="match_parent"
@@ -77,11 +76,7 @@
 		        android:layout_weight="1"
 		        android:gravity="center_vertical|left"
 		        android:text="我的下载" />
-		    <ImageView
-		        android:layout_width="10dp"
-		        android:layout_height="20dp"
-		        android:layout_gravity="center_vertical"
-		        android:src="@drawable/ic_me_right" />
+		    <ImageView style="@style/arrow" />
 		</LinearLayout>
         <View style="@style/line" />
         <LinearLayout style="@style/tableitemnoline"
@@ -89,7 +84,6 @@
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="30dp"
-                android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_me_ideaback" />
             <TextView style="@style/bodytext"
                 android:layout_width="match_parent"
@@ -98,20 +92,14 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical|left"
                 android:text="意见反馈" />
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/ic_me_right" />
+			<ImageView style="@style/arrow" />
         </LinearLayout>
         <View style="@style/line" />
         <LinearLayout style="@style/tableitemnoline"
                       android:id="@+id/setting">
-
             <ImageView
                 android:layout_width="25dp"
 			    android:layout_height="30dp"
-			    android:layout_gravity="center_vertical"
                 android:src="@drawable/ic_me_set" />
 			<TextView style="@style/bodytext"
 			    android:layout_width="match_parent"
@@ -120,11 +108,7 @@
 			    android:gravity="center_vertical|left"
 			    android:layout_weight="1"
 			    android:text="设置" />
-			<ImageView
-		        android:layout_width="10dp"
-		        android:layout_height="20dp"
-		        android:layout_gravity="center_vertical"
-		        android:src="@drawable/ic_me_right" />
+			<ImageView style="@style/arrow" />
 		</LinearLayout>
         <View style="@style/line" />
         <LinearLayout style="@style/tableitem"

@@ -11,4 +11,5 @@ public class UserInfo {
 	public String university;
 	public String faculty;
 	public String picture;
+	public String grade;
 }

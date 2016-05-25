@@ -1,6 +1,6 @@
 package com.wangyi.UIview.activity;
 
-import com.wangyi.UIview.widget.LoadingDialog;
+import com.wangyi.UIview.widget.dialog.LoadingDialog;
 import org.xutils.view.annotation.*;
 
 import com.wangyi.UIview.BaseActivity;
@@ -14,7 +14,6 @@ import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 @ContentView(R.layout.login)
 public class LoginActivity extends BaseActivity {

@@ -3,18 +3,17 @@ package com.wangyi.UIview.activity;
 import org.xutils.view.annotation.*;
 
 import com.wangyi.UIview.BaseActivity;
-import com.wangyi.UIview.widget.PickWeeksDialog;
-import com.wangyi.UIview.widget.PickclassesDialog;
+import com.wangyi.UIview.widget.dialog.PickWeeksDialog;
+import com.wangyi.UIview.widget.dialog.PickclassesDialog;
 import com.wangyi.function.ScheduleFunc;
 import com.wangyi.reader.R;
-import android.content.DialogInterface;
+
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 @ContentView(R.layout.createlesson)

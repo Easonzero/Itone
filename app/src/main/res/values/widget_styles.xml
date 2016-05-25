@@ -30,7 +30,20 @@
         <item name="android:background">@color/basebar_color</item>
     </style>
 
+    <style name="smallitem">
+        <item name="android:paddingLeft">@dimen/padding_step2</item>
+        <item name="android:paddingRight">@dimen/padding_step2</item>
+        <item name="android:paddingBottom">@dimen/padding_step2</item>
+        <item name="android:paddingTop">@dimen/padding_step2</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
     <style name="card">
+        <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">@dimen/padding_step2</item>
         <item name="android:paddingRight">@dimen/padding_step2</item>
         <item name="android:layout_margin">0dp</item>
@@ -41,6 +54,7 @@
     </style>
 
     <style name="tableitem">
+        <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">@dimen/padding_step1</item>
         <item name="android:paddingRight">@dimen/padding_step2</item>
         <item name="android:layout_width">match_parent</item>
@@ -51,6 +65,7 @@
     </style>
 
     <style name="tableitemnoline">
+        <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">@dimen/padding_step1</item>
         <item name="android:paddingRight">@dimen/padding_step2</item>
         <item name="android:layout_width">match_parent</item>
@@ -67,11 +82,10 @@
     </style>
 
     <style name="titletext">
-        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:textSize">@dimen/nameTextSize</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/title_text_color</item>
-        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="cardtext">
@@ -82,6 +96,12 @@
     <style name="bodytext">
         <item name="android:textSize">@dimen/body_text_size</item>
         <item name="android:textColor">@color/apptheme_third_color</item>
+    </style>
+
+    <style name="arrow">
+        <item name="android:layout_width">10dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:src">@drawable/ic_me_right</item>
     </style>
 
     <style name="Animations" />

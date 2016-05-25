@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    style="@style/Container"
+    android:background="@color/base_background_color"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_step3"
+    android:layout_marginTop="@dimen/padding_step5">
+
+    <TextView style="@style/cardtext"
+        android:padding="@dimen/padding_step1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="设置密码："/>
+
+    <LinearLayout style="@style/tableitem"
+        android:layout_height="@dimen/tableHeight"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_step1">
+        <EditText style="@style/tableitem"
+            android:id="@+id/edit_passwords"
+            android:textColor="@color/apptheme_third_color"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:hint="6到16个字符,区分大小写"
+            android:inputType="textPassword"
+            android:textColorHint="@color/apptheme_second_color"/>
+        <Button
+            android:id="@+id/bt_passwords"
+            android:layout_width="@dimen/smallToolbarHeight"
+            android:layout_height="wrap_content"
+            android:text="显示"
+            android:tag="show"
+            android:textColor="@color/apptheme_third_color"
+            android:background="@color/base_background_color"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/commit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tableHeight"
+        android:background="@drawable/bg_register_bt"
+        android:layout_marginTop="@dimen/padding_step2"
+        android:text="完成注册"
+        android:textColor="@color/white"
+        android:textSize="20sp"/>
+</LinearLayout>

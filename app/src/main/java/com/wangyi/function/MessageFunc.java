@@ -9,6 +9,8 @@ import com.wangyi.function.funchelp.Function;
 import com.wangyi.utils.PreferencesReader;
 
 import org.xutils.DbManager;
+import org.xutils.common.util.KeyValue;
+import org.xutils.db.sqlite.WhereBuilder;
 import org.xutils.ex.DbException;
 import org.xutils.x;
 
@@ -42,28 +44,28 @@ public class MessageFunc implements Function {
         db = x.getDb(daoConfig);
     }
 
-    public void visitRomoteMessage(String category){
+    public void visitRomoteMessage(){
         String date = PreferencesReader.getMessageDate();
         if(date==null) {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             date = sdf.format(new java.util.Date());
         }
         if(handler!=null)
-            HttpsFunc.getInstance().connect(handler).getMessage(date,category);
+            HttpsFunc.getInstance().connect(handler).getMessage(date);
     }
 
-    public List<Message> getMessage(int offset,String category){
+    public List<Message> getMessage(int offset){
         List<Message> dataList = new ArrayList<>();
         //test
         int i = 10;
         while(i>0){
             Message msg = new Message();
-            msg.setCategory(category);
+            msg.setCategory("教室更改通知");
             msg.setMessage("教室改为b203");
             msg.setDate(new Date(2016,4,i+1));
             msg.setPicUrl("/res/user/ximin/");
             msg.setIsvisited(false);
-            msg.setUid("西西");
+            msg.setUname("西西");
             dataList.add(msg);
             i--;
         }
@@ -74,6 +76,15 @@ public class MessageFunc implements Function {
         }*/
         handler.sendEmptyMessage(EventName.UI.SUCCESS);
         return dataList;
+    }
+
+    public void updateMessage(Message msg){
+        KeyValue keyValue = new KeyValue("isvisited",msg.isvisited());
+        try {
+            db.update(Message.class, WhereBuilder.b("id","=",msg.getId()),keyValue);
+        } catch (DbException e) {
+            e.printStackTrace();
+        }
     }
 
     public void addMessages(List<Message> messages){

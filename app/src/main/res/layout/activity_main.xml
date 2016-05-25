@@ -25,7 +25,7 @@
         android:layout_weight="1"
         class="com.wangyi.UIview.fragment.MeFragment" />
 
-    <com.wangyi.UIview.widget.FragmentIndicator
+    <com.wangyi.UIview.widget.container.FragmentIndicator
         android:id="@+id/indicator"
         android:layout_width="fill_parent"
         android:layout_height="50dp" />

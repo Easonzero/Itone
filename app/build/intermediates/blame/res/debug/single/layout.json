@@ -20,6 +20,10 @@
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_switch.xml"
     },
     {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/homework.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/homework.xml"
+    },
+    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_profile_setting.xml",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_profile_setting.xml"
     },
@@ -34,6 +38,10 @@
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/fragment_register3.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/fragment_register3.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
@@ -112,12 +120,16 @@
         "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/pager_gridview_layout.xml"
     },
     {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer.xml"
+    },
+    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/search_item.xml",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/search_item.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/fragment_register2.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/fragment_register2.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/vertical_recycler_view.xml",
@@ -196,8 +208,20 @@
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/fragment_register4.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/fragment_register4.xml"
+    },
+    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/fragment_me.xml",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/fragment_me.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/homework_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/homework_item.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/fragment_register1.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/fragment_register1.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/watchbooks.xml",
@@ -218,6 +242,10 @@
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/download_ing_listitem.xml",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/download_ing_listitem.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/search.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/search.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/notification_template_lines.xml",
@@ -254,6 +282,10 @@
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/search_set.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/search_set.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer_item_secondary_toggle.xml",
@@ -360,8 +392,16 @@
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer_item_toggle.xml"
     },
     {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/watchhomework.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/watchhomework.xml"
+    },
+    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/activity_userinfo.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/activity_userinfo.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/message.xml",
@@ -456,12 +496,12 @@
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/select_dialog_item_material.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/z_spinner_dropdown_item.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/z_spinner_dropdown_item.xml"
-    },
-    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/z_spinner_dropdown_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/z_spinner_dropdown_item.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",

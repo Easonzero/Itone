@@ -9,10 +9,10 @@ import java.io.Serializable;
 public class BookData implements Serializable{
 	public long id;
 	public String bookName;
+	public String category;
 	public String subject;
 	public String occupation;
 	public String fromUniversity;
-	public String category;
 	public float count;
 	public int downloadNumber;
 	public String uploader;

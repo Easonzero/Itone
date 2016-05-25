@@ -5,7 +5,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
-import com.wangyi.UIview.widget.NumberView;
+import com.wangyi.UIview.widget.view.NumberView;
 import com.wangyi.reader.R;
 
 import org.xutils.view.annotation.ViewInject;

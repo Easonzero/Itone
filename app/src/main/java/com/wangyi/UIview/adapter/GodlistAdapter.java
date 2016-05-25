@@ -35,8 +35,8 @@ public class GodlistAdapter extends easyRegularAdapter<UserRank,GodlistVH> {
     protected void withBindHolder(GodlistVH holder, UserRank data, int position) {
         holder.name.setText(data.userName);
         holder.downloadNum.setText(data.downloadNum);
-        holder.from.setText(data.from);
-        holder.number.setMessage(data.rank);
+        holder.from.setText(data.university);
+        holder.number.setMessage(data.rank+"");
         ImageOptions options=new ImageOptions.Builder()
                 .setLoadingDrawableId(R.drawable.ic_me)
                 .setFailureDrawableId(R.drawable.ic_me)

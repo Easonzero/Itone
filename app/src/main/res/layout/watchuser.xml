@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/base_background_color"
     android:layout_height="match_parent">
     <RelativeLayout style="@style/toolbar" >
         <TextView
@@ -64,7 +65,7 @@
                 android:layout_weight="1"
                 android:id="@+id/from"/>
         </LinearLayout>
-        <com.wangyi.UIview.widget.NumberView
+        <com.wangyi.UIview.widget.view.NumberView
             android:id="@+id/number"
             android:layout_width="@dimen/ic_numberWidth"
             android:layout_height="match_parent"

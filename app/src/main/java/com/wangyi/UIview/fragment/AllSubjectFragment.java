@@ -12,31 +12,25 @@ import com.marshalchen.ultimaterecyclerview.ObservableScrollState;
 import com.marshalchen.ultimaterecyclerview.ObservableScrollViewCallbacks;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 import com.marshalchen.ultimaterecyclerview.layoutmanagers.ScrollSmoothLineaerLayoutManager;
+import com.wangyi.UIview.activity.SearchActivity;
 import com.wangyi.UIview.activity.WatchBook;
-import com.wangyi.UIview.widget.LoadingDialog;
+import com.wangyi.UIview.widget.dialog.LoadingDialog;
 import com.wangyi.define.BookData;
-import com.wangyi.define.SettingName;
-import com.wangyi.utils.ItOneUtils;
-import org.xutils.ex.DbException;
+
 import org.xutils.view.annotation.*;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.EditText;
 import android.widget.TextView;
 import com.wangyi.UIview.BaseFragment;
-import com.wangyi.UIview.adapter.SearchBookListAdapter;
-import com.wangyi.UIview.widget.KeywordsFlow;
-import com.wangyi.UIview.widget.LessonListLayout;
+import com.wangyi.UIview.adapter.SearchBookAdapter;
+import com.wangyi.UIview.widget.container.LessonListLayout;
 import com.wangyi.define.EventName;
 import com.wangyi.define.UserInfo;
 import com.wangyi.function.BookManagerFunc;
 import com.wangyi.function.HttpsFunc;
-import com.wangyi.function.SensorFunc;
 import com.wangyi.function.UserManagerFunc;
 import com.wangyi.reader.R;
 import org.xutils.x;
@@ -49,18 +43,13 @@ public class AllSubjectFragment extends BaseFragment {
 			"西方建筑史","茶文化欣赏","音乐鉴赏","思修","马哲","形式与政治",
 			"交流技巧","数字逻辑","matlab","博弈论","西方文学","欧洲史",
 			"西方美术史","人机交互"};
-
-	@ViewInject(R.id.keywordsflow)
-	private KeywordsFlow keywordsFlow;
-	@ViewInject(R.id.search_edit)
-	private EditText editSearch;
 	@ViewInject(R.id.lessons)
 	private LessonListLayout lessons;
 	@ViewInject(R.id.booklist)
 	private UltimateRecyclerView bookList;
     @ViewInject(R.id.measure)
     private RelativeLayout measure;
-	SearchBookListAdapter adapter;
+	SearchBookAdapter adapter;
     LoadingDialog loading;
 
 	private Handler handler = new Handler() {
@@ -70,11 +59,7 @@ public class AllSubjectFragment extends BaseFragment {
 			super.handleMessage(msg);
 			switch (msg.what) {
 				case EventName.UI.FINISH:
-					if(msg.obj.equals(EventName.SensorFunc.SENSOR)){
-						keywordsFlow.showKeywordsFlow(keywords);
-					}else{
-						loading.dismiss();
-					}
+					loading.dismiss();
 					break;
 				case EventName.UI.SUCCESS:
 					ArrayList<BookData> books = (ArrayList<BookData>) msg.obj;
@@ -92,30 +77,6 @@ public class AllSubjectFragment extends BaseFragment {
 	public void onActivityCreated(Bundle savedInstanceState){
 		super.onActivityCreated(savedInstanceState);
         loading = new LoadingDialog(x.app());
-		editSearch.addTextChangedListener( new TextWatcher() {
-
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before, int count) {
-				if(s.toString().equals("")&&start - before != 0){
-					keywordsFlow.showKeywordsFlow(keywords);
-					SensorFunc.getInstance().connect(handler).registerListener();
-				}
-				else{
-					keywordsFlow.hideKeywordsFlow();
-					SensorFunc.getInstance().connect(handler).unregisterListener();
-				}
-			}
-
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-			}
-
-			@Override
-			public void afterTextChanged(final Editable s) {
-
-			}
-		});
 
 		lessons.addLessons(keywords,new OnClickListener(){
 
@@ -124,10 +85,8 @@ public class AllSubjectFragment extends BaseFragment {
 				// TODO Auto-generated method stub
 				if(lessons.obj != null){
 					((TextView)lessons.obj).setBackground(null);
-					((TextView)lessons.obj).setPadding(0, 0, 0, 0);
 				}
-				view.setBackgroundResource(R.drawable.bg_class);
-				((TextView)view).setPadding(0, 0, 0, 0);
+				view.setBackgroundResource(R.drawable.bg_subjecttab);
 				lessons.obj = view;
 				String subject = ((TextView)view).getText().toString();
 				UserInfo user = UserManagerFunc.getInstance().getUserInfo();
@@ -137,7 +96,7 @@ public class AllSubjectFragment extends BaseFragment {
 
 		});
 
-		adapter = new SearchBookListAdapter(new ArrayList<BookData>());
+		adapter = new SearchBookAdapter(new ArrayList<BookData>());
         bookList.setLayoutManager(new ScrollSmoothLineaerLayoutManager(
                 getActivity().getBaseContext(), LinearLayoutManager.VERTICAL, false, 300));
 		bookList.setAdapter(adapter);
@@ -161,6 +120,7 @@ public class AllSubjectFragment extends BaseFragment {
                 }
             }
         });
+
         ItemTouchListenerAdapter itemTouchListenerAdapter = new ItemTouchListenerAdapter(bookList.mRecyclerView,
                 new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
                     @Override
@@ -199,8 +159,6 @@ public class AllSubjectFragment extends BaseFragment {
 				HttpsFunc.getInstance().connect(handler).searchBooksBySubject("全部",user.university,0);
 		}else{
 			BookManagerFunc.getInstance().connect(handler).clear();
-			keywordsFlow.hideKeywordsFlow();
-			SensorFunc.getInstance().connect(handler).unregisterListener();
 		}
 	}
 
@@ -216,36 +174,9 @@ public class AllSubjectFragment extends BaseFragment {
         }
     }
 
-    @Event(value=R.id.keywordsflow,type=KeywordsFlow.OnItemClickListener.class)
-    private void onKeywordsItemClick(View view){
-        UserInfo user = UserManagerFunc.getInstance().getUserInfo();
-        if(user != null)
-            HttpsFunc.getInstance().connect(handler).searchBooksBySubject(((TextView)view).getText().toString(),user.university,0);
-    }
-
-	@Event(R.id.keywordsflow)
-	private void onKeywordsClick(View view){
-		editSearch.clearFocus();
-	}
-
-	@Event(value=R.id.search_edit,type=View.OnFocusChangeListener.class)
-	private void onEditSearchFocusChange(View view, boolean is){
-		if(is){
-			keywordsFlow.showKeywordsFlow(keywords);
-			SensorFunc.getInstance().connect(handler).registerListener();
-		}
-		else{
-			keywordsFlow.hideKeywordsFlow();
-			SensorFunc.getInstance().connect(handler).unregisterListener();
-			editSearch.setText("");
-		}
-	}
-
-	@Event(R.id.search_enter)
-	private void onEnterClick(View view){
-		UserInfo user = UserManagerFunc.getInstance().getUserInfo();
-		if(user != null)
-			HttpsFunc.getInstance().connect(handler).searchBookByName(
-				editSearch.getText().toString(),UserManagerFunc.getInstance().getUserInfo().university);
+	@Event(R.id.search)
+	private void onSearchClick(View view){
+        Intent intent = new Intent(x.app(), SearchActivity.class);
+        startActivity(intent);
 	}
 }

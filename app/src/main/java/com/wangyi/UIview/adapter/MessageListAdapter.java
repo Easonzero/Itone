@@ -35,12 +35,12 @@ public class MessageListAdapter extends easyRegularAdapter<Message,MessageListVH
 
     @Override
     protected void withBindHolder(MessageListVH holder, Message data, int position) {
-        holder.name.setText(data.getUid());
+        holder.name.setText(data.getUname());
         holder.content.setText(data.getDate() + "    " + data.getMessage() + "....");
-        holder.topic.setText(data.getCategory() + (data.isvisited()?"*":""));
+        holder.topic.setText(data.getCategory() + (data.isvisited()?"":"*"));
         ImageOptions options=new ImageOptions.Builder()
-                .setLoadingDrawableId(R.drawable.ic_me)
-                .setFailureDrawableId(R.drawable.ic_me)
+                .setLoadingDrawableId(R.drawable.headpic)
+                .setFailureDrawableId(R.drawable.headpic)
                 .setUseMemCache(true)
                 .setCircular(true)
                 .setIgnoreGif(false)

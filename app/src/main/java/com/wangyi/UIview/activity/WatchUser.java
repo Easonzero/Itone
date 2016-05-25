@@ -5,20 +5,17 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 import com.wangyi.UIview.BaseActivity;
 import com.wangyi.UIview.adapter.WatchUserAdapter;
-import com.wangyi.UIview.widget.LoadingDialog;
-import com.wangyi.UIview.widget.NumberView;
+import com.wangyi.UIview.widget.dialog.LoadingDialog;
+import com.wangyi.UIview.widget.view.NumberView;
 import com.wangyi.define.BookData;
 import com.wangyi.define.EventName;
 import com.wangyi.function.HttpsFunc;
-import com.wangyi.function.UserManagerFunc;
 import com.wangyi.reader.R;
 
 import org.xutils.image.ImageOptions;
@@ -28,7 +25,6 @@ import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 /**
  * Created by eason on 5/3/16.
@@ -87,8 +83,8 @@ public class WatchUser extends BaseActivity {
         //int rank = UserManagerFunc.getInstance().getRank();
         number.setMessage("55");//rank+rank<100?"":"/n以内");
         ImageOptions options=new ImageOptions.Builder()
-                .setLoadingDrawableId(R.drawable.ic_me)
-                .setFailureDrawableId(R.drawable.ic_me)
+                .setLoadingDrawableId(R.drawable.headpic)
+                .setFailureDrawableId(R.drawable.headpic)
                 .setUseMemCache(true)
                 .setCircular(true)
                 .setIgnoreGif(true)

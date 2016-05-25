@@ -12,12 +12,15 @@
     <dimen name="default_spacing_micro">8dp</dimen>
     <dimen name="default_spacing_minor">16dp</dimen>
     <dimen name="drawer_width">280dp</dimen>
+    <dimen name="ic_numberWidth">120dp</dimen>
     <dimen name="icon_menu_height">42dp</dimen>
     <dimen name="icon_menu_width">52dp</dimen>
+    <dimen name="largepicWidth">195dp</dimen>
     <dimen name="layout_maxwidth">800dp</dimen>
     <dimen name="meToolbarHeight">500dp</dimen>
     <dimen name="menuitemSize">50dp</dimen>
     <dimen name="scheduleListHeight">160dp</dimen>
+    <dimen name="smallpicWidth">80dp</dimen>
     <dimen name="tableHeight">110dp</dimen>
     <dimen name="tableMargin">76dp</dimen>
     <dimen name="tableheadHeight">64dp</dimen>

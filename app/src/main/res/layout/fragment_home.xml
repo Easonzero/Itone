@@ -100,7 +100,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.wangyi.UIview.widget.SwipeListView
+            <com.wangyi.UIview.widget.view.SwipeListView
                 android:id="@+id/item_listview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
                 android:dividerHeight="1px"
                 android:paddingBottom="@dimen/padding_step1"
                 android:scrollbars="none" >
-            </com.wangyi.UIview.widget.SwipeListView>
+            </com.wangyi.UIview.widget.view.SwipeListView>
 
             <TextView
                 android:id="@+id/browseTextNoItem"

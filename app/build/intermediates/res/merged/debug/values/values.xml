@@ -49,7 +49,7 @@
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
     <color name="background_tab_pressed">#6633B5E5</color>
-    <color name="base_background_color">#f1f1f1</color>
+    <color name="base_background_color">#f2f2f2</color>
     <color name="basebar_color">#2D7E55</color>
     <color name="basebottombar_color">#E4E4E4</color>
     <color name="bg_thumbnail">#424242</color>
@@ -64,6 +64,7 @@
     <color name="bright_foreground_material_dark">@android:color/white</color>
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="busy_indicator">#C0202020</color>
+    <color name="button_background_blue">#69B2F0</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="button_normal">#00000000</color>
@@ -465,6 +466,7 @@
     <color name="text_title_color">#404040</color>
     <color name="title_text_color">#f5f6d3</color>
     <color name="toolbar">#C0000000</color>
+    <color name="tran_blue">#eaedf0</color>
     <color name="triangle">#aa72d572</color>
     <color name="typography_color_caption">#8A000000</color>
     <color name="typography_color_dividers">#1F000000</color>
@@ -637,6 +639,7 @@
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
+    <dimen name="largepicWidth">85dp</dimen>
     <dimen name="layout_maxwidth">650dp</dimen>
     <dimen name="material_drawer_account_header_compact">56dp</dimen>
     <dimen name="material_drawer_account_header_dropdown">22dp</dimen>
@@ -681,7 +684,7 @@
     <dimen name="material_mini_drawer_item_icon_padding">16dp</dimen>
     <dimen name="material_mini_drawer_item_padding">4dp</dimen>
     <dimen name="meToolbarHeight">250dp</dimen>
-    <dimen name="menuitemSize">25dp</dimen>
+    <dimen name="menuitemSize">32dp</dimen>
     <dimen name="nameTextSize">20sp</dimen>
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
@@ -698,6 +701,7 @@
     <dimen name="padding_step_s">4dp</dimen>
     <dimen name="padding_step_ss">6dp</dimen>
     <dimen name="scheduleListHeight">80dp</dimen>
+    <dimen name="smallToolbarHeight">48dp</dimen>
     <dimen name="smallpicWidth">40dp</dimen>
     <dimen name="tableHeight">55dp</dimen>
     <dimen name="tableMargin">38dp</dimen>
@@ -2656,11 +2660,17 @@
     <style name="Widget.AppCompat.TextView.SpinnerItem" parent="Base.Widget.AppCompat.TextView.SpinnerItem"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
+    <style name="arrow">
+        <item name="android:layout_width">10dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:src">@drawable/ic_me_right</item>
+    </style>
     <style name="bodytext">
         <item name="android:textSize">@dimen/body_text_size</item>
         <item name="android:textColor">@color/apptheme_third_color</item>
     </style>
     <style name="card">
+        <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">@dimen/padding_step2</item>
         <item name="android:paddingRight">@dimen/padding_step2</item>
         <item name="android:layout_margin">0dp</item>
@@ -2689,7 +2699,19 @@
         <item name="android:layout_height">0.5dip</item>
         <item name="android:background">@color/line_color</item>
     </style>
+    <style name="smallitem">
+        <item name="android:paddingLeft">@dimen/padding_step2</item>
+        <item name="android:paddingRight">@dimen/padding_step2</item>
+        <item name="android:paddingBottom">@dimen/padding_step2</item>
+        <item name="android:paddingTop">@dimen/padding_step2</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
     <style name="tableitem">
+        <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">@dimen/padding_step1</item>
         <item name="android:paddingRight">@dimen/padding_step2</item>
         <item name="android:layout_width">match_parent</item>
@@ -2699,6 +2721,7 @@
         <item name="android:clickable">true</item>
     </style>
     <style name="tableitemnoline">
+        <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">@dimen/padding_step1</item>
         <item name="android:paddingRight">@dimen/padding_step2</item>
         <item name="android:layout_width">match_parent</item>
@@ -2708,11 +2731,10 @@
         <item name="android:clickable">true</item>
     </style>
     <style name="titletext">
-        <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
+        <item name="android:textSize">@dimen/nameTextSize</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/title_text_color</item>
-        <item name="android:textStyle">bold</item>
     </style>
     <style name="toolbar">
         <item name="android:layout_margin">0dp</item>

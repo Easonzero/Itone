@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout style="@style/smallitem"
+        android:layout_height="@dimen/largepicWidth">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="头  像"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/headpic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/headpic" />
+        <ImageView style="@style/arrow" />
+    </LinearLayout>
+    <View style="@style/line"/>
+    <LinearLayout style="@style/smallitem">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="学  号"
+            android:layout_weight="1"/>
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/studentNo"
+            android:maxLength="20"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textColor="@color/apptheme_second_color"/>
+    </LinearLayout>
+    <View style="@style/line"/>
+    <LinearLayout style="@style/smallitem">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="学  校"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/university"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/apptheme_second_color"/>
+        <ImageView style="@style/arrow" />
+    </LinearLayout>
+    <View style="@style/line"/>
+</LinearLayout>

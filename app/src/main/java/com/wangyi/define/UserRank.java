@@ -10,8 +10,8 @@ import org.xutils.http.annotation.HttpResponse;
 @HttpResponse(parser = JsonResponseParser.class)
 public class UserRank {
     public String userName;
-    public String downloadNum;
-    public String from;
-    public String rank;
+    public int downloadNum;
+    public String university;
+    public int rank;
     public String url;
 }

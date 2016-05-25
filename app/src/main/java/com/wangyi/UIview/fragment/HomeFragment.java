@@ -7,7 +7,7 @@ import com.wangyi.UIview.BaseFragment;
 import com.wangyi.UIview.activity.ScheduleActivity;
 import com.wangyi.UIview.adapter.BookAdapter;
 import com.wangyi.UIview.adapter.LessonGridAdapter;
-import com.wangyi.UIview.widget.SwipeListView;
+import com.wangyi.UIview.widget.view.SwipeListView;
 import com.wangyi.define.EventName;
 import com.wangyi.function.BookManagerFunc;
 import com.wangyi.reader.R;
@@ -43,13 +43,13 @@ public class HomeFragment extends BaseFragment {
 	private int mCurIndicator = 0;
 	private Handler handler = new Handler(){
 		 @Override 
-	        public void handleMessage(Message msg) { 
-	            super.handleMessage(msg); 
-	            switch(msg.what){
-	            case EventName.UI.FINISH:
-	        		adapter.notifyDataSetChanged();
-	        		break;
-	            }
+	        public void handleMessage(Message msg) {
+			 super.handleMessage(msg);
+			 switch(msg.what){
+				 case EventName.UI.FINISH:
+					 adapter.notifyDataSetChanged();
+					 break;
+			 }
 		 }
 	};
 

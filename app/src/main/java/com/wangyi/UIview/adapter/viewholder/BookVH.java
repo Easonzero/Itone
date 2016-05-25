@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
-import com.wangyi.UIview.widget.ScrollingTextView;
+import com.wangyi.UIview.widget.view.ScrollingTextView;
 import com.wangyi.reader.R;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;

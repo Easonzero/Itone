@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout style="@style/toolbar" >
+        <TextView
+            style="@style/titletext"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="查看作业"/>
+        <Button
+            android:id="@+id/back"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="23dp"
+            android:layout_height="25dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/back2" />
+    </RelativeLayout>
+    <com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
+        android:id="@+id/homework"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:recyclerviewClipToPadding="true"
+        app:recyclerviewPadding="2dp"/>
+</LinearLayout>

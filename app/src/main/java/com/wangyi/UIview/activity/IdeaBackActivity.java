@@ -6,7 +6,7 @@ import android.os.Message;
 import android.view.View;
 import android.widget.EditText;
 import com.wangyi.UIview.BaseActivity;
-import com.wangyi.UIview.widget.LoadingDialog;
+import com.wangyi.UIview.widget.dialog.LoadingDialog;
 import com.wangyi.define.EventName;
 import com.wangyi.function.HttpsFunc;
 import com.wangyi.reader.R;

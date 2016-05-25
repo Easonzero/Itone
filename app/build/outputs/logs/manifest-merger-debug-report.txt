@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:2:1-168:12
+ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:2:1-189:12
 	package
 		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:3:5-32
 		INJECTED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml
@@ -106,7 +106,7 @@ ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:13:5-79
 	android:name
 		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:13:22-76
 application
-ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:16:5-166:20
+ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:16:5-187:20
 MERGED from [com.android.support:support-v4:23.3.0] /home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:23.3.0] /home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-vector-drawable:23.3.0] /home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/AndroidManifest.xml:7:5-20
@@ -352,3 +352,53 @@ ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:161:9-165:55
 		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:165:13-52
 	android:name
 		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:162:13-64
+activity#com.wangyi.UIview.activity.UserInfoActivity
+ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:166:9-170:55
+	android:label
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:168:13-45
+	android:launchMode
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:169:13-43
+	android:theme
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:170:13-52
+	android:name
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:167:13-71
+activity#com.wangyi.UIview.activity.SearchActivity
+ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:171:9-174:55
+	android:label
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:172:13-45
+	android:launchMode
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:173:13-43
+	android:theme
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:174:13-52
+	android:name
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:171:19-75
+activity#com.wangyi.UIview.activity.SearchInfoActivity
+ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:175:9-178:55
+	android:label
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:176:13-45
+	android:launchMode
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:177:13-43
+	android:theme
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:178:13-52
+	android:name
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:175:19-79
+activity#com.wangyi.UIview.activity.HomeWorkActivity
+ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:179:9-182:55
+	android:label
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:180:13-45
+	android:launchMode
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:181:13-43
+	android:theme
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:182:13-52
+	android:name
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:179:19-77
+activity#com.wangyi.UIview.activity.WatchHomework
+ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:183:9-186:55
+	android:label
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:184:13-45
+	android:launchMode
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:185:13-43
+	android:theme
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:186:13-52
+	android:name
+		ADDED from /home/eason/Repos/ItOne/app/src/main/AndroidManifest.xml:183:19-74

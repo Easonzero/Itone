@@ -17,8 +17,8 @@ import com.astuetz.PagerSlidingTabStrip;
 import com.wangyi.UIview.adapter.BookmarkViewAdapter;
 import com.wangyi.UIview.adapter.ThumbnailViewAdapter;
 import com.wangyi.UIview.adapter.searchItemAdapter;
-import com.wangyi.UIview.widget.PopupView;
-import com.wangyi.UIview.widget.PopupView.OnDismissListener;
+import com.wangyi.UIview.widget.container.PopupView;
+import com.wangyi.UIview.widget.container.PopupView.OnDismissListener;
 import com.wangyi.reader.R;
 import com.wangyi.utils.PreferencesReader;
 import com.wangyi.utils.ItOneUtils;
@@ -421,7 +421,7 @@ public class MuPDFActivity extends AppCompatActivity implements
             return;
         }
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
         createUI(savedInstanceState);
 
         PackageManager m = getPackageManager();
@@ -1375,6 +1375,13 @@ public class MuPDFActivity extends AppCompatActivity implements
         if (core.getFilePath() == null) {
             bookmarkItem.setVisible(false);
         }
+        MenuItem rotateItem = menu.findItem(R.id.mu_reader_autorotate);
+        int currentRequestedOrientation = getRequestedOrientation();
+        if (currentRequestedOrientation == ActivityInfo.SCREEN_ORIENTATION_SENSOR) {
+            rotateItem.setChecked(true);
+        } else {
+            rotateItem.setChecked(false);
+        }
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -1404,7 +1411,29 @@ public class MuPDFActivity extends AppCompatActivity implements
         } else if (item.getItemId() == R.id.mu_reader_bookmark) {
             bookmarkAction();
             return true;
-        } else if (item.getItemId() == R.id.mu_reader_displayoption) {
+        } else if(item.getItemId() == R.id.mu_reader_autorotate){
+            int currentRequestedOrientation = getRequestedOrientation();
+            if (currentRequestedOrientation == ActivityInfo.SCREEN_ORIENTATION_SENSOR) {
+                int currentOrientation = getResources().getConfiguration().orientation;
+                if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
+                } else {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+                }
+                item.setChecked(false);
+            } else {
+                setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+                item.setChecked(true);
+            }
+            item.setEnabled(false);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    item.setEnabled(true);
+                }
+            }, 200);
+            return true;
+        }else if (item.getItemId() == R.id.mu_reader_displayoption) {
             showDisplayOptions();
             return true;
         }

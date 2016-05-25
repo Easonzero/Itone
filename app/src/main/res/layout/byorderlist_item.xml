@@ -46,7 +46,7 @@
                 android:layout_weight="1"
                 android:id="@+id/from"/>
         </LinearLayout>
-        <com.wangyi.UIview.widget.NumberView
+        <com.wangyi.UIview.widget.view.NumberView
             android:id="@+id/number"
             android:layout_width="@dimen/ic_numberWidth"
             android:layout_height="match_parent"

@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-    <RelativeLayout style="@style/toolbar">
+    <RelativeLayout style="@style/toolbar"
+        android:layout_height="@dimen/smallToolbarHeight"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_step1">
+        <Button
+            android:id="@+id/save"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="#00000000"
+            android:text="保存"
+            android:visibility="invisible"
+            android:textColor="#FFFFFFFF"
+            android:layout_marginBottom="-10dp"/>
         <TextView
                 style="@style/titletext"
+                android:id="@+id/title"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:text="IT1帐号注册"/>
@@ -17,127 +34,33 @@
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:background="@drawable/back2" />
-        <Button
-                android:id="@+id/confirm"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="@dimen/menuitemSize"
-                android:layout_height="@dimen/menuitemSize"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:background="@drawable/register_confirm" />
     </RelativeLayout>
-    <LinearLayout style="@style/Container">
-        <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_card"
-                android:layout_weight="1"
-                android:orientation="vertical">
-            <LinearLayout style="@style/card"
-                          android:layout_weight="0">
-                <TextView android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_vertical"
-                          android:text="头像:" style="cardtext"/>
-                <ImageView android:layout_width="50dp"
-                           android:layout_height="50dp"
-                           android:adjustViewBounds="true"
-                           android:layout_marginLeft="50dp"
-                           android:layout_marginTop="10dp"
-                           android:layout_marginBottom="10dp"
-                           android:background="@drawable/register_addpic" android:id="@+id/picture"/>
-            </LinearLayout>
-            <LinearLayout style="@style/card">
-                <TextView android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_vertical"
-                        android:text="账号:       " style="cardtext"/>
-                <EditText android:layout_width="fill_parent"
-                          android:layout_height="fill_parent"
-                          android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                          android:layout_gravity="center_vertical"
-                          android:id="@+id/id"/>
-            </LinearLayout>
-            <LinearLayout style="@style/card" >
-                <TextView android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_vertical"
-                          android:text="用户名:   " style="cardtext"/>
-                <EditText android:layout_width="fill_parent"
-                          android:layout_height="fill_parent"
-                          android:layout_gravity="center_vertical"
-                          android:id="@+id/userName"/>
-            </LinearLayout>
-            <LinearLayout style="@style/card" >
-                <TextView android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_vertical"
-                          android:text="密码:       " style="cardtext"/>
-                <EditText android:layout_width="fill_parent"
-                          android:layout_height="fill_parent"
-                          android:layout_gravity="center_vertical"
-                          android:inputType="textPassword"
-                          android:id="@+id/passWords"/>
-            </LinearLayout>
-        </LinearLayout>
-        <View android:layout_width="match_parent"
-              android:layout_height="@dimen/padding_step1"/>
-        <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_card"
-                android:layout_weight="1"
-                android:orientation="vertical" >
-            <LinearLayout style="@style/card">
-                <TextView android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_vertical"
-                          android:text="省份:       " style="cardtext"/>
-                <EditText android:layout_width="fill_parent"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_vertical"
-                          android:id="@+id/province"/>
-            </LinearLayout>
-            <LinearLayout style="@style/card" >
-                <TextView android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_vertical"
-                          android:text="市区:       " style="cardtext"/>
-                <EditText android:layout_width="fill_parent"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_vertical"
-                          android:id="@+id/city"/>
-            </LinearLayout>
-            <LinearLayout style="@style/card" >
-                <TextView android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_vertical"
-                          android:text="大学:       " style="cardtext"/>
-                <EditText android:layout_width="fill_parent"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_vertical"
-                          android:id="@+id/university"/>
-            </LinearLayout>
-            <LinearLayout style="@style/card" >
-                <TextView android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_vertical"
-                          android:text="院系:       " style="cardtext"/>
-                <EditText android:layout_width="fill_parent"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_vertical"
-                          android:id="@+id/faculty"/>
-            </LinearLayout>
-            <LinearLayout style="@style/card" >
-                <TextView android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_vertical"
-                          android:text="专业:       " style="cardtext"/>
-                <EditText android:layout_width="fill_parent"
-                          android:layout_height="wrap_content"
-                          android:layout_gravity="center_vertical"
-                          android:id="@+id/occupation"/>
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
+    <fragment
+        android:id="@+id/fragment1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        class="com.wangyi.UIview.fragment.RegisterFragment1"
+        tools:layout="@layout/fragment_register1" />
+    <fragment
+        android:id="@+id/fragment2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        class="com.wangyi.UIview.fragment.RegisterFragment2"
+        tools:layout="@layout/fragment_register2" />
+    <fragment
+        android:id="@+id/fragment3"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        class="com.wangyi.UIview.fragment.RegisterFragment3"
+        tools:layout="@layout/fragment_register3" />
+    <fragment
+        android:id="@+id/fragment4"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        class="com.wangyi.UIview.fragment.RegisterFragment4"
+        tools:layout="@layout/fragment_register4" />
 </LinearLayout>

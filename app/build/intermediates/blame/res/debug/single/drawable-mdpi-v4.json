@@ -104,6 +104,10 @@
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-mdpi-v4/abc_ic_voice_search_api_mtrl_alpha.png"
     },
     {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/headpic.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable-mdpi/headpic.png"
+    },
+    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/zhou6.png",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable-mdpi/zhou6.png"
     },
@@ -232,12 +236,12 @@
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable-mdpi/watch_lesson_weeknum.png"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_btn_rating_star_on_mtrl_alpha.png",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-mdpi-v4/abc_btn_rating_star_on_mtrl_alpha.png"
-    },
-    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/bg_lesson_purple_select.9.png",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable-mdpi/bg_lesson_purple_select.9.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_btn_rating_star_on_mtrl_alpha.png",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-mdpi-v4/abc_btn_rating_star_on_mtrl_alpha.png"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/readhistory_select.png",
@@ -328,10 +332,6 @@
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-mdpi-v4/abc_ic_star_black_36dp.png"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/register_confirm.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable-mdpi/register_confirm.png"
-    },
-    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/zhou1.png",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable-mdpi/zhou1.png"
     },
@@ -416,16 +416,8 @@
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable-mdpi/download_allselect.png"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/register_addpic.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable-mdpi/register_addpic.png"
-    },
-    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_015.png",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/bg_class.9.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable-mdpi/bg_class.9.png"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_015.png",
@@ -554,10 +546,6 @@
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-mdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/bg_card.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable-mdpi/bg_card.png"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/bg_lessonhead.png",

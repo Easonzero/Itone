@@ -17,8 +17,8 @@ import java.sql.Date;
 public class Message {
     @Column(name = "id",isId=true,autoGen = true)
     private String id;
-    @Column(name = "uid")
-    private String uid;
+    @Column(name = "uname")
+    private String uname;
     @Column(name = "picurl")
     private String picUrl;
     @Column(name = "message")
@@ -44,12 +44,12 @@ public class Message {
         this.picUrl = picUrl;
     }
 
-    public String getUid() {
-        return uid;
+    public String getUname() {
+        return uname;
     }
 
-    public void setUid(String uid) {
-        this.uid = uid;
+    public void setUname(String uname) {
+        this.uname = uname;
     }
 
     public boolean isvisited() {

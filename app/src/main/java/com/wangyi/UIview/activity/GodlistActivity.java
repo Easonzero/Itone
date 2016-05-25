@@ -4,18 +4,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ListView;
 
-import com.marshalchen.ultimaterecyclerview.ItemTouchListenerAdapter;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 import com.marshalchen.ultimaterecyclerview.layoutmanagers.ScrollSmoothLineaerLayoutManager;
 import com.wangyi.UIview.BaseActivity;
 import com.wangyi.UIview.adapter.GodlistAdapter;
-import com.wangyi.UIview.widget.LoadingDialog;
+import com.wangyi.UIview.widget.dialog.LoadingDialog;
 import com.wangyi.define.EventName;
+import com.wangyi.define.UserRank;
 import com.wangyi.function.HttpsFunc;
 import com.wangyi.reader.R;
 
@@ -35,6 +32,7 @@ public class GodlistActivity extends BaseActivity {
 
     private GodlistAdapter adapter;
     private LoadingDialog loading;
+    private ArrayList<UserRank> users;
 
     private Handler handler = new Handler(){
         @Override
@@ -47,10 +45,9 @@ public class GodlistActivity extends BaseActivity {
                     loading.show();
                     break;
                 case EventName.UI.SUCCESS:
-                    adapter = new GodlistAdapter((ArrayList)msg.obj);
-                    byorderlist.setLayoutManager(new ScrollSmoothLineaerLayoutManager(
-                            getBaseContext(), LinearLayoutManager.VERTICAL, false, 300));
-                    byorderlist.setAdapter(adapter);
+                    users = (ArrayList<UserRank>)msg.obj;
+                    if(!adapter.isEmpty()) adapter.removeAll();
+                    adapter.insert(users);
                     loading.dismiss();
                     break;
             }
@@ -62,7 +59,29 @@ public class GodlistActivity extends BaseActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         loading = new LoadingDialog(this);
+        users = new ArrayList<UserRank>();
+        adapter = new GodlistAdapter(test());
+        byorderlist.setLayoutManager(new ScrollSmoothLineaerLayoutManager(
+                getBaseContext(), LinearLayoutManager.VERTICAL, false, 300));
+        byorderlist.setAdapter(adapter);
         HttpsFunc.getInstance().connect(handler).getRankByOrder();
+    }
+
+    private ArrayList<UserRank> test(){
+        int i=1;
+        ArrayList<UserRank> users = new ArrayList<UserRank>();
+        String category = "ppt";
+        while(i<11){
+            UserRank user = new UserRank();
+            user.url = "/res/user/ximin/";
+            user.downloadNum = 1000 - i*10;
+            user.rank = i;
+            user.university = "哈尔滨工业大学";
+            user.userName = "王祎";
+            users.add(user);
+            i++;
+        }
+        return users;
     }
 
     @Event(R.id.back)

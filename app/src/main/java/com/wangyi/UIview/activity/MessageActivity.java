@@ -12,15 +12,13 @@ import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 import com.marshalchen.ultimaterecyclerview.layoutmanagers.ScrollSmoothLineaerLayoutManager;
 import com.wangyi.UIview.BaseActivity;
 import com.wangyi.UIview.adapter.MessageListAdapter;
-import com.wangyi.UIview.widget.LoadingDialog;
+import com.wangyi.UIview.widget.dialog.LoadingDialog;
 import com.wangyi.define.EventName;
-import com.wangyi.define.Message;
 import com.wangyi.function.MessageFunc;
 import com.wangyi.reader.R;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
-import java.util.ArrayList;
 
 import in.srain.cube.views.ptr.PtrDefaultHandler;
 import in.srain.cube.views.ptr.PtrFrameLayout;
@@ -60,15 +58,14 @@ public class MessageActivity extends BaseActivity{
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         loading = new LoadingDialog(this);
-        String category = getIntent().getStringExtra("category");
-        //MessageFunc.getInstance().connect(handler).visitRomoteMessage(category);
+        MessageFunc.getInstance().connect(handler).visitRomoteMessage();
         messagelist.setCustomSwipeToRefresh();
         linearLayoutManager = new ScrollSmoothLineaerLayoutManager(
                 this, LinearLayoutManager.VERTICAL, false, 300);
         messagelist.setLayoutManager(linearLayoutManager);
         messagelist.setEmptyView(R.layout.emptylist,UltimateRecyclerView.EMPTY_SHOW_LOADMORE_ONLY);
-        adapter = new MessageListAdapter(MessageFunc.getInstance().connect(handler).getMessage(offset,EventName.Message.MESSAGE));
-        //adapter.insert(MessageFunc.getInstance().getMessage(offset,EventName.Message.MESSAGE));
+        adapter = new MessageListAdapter(MessageFunc.getInstance().connect(handler).getMessage(offset));
+        //adapter.insert(MessageFunc.getInstance().getMessage(offset));
         messagelist.setAdapter(adapter);
         StoreHouseHeader storeHouseHeader = new StoreHouseHeader(this);
         storeHouseHeader.initWithString("Loading...");
@@ -84,13 +81,14 @@ public class MessageActivity extends BaseActivity{
 
             @Override
             public void onRefreshBegin(PtrFrameLayout ptrFrameLayout) {
-                adapter.insert(MessageFunc.getInstance().connect(handler).getMessage(offset+=10,EventName.Message.MESSAGE));
+                adapter.insert(MessageFunc.getInstance().connect(handler).getMessage(offset+=10));
             }
         });
         ItemTouchListenerAdapter itemTouchListenerAdapter = new ItemTouchListenerAdapter(messagelist.mRecyclerView,
                 new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
                     @Override
                     public void onItemClick(RecyclerView parent, View clickedView, int position) {
+
                     }
 
                     @Override

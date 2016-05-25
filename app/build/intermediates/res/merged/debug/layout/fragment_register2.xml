@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    style="@style/Container"
+    android:background="@color/base_background_color"
+    android:padding="@dimen/padding_step4"
+    android:layout_height="match_parent">
+    <TextView style="@style/bodytext"
+        android:id="@+id/tel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tableHeight"
+        android:gravity="center_vertical"
+        android:hint="您的手机号：13115511080"/>
+
+    <TextView style="@style/cardtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:hint="* 您会收到一条带有验证码的短信,请输入验证码"/>
+
+    <EditText style="@style/tableitem"
+        android:id="@+id/checknum"
+        android:textColor="@color/apptheme_third_color"
+        android:layout_height="@dimen/tableHeight"
+        android:layout_marginTop="@dimen/padding_step1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_step1"
+        android:hint="请输入手机收到的验证码"
+        android:textColorHint="@color/apptheme_second_color"/>
+
+    <Button
+        android:id="@+id/commit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/tableHeight"
+        android:background="@drawable/bg_register_bt"
+        android:layout_marginTop="@dimen/padding_step2"
+        android:text="提交验证码"
+        android:textColor="@color/white"
+        android:textSize="20sp"/>
+
+    <TextView style="@style/bodytext"
+        android:id="@+id/info"
+        android:layout_marginTop="@dimen/padding_step2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="54秒后重新发送"/>
+</LinearLayout>
