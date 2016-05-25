@@ -679,7 +679,7 @@ public final class R {
 		public static final int status_bar_latest_event_content = 0x7f0d0191;
 		public static final int store_house_ptr_frame = 0x7f0d0124;
 		public static final int submit_area = 0x7f0d006a;
-		public static final int swipe_refresh_layout = 0x7f0d01d5;
+		public static final int swipe_refresh_layout = 0x7f0d01d6;
 		public static final int tabMode = 0x7f0d001b;
 		public static final int text = 0x7f0d0199;
 		public static final int text2 = 0x7f0d0197;
@@ -687,7 +687,7 @@ public final class R {
 		public static final int time = 0x7f0d0195;
 		public static final int title = 0x7f0d0048;
 		public static final int title_template = 0x7f0d004d;
-		public static final int title_text = 0x7f0d01d4;
+		public static final int title_text = 0x7f0d01d5;
 		public static final int top = 0x7f0d0036;
 		public static final int topPanel = 0x7f0d004c;
 		public static final int ultimate_list = 0x7f0d0125;

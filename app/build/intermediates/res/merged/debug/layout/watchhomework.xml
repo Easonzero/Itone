@@ -12,8 +12,8 @@
         <Button
             android:id="@+id/back"
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="23dp"
-            android:layout_height="25dp"
+            android:layout_width="@dimen/menuitemSize"
+            android:layout_height="@dimen/menuitemSize"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:background="@drawable/back2" />
@@ -61,6 +61,7 @@
             android:padding="@dimen/padding_step1"
             android:text="xxx作业内容是yyy"/>
         <TextView style="@style/cardtext"
+            android:id="@+id/uploader"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:gravity="right"

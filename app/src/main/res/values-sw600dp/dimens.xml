@@ -6,7 +6,7 @@
 	<dimen name="scheduleListHeight">120dp</dimen>
 	<dimen name="toolbarHeight">105dp</dimen>
 	<dimen name="meToolbarHeight">375dp</dimen>
-	<dimen name="menuitemSize">30dp</dimen>
+	<dimen name="menuitemSize">48dp</dimen>
     <dimen name="tableHeight">66dp</dimen>
 	<dimen name="tableMargin">54dp</dimen>
 	<dimen name="tableheadHeight">48dp</dimen>

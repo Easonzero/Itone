@@ -1,17 +1,25 @@
 package com.wangyi.UIview.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.marshalchen.ultimaterecyclerview.ItemTouchListenerAdapter;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
+import com.marshalchen.ultimaterecyclerview.layoutmanagers.ScrollSmoothLineaerLayoutManager;
 import com.wangyi.UIview.BaseActivity;
+import com.wangyi.UIview.adapter.TextAdapter;
+import com.wangyi.UIview.fragment.RegisterFragment4;
 import com.wangyi.UIview.widget.dialog.LoadingDialog;
 import com.wangyi.define.EventName;
 import com.wangyi.function.HttpsFunc;
@@ -35,6 +43,9 @@ public class SearchInfoActivity extends BaseActivity{
     private UltimateRecyclerView info;
 
     private LoadingDialog loading;
+    private LinearLayoutManager linearLayoutManager;
+    private TextAdapter adapter;
+    private ArrayList<String> universities;
 
     private Handler handler = new Handler() {
 
@@ -80,5 +91,26 @@ public class SearchInfoActivity extends BaseActivity{
                 return false;
             }
         });
+
+        universities = new ArrayList<>();
+        linearLayoutManager = new ScrollSmoothLineaerLayoutManager(
+                this, LinearLayoutManager.VERTICAL, false, 300);
+        info.setLayoutManager(linearLayoutManager);
+        info.setEmptyView(R.layout.emptylist,UltimateRecyclerView.EMPTY_SHOW_LOADMORE_ONLY);
+        adapter = new TextAdapter(universities);
+
+        ItemTouchListenerAdapter itemTouchListenerAdapter = new ItemTouchListenerAdapter(info.mRecyclerView,
+                new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
+                    @Override
+                    public void onItemClick(RecyclerView parent, View clickedView, int position) {
+                        Intent intent = new Intent();
+                        intent.putExtra("university",universities.get(position));
+                        SearchInfoActivity.this.setResult(RegisterFragment4.SEARCH_RESULT,intent);
+                    }
+
+                    @Override
+                    public void onItemLongClick(RecyclerView recyclerView, View view, int i) {}
+                });
+        info.mRecyclerView.addOnItemTouchListener(itemTouchListenerAdapter);
     }
 }

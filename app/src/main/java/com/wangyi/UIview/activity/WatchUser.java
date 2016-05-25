@@ -1,11 +1,13 @@
 package com.wangyi.UIview.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
@@ -43,6 +45,8 @@ public class WatchUser extends BaseActivity {
     private ImageView pic;
     @ViewInject(R.id.number)
     private NumberView number;
+    @ViewInject(R.id.userInfo)
+    private LinearLayout userLayout;
 
     private WatchUserAdapter adapter = null;
     private LinearLayoutManager linearLayoutManager;
@@ -135,6 +139,12 @@ public class WatchUser extends BaseActivity {
         uploadlist.getItemAnimator().setRemoveDuration(100);
         uploadlist.getItemAnimator().setMoveDuration(200);
         uploadlist.getItemAnimator().setChangeDuration(100);
+    }
+
+    @Event(R.id.userInfo)
+    private void onUserLayoutClick(View view){
+        Intent intent = new Intent(this,UserInfoActivity.class);
+        startActivity(intent);
     }
 
     @Event(R.id.back)

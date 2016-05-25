@@ -10,13 +10,13 @@
                 android:layout_centerHorizontal="true"
                 android:text="设置"/>
         <Button
-                android:id="@+id/back"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="23dp"
-                android:layout_height="25dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:background="@drawable/back2" />
+            android:id="@+id/back"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/menuitemSize"
+            android:layout_height="@dimen/menuitemSize"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/back2" />
     </RelativeLayout>
     <LinearLayout style="@style/Container">
         <View style="@style/line" />
@@ -48,7 +48,7 @@
         </LinearLayout>
         <View style="@style/line" />
         <LinearLayout style="@style/tableitem"
-                      android:id="@+id/back"
+                      android:id="@+id/intro"
                       android:layout_marginTop="@dimen/tableMargin">
             <TextView style="@style/bodytext"
                       android:layout_width="match_parent"

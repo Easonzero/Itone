@@ -24,8 +24,8 @@
         <Button
             android:id="@+id/back"
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="23dp"
-            android:layout_height="25dp"
+            android:layout_width="@dimen/menuitemSize"
+            android:layout_height="@dimen/menuitemSize"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:background="@drawable/back2" />

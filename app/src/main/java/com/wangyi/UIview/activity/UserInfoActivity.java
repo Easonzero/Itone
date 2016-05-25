@@ -1,6 +1,7 @@
 package com.wangyi.UIview.activity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import com.wangyi.reader.R;
 
 import org.xutils.image.ImageOptions;
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
@@ -56,5 +58,10 @@ public class UserInfoActivity extends BaseActivity{
                             "headPic.jpg",options
             );
         }
+    }
+    
+    @Event(R.id.back)
+    private void onBackClick(View view){
+        this.finish();
     }
 }

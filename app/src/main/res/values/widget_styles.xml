@@ -85,6 +85,7 @@
         <item name="android:textSize">@dimen/nameTextSize</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/padding_step_0</item>
         <item name="android:textColor">@color/title_text_color</item>
     </style>
 

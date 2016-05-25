@@ -8,8 +8,10 @@ import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.wangyi.UIview.BaseFragment;
+import com.wangyi.UIview.activity.SearchInfoActivity;
 import com.wangyi.define.EventName;
 import com.wangyi.reader.R;
 import com.wangyi.utils.ImagePicker;
@@ -26,14 +28,23 @@ import java.io.File;
 
 @ContentView(R.layout.fragment_register4)
 public class RegisterFragment4 extends BaseFragment {
+    public static final int SEARCH_RESULT = 4;
     @ViewInject(R.id.headpic)
     private ImageView picture;
+    @ViewInject(R.id.university)
+    private TextView university;
 
     private boolean isAddPic = false;
 
     @Event(R.id.headpic)
     private void onPicClick(View view){
         showSettingFaceDialog();
+    }
+
+    @Event(R.id.university)
+    private void onUniversityClick(View view){
+        Intent intent = new Intent(getContext(), SearchInfoActivity.class);
+        startActivityForResult(intent,0);
     }
 
     /*
@@ -102,6 +113,9 @@ public class RegisterFragment4 extends BaseFragment {
                         ImagePicker.setImageToView(data,picture);
                         isAddPic = true;
                     }
+                    break;
+                case SEARCH_RESULT:
+                    university.setText(data.getStringExtra("university"));
                     break;
             }
         }

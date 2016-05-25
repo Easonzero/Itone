@@ -2,11 +2,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-	android:orientation="vertical"
-    tools:context=".ScheduleActivity" >
+	android:orientation="vertical" >
 
     <RelativeLayout style="@style/toolbar"
 					android:id="@+id/toolbar">
+		<Button
+			android:id="@+id/back"
+			style="?android:attr/buttonStyleSmall"
+			android:layout_width="@dimen/menuitemSize"
+			android:layout_height="@dimen/menuitemSize"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentLeft="true"
+			android:background="@drawable/back2" />
         <TextView style="@style/titletext"
 				  android:layout_centerHorizontal="true"
 				  android:layout_alignParentBottom="true"

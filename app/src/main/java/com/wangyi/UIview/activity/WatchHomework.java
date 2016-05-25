@@ -23,6 +23,8 @@ public class WatchHomework extends BaseActivity {
     private TextView date;
     @ViewInject(R.id.content)
     private TextView content;
+    @ViewInject(R.id.uploader)
+    private TextView uploader;
 
     private Homework homework;
 
@@ -30,7 +32,7 @@ public class WatchHomework extends BaseActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         homework = (Homework)getIntent().getSerializableExtra("homework");
-
+        uploader.setText("上传者："+homework.uname);
         name.setText(homework.course);
         date.setText(homework.sdate+" ~ "+homework.fdate);
         content.setText(homework.message);
