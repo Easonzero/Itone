@@ -9,9 +9,11 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IProfile;
-import com.wangyi.UIview.adapter.HomeworkAdapter;
-import com.wangyi.define.EventName;
+import com.wangyi.UIview.fragment.HomeFragment;
 import com.wangyi.function.*;
+
+import org.xutils.common.Callback;
+import org.xutils.image.ImageOptions;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.x;
 
@@ -23,21 +25,23 @@ import com.wangyi.reader.R;
 import com.wangyi.utils.ItOneUtils;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 
 @ContentView(R.layout.activity_main)
-public class ItOneActivity extends BaseActivity{
+public class ItOneActivity extends BaseActivity implements HomeFragment.OnMenuListener{
 	private BaseFragment[] mFragments;
     private ProfileDrawerItem mProfileDrawerItem;
     private AccountHeader mAccountHeader;
-
+	private Drawer drawer;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		ScheduleFunc.getInstance().init(this);
 		BookManagerFunc.getInstance().init(this);
 		MessageFunc.getInstance().init(this);
+		HomeworkFunc.getInstance().init(this);
 		UserManagerFunc.getInstance().init(this);
 		HttpsFunc.getInstance().init(this);
 
@@ -61,7 +65,7 @@ public class ItOneActivity extends BaseActivity{
                     @Override
                     public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
                         Intent intent;
-                        if(UserManagerFunc.getInstance().isLogin())
+                        if(!UserManagerFunc.getInstance().isLogin())
                             intent = new Intent(ItOneActivity.this.getApplicationContext(),LoginActivity.class);
                         else
                             intent = new Intent(ItOneActivity.this.getApplicationContext(),WatchUser.class);
@@ -71,7 +75,7 @@ public class ItOneActivity extends BaseActivity{
                 })
                 .build();
 
-		Drawer drawer = new DrawerBuilder()
+		drawer = new DrawerBuilder()
 				.withActivity(this)
                 .withAccountHeader(mAccountHeader)
 				.withStatusBarColorRes(R.color.basebar_color)
@@ -85,12 +89,46 @@ public class ItOneActivity extends BaseActivity{
                     @Override
                     public void onDrawerOpened(View view) {
                         if(UserManagerFunc.getInstance().isLogin()){
-                            mAccountHeader.updateProfile(mProfileDrawerItem.withName(
-                                    UserManagerFunc.getInstance().getUserInfo().userName + "\n" +
-                                    UserManagerFunc.getInstance().getUserInfo().faculty + "\n"
-                            ));
+							ImageOptions options=new ImageOptions.Builder()
+									.setLoadingDrawableId(R.drawable.headpic)
+									.setFailureDrawableId(R.drawable.headpic)
+									.setUseMemCache(true)
+									.setCircular(true)
+									.setIgnoreGif(false)
+									.build();
+							x.image().loadDrawable(
+									HttpsFunc.host +UserManagerFunc.getInstance().getUserInfo().picture+"headPic.jpg",
+									options,
+									new Callback.CommonCallback< Drawable >(){
+
+										@Override
+										public void onSuccess(Drawable result) {
+											mAccountHeader.updateProfile(
+												mProfileDrawerItem.withIcon(
+													result
+												).withName(
+													UserManagerFunc.getInstance().getUserInfo().userName
+												).withEmail(
+													UserManagerFunc.getInstance().getUserInfo().faculty
+											));
+										}
+
+										@Override
+										public void onError(Throwable ex, boolean isOnCallback) {
+										}
+
+										@Override
+										public void onCancelled(CancelledException cex) {
+										}
+
+										@Override
+										public void onFinished() {
+										}
+									});
                         }else{
+							mAccountHeader.updateProfile(mProfileDrawerItem.withIcon(R.drawable.headpic));
                             mAccountHeader.updateProfile(mProfileDrawerItem.withName("未登录"));
+							mAccountHeader.updateProfile(mProfileDrawerItem.withEmail(""));
                         }
                     }
 
@@ -107,7 +145,7 @@ public class ItOneActivity extends BaseActivity{
 						Intent intent;
 						switch (position){
 							case 2:
-								if(UserManagerFunc.getInstance().isLogin()){
+								if(!UserManagerFunc.getInstance().isLogin()){
 									ItOneUtils.showToast(x.app(),"请先登陆");
 									break;
 								}
@@ -115,7 +153,7 @@ public class ItOneActivity extends BaseActivity{
 								startActivity(intent);
 								break;
 							case 3:
-								if(UserManagerFunc.getInstance().isLogin()){
+								if(!UserManagerFunc.getInstance().isLogin()){
 									ItOneUtils.showToast(x.app(),"请先登陆");
 									break;
 								}
@@ -123,7 +161,7 @@ public class ItOneActivity extends BaseActivity{
 								startActivity(intent);
 								break;
 							case 4:
-								if(UserManagerFunc.getInstance().isLogin()){
+								if(!UserManagerFunc.getInstance().isLogin()){
 									ItOneUtils.showToast(x.app(),"请先登陆");
 									break;
 								}
@@ -158,5 +196,19 @@ public class ItOneActivity extends BaseActivity{
 						.hide(mFragments[2]).show(mFragments[which]).commit();
 			}
 		});
+	}
+
+	@Override
+	public void show() {
+		if(drawer != null){
+			drawer.openDrawer();
+		}
+	}
+
+	@Override
+	public void hide() {
+		if(drawer != null){
+			drawer.closeDrawer();
+		}
 	}
 }

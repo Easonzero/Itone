@@ -28,19 +28,20 @@
                 android:orientation="vertical"
                 android:background="@drawable/login_table"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" >
+                android:layout_marginRight="10dp"
+                android:paddingLeft="10dp">
 
             <EditText
+                    android:layout_gravity="center_vertical"
                     android:id="@+id/editUserID"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/tableHeight"
                     android:hint="帐号："
                     android:background="#00000000"
-                    android:inputType="textEmailAddress"
-                    android:padding="10dp" />
+                    android:inputType="textEmailAddress" />
 
             <EditText
-                    android:padding="10dp"
+                    android:layout_gravity="center_vertical"
                     android:id="@+id/editPassWords"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/tableHeight"

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.wangyi.UIview.adapter.viewholder.LessonGridVH;
-import com.wangyi.define.LessonData;
+import com.wangyi.define.bean.LessonData;
 import com.wangyi.function.ScheduleFunc;
 import com.wangyi.reader.R;
 
@@ -13,8 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
-import org.xutils.x;
 
 public class LessonGridAdapter extends BaseAdapter {
 	private LayoutInflater inflater;

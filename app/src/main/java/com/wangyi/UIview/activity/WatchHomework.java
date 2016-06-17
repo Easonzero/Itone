@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.wangyi.UIview.BaseActivity;
-import com.wangyi.define.Homework;
+import com.wangyi.define.bean.Homework;
 import com.wangyi.reader.R;
 
 import org.xutils.view.annotation.ContentView;
@@ -34,7 +34,7 @@ public class WatchHomework extends BaseActivity {
         homework = (Homework)getIntent().getSerializableExtra("homework");
         uploader.setText("上传者："+homework.uname);
         name.setText(homework.course);
-        date.setText(homework.sdate+" ~ "+homework.fdate);
+        date.setText(homework.getSDate()+" ~ "+homework.getFDate());
         content.setText(homework.message);
     }
 

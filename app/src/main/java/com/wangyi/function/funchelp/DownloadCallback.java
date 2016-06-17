@@ -1,7 +1,7 @@
 package com.wangyi.function.funchelp;
 
 import com.wangyi.UIview.adapter.template.DownloadViewHolder;
-import com.wangyi.define.DownloadInfo;
+import com.wangyi.define.bean.DownloadInfo;
 import com.wangyi.define.EventName;
 import com.wangyi.function.DownloadManagerFunc;
 import org.xutils.common.Callback;
@@ -61,7 +61,7 @@ public class DownloadCallback implements
                 return viewHolder;
             }
         }
-        return null;
+        return viewHolder;
     }
 
     @Override

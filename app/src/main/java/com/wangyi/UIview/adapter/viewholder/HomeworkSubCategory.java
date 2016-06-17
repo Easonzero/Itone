@@ -8,10 +8,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.marshalchen.ultimaterecyclerview.expanx.Util.child;
-import com.wangyi.UIview.activity.WatchBook;
 import com.wangyi.UIview.activity.WatchHomework;
 import com.wangyi.UIview.adapter.template.ExpandDataItem;
-import com.wangyi.define.Homework;
+import com.wangyi.define.bean.Homework;
 import com.wangyi.reader.R;
 import com.wangyi.utils.ItOneUtils;
 

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import com.wangyi.UIview.BaseFragment;
+import com.wangyi.function.HttpsFunc;
 import com.wangyi.reader.R;
 import com.wangyi.utils.ItOneUtils;
 
@@ -46,7 +47,8 @@ public class RegisterFragment1 extends BaseFragment {
             String str = tel.getText().toString();
             if(str.length() != 11) ItOneUtils.showToast(getContext(),"请输入正确的手机号");
             else{
-                sendMessage(1,str);
+                HttpsFunc.getInstance().connect(handler).SMS(str);
+                sendMessage(1+3,str);
             }
         }
     }

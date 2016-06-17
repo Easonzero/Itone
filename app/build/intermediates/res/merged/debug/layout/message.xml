@@ -20,7 +20,7 @@
             android:layout_alignParentLeft="true"
             android:background="@drawable/back2" />
     </RelativeLayout>
-    <com.marshalchen.ultimaterecyclerview.CustomUltimateRecyclerview
+    <com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
         android:id="@+id/messagelist"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

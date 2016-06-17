@@ -2,7 +2,7 @@ package com.wangyi.function;
 
 import android.content.Context;
 import com.wangyi.UIview.adapter.template.DownloadViewHolder;
-import com.wangyi.define.DownloadInfo;
+import com.wangyi.define.bean.DownloadInfo;
 import com.wangyi.define.EventName;
 import com.wangyi.function.funchelp.Function;
 import org.xutils.DbManager;
@@ -81,7 +81,7 @@ public class DownloadManagerFunc implements Function {
         return downloadInfoList.get(index);
     }
 
-    public synchronized void startDownload(String url, String label, String savePath,
+    public synchronized void startDownload(String url, String id, String uid, String label, String savePath,
                                            boolean autoResume, boolean autoRename,
                                            DownloadViewHolder viewHolder) throws DbException {
 
@@ -107,12 +107,14 @@ public class DownloadManagerFunc implements Function {
         // create download info
         if (downloadInfo == null) {
             downloadInfo = new DownloadInfo();
+            downloadInfo.setId(Long.parseLong(id));
+            downloadInfo.setUid(uid);
             downloadInfo.setUrl(url);
             downloadInfo.setAutoRename(autoRename);
             downloadInfo.setAutoResume(autoResume);
             downloadInfo.setLabel(label);
             downloadInfo.setFileSavePath(fileSavePath);
-            db.saveBindingId(downloadInfo);
+            db.saveOrUpdate(downloadInfo);
         }
 
         // start downloading
@@ -130,7 +132,9 @@ public class DownloadManagerFunc implements Function {
         params.setSaveFilePath(downloadInfo.getFileSavePath());
         params.setExecutor(executor);
         params.setCancelFast(true);
-        Callback.Cancelable cancelable = x.http().get(params, callback);
+        params.addParameter("id",id);
+        params.addParameter("uid",uid);
+        Callback.Cancelable cancelable = x.http().post(params, callback);
         callback.setCancelable(cancelable);
         callbackMap.put(downloadInfo, callback);
 

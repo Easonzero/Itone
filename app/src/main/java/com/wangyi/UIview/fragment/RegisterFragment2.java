@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.wangyi.UIview.BaseFragment;
+import com.wangyi.define.EventName;
+import com.wangyi.function.HttpsFunc;
 import com.wangyi.reader.R;
 import com.wangyi.utils.ItOneUtils;
 
@@ -30,12 +32,13 @@ public class RegisterFragment2 extends BaseFragment {
     private  TextView info;
 
     private int time = 60;
+    private String id;
 
     @Override
     public void onHiddenChanged(boolean hidden) {
         if(!hidden){
-            String telephone = getMessage();
-            tel.setText("您的手机号："+telephone);
+            id = getMessage();
+            tel.setText("您的手机号："+id);
             run.run();
         }else{
             time = 60;
@@ -55,8 +58,8 @@ public class RegisterFragment2 extends BaseFragment {
                     public void onClick(View v) {
                         time = 60;
                         info.setOnClickListener(null);
+                        HttpsFunc.getInstance().connect(handler).SMS(id);
                         run.run();
-                        ItOneUtils.showToast(RegisterFragment2.this.getContext(),"发送短信");
                     }
                 });
             }else{
@@ -72,6 +75,10 @@ public class RegisterFragment2 extends BaseFragment {
 
     @Event(R.id.commit)
     private void onCommitClick(View view){
-        sendMessage(2);
+        sendMessage(2+3,id);
+    }
+
+    public boolean check(String ckn){
+        return ckn.equals(checknum.getText().toString());
     }
 }

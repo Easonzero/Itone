@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wangyi.UIview.BaseActivity;
-import com.wangyi.define.UserInfo;
+import com.wangyi.define.bean.UserInfo;
 import com.wangyi.function.HttpsFunc;
 import com.wangyi.function.UserManagerFunc;
 import com.wangyi.reader.R;
@@ -59,7 +59,7 @@ public class UserInfoActivity extends BaseActivity{
             );
         }
     }
-    
+
     @Event(R.id.back)
     private void onBackClick(View view){
         this.finish();

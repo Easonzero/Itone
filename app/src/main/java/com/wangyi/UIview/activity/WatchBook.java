@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wangyi.UIview.BaseActivity;
-import com.wangyi.define.BookData;
+import com.wangyi.define.bean.BookData;
 import com.wangyi.define.SettingName;
 import com.wangyi.function.HttpsFunc;
 import com.wangyi.function.UserManagerFunc;
@@ -47,16 +47,18 @@ public class WatchBook extends BaseActivity {
         download.setText("下载量："+book.downloadNumber);
         upload.setText("上传者："+book.uploader);
         from.setText("出版社："+book.fromUniversity);
-        //count.setText(book.count+"");
-        /*ImageOptions options=new ImageOptions.Builder()
-                .setUseMemCache(true)
-                .setIgnoreGif(true)
-                .build();
-        x.image().bind(
-                pic, HttpsFunc.host +
-                        book.pic +
-                        "headPic.jpg",options
-        );*/
+        count.setText(book.count+"");
+        if(book.pic != null||!book.pic.equals("")){
+            ImageOptions options=new ImageOptions.Builder()
+                    .setUseMemCache(true)
+                    .setIgnoreGif(true)
+                    .build();
+            x.image().bind(
+                    pic, HttpsFunc.host +
+                            book.pic +
+                            "headPic.jpg",options
+            );
+        }
     }
 
     @Event(R.id.downloadbt)
@@ -64,11 +66,12 @@ public class WatchBook extends BaseActivity {
         if(!UserManagerFunc.getInstance().getSetting(SettingName.NOWIFIDOWNLOAD)){
             if(!ItOneUtils.getWifiState(x.app())){
                 ItOneUtils.showToast(x.app(),"已设置流量状态下不可下载图书");
+                return;
             }
         }
         try {
             ItOneUtils.showToast(x.app(),"开始下载...");
-            HttpsFunc.getInstance().download(book.id,book.bookName);
+            HttpsFunc.getInstance().download(book.id+"",book.uid,book.bookName+".pdf");
         } catch (DbException e) {
             e.printStackTrace();
         }

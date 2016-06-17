@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import com.wangyi.UIview.BaseFragment;
 import com.wangyi.reader.R;
+import com.wangyi.utils.ItOneUtils;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -38,7 +39,7 @@ public class RegisterFragment3 extends BaseFragment {
 
     @Event(R.id.commit)
     private void onCommitClick(View view){
-        sendMessage(3);
+        sendMessage(3+3, ItOneUtils.generateMessage(getMessage(),edit.getText().toString()));
     }
 
 }

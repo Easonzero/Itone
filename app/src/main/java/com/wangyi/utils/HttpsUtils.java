@@ -20,10 +20,10 @@ public class HttpsUtils {
         return cancelable;
     }
 
-    public static <T>Cancelable Post(String url,Map<String,Object> map,CommonCallback<T> callback){
+    public static <T>Cancelable Post(String url,Map<String,String> map,CommonCallback<T> callback){
         RequestParams params=new RequestParams(url);
         if(null!=map){
-            for(Map.Entry<String, Object> entry : map.entrySet()){
+            for(Map.Entry<String, String> entry : map.entrySet()){
                 params.addParameter(entry.getKey(), entry.getValue());
             }
         }

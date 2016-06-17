@@ -5,6 +5,7 @@ import android.view.View;
 import com.marshalchen.ultimaterecyclerview.quickAdapter.easyRegularAdapter;
 import com.wangyi.UIview.adapter.viewholder.TextVH;
 import com.wangyi.reader.R;
+import com.wangyi.utils.ItOneUtils;
 
 import java.util.List;
 
@@ -28,6 +29,10 @@ public class TextAdapter extends easyRegularAdapter<String,TextVH>{
 
     @Override
     protected void withBindHolder(TextVH holder, String data, int position) {
-        holder.item.setText(data);
+        holder.item.setText(ItOneUtils.parseMessage(data)[0]);
+    }
+
+    public String getItem(int pos){
+        return source.get(pos);
     }
 }

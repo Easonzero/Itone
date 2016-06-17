@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ItOne</string>
+    <string name="app_name">学派</string>
     
     <string name="title_section1">News</string>
     <string name="title_section2">Promotions</string>

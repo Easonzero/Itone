@@ -6,7 +6,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
-import com.wangyi.define.LessonData;
+import com.wangyi.define.bean.LessonData;
 import com.wangyi.function.funchelp.Function;
 import com.wangyi.utils.PreferencesReader;
 import org.xutils.DbManager;

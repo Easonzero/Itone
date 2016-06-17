@@ -7,8 +7,7 @@
         android:orientation="horizontal"
         android:id="@+id/bool_list_item" >
         <RelativeLayout
-            android:layout_weight="1"
-            android:layout_width="@dimen/largepicWidth"
+            android:layout_width="@dimen/thumbnailWidth"
             android:layout_height="match_parent"
             android:layout_margin="@dimen/padding_step1" >
 
@@ -41,7 +40,7 @@
 		</RelativeLayout>
 
         <LinearLayout
-            android:layout_weight="3"
+            android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="vertical"

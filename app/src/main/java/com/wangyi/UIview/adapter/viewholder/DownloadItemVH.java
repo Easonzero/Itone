@@ -5,7 +5,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.wangyi.UIview.adapter.template.DownloadViewHolder;
-import com.wangyi.define.DownloadInfo;
+import com.wangyi.define.bean.DownloadInfo;
 import com.wangyi.define.EventName;
 import com.wangyi.function.DownloadManagerFunc;
 import com.wangyi.reader.R;
@@ -32,21 +32,18 @@ public class DownloadItemVH extends DownloadViewHolder {
     @ViewInject(R.id.download_state)
     public Button stopBtn;
 
-    private int pos;
     private DownloadManagerFunc downloadManager;
-    private int[] selectInfo;
 
-    public DownloadItemVH(View view, DownloadInfo downloadInfo, int pos, int[] selectInfo, DownloadManagerFunc downloadManager) {
+    public DownloadItemVH(View view, DownloadInfo downloadInfo, DownloadManagerFunc downloadManager) {
         super(view, downloadInfo);
-        this.pos = pos;
         this.downloadManager = downloadManager;
-        this.selectInfo = selectInfo;
         refresh();
     }
 
     @Event(R.id.select_state)
     private void selectEvent(View view){
-        selectInfo[pos] = ~selectInfo[pos];
+        downloadInfo.setSelect();
+        refresh();
     }
 
     @Event(R.id.download_state)
@@ -62,6 +59,8 @@ public class DownloadItemVH extends DownloadViewHolder {
                 try {
                     downloadManager.startDownload(
                             downloadInfo.getUrl(),
+                         ""+downloadInfo.getId(),
+                            downloadInfo.getUid(),
                             downloadInfo.getLabel(),
                             downloadInfo.getFileSavePath(),
                             downloadInfo.isAutoResume(),
@@ -97,7 +96,7 @@ public class DownloadItemVH extends DownloadViewHolder {
 
     @Override
     public void onLoading(long total, long current) {
-        refresh();
+          refresh();
     }
 
     @Override
@@ -117,9 +116,16 @@ public class DownloadItemVH extends DownloadViewHolder {
 
     public void refresh() {
         bookname.setText(downloadInfo.getLabel());
-        progress.setText(downloadInfo.getProgress());
+        progress.setText(downloadInfo.getProgress()+"%");
 
-        stopBtn.setVisibility(View.VISIBLE);
+        if(selectBtn.isShown()){
+            if(downloadInfo.getSelect()){
+                selectBtn.setBackgroundResource(R.drawable.download_select);
+            }else{
+                selectBtn.setBackgroundResource(R.drawable.download_unselect);
+            }
+        }
+
         int state = downloadInfo.getState();
         switch (state) {
             case EventName.Download.WAITING:
@@ -131,7 +137,7 @@ public class DownloadItemVH extends DownloadViewHolder {
                 stopBtn.setBackgroundResource(R.drawable.download_stop);
                 break;
             case EventName.Download.FINISHED:
-                stopBtn.setVisibility(View.INVISIBLE);
+                stopBtn.setVisibility(View.GONE);
                 break;
             default:
                 stopBtn.setBackgroundResource(R.drawable.download_stop);

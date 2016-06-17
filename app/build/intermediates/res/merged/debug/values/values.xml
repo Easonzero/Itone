@@ -703,7 +703,7 @@
     <dimen name="scheduleListHeight">80dp</dimen>
     <dimen name="smallToolbarHeight">48dp</dimen>
     <dimen name="smallpicWidth">40dp</dimen>
-    <dimen name="tableHeight">55dp</dimen>
+    <dimen name="tableHeight">50dp</dimen>
     <dimen name="tableMargin">38dp</dimen>
     <dimen name="tableheadHeight">32dp</dimen>
     <dimen name="thumbnailWidth">130dp</dimen>
@@ -767,7 +767,7 @@
     <string name="action_settings">Settings</string>
     <string name="add_bookmark">添加书签</string>
     <string name="allsubject">所有课程</string>
-    <string name="app_name">ItOne</string>
+    <string name="app_name">学派</string>
     <string name="cancel">Cancel</string>
     <string name="cannot_open_buffer">Cannot open buffer</string>
     <string name="cannot_open_document">Cannot open document</string>

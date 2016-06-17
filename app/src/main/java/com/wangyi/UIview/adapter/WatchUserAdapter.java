@@ -8,7 +8,7 @@ import com.marshalchen.ultimaterecyclerview.expanx.LinearExpanxURVAdapter;
 import com.wangyi.UIview.adapter.template.ExpandDataItem;
 import com.wangyi.UIview.adapter.viewholder.BookCategory;
 import com.wangyi.UIview.adapter.viewholder.BookSubCategory;
-import com.wangyi.define.BookData;
+import com.wangyi.define.bean.BookData;
 import com.wangyi.reader.R;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +17,10 @@ import java.util.List;
  * Created by eason on 5/11/16.
  */
 public class WatchUserAdapter extends LinearExpanxURVAdapter<ExpandDataItem<BookData>, BookCategory, BookSubCategory> {
-    public WatchUserAdapter(Context context) {
+    OnSubItemClickListener onSubItemClickListener = null;
+    public WatchUserAdapter(Context context,OnSubItemClickListener onSubItemClickListener) {
         super(context, EXPANDABLE_ITEMS, true);
+        this.onSubItemClickListener = onSubItemClickListener;
     }
 
     @Override
@@ -28,7 +30,7 @@ public class WatchUserAdapter extends LinearExpanxURVAdapter<ExpandDataItem<Book
 
     @Override
     protected BookSubCategory iniCustomChildHolder(View childview) {
-        return new BookSubCategory(childview);
+        return new BookSubCategory(childview,onSubItemClickListener);
     }
 
     @Override
@@ -65,16 +67,24 @@ public class WatchUserAdapter extends LinearExpanxURVAdapter<ExpandDataItem<Book
         for(BookData book:bookData){
             if(book.category.equals("ppt")){
                 ppt.add(new ExpandDataItem(book.bookName,"下载量"+book.downloadNumber,book));
-            }else if(book.category.equals("note")){
+            }else if(book.category.equals("笔记")){
                 note.add(new ExpandDataItem(book.bookName,"下载量"+book.downloadNumber,book));
-            }else if(book.category.equals("review")){
+            }else if(book.category.equals("课本")){
                 review.add(new ExpandDataItem(book.bookName,"下载量"+book.downloadNumber,book));
             }
         }
 
         e.add(new ExpandDataItem("我的ppt", ppt));
         e.add(new ExpandDataItem("我的笔记", note));
-        e.add(new ExpandDataItem("我的复习资料", review));
+        e.add(new ExpandDataItem("我的课本", review));
         return e;
+    }
+
+    public void removeAll(){
+        removeAllInternal(getSet());
+    }
+
+    public interface OnSubItemClickListener{
+        void onClick(BookData book);
     }
 }

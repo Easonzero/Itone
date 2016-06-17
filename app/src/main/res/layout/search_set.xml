@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
     <RelativeLayout style="@style/toolbar" >
         <TextView
+            android:id="@+id/title"
             style="@style/titletext"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"

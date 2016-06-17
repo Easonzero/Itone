@@ -36,7 +36,11 @@ public class LoginActivity extends BaseActivity {
 					break;
 				case EventName.UI.SUCCESS:
 					loading.dismiss();
-					LoginActivity.this.finish();
+					handler.postDelayed(new Runnable() {
+						public void run() {
+							LoginActivity.this.finish();
+						}
+					}, 500);
 					break;
 			}
 		}

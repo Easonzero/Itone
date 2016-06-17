@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -15,9 +14,11 @@ import com.wangyi.UIview.BaseActivity;
 import com.wangyi.UIview.adapter.WatchUserAdapter;
 import com.wangyi.UIview.widget.dialog.LoadingDialog;
 import com.wangyi.UIview.widget.view.NumberView;
-import com.wangyi.define.BookData;
+import com.wangyi.UIview.widget.view.UltimateListView;
+import com.wangyi.define.bean.BookData;
 import com.wangyi.define.EventName;
 import com.wangyi.function.HttpsFunc;
+import com.wangyi.function.UserManagerFunc;
 import com.wangyi.reader.R;
 
 import org.xutils.image.ImageOptions;
@@ -49,7 +50,6 @@ public class WatchUser extends BaseActivity {
     private LinearLayout userLayout;
 
     private WatchUserAdapter adapter = null;
-    private LinearLayoutManager linearLayoutManager;
     private LoadingDialog loading;
 
     private Handler handler = new Handler(){
@@ -64,6 +64,7 @@ public class WatchUser extends BaseActivity {
                     break;
                 case EventName.UI.SUCCESS:
                     ArrayList<BookData> books = (ArrayList<BookData>) msg.obj;
+                    adapter.removeAll();
                     adapter.addAll(WatchUserAdapter.getPreCodeMenu(
                             books.toArray(new BookData[books.size()])), 0);
                     loading.dismiss();
@@ -77,15 +78,31 @@ public class WatchUser extends BaseActivity {
         super.onCreate(savedInstanceState);
         loading = new LoadingDialog(this);
         initUserInfo();
+
+        adapter = new WatchUserAdapter(this, new WatchUserAdapter.OnSubItemClickListener(){
+
+            @Override
+            public void onClick(BookData book) {
+                Intent intent = new Intent(WatchUser.this, WatchBook.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("book", book);
+                intent.putExtras(bundle);
+                WatchUser.this.startActivity(intent);
+            }
+        });
+
         initExpList();
+
+        HttpsFunc.getInstance().connect(handler).searchBookByUser();
     }
 
     private void initUserInfo(){
-        name.setText("王祎");//UserManagerFunc.getInstance().getUserInfo().userName);
-        downloadnum.setText("总下载量：500");//UserManagerFunc.getInstance().getUserPlus().downloadNum);
-        from.setText("哈尔滨工业大学");//UserManagerFunc.getInstance().getUserInfo().university);
-        //int rank = UserManagerFunc.getInstance().getRank();
-        number.setMessage("55");//rank+rank<100?"":"/n以内");
+        name.setText(UserManagerFunc.getInstance().getUserInfo().userName);
+        downloadnum.setText("影响力："+UserManagerFunc.getInstance().getUserPlus().downloadNum+
+        "   人民π："+UserManagerFunc.getInstance().getUserPlus().money);
+        from.setText(UserManagerFunc.getInstance().getUserInfo().university);
+        int rank = UserManagerFunc.getInstance().getRank();
+        number.setMessage((rank+1)+(rank<100?"":"\n以内"));
         ImageOptions options=new ImageOptions.Builder()
                 .setLoadingDrawableId(R.drawable.headpic)
                 .setFailureDrawableId(R.drawable.headpic)
@@ -95,50 +112,16 @@ public class WatchUser extends BaseActivity {
                 .build();
         x.image().bind(
                 pic, HttpsFunc.host +
-                        "/res/user/ximin/" +
+                        UserManagerFunc.getInstance().getUserInfo().picture +
                         "headPic.jpg",options
         );
     }
 
     private void initExpList(){
-        uploadlist.setHasFixedSize(false);
-        adapter = new WatchUserAdapter(this);
-        adapter.addAll(WatchUserAdapter.getPreCodeMenu(test()), 0);
-        linearLayoutManager = new LinearLayoutManager(this);
-        uploadlist.setLayoutManager(linearLayoutManager);
-        uploadlist.setAdapter(adapter);
-        addExpandableFeatures();
-        //HttpsFunc.getInstance().connect(handler).searchBookByUser();
-    }
-
-    private BookData[] test(){
-        int i=0;
-        BookData[] books = new BookData[10];
-        String category = "ppt";
-        while(i<10){
-            BookData book = new BookData();
-            book.downloadNumber = 200;
-            book.bookName = "工科数学";
-            book.fromUniversity = "哈尔滨工业大学";
-            book.occupation = "数学";
-            book.uploader = "王祎";
-            book.category = category;
-            books[i] = book;
-            if(i == 2){
-                category = "note";
-            }else if(i == 7){
-                category = "review";
-            }
-            i++;
-        }
-        return books;
-    }
-
-    private void addExpandableFeatures() {
-        uploadlist.getItemAnimator().setAddDuration(100);
-        uploadlist.getItemAnimator().setRemoveDuration(100);
-        uploadlist.getItemAnimator().setMoveDuration(200);
-        uploadlist.getItemAnimator().setChangeDuration(100);
+        UltimateListView view = new UltimateListView(uploadlist,adapter,this);
+        view.beforeFuncset();
+        view.enableAnimator();
+        view.afterFuncset();
     }
 
     @Event(R.id.userInfo)

@@ -3,19 +3,18 @@ package com.wangyi.function;
 import android.content.Context;
 import android.os.Handler;
 
-import com.wangyi.define.EventName;
-import com.wangyi.define.Message;
+import com.wangyi.define.bean.Message;
 import com.wangyi.function.funchelp.Function;
 import com.wangyi.utils.PreferencesReader;
 
 import org.xutils.DbManager;
 import org.xutils.common.util.KeyValue;
 import org.xutils.db.sqlite.WhereBuilder;
+import org.xutils.db.table.DbModel;
 import org.xutils.ex.DbException;
 import org.xutils.x;
 
 import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,10 +44,17 @@ public class MessageFunc implements Function {
     }
 
     public void visitRomoteMessage(){
-        String date = PreferencesReader.getMessageDate();
+        String date = null;
+        try {
+            DbModel model = db.selector(Message.class).select("MAX(date) as date").findFirst();
+            if(model != null){
+                date = model.getString("date");
+            }
+        } catch (DbException e) {
+            e.printStackTrace();
+        }
         if(date==null) {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            date = sdf.format(new java.util.Date());
+            date = "2016-05-10";
         }
         if(handler!=null)
             HttpsFunc.getInstance().connect(handler).getMessage(date);
@@ -56,25 +62,14 @@ public class MessageFunc implements Function {
 
     public List<Message> getMessage(int offset){
         List<Message> dataList = new ArrayList<>();
-        //test
-        int i = 10;
-        while(i>0){
-            Message msg = new Message();
-            msg.setCategory("教室更改通知");
-            msg.setMessage("教室改为b203");
-            msg.setDate(new Date(2016,4,i+1));
-            msg.setPicUrl("/res/user/ximin/");
-            msg.setIsvisited(false);
-            msg.setUname("西西");
-            dataList.add(msg);
-            i--;
-        }
-        /*try {
-            dataList = db.selector(Message.class).where("category","=",category).limit(10).offset(offset).findAll();
+        try {
+            dataList = db.selector(Message.class).limit(10).offset(offset).findAll();
         } catch (DbException e) {
             e.printStackTrace();
-        }*/
-        handler.sendEmptyMessage(EventName.UI.SUCCESS);
+        }
+        if(dataList == null){
+            dataList = new ArrayList<>();
+        }
         return dataList;
     }
 
@@ -89,7 +84,7 @@ public class MessageFunc implements Function {
 
     public void addMessages(List<Message> messages){
         try {
-            db.save(messages);
+            db.saveOrUpdate(messages);
         } catch (DbException e) {
             e.printStackTrace();
         }

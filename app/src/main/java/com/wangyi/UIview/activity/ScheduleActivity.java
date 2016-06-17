@@ -4,7 +4,7 @@ import java.util.*;
 
 import org.xutils.view.annotation.*;
 import com.wangyi.UIview.BaseActivity;
-import com.wangyi.define.LessonData;
+import com.wangyi.define.bean.LessonData;
 import com.wangyi.function.ScheduleFunc;
 import com.wangyi.reader.R;
 import android.os.Bundle;
@@ -68,7 +68,7 @@ public class ScheduleActivity extends BaseActivity {
 		if (pwMyPopWindow.isShowing()) {
 			pwMyPopWindow.dismiss();
 		} else {
-			pwMyPopWindow.showAsDropDown(view,-100,0);
+			pwMyPopWindow.showAsDropDown(view,-50,0);
 		}
 	}
 
@@ -95,7 +95,10 @@ public class ScheduleActivity extends BaseActivity {
 		Map<String, String> map;
 		for(int i = 0;i < 25;i++){
 			map = new HashMap<String, String>();
-			map.put("share_key", "第" + (i+1) + "周");
+			if(i < 9)
+				map.put("share_key", "第  " + (i+1) + "  周");
+			else
+				map.put("share_key", "第 " + (i+1) + "周");
 			setList.add(map);
 		}
 		LayoutInflater inflater = (LayoutInflater) this
@@ -219,6 +222,11 @@ public class ScheduleActivity extends BaseActivity {
 
 	public void onBackPressed() {
 		super.onBackPressed();
+	}
+
+	@Event(R.id.back)
+	private void onBackClick(View view){
+		this.finish();
 	}
 
 	@Override

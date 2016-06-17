@@ -3,9 +3,10 @@ package com.wangyi.UIview.activity;
 import org.xutils.view.annotation.*;
 import org.xutils.x;
 import com.wangyi.UIview.BaseFragment;
+import com.wangyi.UIview.fragment.RegisterFragment2;
+import com.wangyi.UIview.fragment.RegisterFragment4;
+import com.wangyi.define.EventName;
 import com.wangyi.reader.R;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -20,17 +21,44 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView title;
     @ViewInject(R.id.save)
     private Button save;
-
     private BaseFragment[] mFragments;
+
+    private String ckn = "";
 
     private Handler handler = new Handler() {
 
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            int id = msg.what;
-            if(id > 3) return;
-            if(id == 3) {
+            if(msg.what<=EventName.UI.SUCCESS){
+                switch (msg.what){
+                    case EventName.UI.FINISH:
+                        RegisterActivity.this.finish();
+                        break;
+                    case EventName.UI.START:
+                        break;
+                    case EventName.UI.SUCCESS:
+                        break;
+                }
+                return;
+            }
+            else if(msg.what>=7){
+                int id = msg.what-7;
+                switch (id){
+                    case EventName.UI.SUCCESS:
+                        ckn = (String)msg.obj;
+                        break;
+                }
+                return;
+            }
+            int id = msg.what-3;
+            if(id == 2){
+                if(ckn==null||ckn.equals(""))
+                    return;
+                else if(!((RegisterFragment2)mFragments[1]).check(ckn))
+                    return;
+            }
+            else if(id == 3) {
                 save.setVisibility(View.VISIBLE);
             }
             getSupportFragmentManager().beginTransaction().hide(mFragments[0])
@@ -62,7 +90,7 @@ public class RegisterActivity extends AppCompatActivity {
         mFragments[2].setTitle("设置密码");
         mFragments[3].setTitle("完善个人信息");
 
-        handler.sendEmptyMessage(0);
+        handler.sendEmptyMessage(3);
     }
 
     private void clearAndSet(int i,String msg){
@@ -80,6 +108,6 @@ public class RegisterActivity extends AppCompatActivity {
 
     @Event(R.id.save)
     private void onConfirmClick(View view){
-
+        ((RegisterFragment4)mFragments[3]).register();
     }
 }

@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 public abstract class BaseFragment extends Fragment {
 
     private boolean injected = false;
-    private Handler handler = null;
+    protected Handler handler = null;
     private String title = "";
     private String message = null;
 

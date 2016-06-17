@@ -1,11 +1,11 @@
 package com.wangyi.UIview.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.KeyEvent;
 import android.view.View;
@@ -16,19 +16,21 @@ import android.widget.TextView;
 
 import com.marshalchen.ultimaterecyclerview.ItemTouchListenerAdapter;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
-import com.marshalchen.ultimaterecyclerview.layoutmanagers.ScrollSmoothLineaerLayoutManager;
 import com.wangyi.UIview.BaseActivity;
 import com.wangyi.UIview.adapter.TextAdapter;
-import com.wangyi.UIview.fragment.RegisterFragment4;
 import com.wangyi.UIview.widget.dialog.LoadingDialog;
+import com.wangyi.UIview.widget.view.UltimateListView;
 import com.wangyi.define.EventName;
 import com.wangyi.function.HttpsFunc;
 import com.wangyi.reader.R;
+import com.wangyi.utils.ItOneUtils;
 
 import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by eason on 5/21/16.
@@ -40,12 +42,11 @@ public class SearchInfoActivity extends BaseActivity{
     @ViewInject(R.id.search)
     private EditText search;
     @ViewInject(R.id.info)
-    private UltimateRecyclerView info;
+    private UltimateRecyclerView list;
 
     private LoadingDialog loading;
-    private LinearLayoutManager linearLayoutManager;
     private TextAdapter adapter;
-    private ArrayList<String> universities;
+    private ArrayList<String> source;
 
     private Handler handler = new Handler() {
 
@@ -57,7 +58,9 @@ public class SearchInfoActivity extends BaseActivity{
                     loading.dismiss();
                     break;
                 case EventName.UI.SUCCESS:
-                    ArrayList<String> bs = (ArrayList<String>) msg.obj;
+                    source = (ArrayList<String>) msg.obj;
+                    adapter.removeAll();
+                    adapter.insert(source);
                     break;
                 case EventName.UI.START:
                     loading.show();
@@ -72,8 +75,32 @@ public class SearchInfoActivity extends BaseActivity{
         super.onCreate(savedInstanceState);
         loading = new LoadingDialog(this);
 
-        title.setText(getIntent().getStringExtra("title"));
+        source = new ArrayList<>();
 
+        String scategory = getIntent().getStringExtra("scategory");
+        if(scategory.equals("university")){
+            HttpsFunc.getInstance().connect(handler).getUniversityList();
+            title.setText("选择学校");
+            search.setHint("输入你的学校");
+        }else if(scategory.equals("class")){
+            String fromUniversity = getIntent().getStringExtra("fromUniversity");
+            if(fromUniversity.equals("")||fromUniversity == null) fromUniversity = "*";
+            HttpsFunc.getInstance().connect(handler).getClassList(fromUniversity);
+            title.setText("选择班级");
+            search.setHint("输入你的班级");
+        }else if(scategory.equals("grade")){
+            initGrade();
+            title.setText("选择年级");
+            search.setHint("输入你的年级");
+        }
+
+        adapter = new TextAdapter(source);
+
+        initInfo();
+        initSearch();
+    }
+
+    private void initSearch(){
         search.setMaxEms(20);
         search.setImeOptions(EditorInfo.IME_ACTION_DONE);
 
@@ -85,32 +112,45 @@ public class SearchInfoActivity extends BaseActivity{
                     if(imm.isActive()){
                         imm.hideSoftInputFromWindow(v.getApplicationWindowToken(), 0 );
                     }
-
+                    String param = search.getText().toString();
+                    ArrayList<String> info = ItOneUtils.search(source,param);
+                    adapter.removeAll();
+                    adapter.insert(info);
                     return true;
                 }
                 return false;
             }
         });
+    }
 
-        universities = new ArrayList<>();
-        linearLayoutManager = new ScrollSmoothLineaerLayoutManager(
-                this, LinearLayoutManager.VERTICAL, false, 300);
-        info.setLayoutManager(linearLayoutManager);
-        info.setEmptyView(R.layout.emptylist,UltimateRecyclerView.EMPTY_SHOW_LOADMORE_ONLY);
-        adapter = new TextAdapter(universities);
-
-        ItemTouchListenerAdapter itemTouchListenerAdapter = new ItemTouchListenerAdapter(info.mRecyclerView,
+    private void initInfo(){
+        UltimateListView view = new UltimateListView(list,adapter,this);
+        view.beforeFuncset();
+        view.enableItemClick(new ItemTouchListenerAdapter(list.mRecyclerView,
                 new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
                     @Override
                     public void onItemClick(RecyclerView parent, View clickedView, int position) {
                         Intent intent = new Intent();
-                        intent.putExtra("university",universities.get(position));
-                        SearchInfoActivity.this.setResult(RegisterFragment4.SEARCH_RESULT,intent);
+                        intent.putExtra("result",adapter.getItem(position));
+                        SearchInfoActivity.this.setResult(Activity.RESULT_OK,intent);
+                        SearchInfoActivity.this.finish();
                     }
 
                     @Override
                     public void onItemLongClick(RecyclerView recyclerView, View view, int i) {}
-                });
-        info.mRecyclerView.addOnItemTouchListener(itemTouchListenerAdapter);
+                }));
+        view.afterFuncset();
+    }
+
+    @Event(R.id.back)
+    private void onBackClick(View view){
+        this.finish();
+    }
+
+    private void initGrade(){
+        int year = new Date().getYear()+1900;
+        for(int i=0;i<6;i++){
+            source.add((year-i)+"级");
+        }
     }
 }

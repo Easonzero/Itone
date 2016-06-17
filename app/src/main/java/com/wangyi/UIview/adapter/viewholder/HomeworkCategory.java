@@ -6,7 +6,7 @@ import android.widget.TextView;
 import com.marshalchen.ultimaterecyclerview.expanx.Util.ItemDataClickListener;
 import com.marshalchen.ultimaterecyclerview.expanx.Util.parent;
 import com.wangyi.UIview.adapter.template.ExpandDataItem;
-import com.wangyi.define.Homework;
+import com.wangyi.define.bean.Homework;
 import com.wangyi.reader.R;
 
 import org.xutils.view.annotation.ViewInject;

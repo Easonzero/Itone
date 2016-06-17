@@ -1,7 +1,7 @@
 package com.wangyi.UIview.adapter;
 
 import com.wangyi.UIview.adapter.viewholder.BookVH;
-import com.wangyi.define.BookData;
+import com.wangyi.define.bean.BookData;
 import com.wangyi.function.BookManagerFunc;
 import com.wangyi.reader.R;
 import android.content.Context;

@@ -8,8 +8,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.marshalchen.ultimaterecyclerview.expanx.Util.child;
 import com.wangyi.UIview.activity.WatchBook;
+import com.wangyi.UIview.adapter.WatchUserAdapter;
 import com.wangyi.UIview.adapter.template.ExpandDataItem;
-import com.wangyi.define.BookData;
+import com.wangyi.define.bean.BookData;
 import com.wangyi.reader.R;
 import com.wangyi.utils.ItOneUtils;
 
@@ -26,14 +27,16 @@ public class BookSubCategory extends child<ExpandDataItem<BookData>> {
     public TextView message;
     @ViewInject(R.id.exp_section_ripple_wrapper_click)
     public RelativeLayout relativeLayout;
+    public WatchUserAdapter.OnSubItemClickListener onSubItemClickListener = null;
 
-    public BookSubCategory(View itemView) {
+    public BookSubCategory(View itemView, WatchUserAdapter.OnSubItemClickListener onSubItemClickListener) {
         super(itemView);
         x.view().inject(this,itemView);
         itemMargin = itemView.getContext().getResources()
                 .getDimensionPixelSize(com.marshalchen.ultimaterecyclerview.R.dimen.item_margin);
         offsetMargin = itemView.getContext().getResources()
                 .getDimensionPixelSize(com.marshalchen.ultimaterecyclerview.R.dimen.expand_size);
+        this.onSubItemClickListener = onSubItemClickListener;
     }
 
     @Override
@@ -46,13 +49,7 @@ public class BookSubCategory extends child<ExpandDataItem<BookData>> {
             @Override
             public void onClick(View view) {
                 BookData bookData = itemData.getDataset();
-                Activity activity = (Activity) getContext();
-                Intent intent = new Intent(activity, WatchBook.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("book", bookData);
-                intent.putExtras(bundle);
-                activity.startActivity(intent);
+                onSubItemClickListener.onClick(bookData);
             }
         });
     }

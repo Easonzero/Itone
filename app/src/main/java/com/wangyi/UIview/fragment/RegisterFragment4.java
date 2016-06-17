@@ -7,14 +7,18 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.wangyi.UIview.BaseFragment;
 import com.wangyi.UIview.activity.SearchInfoActivity;
 import com.wangyi.define.EventName;
+import com.wangyi.define.bean.UserInfo;
+import com.wangyi.function.HttpsFunc;
 import com.wangyi.reader.R;
 import com.wangyi.utils.ImagePicker;
+import com.wangyi.utils.ItOneUtils;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
@@ -28,13 +32,36 @@ import java.io.File;
 
 @ContentView(R.layout.fragment_register4)
 public class RegisterFragment4 extends BaseFragment {
-    public static final int SEARCH_RESULT = 4;
+    public static final int UNIVERSITY = 4;
+    public static final int CLASS = 5;
+    public static final int GRADE = 6;
     @ViewInject(R.id.headpic)
     private ImageView picture;
-    @ViewInject(R.id.university)
+    @ViewInject(R.id.university_tx)
     private TextView university;
+    @ViewInject(R.id.Class_tx)
+    private TextView Class;
+    @ViewInject(R.id.grade_tx)
+    private TextView grade;
+    @ViewInject(R.id.userName)
+    private EditText userName;
 
     private boolean isAddPic = false;
+    private String fromFauclty;
+
+    public void register(){
+        String[] params = ItOneUtils.parseMessage(getMessage());
+        UserInfo user = new UserInfo();
+        user.id = params[0];
+        user.passWords = params[1];
+        user.Class = Class.getText().toString();
+        user.faculty = fromFauclty;
+        user.picture = isAddPic?"true":"false";
+        user.university = university.getText().toString();
+        user.grade = university.getText().toString();
+        user.userName = userName.getText().toString();
+        HttpsFunc.getInstance().connect(handler).commitForm(user,"login");
+    }
 
     @Event(R.id.headpic)
     private void onPicClick(View view){
@@ -44,7 +71,24 @@ public class RegisterFragment4 extends BaseFragment {
     @Event(R.id.university)
     private void onUniversityClick(View view){
         Intent intent = new Intent(getContext(), SearchInfoActivity.class);
-        startActivityForResult(intent,0);
+        intent.putExtra("scategory","university");
+        startActivityForResult(intent,UNIVERSITY);
+    }
+
+    @Event(R.id.Class)
+    private void onClassClick(View view){
+        Intent intent = new Intent(getContext(), SearchInfoActivity.class);
+        intent.putExtra("scategory","class");
+        String fromUniversity = university.getText().toString();
+        intent.putExtra("fromUniversity",fromUniversity);
+        startActivityForResult(intent,CLASS);
+    }
+
+    @Event(R.id.grade)
+    private void onGradeClick(View view){
+        Intent intent = new Intent(getContext(), SearchInfoActivity.class);
+        intent.putExtra("scategory","grade");
+        startActivityForResult(intent,GRADE);
     }
 
     /*
@@ -114,8 +158,16 @@ public class RegisterFragment4 extends BaseFragment {
                         isAddPic = true;
                     }
                     break;
-                case SEARCH_RESULT:
-                    university.setText(data.getStringExtra("university"));
+                case UNIVERSITY:
+                    university.setText(data.getStringExtra("result"));
+                    break;
+                case CLASS:
+                    String[] results = ItOneUtils.parseMessage(data.getStringExtra("result"));
+                    Class.setText(results[0]);
+                    fromFauclty = results[1];
+                    break;
+                case GRADE:
+                    grade.setText(data.getStringExtra("result"));
                     break;
             }
         }

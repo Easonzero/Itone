@@ -1,8 +1,8 @@
 package com.wangyi.UIview.adapter.template;
 
 import android.view.View;
-import android.widget.Toast;
-import com.wangyi.define.DownloadInfo;
+
+import com.wangyi.define.bean.DownloadInfo;
 import org.xutils.common.Callback;
 import org.xutils.x;
 

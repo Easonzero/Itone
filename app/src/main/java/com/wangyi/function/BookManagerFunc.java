@@ -1,8 +1,9 @@
 package com.wangyi.function;
 
 import java.io.File;
+import java.io.FileFilter;
 import java.util.ArrayList;
-import com.wangyi.define.BookData;
+import com.wangyi.define.bean.BookData;
 import com.wangyi.define.EventName;
 import com.wangyi.function.funchelp.Function;
 import com.wangyi.utils.PreferencesReader;
@@ -79,12 +80,25 @@ public class BookManagerFunc implements Function {
 		File file = new File(books.get(cur).url);
         file.delete();
 		deletehistory(cur);
-        handler.sendEmptyMessage(EventName.UI.FINISH);
+		showFileDir();
 	}
 	
 	public void showFileDir(){
 		clear();
-		File[] files = new File(FILEPATH).listFiles();
+		File[] files = new File(FILEPATH).listFiles(new FileFilter() {
+
+			@Override
+			public boolean accept(File pathname) {
+				// TODO Auto-generated method stub
+				String filename = pathname.getPath();
+				if(filename.endsWith(".pdf"))
+					return true;
+				else if(filename.endsWith(".ppt"))
+					return true;
+				else
+					return false;
+			}
+		});
 		for (File f : files){
 			BookData book = new BookData();
 			book.bookName = f.getName();

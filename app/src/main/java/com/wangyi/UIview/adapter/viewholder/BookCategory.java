@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import com.marshalchen.ultimaterecyclerview.expanx.Util.ItemDataClickListener;
 import com.marshalchen.ultimaterecyclerview.expanx.Util.parent;
 import com.wangyi.UIview.adapter.template.ExpandDataItem;
-import com.wangyi.define.BookData;
+import com.wangyi.define.bean.BookData;
 import com.wangyi.reader.R;
 
 import org.xutils.view.annotation.ViewInject;

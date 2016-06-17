@@ -17,7 +17,8 @@ import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 import com.wangyi.UIview.adapter.SearchBookAdapter;
 import com.wangyi.UIview.widget.dialog.LoadingDialog;
 import com.wangyi.UIview.widget.view.SearchView;
-import com.wangyi.define.BookData;
+import com.wangyi.UIview.widget.view.UltimateListView;
+import com.wangyi.define.bean.BookData;
 import com.wangyi.define.EventName;
 import com.wangyi.function.HttpsFunc;
 import com.wangyi.reader.R;
@@ -56,9 +57,10 @@ public class SearchActivity extends AppCompatActivity {
                     loading.dismiss();
                     break;
                 case EventName.UI.SUCCESS:
-                    ArrayList<BookData> bs = (ArrayList<BookData>) msg.obj;
-                    adapter.insert(bs);
-                    label.setText("共找到"+books.size()+"个相关课程");
+                    books = (ArrayList<BookData>) msg.obj;
+                    adapter.removeAll();
+                    adapter.insert(books);
+                    label.setText("共找到"+books.size()+"个相关书籍");
                     break;
                 case EventName.UI.START:
                     loading.show();
@@ -75,24 +77,12 @@ public class SearchActivity extends AppCompatActivity {
 
         books = new ArrayList<BookData>();
         adapter = new SearchBookAdapter(books);
-        bookList.setAdapter(adapter);
 
-        ItemTouchListenerAdapter itemTouchListenerAdapter = new ItemTouchListenerAdapter(bookList.mRecyclerView,
-                new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
-                    @Override
-                    public void onItemClick(RecyclerView parent, View clickedView, int position) {
-                        Intent intent = new Intent(SearchActivity.this,WatchBook.class);
-                        Bundle bundle = new Bundle();
-                        bundle.putSerializable("book", books.get(position));
-                        intent.putExtras(bundle);
-                        startActivity(intent);
-                    }
+        initBookList();
+        initSearch();
+    }
 
-                    @Override
-                    public void onItemLongClick(RecyclerView recyclerView, View view, int i) {}
-                });
-        bookList.mRecyclerView.addOnItemTouchListener(itemTouchListenerAdapter);
-
+    public void initSearch(){
         search.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -107,6 +97,27 @@ public class SearchActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    private void initBookList(){
+        UltimateListView view = new UltimateListView(bookList,adapter,this);
+        view.beforeFuncset();
+        view.enableItemClick(new ItemTouchListenerAdapter(bookList.mRecyclerView,
+                new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
+                    @Override
+                    public void onItemClick(RecyclerView parent, View clickedView, int position) {
+                        Intent intent = new Intent(SearchActivity.this,WatchBook.class);
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("book", books.get(position));
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onItemLongClick(RecyclerView recyclerView, View view, int i) {}
+                })
+        );
+        view.afterFuncset();
     }
 
     @Event(R.id.cancel)

@@ -8,7 +8,7 @@ import com.marshalchen.ultimaterecyclerview.expanx.LinearExpanxURVAdapter;
 import com.wangyi.UIview.adapter.template.ExpandDataItem;
 import com.wangyi.UIview.adapter.viewholder.HomeworkCategory;
 import com.wangyi.UIview.adapter.viewholder.HomeworkSubCategory;
-import com.wangyi.define.Homework;
+import com.wangyi.define.bean.Homework;
 import com.wangyi.reader.R;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +56,7 @@ public class HomeworkAdapter extends LinearExpanxURVAdapter<ExpandDataItem<Homew
             String message;
             if(data.message == null) message = "(暂未上传)";
             else message = "(" + data.getFDate() + ")    上传者：" + data.uname;
-            if(data.is){
+            if(1==data.is){
                 compulsory.add(new ExpandDataItem(data.course,message,data));
             }else{
                 elective.add(new ExpandDataItem(data.course,message,data));
@@ -78,5 +78,9 @@ public class HomeworkAdapter extends LinearExpanxURVAdapter<ExpandDataItem<Homew
     @Override
     public RecyclerView.ViewHolder newHeaderHolder(View view) {
         return new UltimateRecyclerviewViewHolder(view);
+    }
+
+    public void removeAll(){
+        this.removeAllInternal(getSet());
     }
 }

@@ -12,6 +12,8 @@
         android:gravity="center_vertical"
         android:padding="@dimen/padding_step1"
         android:textSize="20sp"
+        android:maxLines="1"
+        android:maxLength="8"
         android:text="safsdf"
         android:textColor="@color/apptheme_third_color"
         />

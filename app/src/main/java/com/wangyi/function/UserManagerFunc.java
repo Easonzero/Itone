@@ -1,8 +1,8 @@
 package com.wangyi.function;
 
 import com.wangyi.define.SettingName;
-import com.wangyi.define.UserInfo;
-import com.wangyi.define.UserPlus;
+import com.wangyi.define.bean.UserInfo;
+import com.wangyi.define.bean.UserPlus;
 import com.wangyi.function.funchelp.Function;
 import com.wangyi.utils.ItOneUtils;
 import android.content.Context;

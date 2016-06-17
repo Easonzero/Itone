@@ -2,6 +2,7 @@ package com.wangyi.UIview.adapter.viewholder;
 
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
@@ -22,6 +23,8 @@ public class MessageListVH extends UltimateRecyclerviewViewHolder {
     public TextView topic;
     @ViewInject(R.id.content)
     public TextView content;
+    @ViewInject(R.id.bottom_progress_bar)
+    public ProgressBar progressBar;
 
     public MessageListVH(View itemView) {
         super(itemView);

@@ -8,9 +8,18 @@
 
 	<RelativeLayout style="@style/toolbar"
 					android:id="@+id/toolbar">
+		<Button
+			android:id="@+id/menu"
+			style="?android:attr/buttonStyleSmall"
+			android:background="@drawable/ic_action_outline"
+			android:layout_width="@dimen/menuitemSize"
+			android:layout_height="@dimen/menuitemSize"
+			android:layout_alignParentBottom="true"
+			android:layout_alignParentLeft="true"/>
+
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Itone电子图书" style="@style/titletext"
-        android:layout_alignParentBottom="true"/>
+        android:text="学  派" style="@style/titletext" android:layout_alignParentBottom="true"
+			android:layout_centerHorizontal="true"/>
 	</RelativeLayout>
 	<LinearLayout
 			android:layout_width="match_parent"

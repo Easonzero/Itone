@@ -21,7 +21,7 @@
     <dimen name="menuitemSize">64dp</dimen>
     <dimen name="scheduleListHeight">160dp</dimen>
     <dimen name="smallpicWidth">80dp</dimen>
-    <dimen name="tableHeight">110dp</dimen>
+    <dimen name="tableHeight">100dp</dimen>
     <dimen name="tableMargin">76dp</dimen>
     <dimen name="tableheadHeight">64dp</dimen>
     <dimen name="thumbnailWidth">260dp</dimen>

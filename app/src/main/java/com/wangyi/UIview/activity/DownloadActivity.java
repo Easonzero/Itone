@@ -40,10 +40,15 @@ public class DownloadActivity extends BaseActivity{
 		if(editTag == 0){
 			((Button)view).setText("完成");
 			control.setVisibility(View.VISIBLE);
+			dla.setEditMode();
+			dla.notifyDataSetChanged();
             editTag = 1;
 		}else{
 			((Button)view).setText("编辑");
 			control.setVisibility(View.GONE);
+			dla.setEditMode();
+			dla.clearSelect();
+			dla.notifyDataSetChanged();
             editTag = 0;
 		}
 	}
@@ -51,10 +56,12 @@ public class DownloadActivity extends BaseActivity{
 	@Event(R.id.allselect)
 	private void onAllSelectClick(View view){
         dla.allSelect();
+		dla.notifyDataSetChanged();
 	}
 
 	@Event(R.id.delete)
 	private void onDeleteClick(View view){
         dla.delect();
+		dla.notifyDataSetChanged();
 	}
 }

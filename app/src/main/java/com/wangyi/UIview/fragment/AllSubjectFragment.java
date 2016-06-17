@@ -1,22 +1,14 @@
 package com.wangyi.UIview.fragment;
 
-import android.content.Context;
 import android.content.Intent;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
-
 import com.marshalchen.ultimaterecyclerview.ItemTouchListenerAdapter;
-import com.marshalchen.ultimaterecyclerview.ObservableScrollState;
-import com.marshalchen.ultimaterecyclerview.ObservableScrollViewCallbacks;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
-import com.marshalchen.ultimaterecyclerview.layoutmanagers.ScrollSmoothLineaerLayoutManager;
 import com.wangyi.UIview.activity.SearchActivity;
 import com.wangyi.UIview.activity.WatchBook;
-import com.wangyi.UIview.widget.dialog.LoadingDialog;
-import com.wangyi.define.BookData;
-
+import com.wangyi.UIview.widget.view.UltimateListView;
+import com.wangyi.define.bean.BookData;
 import org.xutils.view.annotation.*;
 import android.os.Bundle;
 import android.os.Handler;
@@ -28,11 +20,13 @@ import com.wangyi.UIview.BaseFragment;
 import com.wangyi.UIview.adapter.SearchBookAdapter;
 import com.wangyi.UIview.widget.container.LessonListLayout;
 import com.wangyi.define.EventName;
-import com.wangyi.define.UserInfo;
+import com.wangyi.define.bean.UserInfo;
 import com.wangyi.function.BookManagerFunc;
 import com.wangyi.function.HttpsFunc;
 import com.wangyi.function.UserManagerFunc;
 import com.wangyi.reader.R;
+import com.wangyi.utils.ItOneUtils;
+
 import org.xutils.x;
 
 import java.util.ArrayList;
@@ -49,8 +43,11 @@ public class AllSubjectFragment extends BaseFragment {
 	private UltimateRecyclerView bookList;
     @ViewInject(R.id.measure)
     private RelativeLayout measure;
-	SearchBookAdapter adapter;
-    LoadingDialog loading;
+
+	private SearchBookAdapter adapter;
+    private ArrayList<BookData> books;
+
+	protected int start = 0;
 
 	private Handler handler = new Handler() {
 
@@ -59,14 +56,18 @@ public class AllSubjectFragment extends BaseFragment {
 			super.handleMessage(msg);
 			switch (msg.what) {
 				case EventName.UI.FINISH:
-					loading.dismiss();
 					break;
 				case EventName.UI.SUCCESS:
-					ArrayList<BookData> books = (ArrayList<BookData>) msg.obj;
-					adapter.insert(books);
+					ArrayList<BookData> book = (ArrayList<BookData>) msg.obj;
+					adapter.insert(book);
+					if(book.size() != 0)
+						start += book.size();
+					else{
+						ItOneUtils.showToast(getContext(), "已經加載全部資源");
+						adapter.getCustomLoadMoreView().setVisibility(View.GONE);
+					}
 					break;
 				case EventName.UI.START:
-					loading.show();
 					break;
 			}
 		}
@@ -76,8 +77,14 @@ public class AllSubjectFragment extends BaseFragment {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState){
 		super.onActivityCreated(savedInstanceState);
-        loading = new LoadingDialog(x.app());
 
+		books = new ArrayList<BookData>();
+		adapter = new SearchBookAdapter(books);
+
+		initBookList();
+    }
+
+	private void initLesson(){
 		lessons.addLessons(keywords,new OnClickListener(){
 
 			@Override
@@ -96,57 +103,48 @@ public class AllSubjectFragment extends BaseFragment {
 
 		});
 
-		adapter = new SearchBookAdapter(new ArrayList<BookData>());
-        bookList.setLayoutManager(new ScrollSmoothLineaerLayoutManager(
-                getActivity().getBaseContext(), LinearLayoutManager.VERTICAL, false, 300));
-		bookList.setAdapter(adapter);
-        bookList.setEmptyView(R.layout.emptylist,UltimateRecyclerView.EMPTY_SHOW_LOADMORE_ONLY);
-        adapter.setCustomLoadMoreView(createListBottomView(this.getContext()));
-        bookList.setScrollViewCallbacks(new ObservableScrollViewCallbacks(){
-            @Override
-            public void onScrollChanged(int i, boolean b, boolean b1) {
-            }
+		lessons.setVisibility(View.GONE);
+	}
 
-            @Override
-            public void onDownMotionEvent() {
-            }
+	private void initBookList(){
+		UltimateListView view = new UltimateListView(bookList,adapter,getContext());
+		view.beforeFuncset();
+		view.enableLoadmore(new UltimateRecyclerView.OnLoadMoreListener() {
+			@Override
+			public void loadMore(int itemsCount, final int maxLastVisiblePosition) {
+				UserInfo user = UserManagerFunc.getInstance().getUserInfo();
+				if(user != null){
+					handler.postDelayed(new Runnable() {
+						public void run() {
+							HttpsFunc.getInstance().connect(handler).searchBooksBySubject("全部","哈尔滨工业大学",start);
+						}
+					}, 500);
+				}
+			}
+		});
 
-            @Override
-            public void onUpOrCancelMotionEvent(ObservableScrollState observableScrollState) {
-                if (observableScrollState == ObservableScrollState.UP) {
-                    bookList.hideView(lessons,bookList,getWindowHeight());
-                }else if (observableScrollState == ObservableScrollState.DOWN) {
-                    bookList.showView(lessons,bookList,getWindowHeight());
-                }
-            }
-        });
-
-        ItemTouchListenerAdapter itemTouchListenerAdapter = new ItemTouchListenerAdapter(bookList.mRecyclerView,
-                new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
-                    @Override
-                    public void onItemClick(RecyclerView parent, View clickedView, int position) {
+		view.enableItemClick(
+				new ItemTouchListenerAdapter(bookList.mRecyclerView,
+				new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
+					@Override
+					public void onItemClick(RecyclerView parent, View clickedView, int position) {
+						if(position > books.size()|| position < 0) return;
 						Intent intent = new Intent(AllSubjectFragment.this.getActivity().getApplicationContext(),WatchBook.class);
 						Bundle bundle = new Bundle();
-						bundle.putSerializable("book", BookManagerFunc.getInstance().getBookData(position));
+						bundle.putSerializable("book", books.get(position));
 						intent.putExtras(bundle);
 						startActivity(intent);
-                    }
+					}
 
-                    @Override
-                    public void onItemLongClick(RecyclerView recyclerView, View view, int i) {}
-                });
-        bookList.mRecyclerView.addOnItemTouchListener(itemTouchListenerAdapter);
-    }
+					@Override
+					public void onItemLongClick(RecyclerView recyclerView, View view, int i) {}
+				})
+		);
+		view.afterFuncset();
+	}
 
     private int getWindowHeight(){
         return measure.getHeight();
-    }
-
-    private View createListBottomView(Context context){
-        View view = LayoutInflater.from(context)
-                .inflate(R.layout.list_item_text, null);
-        ((TextView)view.findViewById(R.id.tv_list_item)).setText("加载更多...");
-        return view;
     }
 
 	@Override
@@ -155,24 +153,12 @@ public class AllSubjectFragment extends BaseFragment {
 		super.onHiddenChanged(hidden);
 		if(!hidden){
 			UserInfo user = UserManagerFunc.getInstance().getUserInfo();
-			if(user != null)
-				HttpsFunc.getInstance().connect(handler).searchBooksBySubject("全部",user.university,0);
+			if(user != null&&books.isEmpty())
+				HttpsFunc.getInstance().connect(handler).searchBooksBySubject("全部","哈尔滨工业大学",start);
 		}else{
 			BookManagerFunc.getInstance().connect(handler).clear();
 		}
 	}
-
-    @Event(value=R.id.booklist,type=UltimateRecyclerView.OnLoadMoreListener.class)
-    private void loadMore(int itemsCount, final int maxLastVisiblePosition){
-        UserInfo user = UserManagerFunc.getInstance().getUserInfo();
-        if(user != null){
-            HttpsFunc.getInstance().connect(handler).searchBooksBySubject(
-                        ((TextView)lessons.obj).getText().toString(),
-                        user.university,
-                        itemsCount);
-            bookList.disableLoadmore();
-        }
-    }
 
 	@Event(R.id.search)
 	private void onSearchClick(View view){

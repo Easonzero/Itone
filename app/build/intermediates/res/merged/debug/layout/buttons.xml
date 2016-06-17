@@ -47,13 +47,14 @@
 					android:textAppearance="?android:attr/textAppearanceSmall"
 					android:textColor="#FFFFFF" />
 			<ImageButton
+					android:padding="8dp"
 					android:id="@+id/editAnnotButton0"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:background="#00000000"
 					android:contentDescription="@string/edit_annotations"
 					android:onClick="OnEditAnnotButtonClick"
-					android:src="@drawable/ic_annotation" />
+					android:src="@drawable/ic_annotation"/>
 		</LinearLayout>
 
 		<RelativeLayout
@@ -70,7 +71,8 @@
 					android:background="#00000000"
 					android:contentDescription="@string/cancel"
 					android:onClick="OnCancelAnnotButtonClick"
-					android:src="@drawable/ic_action_content_remove" />
+					android:src="@drawable/ic_action_content_remove"
+					android:padding="8dp"/>
 			<ImageButton
 					android:id="@+id/highlightButton"
 					android:layout_width="wrap_content"
@@ -80,7 +82,8 @@
 					android:layout_toLeftOf="@+id/underlineButton"
 					android:contentDescription="@string/highlight"
 					android:onClick="OnHighlightButtonClick"
-					android:src="@drawable/ic_highlight" />
+					android:src="@drawable/ic_highlight"
+					android:padding="8dp"/>
 			<ImageButton
 					android:id="@+id/underlineButton"
 					android:layout_width="wrap_content"
@@ -90,7 +93,8 @@
 					android:layout_toLeftOf="@+id/strikeOutButton"
 					android:contentDescription="@string/underline"
 					android:onClick="OnUnderlineButtonClick"
-					android:src="@drawable/ic_underline" />
+					android:src="@drawable/ic_underline"
+					android:padding="8dp"/>
 			<ImageButton
 					android:id="@+id/strikeOutButton"
 					android:layout_width="wrap_content"
@@ -100,7 +104,8 @@
 					android:layout_toLeftOf="@+id/inkButton"
 					android:contentDescription="@string/strike_out"
 					android:onClick="OnStrikeOutButtonClick"
-					android:src="@drawable/ic_strike" />
+					android:src="@drawable/ic_strike"
+					android:padding="8dp"/>
 			<ImageButton
 					android:id="@+id/inkButton"
 					android:layout_width="wrap_content"
@@ -110,7 +115,8 @@
 					android:layout_centerVertical="true"
 					android:contentDescription="@string/ink"
 					android:onClick="OnInkButtonClick"
-					android:src="@drawable/ic_pen" />
+					android:src="@drawable/ic_pen"
+					android:padding="8dp"/>
 		</RelativeLayout>
 		<RelativeLayout
 				android:id="@+id/Accept"
@@ -126,7 +132,8 @@
 					android:background="#00000000"
 					android:contentDescription="@string/cancel"
 					android:onClick="OnCancelAcceptButtonClick"
-					android:src="@drawable/ic_action_content_remove" />
+					android:src="@drawable/ic_action_content_remove"
+					android:padding="8dp"/>
 			<TextView
 					android:id="@+id/annotType"
 					android:layout_width="wrap_content"
@@ -148,7 +155,8 @@
 					android:layout_centerVertical="true"
 					android:contentDescription="@string/accept"
 					android:onClick="OnAcceptButtonClick"
-					android:src="@drawable/ic_check" />
+					android:src="@drawable/ic_check"
+					android:padding="8dp"/>
 		</RelativeLayout>
 		<RelativeLayout
 				android:id="@+id/Delete"
@@ -164,7 +172,8 @@
 					android:background="#00000000"
 					android:contentDescription="@string/cancel"
 					android:onClick="OnCancelDeleteButtonClick"
-					android:src="@drawable/ic_action_content_remove" />
+					android:src="@drawable/ic_action_content_remove"
+					android:padding="8dp"/>
 			<TextView
 					android:id="@+id/deleteLabel"
 					android:layout_width="wrap_content"
@@ -187,7 +196,8 @@
 					android:layout_centerVertical="true"
 					android:contentDescription="@string/delete"
 					android:onClick="OnDeleteButtonClick"
-					android:src="@drawable/ic_trash" />
+					android:src="@drawable/ic_trash"
+					android:padding="8dp"/>
 		</RelativeLayout>
 	</ViewAnimator>
 </RelativeLayout>

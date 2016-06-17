@@ -1,11 +1,10 @@
 package com.wangyi.UIview.adapter;
 
 import android.view.View;
-import android.view.ViewGroup;
-import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
+
 import com.marshalchen.ultimaterecyclerview.quickAdapter.easyRegularAdapter;
 import com.wangyi.UIview.adapter.viewholder.GodlistVH;
-import com.wangyi.define.UserRank;
+import com.wangyi.define.bean.UserRank;
 import com.wangyi.function.HttpsFunc;
 import com.wangyi.reader.R;
 import org.xutils.image.ImageOptions;
@@ -34,12 +33,12 @@ public class GodlistAdapter extends easyRegularAdapter<UserRank,GodlistVH> {
     @Override
     protected void withBindHolder(GodlistVH holder, UserRank data, int position) {
         holder.name.setText(data.userName);
-        holder.downloadNum.setText(data.downloadNum);
+        holder.downloadNum.setText("影响力："+data.downloadNum);
         holder.from.setText(data.university);
         holder.number.setMessage(data.rank+"");
         ImageOptions options=new ImageOptions.Builder()
-                .setLoadingDrawableId(R.drawable.ic_me)
-                .setFailureDrawableId(R.drawable.ic_me)
+                .setLoadingDrawableId(R.drawable.headpic)
+                .setFailureDrawableId(R.drawable.headpic)
                 .setUseMemCache(true)
                 .setCircular(true)
                 .setIgnoreGif(false)

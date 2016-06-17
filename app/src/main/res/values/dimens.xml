@@ -7,7 +7,7 @@
     <dimen name="meToolbarHeight">250dp</dimen>
     <dimen name="smallToolbarHeight">48dp</dimen>
     <dimen name="menuitemSize">32dp</dimen>
-    <dimen name="tableHeight">55dp</dimen>
+    <dimen name="tableHeight">50dp</dimen>
     <dimen name="tableMargin">38dp</dimen>
     <dimen name="tableheadHeight">32dp</dimen>
     <dimen name="ic_numberWidth">60dp</dimen>

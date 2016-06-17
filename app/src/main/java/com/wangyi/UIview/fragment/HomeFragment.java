@@ -41,6 +41,7 @@ public class HomeFragment extends BaseFragment {
 	LessonGridAdapter adapter_lesson = null;
 	Context context;
 	private int mCurIndicator = 0;
+	private OnMenuListener onMenuListener = null;
 	private Handler handler = new Handler(){
 		 @Override 
 	        public void handleMessage(Message msg) {
@@ -59,7 +60,13 @@ public class HomeFragment extends BaseFragment {
         initBookView(this.getActivity().getBaseContext());
         initLessonView(this.getActivity().getBaseContext());
     }
-	
+
+	@Override
+	public void onAttach(Context context) {
+		super.onAttach(context);
+		onMenuListener = (OnMenuListener)context;
+	}
+
 	@Override
 	public void onHiddenChanged(boolean hidden) {
 		if(!hidden){
@@ -68,6 +75,11 @@ public class HomeFragment extends BaseFragment {
 			BookManagerFunc.getInstance().connect(handler).clear();
 			BookManagerFunc.getInstance().saveIfNeed();
 		}
+	}
+
+	@Event(R.id.menu)
+	private void onMenuClick(View view){
+		onMenuListener.show();
 	}
 	
 	@Event(R.id.mybook)
@@ -158,5 +170,10 @@ public class HomeFragment extends BaseFragment {
 		}
 
 		mCurIndicator = which;
+	}
+
+	public interface OnMenuListener{
+		void show();
+		void hide();
 	}
 }

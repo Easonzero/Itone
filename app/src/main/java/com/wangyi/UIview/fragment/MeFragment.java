@@ -10,13 +10,12 @@ import com.wangyi.UIview.BaseFragment;
 import com.wangyi.UIview.activity.DownloadActivity;
 import com.wangyi.UIview.activity.LoginActivity;
 import com.wangyi.define.EventName;
-import com.wangyi.define.UserInfo;
+import com.wangyi.define.bean.UserInfo;
 import com.wangyi.function.HttpsFunc;
 import com.wangyi.function.UserManagerFunc;
 import com.wangyi.reader.R;
-import android.content.Context;
+
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;

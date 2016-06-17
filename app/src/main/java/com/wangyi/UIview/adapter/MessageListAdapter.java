@@ -1,18 +1,13 @@
 package com.wangyi.UIview.adapter;
 
 import android.view.View;
-import android.view.ViewGroup;
-import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
 import com.marshalchen.ultimaterecyclerview.quickAdapter.easyRegularAdapter;
 import com.wangyi.UIview.adapter.viewholder.MessageListVH;
-import com.wangyi.define.Message;
+import com.wangyi.define.bean.Message;
 import com.wangyi.function.HttpsFunc;
 import com.wangyi.reader.R;
 import org.xutils.image.ImageOptions;
 import org.xutils.x;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -50,5 +45,10 @@ public class MessageListAdapter extends easyRegularAdapter<Message,MessageListVH
                         data.getPicUrl() +
                         "headPic.jpg",options
         );
+    }
+
+    @Override
+    public MessageListVH newFooterHolder(View view) {
+        return new MessageListVH(view);
     }
 }

@@ -1,6 +1,7 @@
 package com.wangyi.UIview.adapter.viewholder;
 
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerviewViewHolder;
@@ -21,6 +22,8 @@ public class SearchBookVH extends UltimateRecyclerviewViewHolder {
     public TextView uploader;
     @ViewInject(R.id.item_icontitle)
     public TextView bookNameInPic;
+    @ViewInject(R.id.bottom_progress_bar)
+    public ProgressBar progressBar;
 
     public SearchBookVH(View itemView) {
         super(itemView);

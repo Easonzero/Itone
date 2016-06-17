@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.artifex.mupdfdemo.MuPDFCore;
-import com.wangyi.define.BookData;
+import com.wangyi.define.bean.BookData;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,19 +15,6 @@ import com.wangyi.function.BookManagerFunc;
 import org.xutils.x;
 
 public class PreferencesReader {
-	public static void saveMessageDate(String date){
-		SharedPreferences prefs = x.app().getSharedPreferences("message",Context.MODE_PRIVATE);
-		SharedPreferences.Editor edit = prefs.edit();
-		edit.putString("date", date);
-		edit.commit();
-	}
-
-	public static String getMessageDate(){
-		SharedPreferences prefs = x.app().getSharedPreferences("message",Context.MODE_PRIVATE);
-		String date = prefs.getString("date",null);
-		return date;
-	}
-
 	public static void saveApplicationSetting(boolean[] setting){
 		SharedPreferences prefs = x.app().getSharedPreferences("setting",Context.MODE_PRIVATE);
 		SharedPreferences.Editor edit = prefs.edit();
