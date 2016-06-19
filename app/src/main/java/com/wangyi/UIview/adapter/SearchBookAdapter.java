@@ -36,4 +36,8 @@ public class SearchBookAdapter extends easyRegularAdapter<BookData,SearchBookVH>
     public SearchBookVH newFooterHolder(View view) {
         return new SearchBookVH(view);
     }
+
+    public BookData getItemData(int pos){
+        return getItem(pos);
+    }
 }

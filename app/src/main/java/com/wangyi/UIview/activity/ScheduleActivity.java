@@ -3,10 +3,14 @@ package com.wangyi.UIview.activity;
 import java.util.*;
 
 import org.xutils.view.annotation.*;
+
+import com.wangyi.Itone;
 import com.wangyi.UIview.BaseActivity;
 import com.wangyi.define.bean.LessonData;
 import com.wangyi.function.ScheduleFunc;
 import com.wangyi.reader.R;
+import com.wangyi.utils.ItOneUtils;
+
 import android.os.Bundle;
 import android.content.Context;
 import android.content.Intent;
@@ -144,7 +148,7 @@ public class ScheduleActivity extends BaseActivity {
 					lessongone.setVisibility(View.GONE);
 				}
 				lesson.setPadding(0, 0, 0, 0);
-				lesson.getLayoutParams().height = dip2px(ScheduleActivity.this,80*(dt+1));
+				lesson.getLayoutParams().height = ItOneUtils.dip2px(ScheduleActivity.this,80*(dt+1));
 				lesson.setTag("lesson");
 			}
 		}
@@ -211,7 +215,7 @@ public class ScheduleActivity extends BaseActivity {
 				lesson = (TextView) findViewById(lessonLocation[i][j]);
 				lesson.setVisibility(View.VISIBLE);
 				lesson.setBackgroundResource(R.drawable.bg_lesson);
-				lesson.getLayoutParams().height = dip2px(ScheduleActivity.this,80);
+				lesson.getLayoutParams().height = ItOneUtils.dip2px(ScheduleActivity.this,80);
 				lesson.setText("");
 			}
 		}
@@ -248,10 +252,5 @@ public class ScheduleActivity extends BaseActivity {
 		int[] color = new int[]{R.drawable.bg_lesson_green_selector,R.drawable.bg_lesson_purple_selector,
 				R.drawable.bg_lesson_blue_selector,R.drawable.bg_lesson_grey_selector};
 		lesson.setBackgroundResource(color[random.nextInt(4)]);
-	}
-
-	public static int dip2px(Context context, float dpValue) {
-		final float scale = context.getResources().getDisplayMetrics().density;
-		return (int) (dpValue * scale + 0.5f);
 	}
 }

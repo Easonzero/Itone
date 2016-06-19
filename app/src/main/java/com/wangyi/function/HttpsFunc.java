@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
+import com.wangyi.UIview.widget.container.LessonListLayout;
 import com.wangyi.define.bean.ClassInfo;
 import com.wangyi.define.bean.Homework;
 import com.wangyi.define.bean.University;
@@ -19,11 +22,14 @@ import com.wangyi.define.EventName;
 import com.wangyi.define.bean.UserInfo;
 import com.wangyi.utils.HttpsUtils;
 import com.wangyi.utils.ItOneUtils;
+import com.wangyi.utils.PreferencesReader;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Handler;
+import android.view.View;
+import android.widget.TextView;
 
 import org.xutils.ex.DbException;
 import org.xutils.x;
@@ -56,7 +62,7 @@ public class HttpsFunc implements Function {
 		this.handler = null;
 	}
 
-	public void Login(String userID,String passWords){
+	public void Login(final String userID, final String passWords){
 		if(!isNetworkConnected()){
 			ItOneUtils.showToast(context,"网络未连接");
 			return;
@@ -92,6 +98,7 @@ public class HttpsFunc implements Function {
 					visitUserElseInfo();
 					visitUserRank();
 					UserManagerFunc.getInstance().setLoginStatus(true);
+					PreferencesReader.saveUser(userID,passWords);
 				}else if(result.equals(EventName.Https.ERROR)){
 					ItOneUtils.showToast(context,"用户名或密码错误");
 					if(handler!=null) handler.sendEmptyMessage(EventName.UI.FAULT);
@@ -220,7 +227,7 @@ public class HttpsFunc implements Function {
 		});
 	}
 
-	public void searchBooksBySubject(String subject,String university,int start){
+	public void searchBooksBySubject(String subject, String university, int start){
 		if(!isNetworkConnected()){
 			ItOneUtils.showToast(context,"网络未连接");
 			return;
@@ -368,9 +375,36 @@ public class HttpsFunc implements Function {
 			ItOneUtils.showToast(context,"网络未连接");
 			return;
 		}
-		DownloadManagerFunc.getInstance().startDownload(
-				host+"/books/download", id,uid,bookName,
-				BookManagerFunc.FILEPATH + bookName, true, false, null);
+		Map<String,String> map=new HashMap<>();
+		map.put("id", id);
+		map.put("uid", uid);
+		HttpsUtils.Post(host+"/books/download", map, new Callback.CommonCallback<String>(){
+
+			@Override
+			public void onCancelled(CancelledException arg0) {}
+
+			@Override
+			public void onError(Throwable ex, boolean isCheck) {
+				ItOneUtils.showToast(context,"服务器抽风中...");
+			}
+
+			@Override
+			public void onFinished() {
+			}
+
+			@Override
+			public void onSuccess(String result) {
+				// TODO Auto-generated method stub
+				try {
+					DownloadManagerFunc.getInstance().startDownload(
+                            host+result, bookName,
+							BookManagerFunc.FILEPATH + bookName, true, false, null);
+				} catch (DbException e) {
+					e.printStackTrace();
+				}
+			}
+
+		});
 	}
 
 	public void commitIdea(String advice){

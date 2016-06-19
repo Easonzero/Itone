@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/circle_color.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/circle_color.xml"
-    },
-    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/darkdenim3.png",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/darkdenim3.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/circle_color.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/circle_color.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_badge.xml",

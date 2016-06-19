@@ -79,8 +79,10 @@ public class UserManagerFunc implements Function {
 	}
 
 	public void clear(){
-		if(userInfo!=null)
-			userInfo = new UserInfo();
+		if(userInfo!=null||userPlus!=null){
+			userInfo = null;
+			userPlus = null;
+		}
 		isLogin = false;
 	}
 }

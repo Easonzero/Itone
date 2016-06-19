@@ -1966,7 +1966,7 @@
         <item name="android:textSize">16sp</item>
     </style><style name="Typography_Menu">
         <item name="android:textSize">14sp</item>
-    </style><style name="AppTheme" parent="Theme.AppCompat.Light">
+    </style><style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
     </style><style name="Typography_Subhead">
         <item name="android:fontFamily">sans-serif</item>

@@ -1,13 +1,10 @@
 package com.wangyi.define.bean;
 
-import com.wangyi.define.EventName;
+import com.wangyi.define.DownloadState;
 
 import org.xutils.db.annotation.Column;
 import org.xutils.db.annotation.Table;
 
-/**
- * Created by maxchanglove on 2016/2/24.
- */
 @Table(name = "download", onCreated = "CREATE UNIQUE INDEX index_name ON download(label,fileSavePath)")
 public class DownloadInfo {
 
@@ -21,7 +18,7 @@ public class DownloadInfo {
     private String uid;
 
     @Column(name = "state")
-    private int state = EventName.Download.STOPPED;
+    private DownloadState state = DownloadState.STOPPED;
 
     @Column(name = "url")
     private String url;
@@ -33,7 +30,7 @@ public class DownloadInfo {
     private String fileSavePath;
 
     @Column(name = "progress")
-    private int progress = 0;
+    private int progress;
 
     @Column(name = "fileLength")
     private long fileLength;
@@ -62,11 +59,11 @@ public class DownloadInfo {
         this.uid = uid;
     }
 
-    public int getState() {
+    public DownloadState getState() {
         return state;
     }
 
-    public void setState(int state) {
+    public void setState(DownloadState state) {
         this.state = state;
     }
 
@@ -126,16 +123,16 @@ public class DownloadInfo {
         this.autoRename = autoRename;
     }
 
-    public void setSelect(boolean select){
-        this.select = select;
-    }
-
-    public void setSelect(){
-        select = !select;
-    }
-
-    public boolean getSelect(){
+    public boolean isSelect() {
         return select;
+    }
+
+    public void setSelect() {
+        this.select = !select;
+    }
+
+    public void setSelect(boolean select) {
+        this.select = select;
     }
 
     @Override

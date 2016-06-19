@@ -1,8 +1,8 @@
 package com.wangyi.function.funchelp;
 
 import com.wangyi.UIview.adapter.template.DownloadViewHolder;
+import com.wangyi.define.DownloadState;
 import com.wangyi.define.bean.DownloadInfo;
-import com.wangyi.define.EventName;
 import com.wangyi.function.DownloadManagerFunc;
 import org.xutils.common.Callback;
 import org.xutils.common.util.LogUtil;
@@ -61,13 +61,13 @@ public class DownloadCallback implements
                 return viewHolder;
             }
         }
-        return viewHolder;
+        return null;
     }
 
     @Override
     public void onWaiting() {
         try {
-            downloadInfo.setState(EventName.Download.WAITING);
+            downloadInfo.setState(DownloadState.WAITING);
             downloadManager.updateDownloadInfo(downloadInfo);
         } catch (DbException ex) {
             LogUtil.e(ex.getMessage(), ex);
@@ -81,7 +81,7 @@ public class DownloadCallback implements
     @Override
     public void onStarted() {
         try {
-            downloadInfo.setState(EventName.Download.STARTED);
+            downloadInfo.setState(DownloadState.STARTED);
             downloadManager.updateDownloadInfo(downloadInfo);
         } catch (DbException ex) {
             LogUtil.e(ex.getMessage(), ex);
@@ -96,7 +96,7 @@ public class DownloadCallback implements
     public void onLoading(long total, long current, boolean isDownloading) {
         if (isDownloading) {
             try {
-                downloadInfo.setState(EventName.Download.STARTED);
+                downloadInfo.setState(DownloadState.STARTED);
                 downloadInfo.setFileLength(total);
                 downloadInfo.setProgress((int) (current * 100 / total));
                 downloadManager.updateDownloadInfo(downloadInfo);
@@ -114,7 +114,8 @@ public class DownloadCallback implements
     public void onSuccess(File result) {
         synchronized (DownloadCallback.class) {
             try {
-                downloadInfo.setState(EventName.Download.FINISHED);
+                downloadInfo.setState(DownloadState.FINISHED);
+                downloadInfo.setProgress(100);
                 downloadManager.updateDownloadInfo(downloadInfo);
             } catch (DbException ex) {
                 LogUtil.e(ex.getMessage(), ex);
@@ -130,7 +131,7 @@ public class DownloadCallback implements
     public void onError(Throwable ex, boolean isOnCallback) {
         synchronized (DownloadCallback.class) {
             try {
-                downloadInfo.setState(EventName.Download.ERROR);
+                downloadInfo.setState(DownloadState.ERROR);
                 downloadManager.updateDownloadInfo(downloadInfo);
             } catch (DbException e) {
                 LogUtil.e(e.getMessage(), e);
@@ -146,7 +147,7 @@ public class DownloadCallback implements
     public void onCancelled(CancelledException cex) {
         synchronized (DownloadCallback.class) {
             try {
-                downloadInfo.setState(EventName.Download.STOPPED);
+                downloadInfo.setState(DownloadState.STOPPED);
                 downloadManager.updateDownloadInfo(downloadInfo);
             } catch (DbException ex) {
                 LogUtil.e(ex.getMessage(), ex);
@@ -164,8 +165,8 @@ public class DownloadCallback implements
     }
 
     private boolean isStopped() {
-        int state = downloadInfo.getState();
-        return isCancelled() || state > EventName.Download.STARTED;
+        DownloadState state = downloadInfo.getState();
+        return isCancelled() || state.value() > DownloadState.STARTED.value();
     }
 
     @Override

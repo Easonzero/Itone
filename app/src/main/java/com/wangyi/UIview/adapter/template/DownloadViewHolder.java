@@ -3,7 +3,10 @@ package com.wangyi.UIview.adapter.template;
 import android.view.View;
 
 import com.wangyi.define.bean.DownloadInfo;
+import com.wangyi.utils.ItOneUtils;
+
 import org.xutils.common.Callback;
+import org.xutils.ex.DbException;
 import org.xutils.x;
 
 import java.io.File;
@@ -41,10 +44,11 @@ public class DownloadViewHolder {
     }
 
     public void onSuccess(File result) {
-
+        ItOneUtils.showToast(x.app(), "下载完成");
     }
 
-    public void onError(Throwable ex, boolean isOnCallback) {
+    public void onError(Throwable ex, boolean isOnCallback){
+        ItOneUtils.showToast(x.app(), "下载出错");
     }
 
     public void onCancelled(Callback.CancelledException cex) {

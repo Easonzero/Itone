@@ -16,6 +16,7 @@ import com.wangyi.function.UserManagerFunc;
 import com.wangyi.reader.R;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
@@ -58,7 +59,41 @@ public class MeFragment extends BaseFragment {
             super.handleMessage(msg);
         }
     };
-    
+
+	@Override
+	public void onActivityCreated(Bundle savedInstanceState){
+		super.onActivityCreated(savedInstanceState);
+		if(UserManagerFunc.getInstance().isLogin())
+			handler.sendEmptyMessage(EventName.UI.SUCCESS);
+		else {
+			notLogin.setVisibility(View.VISIBLE);
+			isLogin.setVisibility(View.GONE);
+		}
+	}
+
+	@Override
+	public void onHiddenChanged(boolean hidden) {
+		if(!hidden){
+			if(UserManagerFunc.getInstance().isLogin()&&!isLogin.isShown())
+				handler.sendEmptyMessage(EventName.UI.SUCCESS);
+			else if(!UserManagerFunc.getInstance().isLogin()){
+				notLogin.setVisibility(View.VISIBLE);
+				isLogin.setVisibility(View.GONE);
+			}
+		}
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		if(UserManagerFunc.getInstance().isLogin()&&!isLogin.isShown())
+			handler.sendEmptyMessage(EventName.UI.SUCCESS);
+		else if(!UserManagerFunc.getInstance().isLogin()){
+			notLogin.setVisibility(View.VISIBLE);
+			isLogin.setVisibility(View.GONE);
+		}
+	}
+
 	@Event(R.id.download)
 	private void onDownloadClick(View view){
 		Intent intent = new Intent(x.app(),DownloadActivity.class);
@@ -79,20 +114,14 @@ public class MeFragment extends BaseFragment {
 
 	@Event(R.id.back)
 	private void onBackClick(View view){
-		MeFragment.this.getActivity().finish();
+		UserManagerFunc.getInstance().clear();
+		notLogin.setVisibility(View.VISIBLE);
+		isLogin.setVisibility(View.GONE);
 	}
 	
 	@Event(R.id.menu_in)
 	private void onLoginClick(View view){
 		Intent intent = new Intent(x.app(),LoginActivity.class);
 		startActivity(intent);
-	}
-
-	@Override
-	public void onResume() {
-		// TODO Auto-generated method stub
-		super.onResume();
-		if(UserManagerFunc.getInstance().isLogin())
-			handler.sendEmptyMessage(EventName.UI.SUCCESS);
 	}
 }

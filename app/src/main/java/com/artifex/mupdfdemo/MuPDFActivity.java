@@ -317,7 +317,6 @@ public class MuPDFActivity extends AppCompatActivity implements
         actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(false);
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setIcon(R.drawable.ic_launcher);
         // actionBar.setDisplayShowHomeEnabled(false);
         // actionBar.setHomeButtonEnabled(true);
 

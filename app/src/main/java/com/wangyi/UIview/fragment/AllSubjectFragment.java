@@ -45,7 +45,6 @@ public class AllSubjectFragment extends BaseFragment {
     private RelativeLayout measure;
 
 	private SearchBookAdapter adapter;
-    private ArrayList<BookData> books;
 
 	protected int start = 0;
 
@@ -78,8 +77,7 @@ public class AllSubjectFragment extends BaseFragment {
 	public void onActivityCreated(Bundle savedInstanceState){
 		super.onActivityCreated(savedInstanceState);
 
-		books = new ArrayList<BookData>();
-		adapter = new SearchBookAdapter(books);
+		adapter = new SearchBookAdapter(new ArrayList<BookData>());
 
 		initBookList();
     }
@@ -102,8 +100,6 @@ public class AllSubjectFragment extends BaseFragment {
 			}
 
 		});
-
-		lessons.setVisibility(View.GONE);
 	}
 
 	private void initBookList(){
@@ -112,11 +108,11 @@ public class AllSubjectFragment extends BaseFragment {
 		view.enableLoadmore(new UltimateRecyclerView.OnLoadMoreListener() {
 			@Override
 			public void loadMore(int itemsCount, final int maxLastVisiblePosition) {
-				UserInfo user = UserManagerFunc.getInstance().getUserInfo();
-				if(user != null){
+				if(UserManagerFunc.getInstance().isLogin()){
 					handler.postDelayed(new Runnable() {
 						public void run() {
-							HttpsFunc.getInstance().connect(handler).searchBooksBySubject("全部","哈尔滨工业大学",start);
+							UserInfo user = UserManagerFunc.getInstance().getUserInfo();
+							HttpsFunc.getInstance().connect(handler).searchBooksBySubject("全部",user.university,start);
 						}
 					}, 500);
 				}
@@ -128,10 +124,10 @@ public class AllSubjectFragment extends BaseFragment {
 				new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
 					@Override
 					public void onItemClick(RecyclerView parent, View clickedView, int position) {
-						if(position > books.size()|| position < 0) return;
+						if(position > adapter.getItemCount()|| position < 0) return;
 						Intent intent = new Intent(AllSubjectFragment.this.getActivity().getApplicationContext(),WatchBook.class);
 						Bundle bundle = new Bundle();
-						bundle.putSerializable("book", books.get(position));
+						bundle.putSerializable("book", adapter.getItemData(position));
 						intent.putExtras(bundle);
 						startActivity(intent);
 					}
@@ -153,8 +149,8 @@ public class AllSubjectFragment extends BaseFragment {
 		super.onHiddenChanged(hidden);
 		if(!hidden){
 			UserInfo user = UserManagerFunc.getInstance().getUserInfo();
-			if(user != null&&books.isEmpty())
-				HttpsFunc.getInstance().connect(handler).searchBooksBySubject("全部","哈尔滨工业大学",start);
+			if(user != null&&adapter!=null&&adapter.isEmpty())
+				HttpsFunc.getInstance().connect(handler).searchBooksBySubject("全部",user.university,start);
 		}else{
 			BookManagerFunc.getInstance().connect(handler).clear();
 		}

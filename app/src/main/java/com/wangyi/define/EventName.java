@@ -1,13 +1,6 @@
 package com.wangyi.define;
 
 public class EventName {
-	public static class Download{
-		public static final int WAITING = 0;
-		public static final int STARTED = 1;
-		public static final int FINISHED = 2;
-		public static final int STOPPED = 3;
-		public static final int ERROR = 4;
-	}
 	public static class Https{
 		public static final String OK = "ok";
 		public static final String ERROR = "error";
@@ -22,6 +15,7 @@ public class EventName {
 		public static final int FINISH = 1;
 		public static final int SUCCESS = 2;
 		public static final int FAULT = 3;
+		public static final int REFRESH = -1;
 	}
 	public static class ImagePicker{
 		public static final int IMAGE_REQUEST_CODE = 0;

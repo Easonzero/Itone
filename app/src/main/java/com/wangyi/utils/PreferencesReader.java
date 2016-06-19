@@ -15,6 +15,23 @@ import com.wangyi.function.BookManagerFunc;
 import org.xutils.x;
 
 public class PreferencesReader {
+	public static void saveUser(String id,String pw){
+		if(id == null ||id.equals("")) return;
+		SharedPreferences prefs = x.app().getSharedPreferences("user",Context.MODE_PRIVATE);
+		SharedPreferences.Editor edit = prefs.edit();
+		edit.putString("id", id);
+		edit.putString("pw",pw);
+		edit.commit();
+	}
+
+	public static String[] getUser(){
+		SharedPreferences prefs = x.app().getSharedPreferences("user",Context.MODE_PRIVATE);
+		String[] user = new String[2];
+		user[0] = prefs.getString("id","none");
+		user[1] = prefs.getString("pw","none");
+		return user;
+	}
+
 	public static void saveApplicationSetting(boolean[] setting){
 		SharedPreferences prefs = x.app().getSharedPreferences("setting",Context.MODE_PRIVATE);
 		SharedPreferences.Editor edit = prefs.edit();
@@ -106,7 +123,7 @@ public class PreferencesReader {
 		SharedPreferences prefs = act.getPreferences(Context.MODE_PRIVATE);
 		return prefs.getInt("pagemode", MuPDFCore.AUTO_PAGE_MODE);
 	}
-	
+
 	public static void saveShowCoverPageMode(Activity act, boolean showCover){
 		SharedPreferences prefs = act.getPreferences(Context.MODE_PRIVATE);
 		SharedPreferences.Editor edit = prefs.edit();
@@ -130,41 +147,4 @@ public class PreferencesReader {
 		SharedPreferences prefs = act.getPreferences(Context.MODE_PRIVATE);
 		return prefs.getBoolean("reflowmode", false);
 	}
-	
-	public static boolean isFirstTime(Activity act){
-		SharedPreferences prefs = act.getPreferences(Context.MODE_PRIVATE);
-		boolean isFirst = prefs.getBoolean("isfirsttime", true);
-		if(isFirst) {
-			SharedPreferences.Editor edit = prefs.edit();
-			edit.putBoolean("isfirsttime", false);
-			edit.commit();
-			return true;
-		}
-		return false;
-	}
-	
-	public static String getCurrentPathBrowse(Activity act) {
-		SharedPreferences prefs = act.getPreferences(Context.MODE_PRIVATE);
-		return prefs.getString("currentpathbrowse", "");
-	}
-	
-	public static void saveCurrentPathBrowse(Activity act, String path) {
-		SharedPreferences prefs = act.getPreferences(Context.MODE_PRIVATE);
-		SharedPreferences.Editor edit = prefs.edit();
-		edit.putString("currentpathbrowse", path);
-		edit.commit();
-	}
-	
-	public static boolean getRemoveAdsPurchased(Activity act){
-		SharedPreferences prefs = act.getPreferences(Context.MODE_PRIVATE);
-		return prefs.getBoolean("removeadspurchased", false);
-	}
-	
-	public static void saveRemoveAdsPurchased(Activity act, boolean purchased) {
-		SharedPreferences prefs = act.getPreferences(Context.MODE_PRIVATE);
-		SharedPreferences.Editor edit = prefs.edit();
-		edit.putBoolean("removeadspurchased", purchased);
-		edit.commit();
-	}
-
 }

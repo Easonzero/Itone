@@ -10,6 +10,7 @@ import com.wangyi.define.EventName;
 import com.wangyi.function.DownloadManagerFunc;
 import com.wangyi.reader.R;
 import com.wangyi.utils.ItOneUtils;
+import com.wangyi.define.DownloadState;
 
 import org.xutils.common.Callback;
 import org.xutils.ex.DbException;
@@ -42,25 +43,23 @@ public class DownloadItemVH extends DownloadViewHolder {
 
     @Event(R.id.select_state)
     private void selectEvent(View view){
-        downloadInfo.setSelect();
+        downloadManager.getDownloadInfo(downloadInfo).setSelect();
         refresh();
     }
 
     @Event(R.id.download_state)
     private void toggleEvent(View view) {
-        int state = downloadInfo.getState();
+        DownloadState state = downloadInfo.getState();
         switch (state) {
-            case EventName.Download.WAITING:
-            case EventName.Download.STARTED:
+            case WAITING:
+            case STARTED:
                 downloadManager.stopDownload(downloadInfo);
                 break;
-            case EventName.Download.ERROR:
-            case EventName.Download.STOPPED:
+            case ERROR:
+            case STOPPED:
                 try {
                     downloadManager.startDownload(
                             downloadInfo.getUrl(),
-                         ""+downloadInfo.getId(),
-                            downloadInfo.getUid(),
                             downloadInfo.getLabel(),
                             downloadInfo.getFileSavePath(),
                             downloadInfo.isAutoResume(),
@@ -70,7 +69,7 @@ public class DownloadItemVH extends DownloadViewHolder {
                     ItOneUtils.showToast(x.app(),downloadInfo.getLabel()+"开始下载失败");
                 }
                 break;
-            case EventName.Download.FINISHED:
+            case FINISHED:
                 ItOneUtils.showToast(x.app(),downloadInfo.getLabel()+"下载完成");
                 break;
             default:
@@ -114,29 +113,30 @@ public class DownloadItemVH extends DownloadViewHolder {
         refresh();
     }
 
+
     public void refresh() {
         bookname.setText(downloadInfo.getLabel());
         progress.setText(downloadInfo.getProgress()+"%");
 
         if(selectBtn.isShown()){
-            if(downloadInfo.getSelect()){
+            if(downloadManager.getDownloadInfo(downloadInfo).isSelect()){
                 selectBtn.setBackgroundResource(R.drawable.download_select);
             }else{
                 selectBtn.setBackgroundResource(R.drawable.download_unselect);
             }
         }
 
-        int state = downloadInfo.getState();
+        DownloadState state = downloadInfo.getState();
         switch (state) {
-            case EventName.Download.WAITING:
-            case EventName.Download.STARTED:
+            case WAITING:
+            case STARTED:
                 stopBtn.setBackgroundResource(R.drawable.download_ing);
                 break;
-            case EventName.Download.ERROR:
-            case EventName.Download.STOPPED:
+            case ERROR:
+            case STOPPED:
                 stopBtn.setBackgroundResource(R.drawable.download_stop);
                 break;
-            case EventName.Download.FINISHED:
+            case FINISHED:
                 stopBtn.setVisibility(View.GONE);
                 break;
             default:

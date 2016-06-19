@@ -10,6 +10,7 @@
         <com.wangyi.UIview.widget.view.SearchView
             android:id="@+id/search"
             android:focusable="true"
+            android:gravity="center_vertical"
             android:focusableInTouchMode="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -2,6 +2,7 @@ package com.wangyi.UIview.adapter;
 
 import android.widget.*;
 import com.wangyi.UIview.adapter.viewholder.DownloadItemVH;
+import com.wangyi.define.DownloadState;
 import com.wangyi.define.bean.DownloadInfo;
 import com.wangyi.define.EventName;
 import com.wangyi.function.DownloadManagerFunc;
@@ -16,11 +17,12 @@ import android.view.ViewGroup;
 
 public class DownloadListAdapter extends BaseAdapter {
     private boolean selectState = false;
+    private boolean allSelectState = false;
 	private LayoutInflater inflater;
     private DownloadManagerFunc downloadManager;
     private Context contxt;
     private int listSize;
-	
+	private DownloadItemVH holder;
 	public DownloadListAdapter(Context context){
         downloadManager = DownloadManagerFunc.getInstance();
 		inflater = LayoutInflater.from(context);
@@ -31,7 +33,8 @@ public class DownloadListAdapter extends BaseAdapter {
 	
 	public void allSelect(){
         for(int i = 0;i < listSize;i++){
-            downloadManager.getDownloadInfo(i).setSelect(true);
+            allSelectState = !allSelectState;
+            downloadManager.getDownloadInfo(i).setSelect(allSelectState);
         }
 	}
 
@@ -44,7 +47,7 @@ public class DownloadListAdapter extends BaseAdapter {
     public void delect(){
         try {
             for(int pos=0;pos<listSize;pos++){
-                if(downloadManager.getDownloadInfo(pos).getSelect()){
+                if(downloadManager.getDownloadInfo(pos).isSelect()){
                     downloadManager.removeDownload(getItem(pos));
                 }
             }
@@ -91,17 +94,16 @@ public class DownloadListAdapter extends BaseAdapter {
 			holder = (DownloadItemVH)view.getTag();
             holder.update(downloadInfo);
 		}
-        if (downloadInfo.getState() < EventName.Download.FINISHED) {
+        if (downloadInfo.getState().value() < DownloadState.FINISHED.value()) {
             try {
                 downloadManager.startDownload(
                         downloadInfo.getUrl(),
-                        ""+downloadInfo.getId(),
-                        downloadInfo.getUid(),
                         downloadInfo.getLabel(),
                         downloadInfo.getFileSavePath(),
                         downloadInfo.isAutoResume(),
                         downloadInfo.isAutoRename(),
                         holder);
+                this.holder = holder;
             } catch (DbException ex) {
                 ItOneUtils.showToast(x.app(),"下载失败");
             }
@@ -116,4 +118,9 @@ public class DownloadListAdapter extends BaseAdapter {
         }
 		return view;
 	}
+
+    public void ref(){
+
+        this.holder.refresh();
+    }
 }

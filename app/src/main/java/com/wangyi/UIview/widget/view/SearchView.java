@@ -13,6 +13,8 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import com.wangyi.utils.ItOneUtils;
+
 /**
  * Created by eason on 5/20/16.
  */
@@ -45,7 +47,6 @@ import android.widget.LinearLayout;
         mPaint.setStrokeWidth(4);
         this.setGravity(Gravity.CENTER_VERTICAL);
         setWillNotDraw(false);
-        this.setPadding(2*mPadding,0,2*mPadding,0);
     }
 
     private void initParams(){
@@ -57,12 +58,13 @@ import android.widget.LinearLayout;
 
     private void initEdit(Context context){
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-                LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
         edit = new EditText(context);
         edit.setLayoutParams(lp);
         this.addView(edit);
         edit.setTextColor(Color.WHITE);
         edit.setBackgroundColor(0x00000000);
+        edit.setPadding(0,0,0,0);
         edit.setTextSize(15);
         edit.setMaxEms(20);
         edit.setImeOptions(EditorInfo.IME_ACTION_DONE);
@@ -122,6 +124,7 @@ import android.widget.LinearLayout;
         super.onLayout(changed, l, t, r, b);
         initParams();
         deleBt.set(clast-cr*1.5f,cy-cr*1.5f,clast+cr*1.5f,cy+cr*1.5f);
+        this.setPadding((int)cstart*2,0,(int)cstart*2,0);
     }
 
     @Override

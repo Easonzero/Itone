@@ -23,6 +23,7 @@ import com.wangyi.UIview.widget.container.FragmentIndicator;
 import com.wangyi.UIview.widget.container.FragmentIndicator.OnIndicateListener;
 import com.wangyi.reader.R;
 import com.wangyi.utils.ItOneUtils;
+import com.wangyi.utils.PreferencesReader;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -45,50 +46,91 @@ public class ItOneActivity extends BaseActivity implements HomeFragment.OnMenuLi
 		UserManagerFunc.getInstance().init(this);
 		HttpsFunc.getInstance().init(this);
 
+		UserManagerFunc.getInstance().clear();
+
 		setFragmentIndicator(0);
 
-        mProfileDrawerItem = new ProfileDrawerItem().withIdentifier(0);
-        mAccountHeader = new AccountHeaderBuilder()
-                .withActivity(this)
-                .withHeaderBackground(R.color.basebar_color)
-                .addProfiles(
-                        mProfileDrawerItem
-                )
-                .withOnAccountHeaderSelectionViewClickListener(new AccountHeader.OnAccountHeaderSelectionViewClickListener() {
-                    @Override
-                    public boolean onClick(View view, IProfile profile) {
-                        return true;
-                    }
-                })
-                .withAlternativeProfileHeaderSwitching(false)
-                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
-                    @Override
-                    public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
-                        Intent intent;
-                        if(!UserManagerFunc.getInstance().isLogin())
-                            intent = new Intent(ItOneActivity.this.getApplicationContext(),LoginActivity.class);
-                        else
-                            intent = new Intent(ItOneActivity.this.getApplicationContext(),WatchUser.class);
-                        startActivity(intent);
-                        return false;
-                    }
-                })
-                .build();
+		initDrawer();
+
+		autoLogin();
+	}
+
+	private void autoLogin(){
+		String[] user = PreferencesReader.getUser();
+		user[0] = "13115511080";
+		user[1] = "qwe123";
+		if(!user[0].equals("none")&&!UserManagerFunc.getInstance().isLogin()){
+			HttpsFunc.getInstance().disconnect();
+			HttpsFunc.getInstance().Login(user[0],user[1]);
+		}
+	}
+
+	private void setFragmentIndicator(int whichIsDefault) {
+		mFragments = new BaseFragment[3];
+		mFragments[0] = (BaseFragment)getSupportFragmentManager().findFragmentById(R.id.home);
+		mFragments[1] = (BaseFragment)getSupportFragmentManager().findFragmentById(R.id.allsubject);
+		mFragments[2] = (BaseFragment)getSupportFragmentManager().findFragmentById(R.id.me);
+
+		getSupportFragmentManager().beginTransaction().hide(mFragments[0])
+				.hide(mFragments[1]).hide(mFragments[2])
+				.show(mFragments[whichIsDefault]).commit();
+
+		FragmentIndicator mIndicator = (FragmentIndicator) findViewById(R.id.indicator);
+		FragmentIndicator.setIndicator(whichIsDefault);
+		mIndicator.setOnIndicateListener(new OnIndicateListener() {
+
+			@Override
+			public void onIndicate(View v, int which) {
+				getSupportFragmentManager().beginTransaction()
+						.hide(mFragments[0]).hide(mFragments[1])
+						.hide(mFragments[2]).show(mFragments[which]).commit();
+			}
+		});
+	}
+
+	private void initDrawer(){
+		mProfileDrawerItem = new ProfileDrawerItem().withIdentifier(0);
+		mAccountHeader = new AccountHeaderBuilder()
+				.withActivity(this)
+				.withHeaderBackground(R.color.basebar_color)
+				.addProfiles(
+						mProfileDrawerItem
+				)
+				.withOnAccountHeaderSelectionViewClickListener(new AccountHeader.OnAccountHeaderSelectionViewClickListener() {
+					@Override
+					public boolean onClick(View view, IProfile profile) {
+						return true;
+					}
+				})
+				.withAlternativeProfileHeaderSwitching(false)
+				.withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
+					@Override
+					public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
+						Intent intent;
+						if(!UserManagerFunc.getInstance().isLogin())
+							intent = new Intent(ItOneActivity.this.getApplicationContext(),LoginActivity.class);
+						else
+							intent = new Intent(ItOneActivity.this.getApplicationContext(),WatchUser.class);
+						startActivity(intent);
+						return false;
+					}
+				})
+				.build();
 
 		drawer = new DrawerBuilder()
 				.withActivity(this)
-                .withAccountHeader(mAccountHeader)
+				.withAccountHeader(mAccountHeader)
 				.withStatusBarColorRes(R.color.basebar_color)
 				.addDrawerItems(
 						new DividerDrawerItem().withIdentifier(1),
-                        new PrimaryDrawerItem().withName("查看作业").withIdentifier(2),
-                        new PrimaryDrawerItem().withName("大神榜").withIdentifier(3),
-                        new PrimaryDrawerItem().withName("消息通知").withIdentifier(4)
+						new PrimaryDrawerItem().withName("查看作业").withIdentifier(2),
+						new PrimaryDrawerItem().withName("大神榜").withIdentifier(3),
+						new PrimaryDrawerItem().withName("消息通知").withIdentifier(4)
 				)
-                .withOnDrawerListener(new Drawer.OnDrawerListener() {
-                    @Override
-                    public void onDrawerOpened(View view) {
-                        if(UserManagerFunc.getInstance().isLogin()){
+				.withOnDrawerListener(new Drawer.OnDrawerListener() {
+					@Override
+					public void onDrawerOpened(View view) {
+						if(UserManagerFunc.getInstance().isLogin()){
 							ImageOptions options=new ImageOptions.Builder()
 									.setLoadingDrawableId(R.drawable.headpic)
 									.setFailureDrawableId(R.drawable.headpic)
@@ -104,13 +146,13 @@ public class ItOneActivity extends BaseActivity implements HomeFragment.OnMenuLi
 										@Override
 										public void onSuccess(Drawable result) {
 											mAccountHeader.updateProfile(
-												mProfileDrawerItem.withIcon(
-													result
-												).withName(
-													UserManagerFunc.getInstance().getUserInfo().userName
-												).withEmail(
-													UserManagerFunc.getInstance().getUserInfo().faculty
-											));
+													mProfileDrawerItem.withIcon(
+															result
+													).withName(
+															UserManagerFunc.getInstance().getUserInfo().userName
+													).withEmail(
+															UserManagerFunc.getInstance().getUserInfo().faculty
+													));
 										}
 
 										@Override
@@ -125,23 +167,23 @@ public class ItOneActivity extends BaseActivity implements HomeFragment.OnMenuLi
 										public void onFinished() {
 										}
 									});
-                        }else{
+						}else{
 							mAccountHeader.updateProfile(mProfileDrawerItem.withIcon(R.drawable.headpic));
-                            mAccountHeader.updateProfile(mProfileDrawerItem.withName("未登录"));
+							mAccountHeader.updateProfile(mProfileDrawerItem.withName("未登录"));
 							mAccountHeader.updateProfile(mProfileDrawerItem.withEmail(""));
-                        }
-                    }
+						}
+					}
 
-                    @Override
-                    public void onDrawerClosed(View view) {}
+					@Override
+					public void onDrawerClosed(View view) {}
 
-                    @Override
-                    public void onDrawerSlide(View view, float v) {}
-                })
-                .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+					@Override
+					public void onDrawerSlide(View view, float v) {}
+				})
+				.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
 
-                    @Override
-                    public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+					@Override
+					public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
 						Intent intent;
 						switch (position){
 							case 2:
@@ -169,33 +211,10 @@ public class ItOneActivity extends BaseActivity implements HomeFragment.OnMenuLi
 								startActivity(intent);
 								break;
 						}
-                        return false;
-                    }
-                })
+						return false;
+					}
+				})
 				.build();
-	}
-
-	private void setFragmentIndicator(int whichIsDefault) {
-		mFragments = new BaseFragment[3];
-		mFragments[0] = (BaseFragment)getSupportFragmentManager().findFragmentById(R.id.home);
-		mFragments[1] = (BaseFragment)getSupportFragmentManager().findFragmentById(R.id.allsubject);
-		mFragments[2] = (BaseFragment)getSupportFragmentManager().findFragmentById(R.id.me);
-
-		getSupportFragmentManager().beginTransaction().hide(mFragments[0])
-				.hide(mFragments[1]).hide(mFragments[2])
-				.show(mFragments[whichIsDefault]).commit();
-
-		FragmentIndicator mIndicator = (FragmentIndicator) findViewById(R.id.indicator);
-		FragmentIndicator.setIndicator(whichIsDefault);
-		mIndicator.setOnIndicateListener(new OnIndicateListener() {
-
-			@Override
-			public void onIndicate(View v, int which) {
-				getSupportFragmentManager().beginTransaction()
-						.hide(mFragments[0]).hide(mFragments[1])
-						.hide(mFragments[2]).show(mFragments[which]).commit();
-			}
-		});
 	}
 
 	@Override

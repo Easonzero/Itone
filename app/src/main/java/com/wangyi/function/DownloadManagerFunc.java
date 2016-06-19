@@ -1,29 +1,34 @@
 package com.wangyi.function;
 
-import android.content.Context;
 import com.wangyi.UIview.adapter.template.DownloadViewHolder;
+import com.wangyi.define.DownloadState;
+import com.wangyi.define.DownloadStateConverter;
 import com.wangyi.define.bean.DownloadInfo;
-import com.wangyi.define.EventName;
-import com.wangyi.function.funchelp.Function;
+import com.wangyi.function.funchelp.DownloadCallback;
+
 import org.xutils.DbManager;
 import org.xutils.common.Callback;
 import org.xutils.common.task.PriorityExecutor;
 import org.xutils.common.util.LogUtil;
+import org.xutils.db.converter.ColumnConverterFactory;
 import org.xutils.ex.DbException;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
-import com.wangyi.function.funchelp.DownloadCallback;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executor;
 
-/**
- * Created by maxchanglove on 2016/2/24.
- */
-public class DownloadManagerFunc implements Function {
-    private static DownloadManagerFunc instance;
+public final class DownloadManagerFunc {
+
+    static {
+        // 注册DownloadState在数据库中的值类型映射
+        ColumnConverterFactory.registerColumnConverter(DownloadState.class, new DownloadStateConverter());
+    }
+
+    private static volatile DownloadManagerFunc instance;
 
     private final static int MAX_DOWNLOAD_THREAD = 2; // 有效的值范围[1, 3], 设置为3时, 可能阻塞图片加载.
 
@@ -42,8 +47,8 @@ public class DownloadManagerFunc implements Function {
             List<DownloadInfo> infoList = db.selector(DownloadInfo.class).findAll();
             if (infoList != null) {
                 for (DownloadInfo info : infoList) {
-                    if (info.getState() < EventName.Download.FINISHED) {
-                        info.setState(EventName.Download.STOPPED);
+                    if (info.getState().value() < DownloadState.FINISHED.value()) {
+                        info.setState(DownloadState.STOPPED);
                     }
                     downloadInfoList.add(info);
                 }
@@ -53,6 +58,7 @@ public class DownloadManagerFunc implements Function {
         }
     }
 
+    /*package*/
     public static DownloadManagerFunc getInstance() {
         if (instance == null) {
             synchronized (DownloadManagerFunc.class) {
@@ -62,11 +68,6 @@ public class DownloadManagerFunc implements Function {
             }
         }
         return instance;
-    }
-
-    @Override
-    public void init(Context context) {
-
     }
 
     public void updateDownloadInfo(DownloadInfo info) throws DbException {
@@ -81,7 +82,11 @@ public class DownloadManagerFunc implements Function {
         return downloadInfoList.get(index);
     }
 
-    public synchronized void startDownload(String url, String id, String uid, String label, String savePath,
+    public DownloadInfo getDownloadInfo(DownloadInfo downloadInfo){
+        return downloadInfoList.get(downloadInfoList.indexOf(downloadInfo));
+    }
+
+    public synchronized void startDownload(String url, String label, String savePath,
                                            boolean autoResume, boolean autoRename,
                                            DownloadViewHolder viewHolder) throws DbException {
 
@@ -107,14 +112,12 @@ public class DownloadManagerFunc implements Function {
         // create download info
         if (downloadInfo == null) {
             downloadInfo = new DownloadInfo();
-            downloadInfo.setId(Long.parseLong(id));
-            downloadInfo.setUid(uid);
             downloadInfo.setUrl(url);
             downloadInfo.setAutoRename(autoRename);
             downloadInfo.setAutoResume(autoResume);
             downloadInfo.setLabel(label);
             downloadInfo.setFileSavePath(fileSavePath);
-            db.saveOrUpdate(downloadInfo);
+            db.saveBindingId(downloadInfo);
         }
 
         // start downloading
@@ -132,9 +135,7 @@ public class DownloadManagerFunc implements Function {
         params.setSaveFilePath(downloadInfo.getFileSavePath());
         params.setExecutor(executor);
         params.setCancelFast(true);
-        params.addParameter("id",id);
-        params.addParameter("uid",uid);
-        Callback.Cancelable cancelable = x.http().post(params, callback);
+        Callback.Cancelable cancelable = x.http().get(params, callback);
         callback.setCancelable(cancelable);
         callbackMap.put(downloadInfo, callback);
 
@@ -172,10 +173,6 @@ public class DownloadManagerFunc implements Function {
         DownloadInfo downloadInfo = downloadInfoList.get(index);
         db.delete(downloadInfo);
         stopDownload(downloadInfo);
-        downloadInfoList.remove(index);
-    }
-
-    public void finishDownload(int index){
         downloadInfoList.remove(index);
     }
 

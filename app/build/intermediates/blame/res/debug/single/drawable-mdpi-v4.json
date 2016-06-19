@@ -192,12 +192,12 @@
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-mdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-mdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-mdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable-mdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/download_deleted.PNG",

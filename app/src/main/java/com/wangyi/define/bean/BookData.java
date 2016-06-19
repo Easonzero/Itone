@@ -17,7 +17,7 @@ public class BookData implements Serializable{
 	public int downloadNumber;
 	public String uploader;
 	public String uid;
-	public String money;
+	public int money;
 	public String pic;
 	public String url;
 }
