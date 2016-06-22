@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/base_background_color"
+    android:layout_height="match_parent">
+    <RelativeLayout style="@style/toolbar"
+        android:layout_height="@dimen/smallToolbarHeight"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_step1">
+        <com.wangyi.UIview.widget.view.SearchView
+            android:id="@+id/search"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/cancel"
+            android:layout_marginRight="@dimen/padding_step1"/>
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:text="取消"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_step1"
+        android:text="No item"/>
+    <com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
+        android:id="@+id/booklist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"/>
+</LinearLayout>

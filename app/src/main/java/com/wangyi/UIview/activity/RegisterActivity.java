@@ -7,14 +7,25 @@ import com.wangyi.UIview.fragment.RegisterFragment2;
 import com.wangyi.UIview.fragment.RegisterFragment4;
 import com.wangyi.define.EventName;
 import com.wangyi.reader.R;
+import com.wangyi.utils.ItOneUtils;
+
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.OnPermissionDenied;
+import permissions.dispatcher.RuntimePermissions;
+
+@SuppressLint("NeedOnRequestPermissionsResult")
+@RuntimePermissions
 @ContentView(R.layout.register)
 public class RegisterActivity extends AppCompatActivity {
     @ViewInject(R.id.title)
@@ -23,7 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Button save;
     private BaseFragment[] mFragments;
 
-    private String ckn = "";
+    private String ckn = "test";//短信服务正常后置空他
 
     private Handler handler = new Handler() {
 
@@ -34,10 +45,6 @@ public class RegisterActivity extends AppCompatActivity {
                 switch (msg.what){
                     case EventName.UI.FINISH:
                         RegisterActivity.this.finish();
-                        break;
-                    case EventName.UI.START:
-                        break;
-                    case EventName.UI.SUCCESS:
                         break;
                 }
                 return;
@@ -53,10 +60,14 @@ public class RegisterActivity extends AppCompatActivity {
             }
             int id = msg.what-3;
             if(id == 2){
-                if(ckn==null||ckn.equals(""))
+                if(ckn==null||ckn.equals("")){
+                    ItOneUtils.showToast(RegisterActivity.this, "短信发送失败");
                     return;
-                else if(!((RegisterFragment2)mFragments[1]).check(ckn))
+                }
+                else if(!((RegisterFragment2)mFragments[1]).check(ckn)){
+                    ItOneUtils.showToast(RegisterActivity.this, "验证码错误");
                     return;
+                }
             }
             else if(id == 3) {
                 save.setVisibility(View.VISIBLE);
@@ -76,6 +87,21 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         x.view().inject(this);
         initFragment();
+        RegisterActivityPermissionsDispatcher.onGrantedWithCheck(this);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        RegisterActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+    }
+
+    @NeedsPermission(Manifest.permission.READ_SMS)
+    void onGranted() {}
+
+    @OnPermissionDenied(Manifest.permission.READ_SMS)
+    void onDenied() {
+        this.finish();
     }
 
     private void initFragment(){

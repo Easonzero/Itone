@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
-    api-level="22"
-    density="xxxhdpi"
+    abi="armeabi-v7a,armeabi"
+    api-level="23"
+    density="xxhdpi"
     format="7"
-    timestamp="3286738693445" >
+    timestamp="3099868437026" >
 
     <task
         name="javac"
@@ -19,19 +19,24 @@
         name="verifier"
         duration="0" />
 
-    <build timestamp="1155478249971" >
+    <artifact
+        location="/home/eason/Repos/ItOne/app/build/intermediates/res/resources-debug.ap_"
+        type="RESOURCES" />
+
+    <build timestamp="2637276706050" >
         <artifact
             location="/home/eason/Repos/ItOne/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="2077421341800" >
+    <build timestamp="3099868437026" >
         <artifact
-            location="/home/eason/Repos/ItOne/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_8/classes.dex"
-            type="DEX" />
+            location="/home/eason/Repos/ItOne/app/build/intermediates/res/resources-debug.ap_"
+            type="RESOURCES" />
     </build>
-    <build
-        timestamp="2461632718901"
-        verifier="METHOD_ANNOTATION_CHANGE" >
+    <build timestamp="34977294991108" >
+        <artifact
+            location="/home/eason/Repos/ItOne/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_3/classes.dex"
+            type="DEX" />
         <artifact
             location="/home/eason/Repos/ItOne/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
             type="DEX" />
@@ -39,11 +44,5 @@
             location="/home/eason/Repos/ItOne/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2/classes.dex"
             type="DEX" />
     </build>
-    <build timestamp="2858212886662" >
-        <artifact
-            location="/home/eason/Repos/ItOne/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
-            type="DEX" />
-    </build>
-    <build timestamp="3286738693445" />
 
 </instant-run>

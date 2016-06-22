@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+    <RelativeLayout style="@style/toolbar"
+        android:layout_height="@dimen/smallToolbarHeight"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_step1">
+        <Button
+            android:id="@+id/save"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="#00000000"
+            android:text="保存"
+            android:visibility="invisible"
+            android:textColor="#FFFFFFFF"
+            android:layout_marginBottom="-10dp"/>
+        <TextView
+                style="@style/titletext"
+                android:id="@+id/title"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="IT1帐号注册"/>
+        <Button
+                android:id="@+id/back"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="@dimen/menuitemSize"
+                android:layout_height="@dimen/menuitemSize"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/back2" />
+    </RelativeLayout>
+    <fragment
+        android:id="@+id/fragment1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        class="com.wangyi.UIview.fragment.RegisterFragment1"
+        tools:layout="@layout/fragment_register1" />
+    <fragment
+        android:id="@+id/fragment2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        class="com.wangyi.UIview.fragment.RegisterFragment2"
+        tools:layout="@layout/fragment_register2" />
+    <fragment
+        android:id="@+id/fragment3"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        class="com.wangyi.UIview.fragment.RegisterFragment3"
+        tools:layout="@layout/fragment_register3" />
+    <fragment
+        android:id="@+id/fragment4"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        class="com.wangyi.UIview.fragment.RegisterFragment4"
+        tools:layout="@layout/fragment_register4" />
+</LinearLayout>

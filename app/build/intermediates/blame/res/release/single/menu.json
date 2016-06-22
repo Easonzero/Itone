@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/release/menu/core_menu.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/menu/core_menu.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/release/menu/cart_menu.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/menu/cart_menu.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/release/menu/reader_menu.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/menu/reader_menu.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/release/menu/file_menu.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/menu/file_menu.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/release/menu/search_file.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/menu/search_file.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/release/menu/main_menu.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/menu/main_menu.xml"
+    }
+]

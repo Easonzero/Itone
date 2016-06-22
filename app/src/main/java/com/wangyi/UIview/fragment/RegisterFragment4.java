@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.wangyi.Itone;
 import com.wangyi.UIview.BaseFragment;
 import com.wangyi.UIview.activity.SearchInfoActivity;
 import com.wangyi.define.EventName;
@@ -50,6 +51,14 @@ public class RegisterFragment4 extends BaseFragment {
     private String fromFauclty;
 
     public void register(){
+        if(university.getText().toString().equals("")||
+                Class.getText().toString().equals("")||
+                grade.getText().toString().equals("")||
+                userName.getText().toString().equals("")){
+            ItOneUtils.showToast(getContext(),"有信息项未填写");
+            return;
+        }
+
         String[] params = ItOneUtils.parseMessage(getMessage());
         UserInfo user = new UserInfo();
         user.id = params[0];
@@ -60,7 +69,7 @@ public class RegisterFragment4 extends BaseFragment {
         user.university = university.getText().toString();
         user.grade = university.getText().toString();
         user.userName = userName.getText().toString();
-        HttpsFunc.getInstance().connect(handler).commitForm(user,"login");
+        HttpsFunc.getInstance().connect(handler).commitForm(user,"register");
     }
 
     @Event(R.id.headpic)

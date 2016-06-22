@@ -25,13 +25,22 @@ import com.wangyi.reader.R;
 import com.wangyi.utils.ItOneUtils;
 import com.wangyi.utils.PreferencesReader;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-@ContentView(R.layout.activity_main)
-public class ItOneActivity extends BaseActivity implements HomeFragment.OnMenuListener{
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.OnPermissionDenied;
+import permissions.dispatcher.RuntimePermissions;
+
+@SuppressLint("NeedOnRequestPermissionsResult")
+@RuntimePermissions
+public class ItOneActivity extends AppCompatActivity implements HomeFragment.OnMenuListener{
 	private BaseFragment[] mFragments;
     private ProfileDrawerItem mProfileDrawerItem;
     private AccountHeader mAccountHeader;
@@ -39,6 +48,11 @@ public class ItOneActivity extends BaseActivity implements HomeFragment.OnMenuLi
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		setContentView(R.layout.activity_main);//xuils3莫名奇妙的bug，第一个activity没法注入
+
+		ItOneActivityPermissionsDispatcher.onGrantedWithCheck(this);
+
 		ScheduleFunc.getInstance().init(this);
 		BookManagerFunc.getInstance().init(this);
 		MessageFunc.getInstance().init(this);
@@ -55,14 +69,23 @@ public class ItOneActivity extends BaseActivity implements HomeFragment.OnMenuLi
 		autoLogin();
 	}
 
+	@Override
+	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		// NOTE: delegate the permission handling to generated method
+		ItOneActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+	}
+
 	private void autoLogin(){
 		String[] user = PreferencesReader.getUser();
-		user[0] = "13115511080";
-		user[1] = "qwe123";
 		if(!user[0].equals("none")&&!UserManagerFunc.getInstance().isLogin()){
 			HttpsFunc.getInstance().disconnect();
 			HttpsFunc.getInstance().Login(user[0],user[1]);
 		}
+	}
+
+	@NeedsPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+	public void onGranted(){
 	}
 
 	private void setFragmentIndicator(int whichIsDefault) {
@@ -86,6 +109,11 @@ public class ItOneActivity extends BaseActivity implements HomeFragment.OnMenuLi
 						.hide(mFragments[2]).show(mFragments[which]).commit();
 			}
 		});
+	}
+
+	@OnPermissionDenied(Manifest.permission.READ_EXTERNAL_STORAGE)
+	void onDenied() {
+		finish();
 	}
 
 	private void initDrawer(){

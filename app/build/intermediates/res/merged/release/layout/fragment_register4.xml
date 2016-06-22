@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout style="@style/smallitem"
+        android:layout_height="@dimen/largepicWidth">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="头  像"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/headpic"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/headpic" />
+        <ImageView style="@style/arrow" />
+    </LinearLayout>
+    <View style="@style/line"/>
+
+    <LinearLayout style="@style/smallitem">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="姓  名"/>
+        <EditText
+            android:id="@+id/userName"
+            android:maxLength="8"
+            android:background="@null"
+            android:layout_width="@dimen/toolbarHeight"
+            android:layout_height="match_parent"
+            android:textColor="@color/apptheme_second_color"/>
+    </LinearLayout>
+    <View style="@style/line"/>
+    <LinearLayout style="@style/smallitem"
+        android:id="@+id/university">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="学  校"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/university_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/apptheme_second_color"/>
+        <ImageView style="@style/arrow" />
+    </LinearLayout>
+    <View style="@style/line"/>
+    <LinearLayout style="@style/smallitem"
+                  android:id="@+id/Class">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="班  级"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/Class_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/apptheme_second_color"/>
+        <ImageView style="@style/arrow" />
+    </LinearLayout>
+    <View style="@style/line"/>
+    <LinearLayout style="@style/smallitem"
+                  android:id="@+id/grade">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="年  级"
+            android:layout_weight="1"/>
+        <TextView
+            android:id="@+id/grade_tx"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/apptheme_second_color"/>
+        <ImageView style="@style/arrow" />
+    </LinearLayout>
+    <View style="@style/line"/>
+</LinearLayout>

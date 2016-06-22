@@ -36,7 +36,7 @@
         		android:marqueeRepeatLimit="marquee_forever"
         		android:scrollHorizontally="true"
         		android:textSize="20sp"
-                android:text="A" />
+                android:text=" " />
 		</RelativeLayout>
 
         <LinearLayout

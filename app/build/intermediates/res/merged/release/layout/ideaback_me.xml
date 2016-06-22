@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent" android:orientation="vertical">
+    <RelativeLayout style="@style/toolbar" >
+        <Button
+                android:id="@+id/commit"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="#00000000"
+                android:text="提交"
+                android:textColor="#FFFFFFFF"
+                android:layout_marginBottom="-10dp"/>
+        <TextView
+                style="@style/titletext"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:text="意见反馈"/>
+        <Button
+            android:id="@+id/back"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/menuitemSize"
+            android:layout_height="@dimen/menuitemSize"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/back2" />
+    </RelativeLayout>
+    <LinearLayout style="@style/Container">
+
+        <TextView
+                style="@style/cardtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请输入你的反馈意见" />
+        <EditText
+                style="@style/tableitem"
+                android:layout_weight="0"
+                android:layout_height="@dimen/big_card_image_height"
+                android:inputType="textMultiLine"
+                android:gravity="left|top"
+                android:id="@+id/editText"/>
+    </LinearLayout>
+</LinearLayout>

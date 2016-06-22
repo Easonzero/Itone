@@ -93,8 +93,6 @@ public class BookManagerFunc implements Function {
 				String filename = pathname.getPath();
 				if(filename.endsWith(".pdf"))
 					return true;
-				else if(filename.endsWith(".ppt"))
-					return true;
 				else
 					return false;
 			}

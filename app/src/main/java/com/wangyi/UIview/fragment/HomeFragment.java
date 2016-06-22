@@ -67,7 +67,7 @@ public class HomeFragment extends BaseFragment {
 		onMenuListener = (OnMenuListener)context;
 	}
 
-	@Override
+    @Override
 	public void onHiddenChanged(boolean hidden) {
 		if(!hidden){
 			BookManagerFunc.getInstance().connect(handler).showFileDir();

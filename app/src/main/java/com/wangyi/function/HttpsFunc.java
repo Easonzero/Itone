@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.google.gson.Gson;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 import com.wangyi.UIview.widget.container.LessonListLayout;
 import com.wangyi.define.bean.ClassInfo;
@@ -114,14 +115,7 @@ public class HttpsFunc implements Function {
 			return;
 		}
 		Map<String,Object> map=new HashMap<>();
-		map.put("id",user.id);
-		map.put("passWords",user.passWords);
-		map.put("userName",user.userName);
-		map.put("university",user.university);
-		map.put("faculty",user.faculty);
-		map.put("class",user.Class);
-		map.put("grade",user.grade);
-		map.put("picture",user.picture);
+		map.put("userInfo",new Gson().toJson(user));
 		if(user.picture.equals("true"))
 			map.put("file", new File(ImagePicker.SAVE_PATH));
 		if(handler!=null) handler.sendEmptyMessage(EventName.UI.START);
@@ -137,7 +131,9 @@ public class HttpsFunc implements Function {
 			}
 
 			@Override
-			public void onFinished() {}
+			public void onFinished() {
+				if(handler!=null) handler.sendEmptyMessage(EventName.UI.FINISH);
+			}
 
 			@Override
 			public void onSuccess(String result) {
@@ -146,7 +142,6 @@ public class HttpsFunc implements Function {
 					ItOneUtils.showToast(x.app(),"成功");
 				}else if(result.equals(EventName.Https.ERROR)){
 					ItOneUtils.showToast(x.app(),"用户名已经存在");
-					if(handler!=null) handler.sendEmptyMessage(EventName.UI.FAULT);
 				}
 			}
 

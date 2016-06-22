@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/base_background_color"
+    android:layout_height="match_parent">
+    <RelativeLayout style="@style/toolbar" >
+        <TextView
+            style="@style/titletext"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="查看作业"/>
+        <Button
+            android:id="@+id/back"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/menuitemSize"
+            android:layout_height="@dimen/menuitemSize"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/back2" />
+    </RelativeLayout>
+
+    <LinearLayout style="@style/Container"
+        android:background="@color/base_background_color">
+        <TextView style="@style/tableitem"
+            android:id="@+id/name"
+            android:textColor="@color/apptheme_third_color"
+            android:layout_height="@dimen/tableheadHeight"
+            android:gravity="left"
+            android:layout_marginLeft="@dimen/padding_step1"
+            android:layout_marginRight="@dimen/padding_step1"
+            android:layout_marginBottom="@dimen/padding_step1"
+            android:padding="@dimen/padding_step1"
+            android:text="设计心理学"/>
+        <TextView
+            android:textColor="@color/apptheme_third_color"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="left"
+            android:text="作业周期"/>
+        <TextView style="@style/tableitem"
+            android:id="@+id/date"
+            android:textColor="@color/apptheme_third_color"
+            android:layout_height="@dimen/tableheadHeight"
+            android:gravity="left"
+            android:layout_margin="@dimen/padding_step1"
+            android:padding="@dimen/padding_step1"
+            android:text="2016-1-14 ~ 2016-1-21"/>
+        <TextView
+            android:textColor="@color/apptheme_third_color"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="left"
+            android:text="作业内容"/>
+        <TextView style="@style/tableitem"
+            android:id="@+id/content"
+            android:textColor="@color/apptheme_third_color"
+            android:layout_height="@dimen/cover_height"
+            android:gravity="left"
+            android:scrollbars="vertical"
+            android:layout_margin="@dimen/padding_step1"
+            android:padding="@dimen/padding_step1"
+            android:text="xxx作业内容是yyy"/>
+        <TextView style="@style/cardtext"
+            android:id="@+id/uploader"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="right"
+            android:text="上传导师：刘恒"/>
+        <TextView
+            android:textColor="@color/apptheme_third_color"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="left"
+            android:text="相关模板"/>
+    </LinearLayout>
+</LinearLayout>

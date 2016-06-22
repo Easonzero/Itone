@@ -58,8 +58,7 @@ public class WatchBook extends BaseActivity {
                     .build();
             x.image().bind(
                     pic, HttpsFunc.host +
-                            book.pic +
-                            "headPic.jpg",options
+                            book.pic,options
             );
         }
     }

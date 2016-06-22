@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+	android:id="@+id/measure"
+	android:background="@color/base_background_color"
+    android:focusableInTouchMode="true"
+	android:orientation="vertical">
+	<RelativeLayout style="@style/toolbar"
+					android:id="@+id/toolbar" >
+		<View android:layout_width="match_parent"
+			  android:layout_height="15dp"
+				android:id="@+id/emptytop"/>
+		<RelativeLayout
+				android:id="@+id/search"
+				android:layout_below="@+id/emptytop"
+				android:layout_marginLeft="30dp"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_alignParentBottom="true"
+				android:layout_centerHorizontal="true"
+				android:background="@drawable/bg_allsubject_search"
+				android:paddingLeft="10dp" >
+
+			<Button
+					android:id="@+id/search_enter"
+					android:layout_width="25dp"
+					android:layout_height="25dp"
+					android:background="@android:drawable/ic_menu_search"
+					android:text="  " android:layout_centerVertical="true"/>
+
+			<TextView
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_alignBaseline="@+id/search_enter"
+					android:layout_alignBottom="@+id/search_enter"
+					android:layout_toRightOf="@+id/search_enter"
+					android:hint="搜索你感兴趣的课程"
+					android:textColor="#FF000000" />
+		</RelativeLayout>
+	</RelativeLayout>
+
+	<TextView
+			android:id="@+id/lessonTitle"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentRight="true"
+			android:paddingLeft="10dp"
+			android:paddingTop="5dp"
+			android:text="科目"
+			android:background="#FFFFFF"
+			android:textColor="#888888"
+			android:textSize="15sp"
+			android:visibility="gone"/>
+
+	<com.wangyi.UIview.widget.container.LessonListLayout
+			android:id="@+id/lessons"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:background="#FFFFFF"
+			android:layout_below="@+id/lessonTitle"></com.wangyi.UIview.widget.container.LessonListLayout>
+	<View
+			android:layout_below="@+id/lessons"
+			android:layout_width="match_parent"
+			android:layout_height="0.1dip"
+			android:background="#cccccc" />
+
+	<com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
+			android:id="@+id/booklist"
+			android:layout_below="@+id/lessons"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent" />
+</LinearLayout>

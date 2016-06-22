@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/base_background_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout style="@style/toolbar" >
+        <TextView
+            style="@style/titletext"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="消息通知"/>
+        <Button
+            android:id="@+id/back"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/menuitemSize"
+            android:layout_height="@dimen/menuitemSize"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/back2" />
+    </RelativeLayout>
+    <com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
+        android:id="@+id/messagelist"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        app:recyclerviewClipToPadding="true"
+        app:recyclerviewPadding="2dp"/>
+</LinearLayout>

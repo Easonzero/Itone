@@ -1,2 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/home/eason/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/glide-3.7.0_d2af1971c08fb6168f6b5ba7262060e1eb96e7a1.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.astuetz/pagerslidingtabstrip/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="7912610ed96381c25c36d986eba422731b9641b6">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/com.astuetz-pagerslidingtabstrip-1.0.1_ca8435b3ee07b0afc70ab588f0eba9a2373f8794.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/iconics-core/1.7.6/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ea05949390565bd6d714ac7d99158b3c0bc6a175">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/com.mikepenz-iconics-core-1.7.6_6a760b5736d482741bb36e1c0746b9775e5157e6.jar" />
+    </item>
+    <item
+        jar="/home/eason/Public/android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/support-annotations-23.4.0_76f5a11ff012b8d863c7afb44e4c9e196b64cfc6.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/com.android.support-support-vector-drawable-23.4.0_57ff844f10c149d46cd90ece6b2be0d0dc7a5836.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/com.android.support-cardview-v7-23.4.0_a9e70b611e5cbc72035dd9cf4ede950fae456091.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1aadfe3abbb366d8fb3c0e5350db1aaa6e0f6127">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/com.mikepenz-materialdrawer-4.0.8_6e1de4ce4bbb58ad794df85d484841b760ad29f3.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/libs/gson-2.3.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/gson-2.3.1_cad0af63a9537f999387812676da4e20aed958da.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/org.xutils/xutils/3.3.36/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a525a7f2e266f577629f68820a462a807c66eec7">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/org.xutils-xutils-3.3.36_bd4b583adcb4a72de054c799ad80339a7267951d.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/support-v13/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="be09545b7e6ff322c7286d2e80bed3b75b76c529">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/internal_impl-23.4.0_d68414d9883e031cac360a9bfe464252b511d566.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/libs/picasso-2.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="74137f8d9aac26dd9463efe32271f2be8d41cda9">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/picasso-2.2.0_3b292c763ed9cb7020f1e1b6590a56e1663a1dc3.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/com.android.support-support-v4-23.4.0_8db2e7ee8bdbf6caee62bd91f29d97f871c441cf.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.11/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a0bdf70123d26dd83d8462d602b3a83a41934cf6">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/in.srain.cube-ultra-ptr-1.0.11_c5a604c283617f4f599efd6a284357f5dfe77359.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/libs/android-query-full.0.26.7.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4055bed8ed6f6aa573fa3e7d979c66101c48e182">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/android-query-full.0.26.7_64e14437cb14c61f33f3230dd18094ed40689e89.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="3e33417d80e79d82adb03a964540362d4e2ca5ef">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/com.mikepenz-materialize-0.2.5_81767c9de239cf3bd3637c16b4ed09e4faf0f83c.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.github.hotchemi/permissionsdispatcher/2.0.8/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0263e4a8bf4000840a2b2c058094a2b4183db10f">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/com.github.hotchemi-permissionsdispatcher-2.0.8_2c087138063865cfc0e667873439c2c9eb59fb73.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.hkm.ui/ultimaterecyclerview/0.5.8/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e560f1977b995dc8ac6dd63eabccef06d6fd0cef">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/com.hkm.ui-ultimaterecyclerview-0.5.8_19f81cbee7a147b53251c419f096adc9cb3ce1f2.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/internal_impl-23.4.0_3eb4ecb728bb35364c0fc9fd38029beddf9ccc41.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/com.android.support-appcompat-v7-23.4.0_3fad3fa1d692f01e5760853160fde0e312d88eae.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/com.android.support-animated-vector-drawable-23.4.0_ded32415d92ae2bdf3e5ce2e4c47f84a6259ca61.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0573d010bcb1ee874e1c258a31e98ab920e6805f">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/me.drakeet.materialdialog-library-1.2.8_b114110456de54ba96d5b7877b1ed63a15ee7fdd.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/com.android.support-recyclerview-v7-23.4.0_8953e49cba83860bfb2a758cb3a9af21c8302bac.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/support-v13/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2bf893856577f5038c0b8007a43fda3b3c5beb23">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/com.android.support-support-v13-23.4.0_48cfdf25d2acbc3a2d69701a1830bbb4e6cc9872.jar" />
+    </item>
+    <item
+        jar="/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/jp.wasabeef/recyclerview-animators/2.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8cf541e3455f0d7e1ad0f152179e4f867eee1c35">
+        <dex dex="/home/eason/Repos/ItOne/app/build/intermediates/pre-dexed/release/jp.wasabeef-recyclerview-animators-2.2.1_56812b841c20ff071858158fd4384b136e74d2ef.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,127 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wangyi.UIview.activity.ItOneActivity" >
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/meToolbarHeight"
+        android:background="@drawable/bg_me" >
+
+        <LinearLayout
+            android:id="@+id/notLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="66dp"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/menu_in"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/ic_me"
+                android:text="  " />
+
+            <TextView style="@style/titletext"
+                android:id="@+id/lessontitle"
+                android:text="点击登录" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/Login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="66dp"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <ImageView
+                android:id="@+id/headPic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/ic_me"
+                android:text="  " />
+
+            <TextView style="@style/titletext"
+                android:id="@+id/userName"
+                android:layout_gravity="center"/>
+			<TextView style="@style/titletext"
+                android:id="@+id/other"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout style="@style/Container" >
+		<View style="@style/line" />
+		<LinearLayout
+                android:id="@+id/download"
+                style="@style/tableitemnoline" >
+		    <ImageView
+		        android:layout_width="25dp"
+		        android:layout_height="30dp"
+		        android:src="@drawable/ic_me_download" />
+		    <TextView style="@style/bodytext"
+		        android:layout_width="match_parent"
+		        android:layout_height="match_parent"
+		        android:layout_marginLeft="10dp"
+		        android:layout_weight="1"
+		        android:gravity="center_vertical|left"
+		        android:text="我的下载" />
+		    <ImageView style="@style/arrow" />
+		</LinearLayout>
+        <View style="@style/line" />
+        <LinearLayout style="@style/tableitemnoline"
+                      android:id="@+id/ideaback">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_me_ideaback" />
+            <TextView style="@style/bodytext"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|left"
+                android:text="意见反馈" />
+			<ImageView style="@style/arrow" />
+        </LinearLayout>
+        <View style="@style/line" />
+        <LinearLayout style="@style/tableitemnoline"
+                      android:id="@+id/setting">
+            <ImageView
+                android:layout_width="25dp"
+			    android:layout_height="30dp"
+                android:src="@drawable/ic_me_set" />
+			<TextView style="@style/bodytext"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+					  android:layout_marginLeft="10dp"
+			    android:gravity="center_vertical|left"
+			    android:layout_weight="1"
+			    android:text="设置" />
+			<ImageView style="@style/arrow" />
+		</LinearLayout>
+        <View style="@style/line" />
+        <LinearLayout style="@style/tableitem"
+                      android:id="@+id/back"
+                      android:layout_marginTop="@dimen/tableMargin">
+
+            <TextView style="@style/bodytext"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:gravity="center"
+                      android:text="退出登陆" />
+
+        </LinearLayout>
+    </LinearLayout>
+	
+</LinearLayout>

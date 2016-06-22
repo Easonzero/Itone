@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:id="@+id/bool_list_item" >
+        <RelativeLayout
+            android:layout_width="@dimen/thumbnailWidth"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/padding_step1" >
+
+            <ImageView
+                android:id="@+id/item_icon"
+                android:scaleType="centerInside"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/md_light_blue"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <com.wangyi.UIview.widget.view.ScrollingTextView
+                android:id="@+id/item_icontitle"
+                style="@style/Typography_Headline"
+                android:fontFamily="sans-serif-thin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:singleLine="true"
+                android:ellipsize="marquee"
+        		android:marqueeRepeatLimit="marquee_forever"
+        		android:scrollHorizontally="true"
+        		android:textSize="20sp"
+                android:text=" " />
+		</RelativeLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_step1">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Large Text"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/categroy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/apptheme_second_color"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/uploader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/apptheme_second_color"
+                android:text="TextView" />
+
+        </LinearLayout>
+
+    </LinearLayout>

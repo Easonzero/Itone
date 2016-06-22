@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/base_background_color"
+    android:layout_height="match_parent">
+    <RelativeLayout style="@style/toolbar" >
+        <TextView
+            style="@style/titletext"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="个人锦囊"/>
+        <Button
+            android:id="@+id/back"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/menuitemSize"
+            android:layout_height="@dimen/menuitemSize"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/back2" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/userInfo"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/tableMargin"
+        android:layout_marginBottom="@dimen/tableMargin"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="@dimen/toolbarHeight">
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="@dimen/toolbarHeight"
+            android:layout_height="match_parent" />
+        <LinearLayout
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:textColor="@color/apptheme_third_color"
+                    android:textSize="@dimen/nameTextSize"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="bottom"
+                    android:textColor="@color/apptheme_second_color"
+                    android:id="@+id/downloadnum"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                android:textColor="@color/apptheme_second_color"
+                android:layout_weight="1"
+                android:id="@+id/from"/>
+        </LinearLayout>
+        <com.wangyi.UIview.widget.view.NumberView
+            android:id="@+id/number"
+            android:layout_width="@dimen/ic_numberWidth"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_rank"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
+        android:id="@+id/uploadlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"/>
+</LinearLayout>
