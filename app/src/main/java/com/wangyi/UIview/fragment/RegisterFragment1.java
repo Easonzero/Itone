@@ -47,8 +47,8 @@ public class RegisterFragment1 extends BaseFragment {
             String str = tel.getText().toString();
             if(str.length() != 11) ItOneUtils.showToast(getContext(),"请输入正确的手机号");
             else{
-                HttpsFunc.getInstance().connect(handler).SMS(str);
-                sendMessage(1+3,str);
+                //HttpsFunc.getInstance().connect(handler).SMS(str);
+                sendMessage(2+3,str);//短信验证正常后需要改回去
             }
         }
     }

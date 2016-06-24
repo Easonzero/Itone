@@ -56,7 +56,7 @@ public class RegisterFragment2 extends BaseFragment {
                     String content = msg.getDisplayMessageBody();
                     if (content.contains("【")) {
                         //TODO
-                        fuck = content.substring(content.indexOf("：")-1,content.indexOf("，"));
+                        fuck = content.substring(content.indexOf("：")+1,content.indexOf("，"));
                     }
                 }
             }

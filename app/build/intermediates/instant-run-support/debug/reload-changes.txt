@@ -1,6 +1,2 @@
-CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/wangyi/UIview/adapter/SearchBookAdapter$override.class
-CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/wangyi/UIview/activity/WatchBook$override.class
-CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/wangyi/UIview/adapter/viewholder/SearchBookVH$override.class
-CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/wangyi/function/BookManagerFunc$override.class
-CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/wangyi/function/BookManagerFunc$1$override.class
+CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/wangyi/UIview/activity/UserInfoActivity$override.class
 CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class

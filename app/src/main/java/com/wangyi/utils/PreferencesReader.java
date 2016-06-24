@@ -1,6 +1,7 @@
 package com.wangyi.utils;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,11 +11,24 @@ import com.wangyi.define.bean.BookData;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Environment;
 import com.wangyi.function.BookManagerFunc;
 import org.xutils.x;
 
 public class PreferencesReader {
+	public static int getVersionCode(Context context){
+		try {
+
+			PackageManager pm = context.getPackageManager();
+			PackageInfo pinfo = pm.getPackageInfo(context.getPackageName(), PackageManager.GET_CONFIGURATIONS);
+			return pinfo.versionCode;
+		} catch (PackageManager.NameNotFoundException e) {
+		}
+		return 50;
+	}
+
 	public static void saveUser(String id,String pw){
 		if(id == null ||id.equals("")) return;
 		SharedPreferences prefs = x.app().getSharedPreferences("user",Context.MODE_PRIVATE);
@@ -48,19 +62,15 @@ public class PreferencesReader {
 		return setting;
 	}
 
-    public static void saveScheduleData(Activity act,int initWeek,int initDate){
-        SharedPreferences prefs = act.getSharedPreferences("schedule",Context.MODE_PRIVATE);
-        SharedPreferences.Editor edit = prefs.edit();
-        edit.putInt("initWeek", initWeek);
-        edit.putInt("initDate",initDate);
-        edit.commit();
-    }
-
-    public static int[] getScheduleData(Activity act){
-        SharedPreferences prefs = act.getSharedPreferences("schedule",Context.MODE_PRIVATE);
+    public static int[] getScheduleData(){
+		Date date=new Date();
         int[] data = new int[2];
-        data[0] = prefs.getInt("initWeek",1);
-        data[1] = prefs.getInt("initDate",10);
+		data[0] = 1;
+		if(date.getMonth()>7)
+        	data[1] = 36;
+		else if(date.getMonth()<7)
+			data[1] = 10;
+		else data[1] = 0;
         return data;
     }
 

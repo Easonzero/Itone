@@ -90,7 +90,7 @@ public class FragmentIndicator extends LinearLayout implements OnClickListener {
 			break;
 		}
 
-		// update current status.
+		// UpdateService current status.
 		ImageView currIcon;
 		switch (which) {
 		case 0:

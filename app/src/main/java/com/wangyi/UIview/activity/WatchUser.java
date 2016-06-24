@@ -77,7 +77,6 @@ public class WatchUser extends BaseActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         loading = new LoadingDialog(this);
-        initUserInfo();
 
         adapter = new WatchUserAdapter(this, new WatchUserAdapter.OnSubItemClickListener(){
 
@@ -94,6 +93,12 @@ public class WatchUser extends BaseActivity {
         initExpList();
 
         HttpsFunc.getInstance().connect(handler).searchBookByUser();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initUserInfo();
     }
 
     private void initUserInfo(){

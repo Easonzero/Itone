@@ -63,6 +63,37 @@ public class HttpsFunc implements Function {
 		this.handler = null;
 	}
 
+	public void update(String version){
+		if(!isNetworkConnected()){
+			ItOneUtils.showToast(context,"网络未连接");
+			return;
+		}
+		Map<String,String> map=new HashMap<>();
+		map.put("version", version);
+		HttpsUtils.Post(host+"/app/update", map, new Callback.CommonCallback<String>(){
+
+			@Override
+			public void onCancelled(CancelledException arg0) {}
+
+			@Override
+			public void onError(Throwable ex, boolean isCheck) {
+			}
+
+			@Override
+			public void onFinished() {
+			}
+
+			@Override
+			public void onSuccess(String result) {
+				// TODO Auto-generated method stub
+				if(!result.equals(EventName.Https.ERROR)){
+					handler.obtainMessage(EventName.UI.SUCCESS,result).sendToTarget();
+				}
+			}
+
+		});
+	}
+
 	public void Login(final String userID, final String passWords){
 		if(!isNetworkConnected()){
 			ItOneUtils.showToast(context,"网络未连接");
@@ -109,7 +140,7 @@ public class HttpsFunc implements Function {
 		});
 	}
 
-	public void commitForm(UserInfo user,String formkind){
+	public void commitForm(UserInfo user, final String formkind){
 		if(!isNetworkConnected()){
 			ItOneUtils.showToast(context,"网络未连接");
 			return;
@@ -127,7 +158,6 @@ public class HttpsFunc implements Function {
 			@Override
 			public void onError(Throwable ex, boolean isCheck) {
 				ItOneUtils.showToast(x.app(),"服务器抽风中...");
-				if(handler!=null) handler.sendEmptyMessage(EventName.UI.FAULT);
 			}
 
 			@Override
@@ -140,7 +170,7 @@ public class HttpsFunc implements Function {
 				// TODO Auto-generated method stub
 				if(result.equals(EventName.Https.OK)){
 					ItOneUtils.showToast(x.app(),"成功");
-				}else if(result.equals(EventName.Https.ERROR)){
+				}else if(result.equals(EventName.Https.ERROR)&&formkind.equals("login")){
 					ItOneUtils.showToast(x.app(),"用户名已经存在");
 				}
 			}
@@ -255,7 +285,7 @@ public class HttpsFunc implements Function {
 		});
 	}
 
-	private void visitUserInfo(){
+	public void visitUserInfo(){
 		HttpsUtils.Get(host+"/users/userbaseinfo", null, new Callback.CommonCallback<UserInfo>(){
 
 			@Override

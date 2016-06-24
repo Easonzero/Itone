@@ -44,11 +44,9 @@ public class DownloadViewHolder {
     }
 
     public void onSuccess(File result) {
-        ItOneUtils.showToast(x.app(), "下载完成");
     }
 
     public void onError(Throwable ex, boolean isOnCallback){
-        ItOneUtils.showToast(x.app(), "下载出错");
     }
 
     public void onCancelled(Callback.CancelledException cex) {

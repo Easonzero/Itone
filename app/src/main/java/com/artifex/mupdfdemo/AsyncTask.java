@@ -615,7 +615,7 @@ public abstract class AsyncTask<Params, Progress, Result> {
      * {@link #onProgressUpdate} will note be called if the task has been
      * canceled.
      *
-     * @param values The progress values to update the UI with.
+     * @param values The progress values to UpdateService the UI with.
      *
      * @see #onProgressUpdate
      * @see #doInBackground

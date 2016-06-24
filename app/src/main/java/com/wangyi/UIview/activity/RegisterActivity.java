@@ -59,7 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
                 return;
             }
             int id = msg.what-3;
-            if(id == 2){
+            /*if(id == 2){
                 if(ckn==null||ckn.equals("")){
                     ItOneUtils.showToast(RegisterActivity.this, "短信发送失败");
                     return;
@@ -68,8 +68,8 @@ public class RegisterActivity extends AppCompatActivity {
                     ItOneUtils.showToast(RegisterActivity.this, "验证码错误");
                     return;
                 }
-            }
-            else if(id == 3) {
+            }*/
+            if(id == 3) {
                 save.setVisibility(View.VISIBLE);
             }
             getSupportFragmentManager().beginTransaction().hide(mFragments[0])

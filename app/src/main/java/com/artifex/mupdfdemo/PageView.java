@@ -619,7 +619,7 @@ public abstract class PageView extends ViewGroup {
 
 			boolean area_unchanged = patchArea.equals(mPatchArea) && patchViewSize.equals(mPatchViewSize);
 
-			// If being asked for the same area as last time and not because of an update then nothing to do
+			// If being asked for the same area as last time and not because of an UpdateService then nothing to do
 			if (area_unchanged && !update)
 				return;
 

@@ -16,6 +16,17 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:background="@drawable/back2" />
+        <Button
+            android:id="@+id/save"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="#00000000"
+            android:text="修改"
+            android:textColor="#FFFFFFFF"
+            android:layout_marginBottom="-10dp"/>
     </RelativeLayout>
     <LinearLayout style="@style/smallitem"
         android:layout_height="@dimen/largepicWidth">
@@ -65,10 +76,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="院  系"
+            android:text="班  级"
             android:layout_weight="1"/>
         <TextView
-            android:id="@+id/faculty"
+            android:id="@+id/Class"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/apptheme_second_color"/>

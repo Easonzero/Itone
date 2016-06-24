@@ -96,16 +96,16 @@
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/in.srain.cube/ultra-ptr/1.0.11/res/layout/cube_ptr_simple_loading.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/login.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/login.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/exp_wu_child.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/exp_wu_child.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/browseitem.xml",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/browseitem.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/exp_wu_child.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/exp_wu_child.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/login.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/login.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/list_item_text.xml",
@@ -120,12 +120,12 @@
         "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/pager_gridview_layout.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/search_item.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/search_item.xml"
-    },
-    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/material_drawer.xml",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/layout/material_drawer.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/search_item.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/layout/search_item.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/layout/fragment_register2.xml",

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wangyi.reader"
-    android:versionCode="50"
-    android:versionName="1.0" >
+    android:versionCode="52"
+    android:versionName="1.0-beta2" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -16,6 +16,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
 
     <application
         android:name="com.wangyi.Itone"
@@ -187,6 +188,11 @@
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:theme="@style/NoActionBarTheme" />
+
+        <service
+            android:name="com.wangyi.service.UpdateService"
+            android:enabled="true" >
+        </service>
     </application>
 
 </manifest>

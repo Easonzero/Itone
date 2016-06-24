@@ -4,9 +4,12 @@ import com.wangyi.UIview.adapter.template.DownloadViewHolder;
 import com.wangyi.define.DownloadState;
 import com.wangyi.define.bean.DownloadInfo;
 import com.wangyi.function.DownloadManagerFunc;
+import com.wangyi.utils.ItOneUtils;
+
 import org.xutils.common.Callback;
 import org.xutils.common.util.LogUtil;
 import org.xutils.ex.DbException;
+import org.xutils.x;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
@@ -120,6 +123,7 @@ public class DownloadCallback implements
             } catch (DbException ex) {
                 LogUtil.e(ex.getMessage(), ex);
             }
+            ItOneUtils.showToast(x.app(), "下载完成");
             DownloadViewHolder viewHolder = this.getViewHolder();
             if (viewHolder != null) {
                 viewHolder.onSuccess(result);

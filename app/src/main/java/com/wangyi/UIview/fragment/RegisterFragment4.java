@@ -33,9 +33,9 @@ import java.io.File;
 
 @ContentView(R.layout.fragment_register4)
 public class RegisterFragment4 extends BaseFragment {
-    public static final int UNIVERSITY = 4;
-    public static final int CLASS = 5;
-    public static final int GRADE = 6;
+    public final int UNIVERSITY = 4;
+    public final int CLASS = 5;
+    public final int GRADE = 6;
     @ViewInject(R.id.headpic)
     private ImageView picture;
     @ViewInject(R.id.university_tx)
@@ -67,7 +67,7 @@ public class RegisterFragment4 extends BaseFragment {
         user.faculty = fromFauclty;
         user.picture = isAddPic?"true":"false";
         user.university = university.getText().toString();
-        user.grade = university.getText().toString();
+        user.grade = grade.getText().toString();
         user.userName = userName.getText().toString();
         HttpsFunc.getInstance().connect(handler).commitForm(user,"register");
     }

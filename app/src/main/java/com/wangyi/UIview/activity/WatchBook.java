@@ -49,7 +49,7 @@ public class WatchBook extends BaseActivity {
         name.setText(book.bookName);
         download.setText("下载量："+book.downloadNumber);
         upload.setText("上传者："+book.uploader);
-        from.setText("出版社："+book.fromUniversity);
+        from.setText("学  校："+book.fromUniversity);
         money.setText(book.money+"人民π");
         if(book.pic != null){
             ImageOptions options=new ImageOptions.Builder()

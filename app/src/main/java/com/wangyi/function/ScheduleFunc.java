@@ -34,9 +34,13 @@ public class ScheduleFunc implements Function {
 				.setDbName("schedule")
 				.setDbVersion(1);
 		db = x.getDb(daoConfig);
-		int[] data = PreferencesReader.getScheduleData((Activity) context);
+		int[] data = PreferencesReader.getScheduleData();
 		initWeek = data[0];
-		initDate = data[1];
+		if(data[1] == 0){
+			initDate = getWeekNumber();
+		}else{
+			initDate = data[1];
+		}
 		_weekOfToday = initWeek + (getWeekNumber() - initDate);
 		_today = getWeekOfDate();
 		currentWeek = _weekOfToday;

@@ -1237,7 +1237,7 @@ public class MuPDFActivity extends AppCompatActivity implements
     public void onBackPressed() {
         if (core.hasChanges()) {
             MaterialDialog alert = new MaterialDialog(this);
-            alert.setTitle("ItOne")
+            alert.setTitle("学派")
                  .setMessage(getString(R.string.document_has_changes_save_them_))
                  .setPositiveButton(getString(R.string.yes),new View.OnClickListener() {
                      public void onClick(View view) {
