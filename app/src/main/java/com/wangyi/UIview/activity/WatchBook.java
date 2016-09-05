@@ -86,7 +86,8 @@ public class WatchBook extends BaseActivity {
         }
         try {
             ItOneUtils.showToast(x.app(),"开始下载...");
-            HttpsFunc.getInstance().download(book.id+"",book.uid,book.bookName+".pdf");
+            UserManagerFunc.getInstance().getUserPlus().money -= book.money;
+            HttpsFunc.getInstance().download(book.id+"",UserManagerFunc.getInstance().getUserInfo().id,book.bookName+".pdf");
         } catch (DbException e) {
             e.printStackTrace();
         }

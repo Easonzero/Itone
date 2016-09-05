@@ -26,8 +26,8 @@ android {
         applicationId 'com.wangyi.reader'
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 54
-        versionName '1.0-beta3'
+        versionCode 55
+        versionName '1.0-beta4'
 		aaptOptions.cruncherEnabled = false
 		aaptOptions.useNewCruncher = false
     }
