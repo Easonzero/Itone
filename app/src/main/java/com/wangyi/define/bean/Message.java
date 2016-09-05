@@ -19,6 +19,8 @@ public class Message {
     private String id;
     @Column(name = "uname")
     private String uname;
+    @Column(name = "uPicurl")
+    private String uPicUrl;
     @Column(name = "picurl")
     private String picUrl;
     @Column(name = "message")
@@ -34,6 +36,14 @@ public class Message {
         StringBuffer m = new StringBuffer(message);
         if(m.length()<15) return m.toString();
         return m.substring(0,15);
+    }
+
+    public void setuPicUrl(String uPicUrl) {
+        this.uPicUrl = uPicUrl;
+    }
+
+    public String getuPicUrl() {
+        return uPicUrl;
     }
 
     public String getPicUrl() {

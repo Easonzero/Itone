@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/release/layout-v14/md_stub_progress_indeterminate.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/layout-v14/md_stub_progress_indeterminate.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/release/layout-v14/md_stub_progress.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/layout-v14/md_stub_progress.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/release/layout-v14/md_stub_progress_indeterminate_horizontal.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/layout-v14/md_stub_progress_indeterminate_horizontal.xml"
+    }
+]

@@ -15,6 +15,7 @@ import com.wangyi.define.SettingName;
 import com.wangyi.function.*;
 import org.xutils.common.Callback;
 import org.xutils.image.ImageOptions;
+import org.xutils.view.annotation.Event;
 import org.xutils.x;
 import com.wangyi.UIview.BaseFragment;
 import com.wangyi.UIview.widget.container.FragmentIndicator;
@@ -206,7 +207,8 @@ public class ItOneActivity extends AppCompatActivity implements HomeFragment.OnM
 						new DividerDrawerItem().withIdentifier(1),
 						new PrimaryDrawerItem().withName("查看作业").withIdentifier(2),
 						new PrimaryDrawerItem().withName("大神榜").withIdentifier(3),
-						new PrimaryDrawerItem().withName("消息通知").withIdentifier(4)
+						new PrimaryDrawerItem().withName("消息通知").withIdentifier(4),
+						new PrimaryDrawerItem().withName("我是班长").withIdentifier(5)
 				)
 				.withOnDrawerListener(new Drawer.OnDrawerListener() {
 					@Override
@@ -288,6 +290,18 @@ public class ItOneActivity extends AppCompatActivity implements HomeFragment.OnM
 									break;
 								}
 								intent = new Intent(ItOneActivity.this.getApplicationContext(),MessageActivity.class);
+								startActivity(intent);
+								break;
+							case 5:
+								if(!UserManagerFunc.getInstance().isLogin()){
+									ItOneUtils.showToast(x.app(),"请先登陆");
+									break;
+								}
+								if(UserManagerFunc.getInstance().getUserPlus().isMonitor.equals("FALSE")){
+									ItOneUtils.showToast(x.app(),"快叫你的班长来");
+									break;
+								}
+								intent = new Intent(ItOneActivity.this.getApplicationContext(),PublishActivity.class);
 								startActivity(intent);
 								break;
 						}

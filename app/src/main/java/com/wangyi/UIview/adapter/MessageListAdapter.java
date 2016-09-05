@@ -42,7 +42,7 @@ public class MessageListAdapter extends easyRegularAdapter<Message,MessageListVH
                 .build();
         x.image().bind(
                 holder.pic, HttpsFunc.host +
-                        data.getPicUrl() +
+                        data.getuPicUrl() +
                         "headPic.jpg",options
         );
     }

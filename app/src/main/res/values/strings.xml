@@ -42,7 +42,7 @@
 	<string name="text_not_found">找不到该文本</string>
 	<string name="searching_">搜索中...</string>
 	<string name="toggle_links">Highlight and enable links</string>
-	<string name="no_further_occurrences_found">No further occurrences found</string>
+	<string name="no_further_occurrences_found">到头啦！</string>
 	<string name="select">选择</string>
 	<string name="search">搜索</string>
 	<string name="copy">复制</string>
@@ -84,5 +84,5 @@
 	<string name="home">主页</string>
 	<string name="allsubject">所有课程</string>
 	<string name="me">我</string>
-	<string name="dismiss">dismiss</string>
+	<string name="dismiss">确定</string>
 </resources>

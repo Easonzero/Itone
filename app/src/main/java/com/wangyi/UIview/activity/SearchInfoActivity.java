@@ -21,6 +21,7 @@ import com.wangyi.UIview.adapter.TextAdapter;
 import com.wangyi.UIview.widget.dialog.LoadingDialog;
 import com.wangyi.UIview.widget.view.UltimateListView;
 import com.wangyi.define.EventName;
+import com.wangyi.define.bean.StringListItem;
 import com.wangyi.function.HttpsFunc;
 import com.wangyi.reader.R;
 import com.wangyi.utils.ItOneUtils;
@@ -46,7 +47,7 @@ public class SearchInfoActivity extends BaseActivity{
 
     private LoadingDialog loading;
     private TextAdapter adapter;
-    private ArrayList<String> source;
+    private ArrayList<StringListItem> source;
 
     private Handler handler = new Handler() {
 
@@ -58,7 +59,7 @@ public class SearchInfoActivity extends BaseActivity{
                     loading.dismiss();
                     break;
                 case EventName.UI.SUCCESS:
-                    source = (ArrayList<String>) msg.obj;
+                    source = (ArrayList<StringListItem>) msg.obj;
                     adapter.removeAll();
                     adapter.insert(source);
                     break;
@@ -82,16 +83,30 @@ public class SearchInfoActivity extends BaseActivity{
             HttpsFunc.getInstance().connect(handler).getUniversityList();
             title.setText("选择学校");
             search.setHint("输入你的学校");
+        }else if(scategory.equals("faculty")){
+            String fromUniversity = getIntent().getStringExtra("fromUniversity");
+            if(fromUniversity == null||fromUniversity.equals("")) fromUniversity = "*";
+            HttpsFunc.getInstance().connect(handler).getFacultyList(fromUniversity);
+            title.setText("选择院系");
+            search.setHint("输入你的院系");
         }else if(scategory.equals("class")){
             String fromUniversity = getIntent().getStringExtra("fromUniversity");
-            if(fromUniversity.equals("")||fromUniversity == null) fromUniversity = "*";
-            HttpsFunc.getInstance().connect(handler).getClassList(fromUniversity);
+            String fromFaculty = getIntent().getStringExtra("fromFaculty");
+            if(fromUniversity == null||fromUniversity.equals("")) fromUniversity = "*";
+            if(fromFaculty == null||fromFaculty.equals("")) fromFaculty = "*";
+            HttpsFunc.getInstance().connect(handler).getClassList(fromUniversity,fromFaculty);
             title.setText("选择班级");
             search.setHint("输入你的班级");
         }else if(scategory.equals("grade")){
             initGrade();
             title.setText("选择年级");
             search.setHint("输入你的年级");
+        }else if(scategory.equals("course")){
+            String fromUniversity = getIntent().getStringExtra("fromUniversity");
+            if(fromUniversity == null||fromUniversity.equals("")) fromUniversity = "*";
+            HttpsFunc.getInstance().connect(handler).getCourseList(fromUniversity);
+            title.setText("选择课程");
+            search.setHint("搜索课程");
         }
 
         adapter = new TextAdapter(source);
@@ -113,7 +128,7 @@ public class SearchInfoActivity extends BaseActivity{
                         imm.hideSoftInputFromWindow(v.getApplicationWindowToken(), 0 );
                     }
                     String param = search.getText().toString();
-                    ArrayList<String> info = ItOneUtils.search(source,param);
+                    ArrayList<StringListItem> info = ItOneUtils.search(source,param);
                     adapter.removeAll();
                     adapter.insert(info);
                     return true;
@@ -130,8 +145,10 @@ public class SearchInfoActivity extends BaseActivity{
                 new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
                     @Override
                     public void onItemClick(RecyclerView parent, View clickedView, int position) {
+                        StringListItem r = adapter.getItem(position);
                         Intent intent = new Intent();
-                        intent.putExtra("result",adapter.getItem(position));
+                        intent.putExtra("result",r.name);
+                        if(r.id != -1) intent.putExtra("id",r.id);
                         SearchInfoActivity.this.setResult(Activity.RESULT_OK,intent);
                         SearchInfoActivity.this.finish();
                     }
@@ -150,7 +167,9 @@ public class SearchInfoActivity extends BaseActivity{
     private void initGrade(){
         int year = new Date().getYear()+1900;
         for(int i=0;i<6;i++){
-            source.add((year-i)+"级");
+            StringListItem str = new StringListItem();
+            str.name = (year-i)+"级";
+            source.add(str);
         }
     }
 }

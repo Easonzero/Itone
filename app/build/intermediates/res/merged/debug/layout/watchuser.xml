@@ -1,77 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:background="@color/base_background_color"
-    android:layout_height="match_parent">
-    <RelativeLayout style="@style/toolbar" >
+    android:layout_height="match_parent"
+    android:background="#e9ecf3">
+    <RelativeLayout style="@style/toolbar"
+        android:layout_height="@dimen/userToolbarHeight">
         <TextView
+            android:id="@+id/userName"
             style="@style/titletext"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:text="个人锦囊"/>
+            android:layout_height="@dimen/menuitemSize"
+            android:layout_toRightOf="@id/back"
+            android:gravity="center_vertical"
+            android:text="eason"/>
         <Button
             android:id="@+id/back"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="@dimen/menuitemSize"
             android:layout_height="@dimen/menuitemSize"
-            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:background="@drawable/back2" />
-    </RelativeLayout>
-
-    <LinearLayout
-        android:id="@+id/userInfo"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/tableMargin"
-        android:layout_marginBottom="@dimen/tableMargin"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_height="@dimen/toolbarHeight">
+        <Button
+            android:id="@+id/modify"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/smallButtonSize"
+            android:layout_height="@dimen/smallButtonSize"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ic_modify" />
         <ImageView
             android:id="@+id/pic"
-            android:layout_width="@dimen/toolbarHeight"
-            android:layout_height="match_parent" />
-        <LinearLayout
-            android:layout_marginLeft="10dp"
-            android:orientation="vertical"
+            android:layout_width="@dimen/largepicWidth"
+            android:layout_height="@dimen/largepicWidth"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="45dp"
+            android:src="@drawable/headpic"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:background="@color/base_background_color"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/info"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:layout_weight="1">
             <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1">
                 <TextView
-                    android:id="@+id/name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="bottom"
-                    android:textColor="@color/apptheme_third_color"
-                    android:textSize="@dimen/nameTextSize"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="5dp"
-                    android:gravity="bottom"
-                    android:textColor="@color/apptheme_second_color"
-                    android:id="@+id/downloadnum"/>
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="我的人民π"
+                    android:textColor="@color/apptheme_second_color"/>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="@dimen/smallButtonSize"
+                        android:layout_height="@dimen/smallButtonSize"
+                        android:src="@drawable/ic_money"/>
+                    <TextView
+                        android:id="@+id/money"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/apptheme_third_color"
+                        android:textSize="@dimen/nameTextSize"/>
+                </LinearLayout>
             </LinearLayout>
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="top"
-                android:textColor="@color/apptheme_second_color"
-                android:layout_weight="1"
-                android:id="@+id/from"/>
+                android:layout_weight="1">
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="我的影响力"
+                    android:textColor="@color/apptheme_second_color"/>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="@dimen/smallButtonSize"
+                        android:layout_height="@dimen/smallButtonSize"
+                        android:src="@drawable/ic_downloadnum"/>
+                    <TextView
+                        android:id="@+id/downloadNum"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textColor="@color/apptheme_third_color"
+                        android:textSize="@dimen/nameTextSize"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="我的排名"
+                    android:textColor="@color/apptheme_second_color"/>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="@dimen/smallButtonSize"
+                        android:layout_height="@dimen/smallButtonSize"
+                        android:src="@drawable/ic_rank"/>
+                    <TextView
+                        android:id="@+id/rank"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textSize="@dimen/nameTextSize"
+                        android:textColor="@color/apptheme_third_color"/>
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
-        <com.wangyi.UIview.widget.view.NumberView
-            android:id="@+id/number"
-            android:layout_width="@dimen/ic_numberWidth"
-            android:layout_height="match_parent"
-            android:background="@drawable/bg_rank"
-            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:gravity="center_vertical"
+            android:text="如何获得人民π?"/>
     </LinearLayout>
 
     <com.marshalchen.ultimaterecyclerview.UltimateRecyclerView

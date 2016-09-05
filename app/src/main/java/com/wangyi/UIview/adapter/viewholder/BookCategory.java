@@ -21,7 +21,8 @@ import org.xutils.x;
  * Created by eason on 5/11/16.
  */
 public class BookCategory extends parent<ExpandDataItem<BookData>> {
-    public ImageView image;
+    @ViewInject(R.id.exp_section_icon)
+    public ImageView icon;
     @ViewInject(R.id.exp_section_title)
     public TextView text;
     @ViewInject(R.id.exp_section_notification_number)
@@ -62,11 +63,13 @@ public class BookCategory extends parent<ExpandDataItem<BookData>> {
     public void bindView(final ExpandDataItem<BookData> itemData, final int position, final ItemDataClickListener imageClickListener) {
         adjustmentlayout.setLayoutParams(getParamsLayout(adjustmentlayout, itemData));
 
-        if (capitalized) {
-            text.setText(itemData.getText().toUpperCase());
-        } else {
-            text.setText(itemData.getText());
-        }
+        String title = itemData.getText().toString();
+
+        if(title.equals("我的ppt")) icon.setImageResource(R.drawable.ic_sub_ppt);
+        else if(title.equals("我的笔记")) icon.setImageResource(R.drawable.ic_sub_homework);
+        else if(title.equals("我的课本")) icon.setImageResource(R.drawable.ic_sub_book);
+
+        text.setText(title);
 
         setHandleInitiatedViewStatus(itemData, expand, count);
         setRelativeLayoutClickable(relativeLayout, itemData, imageClickListener, position);

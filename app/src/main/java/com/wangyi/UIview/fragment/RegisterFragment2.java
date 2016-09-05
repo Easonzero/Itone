@@ -40,51 +40,15 @@ public class RegisterFragment2 extends BaseFragment {
     private int time = 60;
     private String id;
 
-    private String fuck = "none";
-
-    private BroadcastReceiver myReceiver = new BroadcastReceiver(){
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            // TODO Auto-generated method stub
-            Bundle bundle = intent.getExtras();
-            SmsMessage msg = null;
-            if (null != bundle) {
-                Object[] smsObj = (Object[]) bundle.get("pdus");
-                for (Object object : smsObj) {
-                    msg = SmsMessage.createFromPdu((byte[]) object);
-                    String content = msg.getDisplayMessageBody();
-                    if (content.contains("【")) {
-                        //TODO
-                        fuck = content.substring(content.indexOf("：")+1,content.indexOf("，"));
-                    }
-                }
-            }
-        }
-
-    };
-
     @Override
     public void onHiddenChanged(boolean hidden) {
         if(!hidden){
-            fuck = "none";
             id = getMessage();
             tel.setText("您的手机号："+id);
             run.run();
-            IntentFilter filter = new IntentFilter();
-            filter.addAction("android.provider.Telephony.SMS_RECEIVED");
-            getActivity().registerReceiver(myReceiver, filter);
         }else{
             time = 60;
             handler.removeCallbacks(run);
-            try {
-
-                getActivity().unregisterReceiver(myReceiver);
-            } catch (IllegalArgumentException e) {
-                if (!e.getMessage().contains("Receiver not registered")) {
-                    throw e;
-                }
-            }
         }
     }
 
@@ -121,6 +85,6 @@ public class RegisterFragment2 extends BaseFragment {
     }
 
     public boolean check(String ckn){
-        return fuck.equals(checknum.getText().toString());
+        return ckn.equals(checknum.getText().toString());
     }
 }

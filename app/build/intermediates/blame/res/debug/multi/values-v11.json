@@ -255,9 +255,51 @@
                     "startLine": 54,
                     "startColumn": 4,
                     "startOffset": 3859,
-                    "endLine": 59,
+                    "endLine": 70,
                     "endColumn": 12,
-                    "endOffset": 4130
+                    "endOffset": 4910
+                },
+                "from": {
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/values-v11/values-v11.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 158,
+                        "endLine": 20,
+                        "endColumn": 12,
+                        "endOffset": 1209
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 71,
+                    "startColumn": 4,
+                    "startOffset": 4915,
+                    "endLine": 87,
+                    "endColumn": 12,
+                    "endOffset": 5948
+                },
+                "from": {
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/values-v11/values-v11.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 1214,
+                        "endLine": 37,
+                        "endColumn": 12,
+                        "endOffset": 2247
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 88,
+                    "startColumn": 4,
+                    "startOffset": 5953,
+                    "endLine": 93,
+                    "endColumn": 12,
+                    "endOffset": 6224
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
@@ -273,12 +315,12 @@
             },
             {
                 "to": {
-                    "startLine": 60,
+                    "startLine": 94,
                     "startColumn": 4,
-                    "startOffset": 4135,
-                    "endLine": 63,
+                    "startOffset": 6229,
+                    "endLine": 97,
                     "endColumn": 12,
-                    "endOffset": 4414
+                    "endOffset": 6508
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
@@ -294,12 +336,12 @@
             },
             {
                 "to": {
-                    "startLine": 64,
+                    "startLine": 98,
                     "startColumn": 4,
-                    "startOffset": 4419,
-                    "endLine": 68,
+                    "startOffset": 6513,
+                    "endLine": 102,
                     "endColumn": 12,
-                    "endOffset": 4714
+                    "endOffset": 6808
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
@@ -315,12 +357,12 @@
             },
             {
                 "to": {
-                    "startLine": 69,
+                    "startLine": 103,
                     "startColumn": 4,
-                    "startOffset": 4719,
-                    "endLine": 74,
+                    "startOffset": 6813,
+                    "endLine": 108,
                     "endColumn": 12,
-                    "endOffset": 5014
+                    "endOffset": 7108
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
@@ -336,12 +378,12 @@
             },
             {
                 "to": {
-                    "startLine": 75,
+                    "startLine": 109,
                     "startColumn": 4,
-                    "startOffset": 5019,
-                    "endLine": 78,
+                    "startOffset": 7113,
+                    "endLine": 112,
                     "endColumn": 12,
-                    "endOffset": 5310
+                    "endOffset": 7404
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
@@ -357,12 +399,12 @@
             },
             {
                 "to": {
-                    "startLine": 79,
+                    "startLine": 113,
                     "startColumn": 4,
-                    "startOffset": 5315,
-                    "endLine": 87,
+                    "startOffset": 7409,
+                    "endLine": 121,
                     "endColumn": 12,
-                    "endOffset": 5732
+                    "endOffset": 7826
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
@@ -378,12 +420,12 @@
             },
             {
                 "to": {
-                    "startLine": 88,
+                    "startLine": 122,
                     "startColumn": 4,
-                    "startOffset": 5737,
-                    "endLine": 92,
+                    "startOffset": 7831,
+                    "endLine": 126,
                     "endColumn": 12,
-                    "endOffset": 6044
+                    "endOffset": 8138
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
@@ -399,12 +441,12 @@
             },
             {
                 "to": {
-                    "startLine": 93,
+                    "startLine": 127,
                     "startColumn": 4,
-                    "startOffset": 6049,
-                    "endLine": 96,
+                    "startOffset": 8143,
+                    "endLine": 130,
                     "endColumn": 12,
-                    "endOffset": 6220
+                    "endOffset": 8314
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
@@ -420,12 +462,12 @@
             },
             {
                 "to": {
-                    "startLine": 97,
+                    "startLine": 131,
                     "startColumn": 4,
-                    "startOffset": 6225,
-                    "endLine": 100,
+                    "startOffset": 8319,
+                    "endLine": 134,
                     "endColumn": 12,
-                    "endOffset": 6408
+                    "endOffset": 8502
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
@@ -441,12 +483,12 @@
             },
             {
                 "to": {
-                    "startLine": 101,
+                    "startLine": 135,
                     "startColumn": 4,
-                    "startOffset": 6413,
-                    "endLine": 104,
+                    "startOffset": 8507,
+                    "endLine": 138,
                     "endColumn": 12,
-                    "endOffset": 6620
+                    "endOffset": 8714
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.2.5/res/values-v11/values-v11.xml",
@@ -462,11 +504,11 @@
             },
             {
                 "to": {
-                    "startLine": 105,
+                    "startLine": 139,
                     "startColumn": 4,
-                    "startOffset": 6625,
+                    "startOffset": 8719,
                     "endColumn": 70,
-                    "endOffset": 6691
+                    "endOffset": 8785
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/values-v11/values-v11.xml",
@@ -481,11 +523,11 @@
             },
             {
                 "to": {
-                    "startLine": 106,
+                    "startLine": 140,
                     "startColumn": 4,
-                    "startOffset": 6696,
+                    "startOffset": 8790,
                     "endColumn": 82,
-                    "endOffset": 6774
+                    "endOffset": 8868
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/values-v11/values-v11.xml",
@@ -500,12 +542,12 @@
             },
             {
                 "to": {
-                    "startLine": 107,
+                    "startLine": 141,
                     "startColumn": 4,
-                    "startOffset": 6779,
-                    "endLine": 157,
+                    "startOffset": 8873,
+                    "endLine": 191,
                     "endColumn": 12,
-                    "endOffset": 10482
+                    "endOffset": 12576
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/values-v11/values-v11.xml",
@@ -521,12 +563,12 @@
             },
             {
                 "to": {
-                    "startLine": 158,
+                    "startLine": 192,
                     "startColumn": 4,
-                    "startOffset": 10487,
-                    "endLine": 209,
+                    "startOffset": 12581,
+                    "endLine": 243,
                     "endColumn": 12,
-                    "endOffset": 14330
+                    "endOffset": 16424
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/values-v11/values-v11.xml",
@@ -542,11 +584,11 @@
             },
             {
                 "to": {
-                    "startLine": 210,
+                    "startLine": 244,
                     "startColumn": 4,
-                    "startOffset": 14335,
+                    "startOffset": 16429,
                     "endColumn": 90,
-                    "endOffset": 14421
+                    "endOffset": 16515
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/values-v11/values-v11.xml",

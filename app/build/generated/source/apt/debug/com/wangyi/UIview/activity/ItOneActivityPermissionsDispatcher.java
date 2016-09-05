@@ -6,7 +6,7 @@ import java.lang.String;
 import permissions.dispatcher.PermissionUtils;
 
 final class ItOneActivityPermissionsDispatcher {
-  private static final int REQUEST_ONGRANTED = 1;
+  private static final int REQUEST_ONGRANTED = 0;
 
   private static final String[] PERMISSION_ONGRANTED = new String[] {"android.permission.READ_EXTERNAL_STORAGE"};
 

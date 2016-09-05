@@ -159,8 +159,27 @@
                     "startLine": 10,
                     "startColumn": 4,
                     "startOffset": 614,
+                    "endColumn": 58,
+                    "endOffset": 668
+                },
+                "from": {
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/commons/0.8.0.1/res/values-xlarge/values-xlarge.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 164,
+                        "endColumn": 58,
+                        "endOffset": 218
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 673,
                     "endColumn": 54,
-                    "endOffset": 664
+                    "endOffset": 723
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/values-xlarge-v4/values-xlarge-v4.xml",

@@ -15,6 +15,8 @@ import android.os.Looper;
 import android.util.DisplayMetrics;
 import android.widget.Toast;
 
+import com.wangyi.define.bean.StringListItem;
+
 public class ItOneUtils {
 	public static int dip2px(Context context, float dpValue) {
 		final float scale = context.getResources().getDisplayMetrics().density;
@@ -79,11 +81,11 @@ public class ItOneUtils {
 		return str1+"@"+str2;
 	}
 
-	public static ArrayList<String> search(ArrayList<String> origin, String param){
+	public static ArrayList<StringListItem> search(ArrayList<StringListItem> origin, String param){
 		if(param.equals("")) return origin;
-		ArrayList<String> result = new ArrayList<>();
-		for(String str:origin){
-			if(str.contains(param)){
+		ArrayList<StringListItem> result = new ArrayList<>();
+		for(StringListItem str:origin){
+			if(str.name.contains(param)){
 				result.add(str);
 			}
 		}

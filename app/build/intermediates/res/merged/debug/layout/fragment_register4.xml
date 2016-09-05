@@ -2,80 +2,175 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <LinearLayout style="@style/smallitem"
-        android:layout_height="@dimen/largepicWidth">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="头  像"
-            android:layout_weight="1"/>
+    <ImageView
+        android:id="@+id/headpic"
+        android:layout_gravity="center"
+        android:layout_width="@dimen/largepicWidth"
+        android:layout_height="@dimen/largepicWidth"
+        android:layout_margin="@dimen/padding_step3"
+        android:src="@drawable/headpic" />
+    <LinearLayout
+        android:paddingBottom="@dimen/toolbarHeight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="@dimen/ic_numberWidth"
+        android:layout_marginTop="@dimen/padding_step2">
         <ImageView
-            android:id="@+id/headpic"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/headpic" />
-        <ImageView style="@style/arrow" />
+            android:src="@drawable/ic_name"
+            android:layout_width="@dimen/smallButtonSize"
+            android:layout_height="@dimen/smallButtonSize"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/padding_step3"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/apptheme_third_color"
+                android:text="姓名"/>
+            <EditText
+                android:id="@+id/userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="输入姓名"/>
+        </LinearLayout>
     </LinearLayout>
-    <View style="@style/line"/>
-
-    <LinearLayout style="@style/smallitem">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="姓  名"/>
-        <EditText
-            android:id="@+id/userName"
-            android:maxLength="8"
-            android:background="@null"
-            android:layout_width="@dimen/toolbarHeight"
-            android:layout_height="match_parent"
-            android:textColor="@color/apptheme_second_color"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="@dimen/ic_numberWidth"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/padding_step2">
+        <ImageView
+            android:src="@drawable/ic_university"
+            android:layout_width="@dimen/smallButtonSize"
+            android:layout_height="@dimen/smallButtonSize"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/padding_step3"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/apptheme_third_color"
+                android:text="学校"/>
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/university"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="选择学校"/>
+        </LinearLayout>
     </LinearLayout>
-    <View style="@style/line"/>
-    <LinearLayout style="@style/smallitem"
-        android:id="@+id/university">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="学  校"
-            android:layout_weight="1"/>
-        <TextView
-            android:id="@+id/university_tx"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textColor="@color/apptheme_second_color"/>
-        <ImageView style="@style/arrow" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="@dimen/ic_numberWidth"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/padding_step2">
+        <ImageView
+            android:src="@drawable/ic_faculty"
+            android:layout_width="@dimen/smallButtonSize"
+            android:layout_height="@dimen/smallButtonSize"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/padding_step3"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/apptheme_third_color"
+                android:text="院系"/>
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/faculty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="选择院系"/>
+        </LinearLayout>
     </LinearLayout>
-    <View style="@style/line"/>
-    <LinearLayout style="@style/smallitem"
-                  android:id="@+id/Class">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="班  级"
-            android:layout_weight="1"/>
-        <TextView
-            android:id="@+id/Class_tx"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textColor="@color/apptheme_second_color"/>
-        <ImageView style="@style/arrow" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="@dimen/ic_numberWidth"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/padding_step2">
+        <ImageView
+            android:src="@drawable/ic_class"
+            android:layout_width="@dimen/smallButtonSize"
+            android:layout_height="@dimen/smallButtonSize"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/padding_step3"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/apptheme_third_color"
+                android:text="班级"/>
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/Class"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="选择班级"/>
+        </LinearLayout>
     </LinearLayout>
-    <View style="@style/line"/>
-    <LinearLayout style="@style/smallitem"
-                  android:id="@+id/grade">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="年  级"
-            android:layout_weight="1"/>
-        <TextView
-            android:id="@+id/grade_tx"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textColor="@color/apptheme_second_color"/>
-        <ImageView style="@style/arrow" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="@dimen/ic_numberWidth"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/padding_step2">
+        <ImageView
+            android:src="@drawable/ic_grade"
+            android:layout_width="@dimen/smallButtonSize"
+            android:layout_height="@dimen/smallButtonSize"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/padding_step3"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/apptheme_third_color"
+                android:text="入学日期"/>
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/grade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="选择入学日期"/>
+        </LinearLayout>
     </LinearLayout>
-    <View style="@style/line"/>
+        </LinearLayout>
 </LinearLayout>

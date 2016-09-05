@@ -41,6 +41,13 @@
 		</RelativeLayout>
 	</RelativeLayout>
 
+	<com.astuetz.PagerSlidingTabStrip
+	android:id="@+id/tabs_strip"
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/bottombar_height"
+	android:background="@color/basebar_color">
+	</com.astuetz.PagerSlidingTabStrip>
+
 	<TextView
 			android:id="@+id/lessonTitle"
 			android:layout_width="match_parent"
@@ -65,11 +72,14 @@
 			android:layout_below="@+id/lessons"
 			android:layout_width="match_parent"
 			android:layout_height="0.1dip"
-			android:background="#cccccc" />
+			android:background="#cccccc"
+			android:visibility="gone"/>
 
-	<com.marshalchen.ultimaterecyclerview.UltimateRecyclerView
-			android:id="@+id/booklist"
-			android:layout_below="@+id/lessons"
-			android:layout_width="fill_parent"
-			android:layout_height="fill_parent" />
+	<android.support.v4.view.ViewPager
+		android:id="@+id/pager"
+		android:layout_below="@+id/tabs_strip"
+		android:layout_height="match_parent"
+		android:layout_width="match_parent">
+
+	</android.support.v4.view.ViewPager>
 </LinearLayout>

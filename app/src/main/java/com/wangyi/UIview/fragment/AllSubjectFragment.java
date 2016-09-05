@@ -1,12 +1,16 @@
 package com.wangyi.UIview.fragment;
 
 import android.content.Intent;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.RelativeLayout;
+
+import com.astuetz.PagerSlidingTabStrip;
 import com.marshalchen.ultimaterecyclerview.ItemTouchListenerAdapter;
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
 import com.wangyi.UIview.activity.SearchActivity;
 import com.wangyi.UIview.activity.WatchBook;
+import com.wangyi.UIview.adapter.CategoryAdapter;
 import com.wangyi.UIview.widget.view.UltimateListView;
 import com.wangyi.define.bean.BookData;
 import org.xutils.view.annotation.*;
@@ -39,14 +43,15 @@ public class AllSubjectFragment extends BaseFragment {
 			"西方美术史","人机交互"};
 	@ViewInject(R.id.lessons)
 	private LessonListLayout lessons;
-	@ViewInject(R.id.booklist)
-	private UltimateRecyclerView bookList;
+	@ViewInject(R.id.pager)
+	private ViewPager mViewPager;
+	@ViewInject(R.id.tabs_strip)
+	private PagerSlidingTabStrip tabsStrip;
     @ViewInject(R.id.measure)
     private RelativeLayout measure;
 
-	private SearchBookAdapter adapter;
-
-	protected int start = 0;
+	private CategoryAdapter adapter;
+	private int current = 0;
 
 	private Handler handler = new Handler() {
 
@@ -58,12 +63,12 @@ public class AllSubjectFragment extends BaseFragment {
 					break;
 				case EventName.UI.SUCCESS:
 					ArrayList<BookData> book = (ArrayList<BookData>) msg.obj;
-					adapter.insert(book);
+					adapter.getAdapter(current).insert(book);
 					if(book.size() != 0)
-						start += book.size();
+						adapter.increaseStart(current,book.size());
 					else{
 						ItOneUtils.showToast(getContext(), "已經加載全部資源");
-						adapter.getCustomLoadMoreView().setVisibility(View.GONE);
+						adapter.getAdapter(current).getCustomLoadMoreView().setVisibility(View.GONE);
 					}
 					break;
 				case EventName.UI.START:
@@ -77,10 +82,55 @@ public class AllSubjectFragment extends BaseFragment {
 	public void onActivityCreated(Bundle savedInstanceState){
 		super.onActivityCreated(savedInstanceState);
 
-		adapter = new SearchBookAdapter(new ArrayList<BookData>());
-
-		initBookList();
+		initCategoryBar();
     }
+
+	private void initCategoryBar(){
+		adapter = new CategoryAdapter(getContext(), new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
+			@Override
+			public void onItemClick(RecyclerView parent, View clickedView, int position) {
+				if(position > adapter.getAdapter(current).getItemCount()|| position < 0) return;
+				Intent intent = new Intent(AllSubjectFragment.this.getActivity().getApplicationContext(),WatchBook.class);
+				Bundle bundle = new Bundle();
+				bundle.putSerializable("book", adapter.getAdapter(current).getItemData(position));
+				intent.putExtras(bundle);
+				startActivity(intent);
+			}
+
+			@Override
+			public void onItemLongClick(RecyclerView parent, View clickedView, int position) {
+
+			}
+		},handler);
+
+		mViewPager.setAdapter(adapter);
+		tabsStrip.setViewPager(mViewPager);
+		tabsStrip.setIndicatorColorResource(R.color.accent_color);
+		tabsStrip.setTextColorResource(R.color.tabtext_normal_color);
+		tabsStrip.setShouldExpand(true);
+		mViewPager.setCurrentItem(0);
+		mViewPager.setOffscreenPageLimit(4);
+
+		tabsStrip.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+			@Override
+			public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+			}
+
+			@Override
+			public void onPageSelected(int position) {
+				current = position;
+				UserInfo user = UserManagerFunc.getInstance().getUserInfo();
+				if(user != null&&adapter!=null&&adapter.getAdapter(current).isEmpty())
+					HttpsFunc.getInstance().connect(handler).searchBooksBySubject("全部",user.university,adapter.getCategory(current),adapter.getStart(current));
+			}
+
+			@Override
+			public void onPageScrollStateChanged(int state) {
+
+			}
+		});
+	}
 
 	private void initLesson(){
 		lessons.addLessons(keywords,new OnClickListener(){
@@ -96,52 +146,11 @@ public class AllSubjectFragment extends BaseFragment {
 				String subject = ((TextView)view).getText().toString();
 				UserInfo user = UserManagerFunc.getInstance().getUserInfo();
 				if(user != null)
-					HttpsFunc.getInstance().connect(handler).searchBooksBySubject(subject,user.university,0);
+					HttpsFunc.getInstance().connect(handler).searchBooksBySubject(subject,user.university,adapter.getCategory(current),0);
 			}
 
 		});
 	}
-
-	private void initBookList(){
-		UltimateListView view = new UltimateListView(bookList,adapter,getContext());
-		view.beforeFuncset();
-		view.enableLoadmore(new UltimateRecyclerView.OnLoadMoreListener() {
-			@Override
-			public void loadMore(int itemsCount, final int maxLastVisiblePosition) {
-				if(UserManagerFunc.getInstance().isLogin()){
-					handler.postDelayed(new Runnable() {
-						public void run() {
-							UserInfo user = UserManagerFunc.getInstance().getUserInfo();
-							HttpsFunc.getInstance().connect(handler).searchBooksBySubject("全部",user.university,start);
-						}
-					}, 500);
-				}
-			}
-		});
-
-		view.enableItemClick(
-				new ItemTouchListenerAdapter(bookList.mRecyclerView,
-				new ItemTouchListenerAdapter.RecyclerViewOnItemClickListener() {
-					@Override
-					public void onItemClick(RecyclerView parent, View clickedView, int position) {
-						if(position > adapter.getItemCount()|| position < 0) return;
-						Intent intent = new Intent(AllSubjectFragment.this.getActivity().getApplicationContext(),WatchBook.class);
-						Bundle bundle = new Bundle();
-						bundle.putSerializable("book", adapter.getItemData(position));
-						intent.putExtras(bundle);
-						startActivity(intent);
-					}
-
-					@Override
-					public void onItemLongClick(RecyclerView recyclerView, View view, int i) {}
-				})
-		);
-		view.afterFuncset();
-	}
-
-    private int getWindowHeight(){
-        return measure.getHeight();
-    }
 
 	@Override
 	public void onHiddenChanged(boolean hidden) {
@@ -149,12 +158,16 @@ public class AllSubjectFragment extends BaseFragment {
 		super.onHiddenChanged(hidden);
 		if(!hidden){
 			UserInfo user = UserManagerFunc.getInstance().getUserInfo();
-			if(user != null&&adapter!=null&&adapter.isEmpty())
-				HttpsFunc.getInstance().connect(handler).searchBooksBySubject("全部",user.university,start);
+			if(user != null&&adapter!=null)
+				HttpsFunc.getInstance().connect(handler).searchBooksBySubject("*",user.university,adapter.getCategory(current),0);
 		}else{
 			BookManagerFunc.getInstance().connect(handler).clear();
 		}
 	}
+
+    private int getWindowHeight(){
+        return measure.getHeight();
+    }
 
 	@Event(R.id.search)
 	private void onSearchClick(View view){

@@ -199,6 +199,48 @@
                         "endOffset": 1844
                     }
                 }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 1849,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 2217
+                },
+                "from": {
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/values-v14/values-v14.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 158,
+                        "endLine": 10,
+                        "endColumn": 12,
+                        "endOffset": 526
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 2222,
+                    "endLine": 43,
+                    "endColumn": 12,
+                    "endOffset": 2649
+                },
+                "from": {
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/values-v14/values-v14.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 531,
+                        "endLine": 19,
+                        "endColumn": 12,
+                        "endOffset": 958
+                    }
+                }
             }
         ]
     }

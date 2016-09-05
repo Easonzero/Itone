@@ -26,8 +26,8 @@ android {
         applicationId 'com.wangyi.reader'
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 52
-        versionName '1.0-beta2'
+        versionCode 54
+        versionName '1.0-beta3'
 		aaptOptions.cruncherEnabled = false
 		aaptOptions.useNewCruncher = false
     }
@@ -67,6 +67,9 @@ dependencies {
     compile 'com.android.support:support-v4:23.4.0'
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile('com.mikepenz:materialdrawer:4.0.8@aar') {
+        transitive = true
+    }
+    compile('com.afollestad.material-dialogs:commons:0.8.0.1@aar') {
         transitive = true
     }
     compile 'com.hkm.ui:ultimaterecyclerview:0.5.8'

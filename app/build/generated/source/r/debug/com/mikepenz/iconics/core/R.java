@@ -8,14 +8,14 @@ package com.mikepenz.iconics.core;
 
 public final class R {
 	public static final class attr {
-		public static final int iiv_background_color = 0x7f0100bd;
-		public static final int iiv_color = 0x7f0100b8;
-		public static final int iiv_contour_color = 0x7f0100bb;
-		public static final int iiv_contour_width = 0x7f0100bc;
-		public static final int iiv_corner_radius = 0x7f0100be;
-		public static final int iiv_icon = 0x7f0100b7;
-		public static final int iiv_padding = 0x7f0100ba;
-		public static final int iiv_size = 0x7f0100b9;
+		public static final int iiv_background_color = 0x7f0100d9;
+		public static final int iiv_color = 0x7f0100d4;
+		public static final int iiv_contour_color = 0x7f0100d7;
+		public static final int iiv_contour_width = 0x7f0100d8;
+		public static final int iiv_corner_radius = 0x7f0100da;
+		public static final int iiv_icon = 0x7f0100d3;
+		public static final int iiv_padding = 0x7f0100d6;
+		public static final int iiv_size = 0x7f0100d5;
 	}
 	public static final class string {
 		public static final int app_name = 0x7f060022;
@@ -33,7 +33,7 @@ public final class R {
 		public static final int library_AndroidIconics_year = 0x7f060049;
 	}
 	public static final class styleable {
-		public static final int[] IconicsImageView = { 0x7f0100b7, 0x7f0100b8, 0x7f0100b9, 0x7f0100ba, 0x7f0100bb, 0x7f0100bc, 0x7f0100bd, 0x7f0100be };
+		public static final int[] IconicsImageView = { 0x7f0100d3, 0x7f0100d4, 0x7f0100d5, 0x7f0100d6, 0x7f0100d7, 0x7f0100d8, 0x7f0100d9, 0x7f0100da };
 		public static final int IconicsImageView_iiv_background_color = 6;
 		public static final int IconicsImageView_iiv_color = 1;
 		public static final int IconicsImageView_iiv_contour_color = 4;

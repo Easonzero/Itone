@@ -7,8 +7,27 @@
                     "startLine": 2,
                     "startColumn": 4,
                     "startOffset": 55,
+                    "endColumn": 41,
+                    "endOffset": 92
+                },
+                "from": {
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/values-sw720dp/values-sw720dp.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 160,
+                        "endColumn": 41,
+                        "endOffset": 197
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 97,
                     "endColumn": 53,
-                    "endOffset": 104
+                    "endOffset": 146
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -23,11 +42,11 @@
             },
             {
                 "to": {
-                    "startLine": 3,
+                    "startLine": 4,
                     "startColumn": 4,
-                    "startOffset": 109,
+                    "startOffset": 151,
                     "endColumn": 45,
-                    "endOffset": 150
+                    "endOffset": 192
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -42,11 +61,11 @@
             },
             {
                 "to": {
-                    "startLine": 4,
+                    "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 155,
+                    "startOffset": 197,
                     "endColumn": 47,
-                    "endOffset": 198
+                    "endOffset": 240
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -61,11 +80,11 @@
             },
             {
                 "to": {
-                    "startLine": 5,
+                    "startLine": 6,
                     "startColumn": 4,
-                    "startOffset": 203,
+                    "startOffset": 245,
                     "endColumn": 48,
-                    "endOffset": 247
+                    "endOffset": 289
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -80,11 +99,11 @@
             },
             {
                 "to": {
-                    "startLine": 6,
+                    "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 252,
+                    "startOffset": 294,
                     "endColumn": 41,
-                    "endOffset": 289
+                    "endOffset": 331
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -99,11 +118,11 @@
             },
             {
                 "to": {
-                    "startLine": 7,
+                    "startLine": 8,
                     "startColumn": 4,
-                    "startOffset": 294,
+                    "startOffset": 336,
                     "endColumn": 50,
-                    "endOffset": 340
+                    "endOffset": 382
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -118,11 +137,11 @@
             },
             {
                 "to": {
-                    "startLine": 8,
+                    "startLine": 9,
                     "startColumn": 4,
-                    "startOffset": 345,
+                    "startOffset": 387,
                     "endColumn": 52,
-                    "endOffset": 393
+                    "endOffset": 435
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -137,11 +156,11 @@
             },
             {
                 "to": {
-                    "startLine": 9,
+                    "startLine": 10,
                     "startColumn": 4,
-                    "startOffset": 398,
+                    "startOffset": 440,
                     "endColumn": 57,
-                    "endOffset": 451
+                    "endOffset": 493
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -156,11 +175,11 @@
             },
             {
                 "to": {
-                    "startLine": 10,
+                    "startLine": 11,
                     "startColumn": 4,
-                    "startOffset": 456,
+                    "startOffset": 498,
                     "endColumn": 55,
-                    "endOffset": 507
+                    "endOffset": 549
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -175,11 +194,11 @@
             },
             {
                 "to": {
-                    "startLine": 11,
+                    "startLine": 12,
                     "startColumn": 4,
-                    "startOffset": 512,
+                    "startOffset": 554,
                     "endColumn": 51,
-                    "endOffset": 559
+                    "endOffset": 601
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -194,11 +213,11 @@
             },
             {
                 "to": {
-                    "startLine": 12,
+                    "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 564,
+                    "startOffset": 606,
                     "endColumn": 52,
-                    "endOffset": 612
+                    "endOffset": 654
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -213,11 +232,11 @@
             },
             {
                 "to": {
-                    "startLine": 13,
+                    "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 617,
+                    "startOffset": 659,
                     "endColumn": 44,
-                    "endOffset": 657
+                    "endOffset": 699
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -232,11 +251,11 @@
             },
             {
                 "to": {
-                    "startLine": 14,
+                    "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 662,
+                    "startOffset": 704,
                     "endColumn": 46,
-                    "endOffset": 704
+                    "endOffset": 746
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -251,11 +270,11 @@
             },
             {
                 "to": {
-                    "startLine": 15,
+                    "startLine": 16,
                     "startColumn": 4,
-                    "startOffset": 709,
+                    "startOffset": 751,
                     "endColumn": 47,
-                    "endOffset": 752
+                    "endOffset": 794
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -270,11 +289,11 @@
             },
             {
                 "to": {
-                    "startLine": 16,
+                    "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 757,
+                    "startOffset": 799,
                     "endColumn": 46,
-                    "endOffset": 799
+                    "endOffset": 841
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -289,11 +308,11 @@
             },
             {
                 "to": {
-                    "startLine": 17,
+                    "startLine": 18,
                     "startColumn": 4,
-                    "startOffset": 804,
+                    "startOffset": 846,
                     "endColumn": 45,
-                    "endOffset": 845
+                    "endOffset": 887
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -308,11 +327,11 @@
             },
             {
                 "to": {
-                    "startLine": 18,
+                    "startLine": 19,
                     "startColumn": 4,
-                    "startOffset": 850,
+                    "startOffset": 892,
                     "endColumn": 47,
-                    "endOffset": 893
+                    "endOffset": 935
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -327,11 +346,11 @@
             },
             {
                 "to": {
-                    "startLine": 19,
+                    "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 898,
+                    "startOffset": 940,
                     "endColumn": 47,
-                    "endOffset": 941
+                    "endOffset": 983
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -346,11 +365,11 @@
             },
             {
                 "to": {
-                    "startLine": 20,
+                    "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 946,
+                    "startOffset": 988,
                     "endColumn": 43,
-                    "endOffset": 985
+                    "endOffset": 1027
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -365,11 +384,11 @@
             },
             {
                 "to": {
-                    "startLine": 21,
+                    "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 990,
+                    "startOffset": 1032,
                     "endColumn": 50,
-                    "endOffset": 1036
+                    "endOffset": 1078
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -384,11 +403,11 @@
             },
             {
                 "to": {
-                    "startLine": 22,
+                    "startLine": 23,
                     "startColumn": 4,
-                    "startOffset": 1041,
+                    "startOffset": 1083,
                     "endColumn": 44,
-                    "endOffset": 1081
+                    "endOffset": 1123
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -403,11 +422,11 @@
             },
             {
                 "to": {
-                    "startLine": 23,
+                    "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 1086,
+                    "startOffset": 1128,
                     "endColumn": 43,
-                    "endOffset": 1125
+                    "endOffset": 1167
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -422,11 +441,11 @@
             },
             {
                 "to": {
-                    "startLine": 24,
+                    "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 1130,
+                    "startOffset": 1172,
                     "endColumn": 42,
-                    "endOffset": 1168
+                    "endOffset": 1210
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -441,11 +460,11 @@
             },
             {
                 "to": {
-                    "startLine": 25,
+                    "startLine": 26,
                     "startColumn": 4,
-                    "startOffset": 1173,
+                    "startOffset": 1215,
                     "endColumn": 46,
-                    "endOffset": 1215
+                    "endOffset": 1257
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -460,11 +479,11 @@
             },
             {
                 "to": {
-                    "startLine": 26,
+                    "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 1220,
+                    "startOffset": 1262,
                     "endColumn": 46,
-                    "endOffset": 1262
+                    "endOffset": 1304
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -479,11 +498,11 @@
             },
             {
                 "to": {
-                    "startLine": 27,
+                    "startLine": 28,
                     "startColumn": 4,
-                    "startOffset": 1267,
+                    "startOffset": 1309,
                     "endColumn": 45,
-                    "endOffset": 1308
+                    "endOffset": 1350
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -498,11 +517,11 @@
             },
             {
                 "to": {
-                    "startLine": 28,
+                    "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 1313,
+                    "startOffset": 1355,
                     "endColumn": 43,
-                    "endOffset": 1352
+                    "endOffset": 1394
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",
@@ -517,11 +536,11 @@
             },
             {
                 "to": {
-                    "startLine": 29,
+                    "startLine": 30,
                     "startColumn": 4,
-                    "startOffset": 1357,
+                    "startOffset": 1399,
                     "endColumn": 42,
-                    "endOffset": 1395
+                    "endOffset": 1437
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/src/main/res/values-sw720dp/dimens.xml",

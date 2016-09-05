@@ -1,2 +1,8 @@
-CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/wangyi/UIview/activity/UserInfoActivity$override.class
+CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/wangyi/UIview/activity/MessageActivity$2$1$override.class
 CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class
+CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/wangyi/UIview/activity/MessageActivity$override.class
+CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/wangyi/UIview/activity/MessageActivity$1$override.class
+CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/wangyi/UIview/activity/MessageActivity$4$override.class
+CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/wangyi/UIview/activity/MessageActivity$3$override.class
+CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/wangyi/UIview/activity/MessageActivity$3$1$override.class
+CHANGED,/home/eason/Repos/ItOne/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/wangyi/UIview/activity/MessageActivity$2$override.class

@@ -71,10 +71,20 @@ public class HomeFragment extends BaseFragment {
 	public void onHiddenChanged(boolean hidden) {
 		if(!hidden){
 			BookManagerFunc.getInstance().connect(handler).showFileDir();
+			adapter_lesson.update();
+			adapter_lesson.notifyDataSetChanged();
 		}else{
 			BookManagerFunc.getInstance().connect(handler).clear();
 			BookManagerFunc.getInstance().saveIfNeed();
 		}
+	}
+
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		adapter_lesson.update();
+		adapter_lesson.notifyDataSetChanged();
 	}
 
 	@Event(R.id.menu)
@@ -139,8 +149,11 @@ public class HomeFragment extends BaseFragment {
 	}
 
 	private void initLessonView(Context context){
-		adapter_lesson = new LessonGridAdapter(context);
-		
+		if(adapter_lesson==null)
+			adapter_lesson = new LessonGridAdapter(context);
+		else
+			adapter_lesson.notifyDataSetChanged();
+
 		if(adapter_lesson.getCount() != 0){
 			lessonList.setAdapter(adapter_lesson);
 		}

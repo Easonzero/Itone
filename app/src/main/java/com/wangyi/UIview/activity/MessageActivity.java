@@ -37,7 +37,9 @@ public class MessageActivity extends BaseActivity{
                 case EventName.UI.FINISH:
                     offset = 0;
                     adapter.removeAll();
-                    adapter.insert(MessageFunc.getInstance().connect(handler).getMessage(offset));
+                    List<Message> messages = MessageFunc.getInstance().connect(handler).getMessage(offset);
+                    adapter.insert(messages);
+                    offset += messages.size();
                     break;
             }
         }

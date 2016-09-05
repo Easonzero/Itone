@@ -89,7 +89,7 @@ public class LessonData {
     }
 
     public String getWeeknumDelay(){
-        return week;
+        return weeknumDelay;
     }
 
     public void setWeeknumDelay(String weeknumDelay){

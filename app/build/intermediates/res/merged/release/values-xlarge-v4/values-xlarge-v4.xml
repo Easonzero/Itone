@@ -8,5 +8,6 @@
     <item name="abc_dialog_min_width_major" type="dimen">45%</item>
     <item name="abc_dialog_min_width_minor" type="dimen">72%</item>
     <dimen name="abc_search_view_text_min_width">192dip</dimen>
+    <dimen name="md_preference_content_inset">24dp</dimen>
     <integer name="abc_max_action_buttons">5</integer>
 </resources>

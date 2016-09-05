@@ -13,5 +13,5 @@ public class UserPlus {
     public String id;
     public int money;
     public int downloadNum;
-    public ArrayList<CourseInfo> course;
+    public String isMonitor;
 }

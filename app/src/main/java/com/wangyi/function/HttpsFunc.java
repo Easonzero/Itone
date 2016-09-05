@@ -1,17 +1,13 @@
 package com.wangyi.function;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
-import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
-import com.wangyi.UIview.widget.container.LessonListLayout;
-import com.wangyi.define.bean.ClassInfo;
 import com.wangyi.define.bean.Homework;
-import com.wangyi.define.bean.University;
+import com.wangyi.define.bean.StringListItem;
 import com.wangyi.define.bean.UserPlus;
 import com.wangyi.define.bean.UserRank;
 import com.wangyi.function.funchelp.Function;
@@ -29,8 +25,6 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Handler;
-import android.view.View;
-import android.widget.TextView;
 
 import org.xutils.ex.DbException;
 import org.xutils.x;
@@ -170,6 +164,9 @@ public class HttpsFunc implements Function {
 				// TODO Auto-generated method stub
 				if(result.equals(EventName.Https.OK)){
 					ItOneUtils.showToast(x.app(),"成功");
+					if(formkind.equals("modify")){
+						visitUserInfo();
+					}
 				}else if(result.equals(EventName.Https.ERROR)&&formkind.equals("login")){
 					ItOneUtils.showToast(x.app(),"用户名已经存在");
 				}
@@ -252,7 +249,7 @@ public class HttpsFunc implements Function {
 		});
 	}
 
-	public void searchBooksBySubject(String subject, String university, int start){
+	public void searchBooksBySubject(String subject, String university, String category,int start){
 		if(!isNetworkConnected()){
 			ItOneUtils.showToast(context,"网络未连接");
 			return;
@@ -260,6 +257,7 @@ public class HttpsFunc implements Function {
 		if(handler!=null) handler.sendEmptyMessage(EventName.UI.START);
 		Map<String,String> map=new HashMap<>();
 		map.put("subject", subject.equals("全部")?"*":subject);
+		map.put("category",category);
 		map.put("fromUniversity", university);
 		map.put("start",start+"");
 		HttpsUtils.Post(host+"/books/booklist", map, new Callback.CommonCallback<List<BookData>>(){
@@ -499,6 +497,99 @@ public class HttpsFunc implements Function {
 		});
 	}
 
+	public void sendMessage(String category,String message,String picUrl){
+		if(!isNetworkConnected()){
+			ItOneUtils.showToast(context,"网络未连接");
+			return;
+		}
+		String id = UserManagerFunc.getInstance().isLogin()?
+				UserManagerFunc.getInstance().getUserInfo().id:null;
+		Map<String,String> jsonOB = new HashMap<>();
+		jsonOB.put("category",category);
+		jsonOB.put("message",message);
+		jsonOB.put("uid",id);
+		jsonOB.put("picUrl",picUrl);
+		String json = new Gson().toJson(jsonOB);
+		Map<String,Object> map=new HashMap<>();
+		map.put("message",json);
+		if(picUrl.equals("true"))
+			map.put("file", new File(ImagePicker.SAVE_PATH_MESSAGE));
+		if(handler!=null) handler.sendEmptyMessage(EventName.UI.START);
+		HttpsUtils.UpLoadFile(host+"/message/send", map, new Callback.CommonCallback<String>(){
+
+			@Override
+			public void onCancelled(CancelledException arg0) {}
+
+			@Override
+			public void onError(Throwable ex, boolean isCheck) {
+				ItOneUtils.showToast(x.app(),"服务器抽风中...");
+			}
+
+			@Override
+			public void onFinished() {
+				if(handler!=null) handler.sendEmptyMessage(EventName.UI.FINISH);
+			}
+
+			@Override
+			public void onSuccess(String result) {
+				// TODO Auto-generated method stub
+				if(result.equals(EventName.Https.OK)){
+					ItOneUtils.showToast(x.app(),"成功");
+				}else if(result.equals(EventName.Https.ERROR)){
+					ItOneUtils.showToast(x.app(),"发送消息失败");
+				}
+			}
+
+		});
+	}
+
+	public void sendHomework(int courseNo,String message,String fdate,String picUrl){
+		if(!isNetworkConnected()){
+			ItOneUtils.showToast(context,"网络未连接");
+			return;
+		}
+		String id = UserManagerFunc.getInstance().isLogin()?
+				UserManagerFunc.getInstance().getUserInfo().id:null;
+		Map<String,String> jsonOB = new HashMap<>();
+		jsonOB.put("courseNo",courseNo+"");
+		jsonOB.put("message",message);
+		jsonOB.put("uid",id);
+		jsonOB.put("fdate",fdate);
+		jsonOB.put("picUrl",picUrl);
+		String json = new Gson().toJson(jsonOB);
+		Map<String,Object> map=new HashMap<>();
+		map.put("homework",json);
+		if(picUrl.equals("true"))
+			map.put("file", new File(ImagePicker.SAVE_PATH_HOMEWORK));
+		if(handler!=null) handler.sendEmptyMessage(EventName.UI.START);
+		HttpsUtils.UpLoadFile(host+"/message/send", map, new Callback.CommonCallback<String>(){
+
+			@Override
+			public void onCancelled(CancelledException arg0) {}
+
+			@Override
+			public void onError(Throwable ex, boolean isCheck) {
+				ItOneUtils.showToast(x.app(),"服务器抽风中...");
+			}
+
+			@Override
+			public void onFinished() {
+				if(handler!=null) handler.sendEmptyMessage(EventName.UI.FINISH);
+			}
+
+			@Override
+			public void onSuccess(String result) {
+				// TODO Auto-generated method stub
+				if(result.equals(EventName.Https.OK)){
+					ItOneUtils.showToast(x.app(),"成功");
+				}else if(result.equals(EventName.Https.ERROR)){
+					ItOneUtils.showToast(x.app(),"发送消息失败");
+				}
+			}
+
+		});
+	}
+
 	public void getHomework(){
 		if(!isNetworkConnected()){
 			ItOneUtils.showToast(context,"网络未连接");
@@ -538,7 +629,7 @@ public class HttpsFunc implements Function {
 			return;
 		}
 		if(handler != null) handler.sendEmptyMessage(EventName.UI.START);
-		HttpsUtils.Get(host+"/base/university", null, new Callback.CommonCallback<List<University>>(){
+		HttpsUtils.Get(host+"/base/university", null, new Callback.CommonCallback<List<StringListItem>>(){
 
 			@Override
 			public void onCancelled(CancelledException arg0) {
@@ -553,19 +644,15 @@ public class HttpsFunc implements Function {
 			}
 
 			@Override
-			public void onSuccess(List<University> result) {
+			public void onSuccess(List<StringListItem> result) {
 				// TODO Auto-generated method stub
-				ArrayList<String> temp = new ArrayList<String>();
-				for(University info:result){
-					temp.add(info.name);
-				}
-				handler.obtainMessage(EventName.UI.SUCCESS,temp).sendToTarget();
+				handler.obtainMessage(EventName.UI.SUCCESS,result).sendToTarget();
 			}
 
 		});
 	}
 
-	public void getClassList(String fromUniversity){
+	public void getFacultyList(String fromUniversity){
 		if(!isNetworkConnected()){
 			ItOneUtils.showToast(context,"网络未连接");
 			return;
@@ -573,7 +660,7 @@ public class HttpsFunc implements Function {
 		if(handler != null) handler.sendEmptyMessage(EventName.UI.START);
 		Map<String,String> map=new HashMap<>();
 		map.put("fromUniversity", fromUniversity);
-		HttpsUtils.Post(host+"/base/class", map, new Callback.CommonCallback<List<ClassInfo>>(){
+		HttpsUtils.Post(host+"/base/faculty", map, new Callback.CommonCallback<List<StringListItem>>(){
 
 			@Override
 			public void onCancelled(CancelledException arg0) {
@@ -589,13 +676,74 @@ public class HttpsFunc implements Function {
 			}
 
 			@Override
-			public void onSuccess(List<ClassInfo> result) {
+			public void onSuccess(List<StringListItem> result) {
 				// TODO Auto-generated method stub
-				ArrayList<String> temp = new ArrayList<String>();
-				for(ClassInfo info:result){
-					temp.add(ItOneUtils.generateMessage(info.name,info.fromFaculty));
-				}
-				handler.obtainMessage(EventName.UI.SUCCESS,temp).sendToTarget();
+				handler.obtainMessage(EventName.UI.SUCCESS,result).sendToTarget();
+			}
+
+		});
+	}
+
+	public void getClassList(String fromUniversity,String fromFaculty){
+		if(!isNetworkConnected()){
+			ItOneUtils.showToast(context,"网络未连接");
+			return;
+		}
+		if(handler != null) handler.sendEmptyMessage(EventName.UI.START);
+		Map<String,String> map=new HashMap<>();
+		map.put("fromUniversity", fromUniversity);
+		map.put("fromFaculty", fromFaculty);
+		HttpsUtils.Post(host+"/base/class", map, new Callback.CommonCallback<List<StringListItem>>(){
+
+			@Override
+			public void onCancelled(CancelledException arg0) {
+			}
+			@Override
+			public void onError(Throwable ex, boolean isCheck) {
+				ItOneUtils.showToast(context,ex.toString());
+			}
+
+			@Override
+			public void onFinished() {
+				if(handler != null) handler.sendEmptyMessage(EventName.UI.FINISH);
+			}
+
+			@Override
+			public void onSuccess(List<StringListItem> result) {
+				// TODO Auto-generated method stub
+				handler.obtainMessage(EventName.UI.SUCCESS,result).sendToTarget();
+			}
+
+		});
+	}
+
+	public void getCourseList(String fromUniversity){
+		if(!isNetworkConnected()){
+			ItOneUtils.showToast(context,"网络未连接");
+			return;
+		}
+		if(handler != null) handler.sendEmptyMessage(EventName.UI.START);
+		Map<String,String> map=new HashMap<>();
+		map.put("fromUniversity", fromUniversity);
+		HttpsUtils.Post(host+"/base/course", map, new Callback.CommonCallback<List<StringListItem>>(){
+
+			@Override
+			public void onCancelled(CancelledException arg0) {
+			}
+			@Override
+			public void onError(Throwable ex, boolean isCheck) {
+				ItOneUtils.showToast(context,ex.toString());
+			}
+
+			@Override
+			public void onFinished() {
+				if(handler != null) handler.sendEmptyMessage(EventName.UI.FINISH);
+			}
+
+			@Override
+			public void onSuccess(List<StringListItem> result) {
+				// TODO Auto-generated method stub
+				handler.obtainMessage(EventName.UI.SUCCESS,result).sendToTarget();
 			}
 
 		});

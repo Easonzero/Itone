@@ -17,13 +17,16 @@ import com.wangyi.UIview.activity.SearchInfoActivity;
 import com.wangyi.define.EventName;
 import com.wangyi.define.bean.UserInfo;
 import com.wangyi.function.HttpsFunc;
+import com.wangyi.function.UserManagerFunc;
 import com.wangyi.reader.R;
 import com.wangyi.utils.ImagePicker;
 import com.wangyi.utils.ItOneUtils;
 
+import org.xutils.image.ImageOptions;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
 
 import java.io.File;
 
@@ -34,24 +37,27 @@ import java.io.File;
 @ContentView(R.layout.fragment_register4)
 public class RegisterFragment4 extends BaseFragment {
     public final int UNIVERSITY = 4;
-    public final int CLASS = 5;
-    public final int GRADE = 6;
+    public final int FACULTY = 5;
+    public final int CLASS = 6;
+    public final int GRADE = 7;
     @ViewInject(R.id.headpic)
     private ImageView picture;
-    @ViewInject(R.id.university_tx)
+    @ViewInject(R.id.university)
     private TextView university;
-    @ViewInject(R.id.Class_tx)
+    @ViewInject(R.id.faculty)
+    private TextView faculty;
+    @ViewInject(R.id.Class)
     private TextView Class;
-    @ViewInject(R.id.grade_tx)
+    @ViewInject(R.id.grade)
     private TextView grade;
     @ViewInject(R.id.userName)
     private EditText userName;
 
     private boolean isAddPic = false;
-    private String fromFauclty;
 
     public void register(){
         if(university.getText().toString().equals("")||
+                faculty.getText().toString().equals("")||
                 Class.getText().toString().equals("")||
                 grade.getText().toString().equals("")||
                 userName.getText().toString().equals("")){
@@ -64,12 +70,56 @@ public class RegisterFragment4 extends BaseFragment {
         user.id = params[0];
         user.passWords = params[1];
         user.Class = Class.getText().toString();
-        user.faculty = fromFauclty;
+        user.faculty = faculty.getText().toString();
         user.picture = isAddPic?"true":"false";
         user.university = university.getText().toString();
         user.grade = grade.getText().toString();
         user.userName = userName.getText().toString();
         HttpsFunc.getInstance().connect(handler).commitForm(user,"register");
+    }
+
+    public void setData(){
+        UserInfo userInfo = UserManagerFunc.getInstance().getUserInfo();
+        userName.setText(userInfo.userName);
+        Class.setText(userInfo.Class);
+        faculty.setText(userInfo.faculty);
+        grade.setText(userInfo.grade);
+        university.setText(userInfo.university);
+        ImageOptions options=new ImageOptions.Builder()
+                .setLoadingDrawableId(R.drawable.headpic)
+                .setFailureDrawableId(R.drawable.headpic)
+                .setUseMemCache(true)
+                .setCircular(true)
+                .setIgnoreGif(false)
+                .build();
+        x.image().bind(
+                picture, HttpsFunc.host +
+                        userInfo.picture +
+                        "headPic.jpg",options
+        );
+    }
+
+    public void modify(){
+        if(university.getText().toString().equals("")||
+                faculty.getText().toString().equals("")||
+                Class.getText().toString().equals("")||
+                grade.getText().toString().equals("")||
+                userName.getText().toString().equals("")){
+            ItOneUtils.showToast(getContext(),"有信息项未填写");
+            return;
+        }
+
+        UserInfo userInfo = new UserInfo();
+        userInfo.id = UserManagerFunc.getInstance().getUserInfo().id;
+        userInfo.Class = Class.getText().toString();
+        userInfo.faculty = faculty.getText().toString();
+        userInfo.picture = isAddPic?"true":"false";
+        userInfo.university = university.getText().toString();
+        userInfo.grade = grade.getText().toString();
+        userInfo.userName = userName.getText().toString();
+
+        HttpsFunc.getInstance().connect(handler).commitForm(
+                userInfo,"modify");
     }
 
     @Event(R.id.headpic)
@@ -84,12 +134,23 @@ public class RegisterFragment4 extends BaseFragment {
         startActivityForResult(intent,UNIVERSITY);
     }
 
+    @Event(R.id.faculty)
+    private void onFacultyClick(View view){
+        Intent intent = new Intent(getContext(), SearchInfoActivity.class);
+        intent.putExtra("scategory","faculty");
+        String fromUniversity = university.getText().toString();
+        intent.putExtra("fromUniversity",fromUniversity);
+        startActivityForResult(intent,FACULTY);
+    }
+
     @Event(R.id.Class)
     private void onClassClick(View view){
         Intent intent = new Intent(getContext(), SearchInfoActivity.class);
         intent.putExtra("scategory","class");
         String fromUniversity = university.getText().toString();
         intent.putExtra("fromUniversity",fromUniversity);
+        String fromFaculty = faculty.getText().toString();
+        intent.putExtra("fromFaculty",fromFaculty);
         startActivityForResult(intent,CLASS);
     }
 
@@ -169,11 +230,15 @@ public class RegisterFragment4 extends BaseFragment {
                     break;
                 case UNIVERSITY:
                     university.setText(data.getStringExtra("result"));
+                    faculty.setText("");
+                    Class.setText("");
+                    break;
+                case FACULTY:
+                    faculty.setText(data.getStringExtra("result"));
+                    Class.setText("");
                     break;
                 case CLASS:
-                    String[] results = ItOneUtils.parseMessage(data.getStringExtra("result"));
-                    Class.setText(results[0]);
-                    fromFauclty = results[1];
+                    Class.setText(data.getStringExtra("result"));
                     break;
                 case GRADE:
                     grade.setText(data.getStringExtra("result"));

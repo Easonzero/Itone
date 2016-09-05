@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@color/base_background_color"
+              android:layout_height="match_parent">
+    <RelativeLayout style="@style/toolbar"
+                    android:layout_height="@dimen/toolbarHeight">
+        <LinearLayout
+            android:id="@+id/switch_contain"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="150dp"
+            android:layout_height="@dimen/menuitemSize"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/bg_publish_message">
+            <Button
+                android:id="@+id/bt_message"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:textColor="@color/white"
+                android:text="发消息"/>
+            <Button
+                android:id="@+id/bt_homework"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:textColor="@color/apptheme_third_color"
+                android:text="发作业"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/back"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="@dimen/menuitemSize"
+            android:layout_height="@dimen/menuitemSize"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/back2" />
+    </RelativeLayout>
+    <fragment
+        android:id="@+id/message"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        class="com.wangyi.UIview.fragment.PublishMessageFragment"
+        tools:layout="@layout/fragment_publishmessage" />
+    <fragment
+        android:id="@+id/homework"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        class="com.wangyi.UIview.fragment.PublishHomeworkFragment"
+        tools:layout="@layout/fragment_publishhomework" />
+</LinearLayout>

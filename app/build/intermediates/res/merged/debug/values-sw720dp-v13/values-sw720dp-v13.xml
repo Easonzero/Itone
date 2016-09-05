@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <bool name="md_is_tablet">true</bool>
     <dimen name="big_card_image_height">240dp</dimen>
     <dimen name="body_text_size">21sp</dimen>
     <dimen name="bottombar_height">56dp</dimen>

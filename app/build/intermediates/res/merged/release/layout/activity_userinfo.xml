@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout style="@style/toolbar" >
+    <RelativeLayout style="@style/toolbar"
+         android:layout_height="@dimen/smallToolbarHeight"
+         android:gravity="center_vertical"
+         android:padding="@dimen/padding_step1">
         <TextView
             style="@style/titletext"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:text="个人信息"/>
+            android:layout_toRightOf="@+id/back"
+            android:layout_centerVertical="true"
+            android:text="编辑个人信息"/>
         <Button
             android:id="@+id/back"
             style="?android:attr/buttonStyleSmall"
@@ -24,80 +28,13 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:background="#00000000"
-            android:text="修改"
-            android:textColor="#FFFFFFFF"
-            android:layout_marginBottom="-10dp"/>
+            android:text="保存"
+            android:textColor="#FFFFFFFF"/>
     </RelativeLayout>
-    <LinearLayout style="@style/smallitem"
-        android:layout_height="@dimen/largepicWidth">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="头  像"
-            android:layout_weight="1"/>
-        <ImageView
-            android:id="@+id/headpic"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/headpic" />
-        <ImageView style="@style/arrow" />
-    </LinearLayout>
-    <View style="@style/line"/>
-    <LinearLayout style="@style/smallitem">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="姓  名"
-            android:layout_weight="1"/>
-        <EditText
-            android:id="@+id/name"
-            android:maxLength="8"
-            android:background="@null"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/apptheme_second_color"/>
-    </LinearLayout>
-    <View style="@style/line"/>
-    <LinearLayout style="@style/smallitem">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="学  校"
-            android:layout_weight="1"/>
-        <TextView
-            android:id="@+id/university"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/apptheme_second_color"/>
-        <ImageView style="@style/arrow" />
-    </LinearLayout>
-    <View style="@style/line"/>
-    <LinearLayout style="@style/smallitem">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="班  级"
-            android:layout_weight="1"/>
-        <TextView
-            android:id="@+id/Class"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/apptheme_second_color"/>
-        <ImageView style="@style/arrow" />
-    </LinearLayout>
-    <View style="@style/line"/>
-    <LinearLayout style="@style/smallitem">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="年  级"
-            android:layout_weight="1"/>
-        <TextView
-            android:id="@+id/grade"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/apptheme_second_color"/>
-        <ImageView style="@style/arrow" />
-    </LinearLayout>
-    <View style="@style/line"/>
+    <fragment
+        android:id="@+id/fragment4"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        class="com.wangyi.UIview.fragment.RegisterFragment4"
+        tools:layout="@layout/fragment_register4" />
 </LinearLayout>

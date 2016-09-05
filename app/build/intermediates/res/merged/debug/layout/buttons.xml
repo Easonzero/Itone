@@ -3,7 +3,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent" >
-
+	<com.wangyi.UIview.widget.view.ArrowView
+		android:id="@+id/left_arrow"
+		android:visibility="gone"
+		android:layout_alignParentLeft="true"
+		android:layout_centerVertical="true"
+		android:layout_marginLeft="@dimen/padding_step2"
+		android:layout_width="@dimen/icon_menu_width"
+		android:layout_height="@dimen/icon_menu_width"
+		android:onClick="OnLeftArrowClick"/>
+	<com.wangyi.UIview.widget.view.ArrowView
+		android:id="@+id/right_arrow"
+		android:visibility="gone"
+		android:layout_alignParentRight="true"
+		android:layout_centerVertical="true"
+		android:layout_marginRight="@dimen/padding_step2"
+		android:layout_width="@dimen/icon_menu_width"
+		android:layout_height="@dimen/icon_menu_width"
+		android:onClick="OnRightArrowClick"/>
 	<ViewAnimator
 			android:id="@+id/bottomMenus"
 			android:layout_width="match_parent"

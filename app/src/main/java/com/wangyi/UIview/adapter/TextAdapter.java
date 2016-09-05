@@ -4,6 +4,7 @@ import android.view.View;
 
 import com.marshalchen.ultimaterecyclerview.quickAdapter.easyRegularAdapter;
 import com.wangyi.UIview.adapter.viewholder.TextVH;
+import com.wangyi.define.bean.StringListItem;
 import com.wangyi.reader.R;
 import com.wangyi.utils.ItOneUtils;
 
@@ -12,8 +13,8 @@ import java.util.List;
 /**
  * Created by eason on 5/25/16.
  */
-public class TextAdapter extends easyRegularAdapter<String,TextVH>{
-    public TextAdapter(List<String> texts){
+public class TextAdapter extends easyRegularAdapter<StringListItem,TextVH>{
+    public TextAdapter(List<StringListItem> texts){
         super(texts);
     }
 
@@ -28,11 +29,11 @@ public class TextAdapter extends easyRegularAdapter<String,TextVH>{
     }
 
     @Override
-    protected void withBindHolder(TextVH holder, String data, int position) {
-        holder.item.setText(ItOneUtils.parseMessage(data)[0]);
+    protected void withBindHolder(TextVH holder, StringListItem data, int position) {
+        holder.item.setText(data.name);
     }
 
-    public String getItem(int pos){
+    public StringListItem getItem(int pos){
         return source.get(pos);
     }
 }

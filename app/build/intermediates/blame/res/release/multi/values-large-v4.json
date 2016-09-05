@@ -197,8 +197,27 @@
                     "startLine": 12,
                     "startColumn": 4,
                     "startOffset": 730,
+                    "endColumn": 58,
+                    "endOffset": 784
+                },
+                "from": {
+                    "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/commons/0.8.0.1/res/values-large/values-large.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 163,
+                        "endColumn": 58,
+                        "endOffset": 217
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 789,
                     "endColumn": 54,
-                    "endOffset": 780
+                    "endOffset": 839
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/values-large-v4/values-large-v4.xml",
@@ -213,11 +232,11 @@
             },
             {
                 "to": {
-                    "startLine": 13,
+                    "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 785,
+                    "startOffset": 844,
                     "endColumn": 103,
-                    "endOffset": 884
+                    "endOffset": 943
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/values-large-v4/values-large-v4.xml",
@@ -232,11 +251,11 @@
             },
             {
                 "to": {
-                    "startLine": 14,
+                    "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 889,
+                    "startOffset": 948,
                     "endColumn": 115,
-                    "endOffset": 1000
+                    "endOffset": 1059
                 },
                 "from": {
                     "file": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/values-large-v4/values-large-v4.xml",

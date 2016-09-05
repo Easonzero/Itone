@@ -19,6 +19,7 @@ import com.wangyi.UIview.adapter.ThumbnailViewAdapter;
 import com.wangyi.UIview.adapter.searchItemAdapter;
 import com.wangyi.UIview.widget.container.PopupView;
 import com.wangyi.UIview.widget.container.PopupView.OnDismissListener;
+import com.wangyi.UIview.widget.view.ArrowView;
 import com.wangyi.reader.R;
 import com.wangyi.utils.PreferencesReader;
 import com.wangyi.utils.ItOneUtils;
@@ -129,6 +130,9 @@ public class MuPDFActivity extends AppCompatActivity implements
     private AsyncTask<Void, Void, Void> getCoverTask;
     private PopupView popupSearchView;
     private String cacheSearch = "";
+
+    private ArrowView mLeftArrow;
+    private ArrowView mRightArrow;
 
     public void createAlertWaiter() {
         mAlertsActive = true;
@@ -531,11 +535,15 @@ public class MuPDFActivity extends AppCompatActivity implements
                     if (mTopBarMode == TopBarMode.Main)
                         hideButtons();
                 }
+                mRightArrow.setVisibility(INVISIBLE);
+                mLeftArrow.setVisibility(INVISIBLE);
             }
 
             @Override
             protected void onDocMotion() {
                 hideButtons();
+                mRightArrow.setVisibility(INVISIBLE);
+                mLeftArrow.setVisibility(INVISIBLE);
             }
 
             @Override
@@ -601,7 +609,9 @@ public class MuPDFActivity extends AppCompatActivity implements
             @Override
             protected void onTextFound(SearchTaskResult result) {
                 // TODO Auto-generated method stub
-
+                SearchTaskResult.set(result);
+                mDocView.setDisplayedViewIndex(result.pageNumber);
+                mDocView.resetupChildren();
             }
 
             @Override
@@ -625,7 +635,6 @@ public class MuPDFActivity extends AppCompatActivity implements
                     ListView list = (ListView)view.findViewById(R.id.searchList);
                     list.setAdapter(adapter);
                     list.setOnItemClickListener(new OnItemClickListener() {
-
                                 @Override
                                 public void onItemClick(AdapterView<?> arg0,
                                                         View arg1, int index, long arg3) {
@@ -634,8 +643,10 @@ public class MuPDFActivity extends AppCompatActivity implements
                                             .get(index).pageNumber));
                                     mDocView.resetupChildren();
                                     popupSearchView.dismiss();
-                                }
-                            });
+                                    mRightArrow.setVisibility(View.VISIBLE);
+                                    mLeftArrow.setVisibility(View.VISIBLE);
+                        }
+                    });
                 }
             }
         };
@@ -1049,7 +1060,26 @@ public class MuPDFActivity extends AppCompatActivity implements
         mLowerMenus = (LinearLayout) mButtonsView.findViewById(R.id.lowerMenus);
         mOutlineAction = (ImageView) mButtonsView
                 .findViewById(R.id.showOutlineAction);
+        mLeftArrow = (ArrowView) mButtonsView.findViewById(R.id.left_arrow);
+        mRightArrow = (ArrowView) mButtonsView.findViewById(R.id.right_arrow);
 
+        mLeftArrow.setType("left");
+        mRightArrow.setType("right");
+    }
+
+    public void OnLeftArrowClick(View v){
+        search(-1);
+    }
+
+    public void OnRightArrowClick(View v){
+        search(1);
+    }
+
+    private void search(int direction) {
+        int displayPage = mDocView.getDisplayedViewIndex();
+        SearchTaskResult r = SearchTaskResult.get();
+        int searchPage = r != null ? r.pageNumber : -1;
+        mSearchTask.go(cacheSearch, direction, displayPage, searchPage);
     }
 
     public void OnMoreButtonClick(View v) {

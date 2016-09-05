@@ -4,19 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.marshalchen.ultimaterecyclerview.UltimateRecyclerView;
-import com.wangyi.UIview.BaseActivity;
 import com.wangyi.UIview.adapter.WatchUserAdapter;
 import com.wangyi.UIview.widget.dialog.LoadingDialog;
-import com.wangyi.UIview.widget.view.NumberView;
 import com.wangyi.UIview.widget.view.UltimateListView;
 import com.wangyi.define.bean.BookData;
 import com.wangyi.define.EventName;
+import com.wangyi.define.bean.UserInfo;
+import com.wangyi.define.bean.UserPlus;
 import com.wangyi.function.HttpsFunc;
 import com.wangyi.function.UserManagerFunc;
 import com.wangyi.reader.R;
@@ -33,21 +33,21 @@ import java.util.ArrayList;
  * Created by eason on 5/3/16.
  */
 @ContentView(value= R.layout.watchuser)
-public class WatchUser extends BaseActivity {
+public class WatchUser extends AppCompatActivity {
     @ViewInject(R.id.uploadlist)
     private UltimateRecyclerView uploadlist;
-    @ViewInject(R.id.name)
+    @ViewInject(R.id.userName)
     private TextView name;
-    @ViewInject(R.id.downloadnum)
-    private TextView downloadnum;
-    @ViewInject(R.id.from)
-    private TextView from;
+    @ViewInject(R.id.downloadNum)
+    private TextView downloadNum;
+    @ViewInject(R.id.money)
+    private TextView money;
     @ViewInject(R.id.pic)
     private ImageView pic;
-    @ViewInject(R.id.number)
-    private NumberView number;
-    @ViewInject(R.id.userInfo)
-    private LinearLayout userLayout;
+    @ViewInject(R.id.rank)
+    private TextView rank;
+    @ViewInject(R.id.info)
+    private TextView info;
 
     private WatchUserAdapter adapter = null;
     private LoadingDialog loading;
@@ -77,6 +77,7 @@ public class WatchUser extends BaseActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         loading = new LoadingDialog(this);
+        x.view().inject(this);
 
         adapter = new WatchUserAdapter(this, new WatchUserAdapter.OnSubItemClickListener(){
 
@@ -102,22 +103,27 @@ public class WatchUser extends BaseActivity {
     }
 
     private void initUserInfo(){
-        name.setText(UserManagerFunc.getInstance().getUserInfo().userName);
-        downloadnum.setText("影响力："+UserManagerFunc.getInstance().getUserPlus().downloadNum+
-        "   人民π："+UserManagerFunc.getInstance().getUserPlus().money);
-        from.setText(UserManagerFunc.getInstance().getUserInfo().university);
-        int rank = UserManagerFunc.getInstance().getRank();
-        number.setMessage((rank+1)+(rank<100?"":"\n以内"));
+        UserInfo userInfo = UserManagerFunc.getInstance().getUserInfo();
+        UserPlus userPlus = UserManagerFunc.getInstance().getUserPlus();
+        name.setText(userInfo.userName);
+        downloadNum.setText(""+userPlus.downloadNum);
+        money.setText(""+userPlus.money);
+        info.setText(userInfo.university+"/"+
+                userInfo.faculty+"/"+
+                userInfo.Class+"/"+
+                userInfo.grade);
+        int number = UserManagerFunc.getInstance().getRank();
+        rank.setText((number+1)+(number<100?"":"\n以内"));
         ImageOptions options=new ImageOptions.Builder()
                 .setLoadingDrawableId(R.drawable.headpic)
                 .setFailureDrawableId(R.drawable.headpic)
                 .setUseMemCache(true)
                 .setCircular(true)
-                .setIgnoreGif(true)
+                .setIgnoreGif(false)
                 .build();
         x.image().bind(
                 pic, HttpsFunc.host +
-                        UserManagerFunc.getInstance().getUserInfo().picture +
+                        userInfo.picture +
                         "headPic.jpg",options
         );
     }
@@ -129,8 +135,8 @@ public class WatchUser extends BaseActivity {
         view.afterFuncset();
     }
 
-    @Event(R.id.userInfo)
-    private void onUserLayoutClick(View view){
+    @Event(R.id.modify)
+    private void onModifyClick(View view){
         Intent intent = new Intent(this,UserInfoActivity.class);
         startActivity(intent);
     }

@@ -3,12 +3,14 @@ package com.wangyi.UIview.adapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.wangyi.UIview.activity.WatchLesson;
 import com.wangyi.UIview.adapter.viewholder.LessonGridVH;
 import com.wangyi.define.bean.LessonData;
 import com.wangyi.function.ScheduleFunc;
 import com.wangyi.reader.R;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +24,11 @@ public class LessonGridAdapter extends BaseAdapter {
 		lessonDatas = ScheduleFunc.getInstance().find();
 		if(lessonDatas == null) lessonDatas = new ArrayList();
 		inflater = LayoutInflater.from(context);
+	}
+
+	public void update(){
+		lessonDatas = ScheduleFunc.getInstance().find();
+		if(lessonDatas == null) lessonDatas = new ArrayList();
 	}
 
 	@Override

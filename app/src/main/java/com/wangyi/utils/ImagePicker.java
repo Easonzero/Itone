@@ -26,22 +26,25 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class ImagePicker {
     public static String SAVE_PATH = "/sdcard/headPic.jpg";
+    public static String SAVE_PATH_MESSAGE = "/sdcard/message.jpg";
+    public static String SAVE_PATH_HOMEWORK = "/sdcard/homework.jpg";
     public static void setImageToView(Intent data,ImageView imageView) {
         Bundle extras = data.getExtras();
         if (extras != null) {
             Bitmap photo = extras.getParcelable("data");
             Bitmap roundBitmap=toRoundBitmap(photo);
             imageView.setImageBitmap(roundBitmap);
-            saveBitmap(photo);
+            saveBitmap(photo,SAVE_PATH);
         }
     }
     
-    public static void saveBitmap(Bitmap mBitmap) {
-        File f = new File(SAVE_PATH);
+    public static void saveBitmap(Bitmap mBitmap,String uri) {
+        File f = new File(uri);
         try {
             f.createNewFile();
             FileOutputStream fOut = null;

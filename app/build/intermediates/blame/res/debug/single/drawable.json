@@ -1,63 +1,15 @@
 [
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/darkdenim3.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/darkdenim3.png"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/circle_color.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/circle_color.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_badge.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_badge.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/search.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/search.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/apptheme_list_selector_holo_light.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/apptheme_list_selector_holo_light.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_lesson_blue_selector.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_lesson_blue_selector.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_ratingbar_indicator_material.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_card_nos.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/res/drawable/material_card_nos.xml"
-    },
-    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_select.png",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_select.png"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_default_mtrl_shape.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/md_transparent.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/drawable/md_transparent.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_print.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_print.png"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_share.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_share.png"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_borderless_material.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_cab_background_internal_bg.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_list_selector_holo_dark.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_shadow_bottom.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_shadow_bottom.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/button.xml",
@@ -68,112 +20,120 @@
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_folder.png"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_annot.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_annot.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_action_arrow_left.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_action_arrow_left.png"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_shadow_left.9.png",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_shadow_left.9.png"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_radio_material.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_shadow_bottom.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_shadow_bottom.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_cab_background_top_material.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_shadow_right.9.png",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_shadow_right.9.png"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_light.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_dialog_material_background_light.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/me_tableitem_selecter.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/me_tableitem_selecter.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_spinner_textfield_background_material.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_lesson_grey_selector.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_lesson_grey_selector.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_tab_indicator_material.xml"
-    },
-    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/loadbackground.xml",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/loadbackground.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/shadow.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/shadow.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_doc.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_doc.png"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_lesson_green_selector.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_lesson_green_selector.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_list_selector_background_transition_holo_light.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_lowerbutton.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_lowerbutton.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_arrow_right.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_arrow_right.png"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_check_material.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_edit_text_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_seekbar_thumb_material.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/seek_thumb.xml",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/seek_thumb.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_more.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_more.png"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_seekbar_track_material.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_dark.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_dialog_material_background_dark.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/me_tableitem_selecter.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/me_tableitem_selecter.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_text_cursor_material.xml"
     },
     {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_arrow_left.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_arrow_left.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_annot.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_annot.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_lesson_blue_selector.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_lesson_blue_selector.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/shadow.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/shadow.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/me_tableitem2_selecter.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/me_tableitem2_selecter.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_lesson_grey_selector.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_lesson_grey_selector.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_light.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_sdcard.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_sdcard.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_list_selector_holo_light.xml"
+    },
+    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_shadow_top.xml",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_shadow_top.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_action_arrow_left.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_action_arrow_left.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background_dark.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_dialog_material_background_dark.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_textfield_search_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_dialog_window.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/res/drawable/material_dialog_window.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/md_item_selected_dark.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/drawable/md_item_selected_dark.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/apptheme_list_selector_holo_light.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/apptheme_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_full_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_ratingbar_full_material.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_card_nos_pressed.xml",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/res/drawable/material_card_nos_pressed.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_list.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_list.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_shadow_right.9.png",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_shadow_right.9.png"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_top_actionbar.xml",
@@ -184,151 +144,231 @@
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_arrow_up.png"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_clipboard.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_clipboard.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/md_selector_dark.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/drawable/md_selector_dark.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_doc.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_doc.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_lesson_green_selector.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_lesson_green_selector.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_sdcard.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_sdcard.png"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/me_tableitem2_selecter.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/me_tableitem2_selecter.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_check.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_check.png"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_item_background_holo_light.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_subjecttab.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_subjecttab.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_list.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_list.png"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_magnifying_glass.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_magnifying_glass.png"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_colored_material.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_cancel.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_cancel.png"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_circle_mask.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_circle_mask.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/md_btn_selector.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/drawable/md_btn_selector.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_switch_thumb_material.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_thumb_material.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_seekbar_thumb_material.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/page_num.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/page_num.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_full_material.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_ratingbar_full_material.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_menu_moreoverflow_note.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_menu_moreoverflow_note.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/abc_ic_clear.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_card.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/res/drawable/material_card.xml"
-    },
-    {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_search.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_search.xml"
-    },
-    {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_dir.png",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_dir.png"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_ratingbar_small_material.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_dark.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_list_selector_holo_dark.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_link.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_link.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_more.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_more.png"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_reflow.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_reflow.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_clipboard.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_clipboard.png"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_dark.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_item_background_holo_dark.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_cancel.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_cancel.png"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_arrow_left.png",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_arrow_left.png"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_default_mtrl_shape.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_default_mtrl_shape.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/drag_frame.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.hkm.ui/ultimaterecyclerview/0.5.8/res/drawable/drag_frame.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_borderless_material.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/busy.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/busy.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/md_item_selected.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/drawable/md_item_selected.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_colored_material.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_lesson_purple_selector.xml",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_lesson_purple_selector.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_menu_moreoverflow_note.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_menu_moreoverflow_note.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/seek_progress.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/seek_progress.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/md_btn_selected.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/drawable/md_btn_selected.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_list_selector_holo_light.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_cab_background_top_material.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_register_bt.xml",
-        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_register_bt.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/gray_circle.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/commons/0.8.0.1/res/drawable/gray_circle.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_tab_indicator_material.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/buttondark.xml",
         "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/buttondark.xml"
     },
     {
-        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_dialog_window.xml",
-        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/res/drawable/material_dialog_window.xml"
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/md_btn_selector_dark.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/drawable/md_btn_selector_dark.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_card_nos.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/res/drawable/material_card_nos.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_btn_check_material.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/seek_progress.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/seek_progress.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_search.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_search.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_circle_mask.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_circle_mask.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_arrow_right.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_arrow_right.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/md_selector.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/drawable/md_selector.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/busy.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/busy.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_drawer_badge.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/4.0.8/res/drawable/material_drawer_badge.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/drag_frame.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.hkm.ui/ultimaterecyclerview/0.5.8/res/drawable/drag_frame.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_magnifying_glass.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_magnifying_glass.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/material_card.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/me.drakeet.materialdialog/library/1.2.8/res/drawable/material_card.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/md_btn_selected_dark.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.0.1/res/drawable/md_btn_selected_dark.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/darkdenim3.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/darkdenim3.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/circle_color.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/circle_color.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/search.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/search.xml"
     },
     {
         "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/background_tab.xml",
         "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.astuetz/pagerslidingtabstrip/1.0.1/res/drawable/background_tab.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_small_material.xml",
+        "source": "/home/eason/Repos/ItOne/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/drawable/abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_register_bt.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_register_bt.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_lowerbutton.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_lowerbutton.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/abc_ic_clear.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_reflow.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_reflow.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/page_num.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/page_num.xml"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_check.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_check.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_share.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_share.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_link.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_link.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/ic_print.png",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/ic_print.png"
+    },
+    {
+        "merged": "/home/eason/Repos/ItOne/app/build/intermediates/res/merged/debug/drawable/bg_subjecttab.xml",
+        "source": "/home/eason/Repos/ItOne/app/src/main/res/drawable/bg_subjecttab.xml"
     }
 ]
